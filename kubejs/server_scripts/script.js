@@ -6,7 +6,31 @@ settings.logSkippedRecipes = false
 settings.logErroringRecipes = true
 
 onEvent(`recipes`, event => {
+	//common
+	const removeTools = [
+		`minecraft:wooden`,
+		`minecraft:stone`,
+		`minecraft:golden`,
+		`minecraft:iron`,
+		`minecraft:diamond`,
+		`minecraft:netherite`,
+		`immersiveengineering:steel`,
+		`create_sa:brass`,
+		`create_sa:copper`,
+		`create_sa:zinc`
+	]
+	removeTools.forEach(material => {
+		event.remove([{ output: `${material}_pickaxe` }, { input: `${material}_pickaxe` }])
+		event.remove([{ output: `${material}_axe` }, { input: `${material}_axe` }])
+		event.remove([{ output: `${material}_shovel` }, { input: `${material}_shovel` }])
+		event.remove([{ output: `${material}_hoe` }, { input: `${material}_hoe` }])
+		event.remove([{ output: `${material}_sword` }, { input: `${material}_sword` }])
+	})
+
 	// minecraft
+	event.shapeless(`alloyed:steel_ingot`, `#forge:ingots/steel`)
+	event.shapeless('immersiveengineering:ingot_steel', `#forge:ingots/steel`)
+	event.shapeless('thermal:steel_ingot', `#forge:ingots/steel`)
 	event.blasting(`minecraft:blaze_powder`, `minecraft:gunpowder`)
 
 	// oldguns
@@ -65,6 +89,11 @@ onEvent(`recipes`, event => {
 	event.remove({ id: `tconstruct:smeltery/seared/grout` })
 	event.remove({ id: `tconstruct:smeltery/seared/grout_multiple` })
 
+	event.recipes.create.mixing(
+		[`2x tconstruct:grout`, Item.of(`tconstruct:grout`).withChance(0.5)],
+		[`minecraft:clay_ball`, `#minecraft:sand`, `minecraft:gravel`]
+	)
+
 	// create
 	event.remove({ id: `davebuildingmod:rec_steel_block` })
 
@@ -73,12 +102,6 @@ onEvent(`recipes`, event => {
 	event.recipes.create.emptying([`minecraft:obsidian`, Fluid.of(`minecraft:lava`, 250)], `minecraft:magma_block`)
 	// event.recipes.create.blasting(`minecraft:magma_block`, `minecraft:netherrack`)
 	event.recipes.create.haunting(`minecraft:netherrack`, `minecraft:clay`)
-
-	event.recipes.create.mixing(
-		[`2x tconstruct:grout`, Item.of(`tconstruct:grout`).withChance(0.5)],
-		[`minecraft:clay_ball`, `#minecraft:sand`, `minecraft:gravel`]
-	)
-
 	let inter = `kubejs:unprocessed_steel_ingot`
 	event.recipes.create.sequencedAssembly(`oldguns:steel_ingot`, `#forge:ingots/steel`,
 		[
@@ -87,7 +110,88 @@ onEvent(`recipes`, event => {
 			event.recipes.create.pressing(inter, inter)
 		]).transitionalItem(inter).loops(1)
 
-	// immersiveengineering
+	// delight
+	event.remove({ output: `#farmersdelight:tools/knives`, not: [{ output: 'allyed:steel_knife' }, { output: 'delightful:experience_knife' }, { output: 'delightful:gilded_quartz_knife' }, { output: 'farmersdelight:netherite_knife' }] })
+
+	event.shaped(
+		Item.of('farmersdelight:iron_knife'),
+		[
+			` H`,
+			`S `
+		], {
+		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:iron"}'),
+		S: `#forge:rods/wooden`
+	})
+	event.shaped(
+		Item.of('farmersdelight:flint_knife'),
+		[
+			` H`,
+			`S `
+		], {
+		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:flint"}'),
+		S: `#forge:rods/wooden`
+	})
+	event.shaped(
+		Item.of('delightful:constantan_knife'),
+		[
+			` H`,
+			`S `
+		], {
+		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:constantan"}'),
+		S: `#forge:rods/wooden`
+	})
+	event.shaped(
+		Item.of('delightful:silver_knife'),
+		[
+			` H`,
+			`S `
+		], {
+		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:silver"}'),
+		S: `#forge:rods/wooden`
+	})
+	event.shaped(
+		Item.of('delightful:invar_knife'),
+		[
+			` H`,
+			`S `
+		], {
+		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:invar"}'),
+		S: `#forge:rods/wooden`
+	})
+	event.shaped(
+		Item.of('delightful:lead_knife'),
+		[
+			` H`,
+			`S `
+		], {
+		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:lead"}'),
+		S: `#forge:rods/wooden`
+	})
+	event.shaped(
+		Item.of('delightful:electrum_knife'),
+		[
+			` H`,
+			`S `
+		], {
+		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:electrum"}'),
+		S: `#forge:rods/wooden`
+	})
+	event.shaped(
+		Item.of('delightful:bronze_knife'),
+		[
+			` H`,
+			`S `
+		], {
+		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:bronze"}'),
+		S: `#forge:rods/wooden`
+	})
+	event.recipes.create.filling(Item.of('farmersdelight:diamond_knife'), ['#farmersdelight:tools/knives', Fluid.of(`tconstruct:molten_diamond`, 100)])
+	event.recipes.create.filling(Item.of('farmersdelight:golden_knife'), ['#farmersdelight:tools/knives', Fluid.of(`tconstruct:molten_gold`, 90)])
+	event.recipes.create.filling(Item.of('delightful:zinc_knife'), ['#farmersdelight:tools/knives', Fluid.of(`tconstruct:molten_zinc`, 90)])
+	event.recipes.create.filling(Item.of('delightful:brass_knife'), ['#farmersdelight:tools/knives', Fluid.of(`tconstruct:molten_brass`, 90)])
+	event.recipes.create.filling(Item.of('delightful:bronze_knife'), ['#farmersdelight:tools/knives', Fluid.of(`tconstruct:molten_bronze`, 90)])
+	event.recipes.create.filling(Item.of('delightful:tin_knife'), ['#farmersdelight:tools/knives', Fluid.of(`tconstruct:molten_tin`, 90)])
+	event.recipes.create.filling(Item.of('delightful:nickel_knife'), ['#farmersdelight:tools/knives', Fluid.of(`tconstruct:molten_nickel`, 90)])
 
 })
 
@@ -95,7 +199,6 @@ onEvent(`item.tags`, event => {
 	// item tag
 })
 
-/*
 onEvent("lootjs", (event) => {
 	event.addLootTableModifier(`minecraft:blocks/grass`)
 		.removeLoot(`minecraft:wheat_seeds`);
@@ -103,4 +206,3 @@ onEvent("lootjs", (event) => {
 	event.addLootTableModifier(`minecraft:blocks/tall_grass`)
 		.removeLoot(`minecraft:wheat_seeds`);
 });
-*/

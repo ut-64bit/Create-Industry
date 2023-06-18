@@ -2,7 +2,7 @@
 
 onEvent('item.registry', event => {
 	event.create('unprocessed_steel_ingot', 'create:sequenced_assembly').displayName('Unprocessed Steel Ingot')
-	// event.create('blaze_core').displayName('Blaze Core')
+	event.create('blaze_core').displayName('Blaze Core')
 })
 
 onEvent('block.registry', event => {
