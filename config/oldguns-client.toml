@@ -1,0 +1,15 @@
+
+["Debug config"]
+	#if you want to make transforms to de gun parts or hands active this
+	"do debug stuff" = false
+	#The path where the animations will be saved
+	Path = "nothing"
+
+["Misc config"]
+	#Hitmarker duration
+	#Range: 0 ~ 50
+	"Hitmarker duration" = 4
+	#MuzzleFlash duration
+	#Range: 0 ~ 50
+	"MuzzleFlash duration" = 4
+
