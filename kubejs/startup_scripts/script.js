@@ -1,7 +1,7 @@
 // priority: 0
 
 onEvent(`item.registry`, event => {
-	event.create(`unprocessed_gun_steel_ingot`, `create:sequenced_assembly`)
+	event.create(`unprocessed_steel_ingot`, `create:sequenced_assembly`)
 	event.create(`blaze_core`)
 })
 
