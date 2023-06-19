@@ -21,11 +21,11 @@ onEvent(`jei.hide.items`, event => {
 	event.hide(`tconstruct:sky_slime_sling`)
 
 	// delight
-	event.hide('delightful:steel_knife')
+	event.hide(`delightful:steel_knife`)
 })
 
-onEvent('item.tooltip', tooltip => {
-	const mags = ['oldguns:mags/asval_mag', 'oldguns:mags/aks-74u_mag', 'oldguns:mags/sten_mag', 'oldguns:mags/mp40_mag', 'oldguns:mags/luger_mag', 'oldguns:mags/thompson_drum_mag', 'oldguns:mags/thompson_mag', 'oldguns:mags/colt_mag']
+onEvent(`item.tooltip`, tooltip => {
+	const mags = [`oldguns:mags/asval_mag`, `oldguns:mags/aks-74u_mag`, `oldguns:mags/sten_mag`, `oldguns:mags/mp40_mag`, `oldguns:mags/luger_mag`, `oldguns:mags/thompson_drum_mag`, `oldguns:mags/thompson_mag`, `oldguns:mags/colt_mag`]
 	mags.forEach(mag => {
 		tooltip.addAdvanced(mag, (item, advanced, text) => {
 			let bullets = item.nbt?.bullets

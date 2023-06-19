@@ -29,8 +29,8 @@ onEvent(`recipes`, event => {
 
 	// minecraft
 	event.shapeless(`alloyed:steel_ingot`, `#forge:ingots/steel`)
-	event.shapeless('immersiveengineering:ingot_steel', `#forge:ingots/steel`)
-	event.shapeless('thermal:steel_ingot', `#forge:ingots/steel`)
+	event.shapeless(`immersiveengineering:ingot_steel`, `#forge:ingots/steel`)
+	event.shapeless(`thermal:steel_ingot`, `#forge:ingots/steel`)
 	event.blasting(`minecraft:blaze_powder`, `minecraft:gunpowder`)
 
 	// oldguns
@@ -111,87 +111,87 @@ onEvent(`recipes`, event => {
 		]).transitionalItem(inter).loops(1)
 
 	// delight
-	event.remove({ output: `#farmersdelight:tools/knives`, not: [{ output: 'allyed:steel_knife' }, { output: 'delightful:experience_knife' }, { output: 'delightful:gilded_quartz_knife' }, { output: 'farmersdelight:netherite_knife' }] })
+	event.remove({ output: `#farmersdelight:tools/knives`, not: [{ output: `allyed:steel_knife` }, { output: `delightful:experience_knife` }, { output: `delightful:gilded_quartz_knife` }, { output: `farmersdelight:netherite_knife` }] })
 
 	event.shaped(
-		Item.of('farmersdelight:iron_knife'),
+		Item.of(`farmersdelight:iron_knife`),
 		[
 			` H`,
 			`S `
 		], {
-		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:iron"}'),
+		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:iron"}`),
 		S: `#forge:rods/wooden`
 	})
 	event.shaped(
-		Item.of('farmersdelight:flint_knife'),
+		Item.of(`farmersdelight:flint_knife`),
 		[
 			` H`,
 			`S `
 		], {
-		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:flint"}'),
+		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:flint"}`),
 		S: `#forge:rods/wooden`
 	})
 	event.shaped(
-		Item.of('delightful:constantan_knife'),
+		Item.of(`delightful:constantan_knife`),
 		[
 			` H`,
 			`S `
 		], {
-		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:constantan"}'),
+		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:constantan"}`),
 		S: `#forge:rods/wooden`
 	})
 	event.shaped(
-		Item.of('delightful:silver_knife'),
+		Item.of(`delightful:silver_knife`),
 		[
 			` H`,
 			`S `
 		], {
-		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:silver"}'),
+		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:silver"}`),
 		S: `#forge:rods/wooden`
 	})
 	event.shaped(
-		Item.of('delightful:invar_knife'),
+		Item.of(`delightful:invar_knife`),
 		[
 			` H`,
 			`S `
 		], {
-		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:invar"}'),
+		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:invar"}`),
 		S: `#forge:rods/wooden`
 	})
 	event.shaped(
-		Item.of('delightful:lead_knife'),
+		Item.of(`delightful:lead_knife`),
 		[
 			` H`,
 			`S `
 		], {
-		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:lead"}'),
+		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:lead"}`),
 		S: `#forge:rods/wooden`
 	})
 	event.shaped(
-		Item.of('delightful:electrum_knife'),
+		Item.of(`delightful:electrum_knife`),
 		[
 			` H`,
 			`S `
 		], {
-		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:electrum"}'),
+		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:electrum"}`),
 		S: `#forge:rods/wooden`
 	})
 	event.shaped(
-		Item.of('delightful:bronze_knife'),
+		Item.of(`delightful:bronze_knife`),
 		[
 			` H`,
 			`S `
 		], {
-		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:bronze"}'),
+		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:bronze"}`),
 		S: `#forge:rods/wooden`
 	})
-	event.recipes.create.filling(Item.of('farmersdelight:diamond_knife'), ['#farmersdelight:tools/knives', Fluid.of(`tconstruct:molten_diamond`, 100)])
-	event.recipes.create.filling(Item.of('farmersdelight:golden_knife'), ['#farmersdelight:tools/knives', Fluid.of(`tconstruct:molten_gold`, 90)])
-	event.recipes.create.filling(Item.of('delightful:zinc_knife'), ['#farmersdelight:tools/knives', Fluid.of(`tconstruct:molten_zinc`, 90)])
-	event.recipes.create.filling(Item.of('delightful:brass_knife'), ['#farmersdelight:tools/knives', Fluid.of(`tconstruct:molten_brass`, 90)])
-	event.recipes.create.filling(Item.of('delightful:bronze_knife'), ['#farmersdelight:tools/knives', Fluid.of(`tconstruct:molten_bronze`, 90)])
-	event.recipes.create.filling(Item.of('delightful:tin_knife'), ['#farmersdelight:tools/knives', Fluid.of(`tconstruct:molten_tin`, 90)])
-	event.recipes.create.filling(Item.of('delightful:nickel_knife'), ['#farmersdelight:tools/knives', Fluid.of(`tconstruct:molten_nickel`, 90)])
+	event.recipes.create.filling(Item.of(`farmersdelight:diamond_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_diamond`, 100)])
+	event.recipes.create.filling(Item.of(`farmersdelight:golden_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_gold`, 90)])
+	event.recipes.create.filling(Item.of(`delightful:zinc_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_zinc`, 90)])
+	event.recipes.create.filling(Item.of(`delightful:brass_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_brass`, 90)])
+	event.recipes.create.filling(Item.of(`delightful:bronze_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_bronze`, 90)])
+	event.recipes.create.filling(Item.of(`delightful:tin_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_tin`, 90)])
+	event.recipes.create.filling(Item.of(`delightful:nickel_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_nickel`, 90)])
 
 })
 
