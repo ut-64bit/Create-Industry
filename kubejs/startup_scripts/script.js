@@ -2,6 +2,8 @@
 
 onEvent(`item.registry`, event => {
 	event.create(`unprocessed_steel_ingot`, `create:sequenced_assembly`)
+	event.create(`incomplete_netherite_upgrade_smithing_template`, `create:sequenced_assembly`)
+
 	event.create(`blaze_core`)
 })
 
