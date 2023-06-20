@@ -109,6 +109,14 @@ onEvent(`recipes`, event => {
 			event.recipes.create.pressing(inter, inter),
 			event.recipes.create.pressing(inter, inter)
 		]).transitionalItem(inter).loops(1)
+	let inter = `kubejs:incomplete_netherite_upgrade_smithing_template`
+	event.recipes.create.sequencedAssembly(`armor_trims:netherite_upgrade_smithing_template`, `minecraft:netherrack`,
+		[
+			event.recipes.create.deploying(inter, [inter, `armor_trims:netherite_upgrade_smithing_template`]).keepHeldItem(),
+			event.recipes.create.pressing(inter, inter),
+			event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 300)]),
+			event.recipes.create.pressing(inter, inter)
+		]).transitionalItem(inter).loops(1)
 
 	// delight
 	event.remove({ output: `#farmersdelight:tools/knives`, not: [{ output: `allyed:steel_knife` }, { output: `delightful:experience_knife` }, { output: `delightful:gilded_quartz_knife` }, { output: `farmersdelight:netherite_knife` }] })
