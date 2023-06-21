@@ -7,25 +7,67 @@ settings.logErroringRecipes = true
 
 onEvent(`recipes`, event => {
 	//common
-	const removeTools = [
-		`minecraft:wooden`,
-		`minecraft:stone`,
-		`minecraft:golden`,
-		`minecraft:iron`,
-		`minecraft:diamond`,
-		`minecraft:netherite`,
-		`immersiveengineering:steel`,
-		`create_sa:brass`,
-		`create_sa:copper`,
-		`create_sa:zinc`
-	]
-	removeTools.forEach(material => {
-		event.remove([{ output: `${material}_pickaxe` }, { input: `${material}_pickaxe` }])
-		event.remove([{ output: `${material}_axe` }, { input: `${material}_axe` }])
-		event.remove([{ output: `${material}_shovel` }, { input: `${material}_shovel` }])
-		event.remove([{ output: `${material}_hoe` }, { input: `${material}_hoe` }])
-		event.remove([{ output: `${material}_sword` }, { input: `${material}_sword` }])
-	})
+	let removeTool = (material, removeInput) => {
+		event.remove({ output: `${material}_pickaxe` })
+		event.remove({ output: `${material}_axe` })
+		event.remove({ output: `${material}_shovel` })
+		event.remove({ output: `${material}_hoe` })
+		event.remove({ output: `${material}_sword` })
+		if (removeInput) {
+			event.remove({ input: `${material}_pickaxe` })
+			event.remove({ input: `${material}_axe` })
+			event.remove({ input: `${material}_shovel` })
+			event.remove({ input: `${material}_hoe` })
+			event.remove({ input: `${material}_sword` })
+		}
+	}
+	removeTool(`wooden`, true)
+	removeTool(`stone`, true)
+	removeTool(`golden`, true)
+	removeTool(`iron`, true)
+	removeTool(`diamond`, true)
+	removeTool(`netherite`, true)
+	removeTool(`immersiveengineering:steel`, true)
+	removeTool(`create_sa:copper`, true)
+	removeTool(`create_sa:brass`, true)
+	removeTool(`create_sa:zinc`, true)
+
+	let removeArmor = (material, removeInput) => {
+		event.remove({ output: `${material}_helmet` })
+		event.remove({ output: `${material}_chestplate` })
+		event.remove({ output: `${material}_leggings` })
+		event.remove({ output: `${material}_boots` })
+		if (removeInput) {
+			event.remove({ input: `${material}_helmet` })
+			event.remove({ input: `${material}_chestplate` })
+			event.remove({ input: `${material}_leggings` })
+			event.remove({ input: `${material}_boots` })
+		}
+	}
+	removeArmor(`iron`, true)
+	removeArmor(`golden`, true)
+	removeArmor(`diamond`, true)
+
+	let addPlateArmor = (material, plate) => {
+		event.shaped(`${material}_helmet`,
+			[
+				`PPP`,
+				`PLP`
+			], {
+			P: `#forge:plates/${plate}`,
+			L: `minecraft:leather_helmet`
+		})
+		event.shaped(`${material}_chestplate`,
+			[
+				`PLP`,
+				`PPP`,
+				`PPP`
+			], {
+			P: `#forge:plates/${plate}`,
+			L: `minecraft:leather_chestplate`
+		})
+
+	}
 
 	// minecraft
 	event.shapeless(`alloyed:steel_ingot`, `#forge:ingots/steel`)
@@ -36,6 +78,14 @@ onEvent(`recipes`, event => {
 	// oldguns
 	event.remove({ output: `oldguns:steel_ingot` })
 	event.remove({ output: `oldguns:iron_with_coal` })
+
+	let inter = `kubejs:unprocessed_steel_ingot`
+	event.recipes.create.sequencedAssembly(`oldguns:steel_ingot`, `#forge:ingots/steel`,
+		[
+			event.recipes.create.filling(inter, [inter, Fluid.of(`minecraft:lava`, 250)]),
+			event.recipes.create.pressing(inter, inter),
+			event.recipes.create.pressing(inter, inter)
+		]).transitionalItem(inter).loops(1)
 
 	// tconstruct
 	const MetalMaterials = [
@@ -78,10 +128,25 @@ onEvent(`recipes`, event => {
 		`uranium`,
 		`zinc`
 	]
-	MetalMaterials.forEach(material => {
-		event.remove({ type: `tconstruct:casting_table`, output: `#forge:plates/${material}` })
-		event.remove({ type: `tconstruct:casting_table`, output: `#forge:wires/${material}` })
+	const removeCastTypes = [
+		`plate`,
+		`wire`,
+		`gear`
+	]
+	removeCastTypes.forEach(type => {
+		event.remove({ output: `tconstruct:${type}_red_sand_cast` })
+		event.remove({ output: `tconstruct:${type}_sand_cast` })
+		event.remove({ output: `tconstruct:${type}_cast` })
+
+		MetalMaterials.forEach(material => {
+			event.remove({ type: `tconstruct:casting_table`, output: `#forge:${type}s/${material}` })
+		})
 	})
+	/*
+	event.remove({ type: `tconstruct:casting_table`, output: `#forge:plates` })
+	event.remove({ type: `tconstruct:casting_table`, output: `#forge:wires` })
+	event.remove({ type: `tconstruct:casting_table`, output: `#forge:gears` })
+	*/
 	event.remove([{ output: `tconstruct:earth_slime_sling` }, { input: `tconstruct:earth_slime_sling` }])
 	event.remove([{ output: `tconstruct:ender_slime_sling` }, { input: `tconstruct:ender_slime_sling` }])
 	event.remove([{ output: `tconstruct:ichor_slime_sling` }, { input: `tconstruct:ichor_slime_sling` }])
@@ -102,13 +167,6 @@ onEvent(`recipes`, event => {
 	event.recipes.create.emptying([`minecraft:obsidian`, Fluid.of(`minecraft:lava`, 250)], `minecraft:magma_block`)
 	// event.recipes.create.blasting(`minecraft:magma_block`, `minecraft:netherrack`)
 	event.recipes.create.haunting(`minecraft:netherrack`, `minecraft:clay`)
-	let inter = `kubejs:unprocessed_steel_ingot`
-	event.recipes.create.sequencedAssembly(`oldguns:steel_ingot`, `#forge:ingots/steel`,
-		[
-			event.recipes.create.filling(inter, [inter, Fluid.of(`minecraft:lava`, 250)]),
-			event.recipes.create.pressing(inter, inter),
-			event.recipes.create.pressing(inter, inter)
-		]).transitionalItem(inter).loops(1)
 	let inter = `kubejs:incomplete_netherite_upgrade_smithing_template`
 	event.recipes.create.sequencedAssembly(`armor_trims:netherite_upgrade_smithing_template`, `minecraft:netherrack`,
 		[
