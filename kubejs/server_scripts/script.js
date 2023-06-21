@@ -44,9 +44,12 @@ onEvent(`recipes`, event => {
 			event.remove({ input: `${material}_boots` })
 		}
 	}
-	removeArmor(`iron`, true)
-	removeArmor(`golden`, true)
-	removeArmor(`diamond`, true)
+	removeArmor(`iron`, false)
+	removeArmor(`golden`, false)
+	removeArmor(`diamond`, false)
+	removeArmor(`create_sa:brass`, false)
+	removeArmor(`create_sa:copper`, false)
+	removeArmor(`create_sa:zinc`, true)
 
 	let addPlateArmor = (material, plate) => {
 		event.shaped(`${material}_helmet`,
@@ -66,8 +69,32 @@ onEvent(`recipes`, event => {
 			P: `#forge:plates/${plate}`,
 			L: `minecraft:leather_chestplate`
 		})
-
+		event.shaped(`${material}_leggings`,
+			[
+				`PPP`,
+				`PLP`,
+				`P P`
+			], {
+			P: `#forge:plates/${plate}`,
+			L: `minecraft:leather_leggings`
+		})
+		event.shaped(`${material}_boots`,
+			[
+				`P P`,
+				`PLP`
+			], {
+			P: `#forge:plates/${plate}`,
+			L: `minecraft:leather_boots`
+		})
 	}
+    addPlateArmor(`iron`,`iron`)
+	addPlateArmor(`golden`,`gold`)
+	addPlateArmor(`create_sa:brass`,`brass`)
+	addPlateArmor(`create_sa:copper`,`copper`)
+	event.recipes.create.filling(`diamond_helmet`, [`iron_helmet`, Fluid.of(`tconstruct:molten_diamond`, 500)])
+	event.recipes.create.filling(`diamond_chestplate`, [`iron_chestplate`, Fluid.of(`tconstruct:molten_diamond`, 800)])
+	event.recipes.create.filling(`diamond_leggings`, [`iron_leggings`, Fluid.of(`tconstruct:molten_diamond`, 700)])
+	event.recipes.create.filling(`diamond_boots`, [`iron_boots`, Fluid.of(`tconstruct:molten_diamond`, 400)])
 
 	// minecraft
 	event.shapeless(`alloyed:steel_ingot`, `#forge:ingots/steel`)
@@ -167,6 +194,8 @@ onEvent(`recipes`, event => {
 	event.recipes.create.emptying([`minecraft:obsidian`, Fluid.of(`minecraft:lava`, 250)], `minecraft:magma_block`)
 	// event.recipes.create.blasting(`minecraft:magma_block`, `minecraft:netherrack`)
 	event.recipes.create.haunting(`minecraft:netherrack`, `minecraft:clay`)
+
+	// armor_trims
 	let inter = `kubejs:incomplete_netherite_upgrade_smithing_template`
 	event.recipes.create.sequencedAssembly(`armor_trims:netherite_upgrade_smithing_template`, `minecraft:netherrack`,
 		[
