@@ -11,6 +11,10 @@ onEvent(`jei.hide.items`, event => {
 		event.hide(`${material}_sword`)
 	})
 
+	// create
+	event.hide(`davebuildingmod:steel_block`)
+	event.hide(`davebuildingmod:steel_ingot`)
+
 	// oldguns
 	event.hide(`oldguns:iron_with_coal`)
 
