@@ -130,9 +130,9 @@ onEvent(`recipes`, event => {
 	event.shapeless(`thermal:steel_ingot`, `#forge:ingots/steel`)
 
 	/* かまど製錬レシピを削除 */
-	event.replaceOutput({id:`minecraft:iron_ingot_from_smelting_raw_iron`},`iron_ingot`,`9x iron_nugget`)
-	event.replaceOutput({id:`minecraft:gold_ingot_from_smelting_raw_gold`},`gold_ingot`,`9x gold_nugget`)
-	event.replaceOutput({id:`minecraft:copper_ingot_from_smelting_raw_copper`},`iron_ingot`,`9x copper_nugget`)
+	event.replaceOutput({ id: `minecraft:iron_ingot_from_smelting_raw_iron` }, `iron_ingot`, `9x iron_nugget`)
+	event.replaceOutput({ id: `minecraft:gold_ingot_from_smelting_raw_gold` }, `gold_ingot`, `9x gold_nugget`)
+	event.replaceOutput({ id: `minecraft:copper_ingot_from_smelting_raw_copper` }, `iron_ingot`, `9x copper_nugget`)
 
 	// oldguns
 	/* 銃器用鋼鉄のレシピを削除 */
