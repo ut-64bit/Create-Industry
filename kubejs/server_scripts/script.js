@@ -6,7 +6,16 @@ settings.logSkippedRecipes = false
 settings.logErroringRecipes = true
 
 onEvent(`recipes`, event => {
-	//common
+	const MetalMaterials = [`aluminum`, `amethyst_bronze`, `brass`, `bronze`, `cobalt`, `constantan`, `copper`, `electrum`, `emerald`, `enderium`, `gold`, `hepatizon`, `invar`, `iron`, `knightslime`, `lead`, `lumium`, `manyullyn`, `molten_debris`, `netherite`, `nickel`, `osmium`, `pewter`, `pig_iron`, `platinum`, `queens_slime`, `refined_glowstone`, `refined_obsidian`, `rose_gold`, `signalum`, `silver`, `slimesteel`, `soulsteel`, `steel`, `tin`, `tungsten`, `uranium`, `zinc`]
+
+	// common
+	/* 全ての金属の圧縮レシピを削除 */
+	MetalMaterials.forEach(material => {
+		event.remove({ type: `minecraft:craft_shaped`, output: `#forge:ingots/${material}`, input: `#forge:nuggets/${material}` })
+		event.remove({ type: `minecraft:craft_shaped`, output: `#forge:storage_blocks/${material}`, input: `#forge:ingots/${material}` })
+	})
+
+	/* バニラ型のツールを削除 */
 	let removeTool = (material, removeInput) => {
 		event.remove({ output: `${material}_pickaxe` })
 		event.remove({ output: `${material}_axe` })
@@ -32,6 +41,7 @@ onEvent(`recipes`, event => {
 	removeTool(`create_sa:brass`, true)
 	removeTool(`create_sa:zinc`, true)
 
+	/* 防具のレシピを削除 */
 	let removeArmor = (material, removeInput) => {
 		event.remove({ output: `${material}_helmet` })
 		event.remove({ output: `${material}_chestplate` })
@@ -51,6 +61,12 @@ onEvent(`recipes`, event => {
 	removeArmor(`create_sa:copper`, false)
 	removeArmor(`create_sa:zinc`, true)
 
+	/* かまど製錬レシピを削除 */
+    MetalMaterials.forEach(material=>{
+		event.replaceInput({type:`minecraft:smelting`,input:`#forge:ores/${material}`},`#forge:ores`,`#forge:dusts/${material}`)
+	})
+
+	/* 防具のレシピを変更 */
 	let addPlateArmor = (material, plate) => {
 		event.shaped(`${material}_helmet`,
 			[
@@ -87,25 +103,43 @@ onEvent(`recipes`, event => {
 			L: `minecraft:leather_boots`
 		})
 	}
-    addPlateArmor(`iron`,`iron`)
-	addPlateArmor(`golden`,`gold`)
-	addPlateArmor(`create_sa:brass`,`brass`)
-	addPlateArmor(`create_sa:copper`,`copper`)
+	addPlateArmor(`iron`, `iron`)
+	addPlateArmor(`golden`, `gold`)
+	addPlateArmor(`create_sa:brass`, `brass`)
+	addPlateArmor(`create_sa:copper`, `copper`)
 	event.recipes.create.filling(`diamond_helmet`, [`iron_helmet`, Fluid.of(`tconstruct:molten_diamond`, 500)])
 	event.recipes.create.filling(`diamond_chestplate`, [`iron_chestplate`, Fluid.of(`tconstruct:molten_diamond`, 800)])
 	event.recipes.create.filling(`diamond_leggings`, [`iron_leggings`, Fluid.of(`tconstruct:molten_diamond`, 700)])
 	event.recipes.create.filling(`diamond_boots`, [`iron_boots`, Fluid.of(`tconstruct:molten_diamond`, 400)])
 
+	/* 金属の圧縮レシピを変更 */
+	MetalMaterials.forEach(material => {
+		let input = `#forge:nuggets/${material}`
+		event.recipes.create.compacting(`#forge:ingots/${material}`, [
+			input, input, input,
+			input, input, input,
+			input, input, input
+		]).heated()
+		let input = `#forge:ingots/${material}`
+		event.recipes.create.compacting(`#forge:storage_blocks/${material}`, [
+			input, input, input,
+			input, input, input,
+			input, input, input
+		]).heated()
+	})
+
 	// minecraft
+	/* 鋼鉄の変換レシピ */
 	event.shapeless(`alloyed:steel_ingot`, `#forge:ingots/steel`)
 	event.shapeless(`immersiveengineering:ingot_steel`, `#forge:ingots/steel`)
 	event.shapeless(`thermal:steel_ingot`, `#forge:ingots/steel`)
-	event.blasting(`minecraft:blaze_powder`, `minecraft:gunpowder`)
 
 	// oldguns
+	/* 銃器用鋼鉄のレシピを削除 */
 	event.remove({ output: `oldguns:steel_ingot` })
 	event.remove({ output: `oldguns:iron_with_coal` })
 
+	/* 銃器用鋼鉄のレシピを変更 */
 	let inter = `kubejs:unprocessed_steel_ingot`
 	event.recipes.create.sequencedAssembly(`oldguns:steel_ingot`, `#forge:ingots/steel`,
 		[
@@ -115,51 +149,8 @@ onEvent(`recipes`, event => {
 		]).transitionalItem(inter).loops(1)
 
 	// tconstruct
-	const MetalMaterials = [
-		`aluminum`,
-		`amethyst_bronze`,
-		`brass`,
-		`bronze`,
-		`cobalt`,
-		`constantan`,
-		`copper`,
-		`electrum`,
-		`emerald`,
-		`enderium`,
-		`gold`,
-		`hepatizon`,
-		`invar`,
-		`iron`,
-		`knightslime`,
-		`lead`,
-		`lumium`,
-		`manyullyn`,
-		`molten_debris`,
-		`netherite`,
-		`nickel`,
-		`osmium`,
-		`pewter`,
-		`pig_iron`,
-		`platinum`,
-		`queens_slime`,
-		`refined_glowstone`,
-		`refined_obsidian`,
-		`rose_gold`,
-		`signalum`,
-		`silver`,
-		`slimesteel`,
-		`soulsteel`,
-		`steel`,
-		`tin`,
-		`tungsten`,
-		`uranium`,
-		`zinc`
-	]
-	const removeCastTypes = [
-		`plate`,
-		`wire`,
-		`gear`
-	]
+	/* 一部のキャストレシピを削除 */
+	const removeCastTypes = [`plate`, `wire`, `gear`]
 	removeCastTypes.forEach(type => {
 		event.remove({ output: `tconstruct:${type}_red_sand_cast` })
 		event.remove({ output: `tconstruct:${type}_sand_cast` })
@@ -174,28 +165,34 @@ onEvent(`recipes`, event => {
 	event.remove({ type: `tconstruct:casting_table`, output: `#forge:wires` })
 	event.remove({ type: `tconstruct:casting_table`, output: `#forge:gears` })
 	*/
+	/* スライムスリングを削除 */
 	event.remove([{ output: `tconstruct:earth_slime_sling` }, { input: `tconstruct:earth_slime_sling` }])
 	event.remove([{ output: `tconstruct:ender_slime_sling` }, { input: `tconstruct:ender_slime_sling` }])
 	event.remove([{ output: `tconstruct:ichor_slime_sling` }, { input: `tconstruct:ichor_slime_sling` }])
 	event.remove([{ output: `tconstruct:sky_slime_sling` }, { input: `tconstruct:sky_slime_sling` }])
+
+	/* グラウトのレシピを削除 */
 	event.remove({ id: `tconstruct:smeltery/seared/grout` })
 	event.remove({ id: `tconstruct:smeltery/seared/grout_multiple` })
 
+	/* グラウトのレシピを変更 */
 	event.recipes.create.mixing(
 		[`2x tconstruct:grout`, Item.of(`tconstruct:grout`).withChance(0.5)],
 		[`minecraft:clay_ball`, `#minecraft:sand`, `minecraft:gravel`]
 	)
 
 	// create
+	/* 不要なアイテムのレシピを削除 */
 	event.remove({ id: `davebuildingmod:rec_steel_block` })
 
+	/* 雑多なレシピを追加 */
 	event.recipes.create.crushing([`create:copper_nugget`, `minecraft:red_sand`], `minecraft:terracotta`).processingTime(150)
 	event.recipes.create.filling(`minecraft:magma_block`, [`minecraft:netherrack`, Fluid.of(`minecraft:lava`, 500)])
 	event.recipes.create.emptying([`minecraft:obsidian`, Fluid.of(`minecraft:lava`, 250)], `minecraft:magma_block`)
-	// event.recipes.create.blasting(`minecraft:magma_block`, `minecraft:netherrack`)
 	event.recipes.create.haunting(`minecraft:netherrack`, `minecraft:clay`)
 
 	// armor_trims
+	/* ネザライト強化 */
 	let inter = `kubejs:incomplete_netherite_upgrade_smithing_template`
 	event.recipes.create.sequencedAssembly(`armor_trims:netherite_upgrade_smithing_template`, `minecraft:netherrack`,
 		[
@@ -206,8 +203,10 @@ onEvent(`recipes`, event => {
 		]).transitionalItem(inter).loops(1)
 
 	// delight
+	/* 一部を除いたナイフのレシピを削除 */
 	event.remove({ output: `#farmersdelight:tools/knives`, not: [{ output: `allyed:steel_knife` }, { output: `delightful:experience_knife` }, { output: `delightful:gilded_quartz_knife` }, { output: `farmersdelight:netherite_knife` }] })
 
+	/* ナイフのレシピを変更 */
 	event.shaped(
 		Item.of(`farmersdelight:iron_knife`),
 		[
