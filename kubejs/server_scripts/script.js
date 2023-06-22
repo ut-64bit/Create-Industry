@@ -62,9 +62,11 @@ onEvent(`recipes`, event => {
 	removeArmor(`create_sa:zinc`, true)
 
 	/* かまど製錬レシピを削除 */
-    MetalMaterials.forEach(material=>{
-		event.replaceInput({type:`minecraft:smelting`,input:`#forge:ores/${material}`},`#forge:ores`,`#forge:dusts/${material}`)
-	})
+	/**
+	 * MetalMaterials.forEach(material=>{
+	 *	event.replaceInput({type:`minecraft:smelting`,input:`#forge:ores/${material}`},`#forge:ores`,`#forge:dusts/${material}`)
+	 * })
+	 */
 
 	/* 防具のレシピを変更 */
 	let addPlateArmor = (material, plate) => {
@@ -155,16 +157,11 @@ onEvent(`recipes`, event => {
 		event.remove({ output: `tconstruct:${type}_red_sand_cast` })
 		event.remove({ output: `tconstruct:${type}_sand_cast` })
 		event.remove({ output: `tconstruct:${type}_cast` })
-
-		MetalMaterials.forEach(material => {
-			event.remove({ type: `tconstruct:casting_table`, output: `#forge:${type}s/${material}` })
-		})
 	})
-	/*
 	event.remove({ type: `tconstruct:casting_table`, output: `#forge:plates` })
 	event.remove({ type: `tconstruct:casting_table`, output: `#forge:wires` })
 	event.remove({ type: `tconstruct:casting_table`, output: `#forge:gears` })
-	*/
+
 	/* スライムスリングを削除 */
 	event.remove([{ output: `tconstruct:earth_slime_sling` }, { input: `tconstruct:earth_slime_sling` }])
 	event.remove([{ output: `tconstruct:ender_slime_sling` }, { input: `tconstruct:ender_slime_sling` }])
@@ -192,15 +189,49 @@ onEvent(`recipes`, event => {
 	event.recipes.create.haunting(`minecraft:netherrack`, `minecraft:clay`)
 
 	// armor_trims
-	/* ネザライト強化 */
+	/* 強化と装飾 */
 	let inter = `kubejs:incomplete_netherite_upgrade_smithing_template`
-	event.recipes.create.sequencedAssembly(`armor_trims:netherite_upgrade_smithing_template`, `minecraft:netherrack`,
-		[
-			event.recipes.create.deploying(inter, [inter, `armor_trims:netherite_upgrade_smithing_template`]).keepHeldItem(),
-			event.recipes.create.pressing(inter, inter),
-			event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 300)]),
-			event.recipes.create.pressing(inter, inter)
-		]).transitionalItem(inter).loops(1)
+	event.recipes.create.sequencedAssembly(`armor_trims:netherite_upgrade_smithing_template`, `minecraft:netherrack`, [
+		event.recipes.create.deploying(inter, [inter, `armor_trims:netherite_upgrade_smithing_template`]).keepHeldItem(),
+		event.recipes.create.pressing(inter, inter),
+		event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 300)]),
+		event.recipes.create.pressing(inter, inter)
+	]).transitionalItem(inter).loops(1)
+	let inter = `kubejs:incomplete_coast_armor_trim_smithing_template`
+	event.recipes.create.sequencedAssembly(`armor_trims:coast_armor_trim_smithing_template`, `#forge:cobblestone/normal`, [
+		event.recipes.create.deploying(inter, [inter, `armor_trims:coast_armor_trim_smithing_template`]).keepHeldItem(),
+		event.recipes.create.pressing(inter, inter),
+		event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 300)]),
+		event.recipes.create.pressing(inter, inter)
+	]).transitionalItem(inter).loops(1)
+	let inter = `kubejs:incomplete_dune_armor_trim_smithing_template`
+	event.recipes.create.sequencedAssembly(`armor_trims:dune_armor_trim_smithing_template`, `forge:sandstone`, [
+		event.recipes.create.deploying(inter, [inter, `armor_trims:dune_armor_trim_smithing_template`]).keepHeldItem(),
+		event.recipes.create.pressing(inter, inter),
+		event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 300)]),
+		event.recipes.create.pressing(inter, inter)
+	]).transitionalItem(inter).loops(1)
+	let inter = `kubejs:incomplete_eye_armor_trim_smithing_template`
+	event.recipes.create.sequencedAssembly(`armor_trims:eye_armor_trim_smithing_template`, `forge:end_stones`, [
+		event.recipes.create.deploying(inter, [inter, `armor_trims:eye_armor_trim_smithing_template`]).keepHeldItem(),
+		event.recipes.create.pressing(inter, inter),
+		event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 300)]),
+		event.recipes.create.pressing(inter, inter)
+	]).transitionalItem(inter).loops(1)
+	let inter = `kubejs:incomplete_host_armor_trim_smithing_template`
+	event.recipes.create.sequencedAssembly(`armor_trims:host_armor_trim_smithing_template`, `minecraft:terracotta`, [
+		event.recipes.create.deploying(inter, [inter, `armor_trims:host_armor_trim_smithing_template`]).keepHeldItem(),
+		event.recipes.create.pressing(inter, inter),
+		event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 300)]),
+		event.recipes.create.pressing(inter, inter)
+	]).transitionalItem(inter).loops(1)
+	let inter = `kubejs:incomplete_raiser_armor_trim_smithing_template`
+	event.recipes.create.sequencedAssembly(`armor_trims:raiser_armor_trim_smithing_template`, `minecraft:terracotta`, [
+		event.recipes.create.deploying(inter, [inter, `armor_trims:raiser_armor_trim_smithing_template`]).keepHeldItem(),
+		event.recipes.create.pressing(inter, inter),
+		event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 300)]),
+		event.recipes.create.pressing(inter, inter)
+	]).transitionalItem(inter).loops(1)
 
 	// delight
 	/* 一部を除いたナイフのレシピを削除 */
