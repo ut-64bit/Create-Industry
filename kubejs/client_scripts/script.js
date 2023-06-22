@@ -23,6 +23,12 @@ onEvent(`jei.hide.items`, event => {
 	event.hide(`tconstruct:ender_slime_sling`)
 	event.hide(`tconstruct:ichor_slime_sling`)
 	event.hide(`tconstruct:sky_slime_sling`)
+	const hideCastTypes = [`plate`, `wire`, `gear`]
+	hideCastTypes.forEach(type => {
+		event.hide(`tconstruct:${type}_red_sand_cast`)
+		event.hide(`tconstruct:${type}_sand_cast`)
+		event.hide(`tconstruct:${type}_cast`)
+	})
 
 	// delight
 	event.hide(`delightful:steel_knife`)
