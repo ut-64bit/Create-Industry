@@ -61,13 +61,6 @@ onEvent(`recipes`, event => {
 	removeArmor(`create_sa:copper`, false)
 	removeArmor(`create_sa:zinc`, true)
 
-	/* かまど製錬レシピを削除 */
-	/**
-	 * MetalMaterials.forEach(material=>{
-	 *	event.replaceInput({type:`minecraft:smelting`,input:`#forge:ores/${material}`},`#forge:ores`,`#forge:dusts/${material}`)
-	 * })
-	 */
-
 	/* 防具のレシピを変更 */
 	let addPlateArmor = (material, plate) => {
 		event.shaped(`${material}_helmet`,
@@ -135,6 +128,11 @@ onEvent(`recipes`, event => {
 	event.shapeless(`alloyed:steel_ingot`, `#forge:ingots/steel`)
 	event.shapeless(`immersiveengineering:ingot_steel`, `#forge:ingots/steel`)
 	event.shapeless(`thermal:steel_ingot`, `#forge:ingots/steel`)
+
+	/* かまど製錬レシピを削除 */
+	event.replaceOutput({id:`minecraft:iron_ingot_from_smelting_raw_iron`},`iron_ingot`,`9x iron_nugget`)
+	event.replaceOutput({id:`minecraft:gold_ingot_from_smelting_raw_gold`},`gold_ingot`,`9x gold_nugget`)
+	event.replaceOutput({id:`minecraft:copper_ingot_from_smelting_raw_copper`},`iron_ingot`,`9x copper_nugget`)
 
 	// oldguns
 	/* 銃器用鋼鉄のレシピを削除 */
