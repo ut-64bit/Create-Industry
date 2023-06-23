@@ -9,10 +9,24 @@ onEvent(`recipes`, event => {
 	const MetalMaterials = [`aluminum`, `amethyst_bronze`, `brass`, `bronze`, `cobalt`, `constantan`, `copper`, `electrum`, `emerald`, `enderium`, `gold`, `hepatizon`, `invar`, `iron`, `knightslime`, `lead`, `lumium`, `manyullyn`, `molten_debris`, `netherite`, `nickel`, `osmium`, `pewter`, `pig_iron`, `platinum`, `queens_slime`, `refined_glowstone`, `refined_obsidian`, `rose_gold`, `signalum`, `silver`, `slimesteel`, `soulsteel`, `steel`, `tin`, `tungsten`, `uranium`, `zinc`]
 
 	// common
-	/* 全ての金属の圧縮レシピを削除 */
+	/* 金属の圧縮レシピを変更 */
 	MetalMaterials.forEach(material => {
 		event.remove({ type: `minecraft:craft_shaped`, output: `#forge:ingots/${material}`, input: `#forge:nuggets/${material}` })
 		event.remove({ type: `minecraft:craft_shaped`, output: `#forge:storage_blocks/${material}`, input: `#forge:ingots/${material}` })
+	})
+	MetalMaterials.forEach(material => {
+		let input = `#forge:nuggets/${material}`
+		event.recipes.create.compacting(`#forge:ingots/${material}`, [
+			input, input, input,
+			input, input, input,
+			input, input, input
+		]).heated()
+		let input = `#forge:ingots/${material}`
+		event.recipes.create.compacting(`#forge:storage_blocks/${material}`, [
+			input, input, input,
+			input, input, input,
+			input, input, input
+		]).heated()
 	})
 
 	/* バニラ型のツールを削除 */
@@ -107,22 +121,6 @@ onEvent(`recipes`, event => {
 	event.recipes.create.filling(`diamond_leggings`, [`iron_leggings`, Fluid.of(`tconstruct:molten_diamond`, 700)])
 	event.recipes.create.filling(`diamond_boots`, [`iron_boots`, Fluid.of(`tconstruct:molten_diamond`, 400)])
 
-	/* 金属の圧縮レシピを変更 */
-	MetalMaterials.forEach(material => {
-		let input = `#forge:nuggets/${material}`
-		event.recipes.create.compacting(`#forge:ingots/${material}`, [
-			input, input, input,
-			input, input, input,
-			input, input, input
-		]).heated()
-		let input = `#forge:ingots/${material}`
-		event.recipes.create.compacting(`#forge:storage_blocks/${material}`, [
-			input, input, input,
-			input, input, input,
-			input, input, input
-		]).heated()
-	})
-
 	// minecraft
 	/* 鋼鉄の変換レシピ */
 	event.shapeless(`alloyed:steel_ingot`, `#forge:ingots/steel`)
@@ -141,12 +139,12 @@ onEvent(`recipes`, event => {
 
 	/* 銃器用鋼鉄のレシピを変更 */
 	let inter = `kubejs:unprocessed_steel_ingot`
-	event.recipes.create.sequencedAssembly(`oldguns:steel_ingot`, `#forge:ingots/steel`,[
-			event.recipes.create.filling(inter, [inter, Fluid.of(`minecraft:lava`, 500)]),
-			event.recipes.create.pressing(inter, inter),
-			event.recipes.create.pressing(inter, inter),
-			event.recipes.create.filling(inter, [inter, Fluid.of(`minecraft:water`, 500)]),
-		]).transitionalItem(inter).loops(1)
+	event.recipes.create.sequencedAssembly(`oldguns:steel_ingot`, `#forge:ingots/steel`, [
+		event.recipes.create.filling(inter, [inter, Fluid.of(`minecraft:lava`, 500)]),
+		event.recipes.create.pressing(inter, inter),
+		event.recipes.create.pressing(inter, inter),
+		event.recipes.create.filling(inter, [inter, Fluid.of(`minecraft:water`, 500)]),
+	]).transitionalItem(inter).loops(1)
 
 	// tconstruct
 	/* 一部のキャストレシピを削除 */
@@ -166,11 +164,9 @@ onEvent(`recipes`, event => {
 	event.remove([{ output: `tconstruct:ichor_slime_sling` }, { input: `tconstruct:ichor_slime_sling` }])
 	event.remove([{ output: `tconstruct:sky_slime_sling` }, { input: `tconstruct:sky_slime_sling` }])
 
-	/* グラウトのレシピを削除 */
+	/* グラウトのレシピを変更 */
 	event.remove({ id: `tconstruct:smeltery/seared/grout` })
 	event.remove({ id: `tconstruct:smeltery/seared/grout_multiple` })
-
-	/* グラウトのレシピを変更 */
 	event.recipes.create.mixing(
 		[`2x tconstruct:grout`, Item.of(`tconstruct:grout`).withChance(0.5)],
 		[`minecraft:clay_ball`, `#minecraft:sand`, `minecraft:gravel`]
@@ -180,6 +176,17 @@ onEvent(`recipes`, event => {
 	/* 不要なアイテムのレシピを削除 */
 	event.remove({ id: `davebuildingmod:rec_steel_block` })
 
+	/* 合金をつくった時の出力を液体に変更 */
+	event.replaceOutput({ id: `alloyed:mixing/bronze_ingot` }, `alloyed:bronze_ingot`, Fluid.of(`tconstruct:molten_bronze`, 90))
+	event.replaceOutput({ id: `alloyed:mixing/bronze_ingot_x3` }, `alloyed:bronze_ingot`, Fluid.of(`tconstruct:molten_bronze`, 270))
+	event.replaceOutput({ id: `alloyed:mixing/steel_ingot` }, `alloyed:steel_ingot`, Fluid.of(`tconstruct:molten_steel`, 270))
+	event.replaceOutput({ id: `create:mixing/brass_ingot` }, `create:brass_ingot`, Fluid.of(`tconstruct:molten_brass`, 180))
+
+	/* 液体をインゴットに */
+	event.recipes.create.compacting(`alloyed:bronze_ingot`, Fluid.of(`tconstruct:molten_bronze`, 90))
+	event.recipes.create.compacting(`alloyed:steel_ingot`, Fluid.of(`tconstruct:molten_steel`, 90))
+	event.recipes.create.compacting(`create:brass_ingot`, Fluid.of(`tconstruct:molten_brass`, 90))
+
 	/* 雑多なレシピを追加 */
 	event.recipes.create.crushing([`create:copper_nugget`, `minecraft:red_sand`], `minecraft:terracotta`).processingTime(150)
 	event.recipes.create.filling(`minecraft:magma_block`, [`minecraft:netherrack`, Fluid.of(`minecraft:lava`, 500)])
@@ -188,14 +195,23 @@ onEvent(`recipes`, event => {
 
 	// immersiveengineering
 	/* component_iron */
-	event.remove({id:`immersiveengineering:crafting/component_iron`})
+	event.remove({ id: `immersiveengineering:crafting/component_iron` })
 	let inter = `kubejs:incomplete_component_iron`
 	event.recipes.create.sequencedAssembly(`immersiveengineering:component_iron`, `#forge:rods/iron`, [
 		event.recipes.create.deploying(inter, [inter, `immersiveengineering:wirecoil_copper`]),
 		event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
 		event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
-		event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
 		event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`])
+	]).transitionalItem(inter).loops(1)
+
+	/* component_steel */
+	event.remove({ id: `immersiveengineering:crafting/component_steel` })
+	let inter = `kubejs:incomplete_component_steel`
+	event.recipes.create.sequencedAssembly(`immersiveengineering:component_steel`, `#forge:rods/iron`, [
+		event.recipes.create.deploying(inter, [inter, `immersiveengineering:wirecoil_copper`]),
+		event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`]),
+		event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`]),
+		event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`])
 	]).transitionalItem(inter).loops(1)
 
 	// armor_trims
