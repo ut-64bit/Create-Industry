@@ -129,7 +129,7 @@ onEvent(`recipes`, event => {
 	event.shapeless(`immersiveengineering:ingot_steel`, `#forge:ingots/steel`)
 	event.shapeless(`thermal:steel_ingot`, `#forge:ingots/steel`)
 
-	/* かまど製錬レシピを削除 */
+	/* かまど製錬レシピを変更 */
 	event.replaceOutput({ id: `minecraft:iron_ingot_from_smelting_raw_iron` }, `iron_ingot`, `9x iron_nugget`)
 	event.replaceOutput({ id: `minecraft:gold_ingot_from_smelting_raw_gold` }, `gold_ingot`, `9x gold_nugget`)
 	event.replaceOutput({ id: `minecraft:copper_ingot_from_smelting_raw_copper` }, `iron_ingot`, `9x copper_nugget`)
@@ -141,11 +141,11 @@ onEvent(`recipes`, event => {
 
 	/* 銃器用鋼鉄のレシピを変更 */
 	let inter = `kubejs:unprocessed_steel_ingot`
-	event.recipes.create.sequencedAssembly(`oldguns:steel_ingot`, `#forge:ingots/steel`,
-		[
-			event.recipes.create.filling(inter, [inter, Fluid.of(`minecraft:lava`, 250)]),
+	event.recipes.create.sequencedAssembly(`oldguns:steel_ingot`, `#forge:ingots/steel`,[
+			event.recipes.create.filling(inter, [inter, Fluid.of(`minecraft:lava`, 500)]),
 			event.recipes.create.pressing(inter, inter),
-			event.recipes.create.pressing(inter, inter)
+			event.recipes.create.pressing(inter, inter),
+			event.recipes.create.filling(inter, [inter, Fluid.of(`minecraft:water`, 500)]),
 		]).transitionalItem(inter).loops(1)
 
 	// tconstruct
