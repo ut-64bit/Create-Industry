@@ -186,6 +186,18 @@ onEvent(`recipes`, event => {
 	event.recipes.create.emptying([`minecraft:obsidian`, Fluid.of(`minecraft:lava`, 250)], `minecraft:magma_block`)
 	event.recipes.create.haunting(`minecraft:netherrack`, `minecraft:clay`)
 
+	// immersiveengineering
+	/* component_iron */
+	event.remove({id:`immersiveengineering:crafting/component_iron`})
+	let inter = `kubejs:incomplete_component_iron`
+	event.recipes.create.sequencedAssembly(`immersiveengineering:component_iron`, `#forge:rods/iron`, [
+		event.recipes.create.deploying(inter, [inter, `immersiveengineering:wirecoil_copper`]),
+		event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
+		event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
+		event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
+		event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`])
+	]).transitionalItem(inter).loops(1)
+
 	// armor_trims
 	/* 強化と装飾 */
 	let inter = `kubejs:incomplete_netherite_upgrade_smithing_template`
