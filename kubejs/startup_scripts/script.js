@@ -2,7 +2,10 @@
 
 onEvent(`item.registry`, event => {
 	event.create(`unprocessed_steel_ingot`, `create:sequenced_assembly`)
+
+	// immersiveengineering
 	event.create(`incomplete_component_iron`, `create:sequenced_assembly`)
+	event.create(`incomplete_component_steel`, `create:sequenced_assembly`)
 
 	// armor trim
 	event.create(`incomplete_coast_armor_trim_smithing_template`, `create:sequenced_assembly`)
