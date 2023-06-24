@@ -171,11 +171,14 @@ onEvent(`recipes`, event => {
 	event.remove([{ output: `tconstruct:sky_slime_sling` }, { input: `tconstruct:sky_slime_sling` }])
 
 	/* グラウトのレシピを変更 */
-	event.remove({ id: `tconstruct:smeltery/seared/grout` })
 	event.remove({ id: `tconstruct:smeltery/seared/grout_multiple` })
 	event.recipes.create.mixing(
 		[`2x tconstruct:grout`, Item.of(`tconstruct:grout`).withChance(0.5)],
 		[`minecraft:clay_ball`, `#minecraft:sand`, `minecraft:gravel`]
+	)
+	event.recipes.create.mixing(
+		[`8x tconstruct:grout`, Item.of(`tconstruct:grout`, 6).withChance(0.7)],
+		[`minecraft:clay`, `#minecraft:sand`, `#minecraft:sand`, `#minecraft:sand`, `#minecraft:sand`, `minecraft:gravel`, `minecraft:gravel`, `minecraft:gravel`, `minecraft:gravel`]
 	)
 
 	// create
