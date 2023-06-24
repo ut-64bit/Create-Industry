@@ -2,14 +2,31 @@
 
 onEvent(`jei.hide.items`, event => {
 	// minecraft
-	const vanillaTools = [`minecraft:wooden`, `minecraft:stone`, `minecraft:golden`, `minecraft:iron`, `minecraft:diamond`, `minecraft:netherite`]
-	vanillaTools.forEach(material => {
+	let hideTool =(material) => {
 		event.hide(`${material}_pickaxe`)
 		event.hide(`${material}_axe`)
 		event.hide(`${material}_shovel`)
 		event.hide(`${material}_hoe`)
 		event.hide(`${material}_sword`)
-	})
+	}
+	hideTool(`wooden`)
+	hideTool(`stone`)
+	hideTool(`iron`)
+	hideTool(`golden`)
+	hideTool(`diamond`)
+	hideTool(`netherite`)
+	hideTool(`immersiveengineering:steel`)
+	hideTool(`create_sa:copper`)
+	hideTool(`create_sa:brass`)
+	hideTool(`create_sa:zinc`)
+
+	let hideArmor =(material) => {
+		event.hide(`${material}_helmet`)
+		event.hide(`${material}_chestplate`)
+		event.hide(`${material}_leggings`)
+		event.hide(`${material}_boots`)
+	}
+	hideArmor(`create_sa:zinc`)
 
 	// create
 	event.hide(`davebuildingmod:steel_block`)
@@ -29,9 +46,6 @@ onEvent(`jei.hide.items`, event => {
 		event.hide(`tconstruct:${type}_sand_cast`)
 		event.hide(`tconstruct:${type}_cast`)
 	})
-
-	// delight
-	event.hide(`delightful:steel_knife`)
 })
 
 onEvent(`item.tooltip`, tooltip => {

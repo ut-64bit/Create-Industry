@@ -14,6 +14,12 @@ onEvent(`recipes`, event => {
 		event.remove({ type: `minecraft:craft_shaped`, output: `#forge:ingots/${material}`, input: `#forge:nuggets/${material}` })
 		event.remove({ type: `minecraft:craft_shaped`, output: `#forge:storage_blocks/${material}`, input: `#forge:ingots/${material}` })
 	})
+	/**
+	 * event.remove({id:`alloyed:crafting/bronze_ingot_from_compacting`})
+	 * event.remove({id:`alloyed:crafting/bronze/bronze_block`})
+	 * event.remove({id:`alloyed:crafting/steel_block_from_compacting`})
+	 * event.remove({id:`alloyed:crafting/steel_ingot_from_compacting`})
+	 */
 	MetalMaterials.forEach(material => {
 		let input = `#forge:nuggets/${material}`
 		event.recipes.create.compacting(`#forge:ingots/${material}`, [
@@ -135,7 +141,7 @@ onEvent(`recipes`, event => {
 	// oldguns
 	/* 銃器用鋼鉄のレシピを削除 */
 	event.remove({ output: `oldguns:steel_ingot` })
-	event.remove({ output: `oldguns:iron_with_coal` })
+	event.remove([{ output: `oldguns:iron_with_coal` }, { input: `oldguns:iron_with_coal` }])
 
 	/* 銃器用鋼鉄のレシピを変更 */
 	let inter = `kubejs:unprocessed_steel_ingot`
@@ -150,9 +156,9 @@ onEvent(`recipes`, event => {
 	/* 一部のキャストレシピを削除 */
 	const removeCastTypes = [`plate`, `wire`, `gear`]
 	removeCastTypes.forEach(type => {
-		event.remove({ output: `tconstruct:${type}_red_sand_cast` })
-		event.remove({ output: `tconstruct:${type}_sand_cast` })
-		event.remove({ output: `tconstruct:${type}_cast` })
+		event.remove([{ output: `tconstruct:${type}_red_sand_cast` }, { input: `tconstruct:${type}_red_sand_cast` }])
+		event.remove([{ output: `tconstruct:${type}_sand_cast` }, { input: `tconstruct:${type}_sand_cast` }])
+		event.remove([{ output: `tconstruct:${type}_cast` }, { input: `tconstruct:${type}_cast` }])
 	})
 	event.remove({ type: `tconstruct:casting_table`, output: `#forge:plates` })
 	event.remove({ type: `tconstruct:casting_table`, output: `#forge:wires` })
@@ -283,48 +289,12 @@ onEvent(`recipes`, event => {
 		S: `#forge:rods/wooden`
 	})
 	event.shaped(
-		Item.of(`delightful:constantan_knife`),
-		[
-			` H`,
-			`S `
-		], {
-		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:constantan"}`),
-		S: `#forge:rods/wooden`
-	})
-	event.shaped(
 		Item.of(`delightful:silver_knife`),
 		[
 			` H`,
 			`S `
 		], {
 		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:silver"}`),
-		S: `#forge:rods/wooden`
-	})
-	event.shaped(
-		Item.of(`delightful:invar_knife`),
-		[
-			` H`,
-			`S `
-		], {
-		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:invar"}`),
-		S: `#forge:rods/wooden`
-	})
-	event.shaped(
-		Item.of(`delightful:lead_knife`),
-		[
-			` H`,
-			`S `
-		], {
-		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:lead"}`),
-		S: `#forge:rods/wooden`
-	})
-	event.shaped(
-		Item.of(`delightful:electrum_knife`),
-		[
-			` H`,
-			`S `
-		], {
-		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:electrum"}`),
 		S: `#forge:rods/wooden`
 	})
 	event.shaped(
@@ -338,12 +308,8 @@ onEvent(`recipes`, event => {
 	})
 	event.recipes.create.filling(Item.of(`farmersdelight:diamond_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_diamond`, 100)])
 	event.recipes.create.filling(Item.of(`farmersdelight:golden_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_gold`, 90)])
-	event.recipes.create.filling(Item.of(`delightful:zinc_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_zinc`, 90)])
 	event.recipes.create.filling(Item.of(`delightful:brass_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_brass`, 90)])
-	event.recipes.create.filling(Item.of(`delightful:bronze_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_bronze`, 90)])
-	event.recipes.create.filling(Item.of(`delightful:tin_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_tin`, 90)])
 	event.recipes.create.filling(Item.of(`delightful:nickel_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_nickel`, 90)])
-
 })
 
 onEvent(`item.tags`, event => {
