@@ -5,10 +5,36 @@ settings.logRemovedRecipes = true
 settings.logSkippedRecipes = false
 settings.logErroringRecipes = true
 
+let TC = (id) => `tconstruct:${id}`
+let IE = (id) => `immersiveengineering:${id}`
+
+const deleteItems = [
+	`oldguns:iron_with_coal`,
+	`tconstruct:earth_slime_sling`,
+	`tconstruct:ender_slime_sling`,
+	`tconstruct:ichor_slime_sling`,
+	`tconstruct:sky_slime_sling`,
+	`davebuildingmod:steel_ingot`,
+	`davebuildingmod:steel_block`,
+	TC(`plate_cast`),
+	TC(`plate_sand_cast`),
+	TC(`plate_red_sand_cast`),
+	TC(`wire_cast`),
+	TC(`wire_sand_cast`),
+	TC(`wire_red_sand_cast`),
+	TC(`gear_cast`),
+	TC(`gear_sand_cast`),
+	TC(`gear_red_sand_cast`)
+]
+
 onEvent(`recipes`, event => {
 	const MetalMaterials = [`aluminum`, `amethyst_bronze`, `brass`, `bronze`, `cobalt`, `constantan`, `copper`, `electrum`, `emerald`, `enderium`, `gold`, `hepatizon`, `invar`, `iron`, `knightslime`, `lead`, `lumium`, `manyullyn`, `molten_debris`, `netherite`, `nickel`, `osmium`, `pewter`, `pig_iron`, `platinum`, `queens_slime`, `refined_glowstone`, `refined_obsidian`, `rose_gold`, `signalum`, `silver`, `slimesteel`, `soulsteel`, `steel`, `tin`, `tungsten`, `uranium`, `zinc`]
 
 	// common
+	deleteItems.forEach(item => {
+		event.remove([{ output: `${item}` }, { input: `${item}` }])
+	})
+
 	/* 金属の圧縮レシピを変更 */
 	MetalMaterials.forEach(material => {
 		event.remove({ type: `minecraft:craft_shaped`, output: `#forge:ingots/${material}`, input: `#forge:nuggets/${material}` })
@@ -139,11 +165,8 @@ onEvent(`recipes`, event => {
 	event.replaceOutput({ id: `minecraft:copper_ingot_from_smelting_raw_copper` }, `iron_ingot`, `9x copper_nugget`)
 
 	// oldguns
-	/* 銃器用鋼鉄のレシピを削除 */
-	event.remove({ output: `oldguns:steel_ingot` })
-	event.remove([{ output: `oldguns:iron_with_coal` }, { input: `oldguns:iron_with_coal` }])
-
 	/* 銃器用鋼鉄のレシピを変更 */
+	event.remove({ output: `oldguns:steel_ingot` })
 	let inter = `kubejs:unprocessed_steel_ingot`
 	event.recipes.create.sequencedAssembly(`oldguns:steel_ingot`, `#forge:ingots/steel`, [
 		event.recipes.create.filling(inter, [inter, Fluid.of(`minecraft:lava`, 500)]),
@@ -154,59 +177,55 @@ onEvent(`recipes`, event => {
 
 	// tconstruct
 	/* 一部のキャストレシピを削除 */
-	const removeCastTypes = [`plate`, `wire`, `gear`]
-	removeCastTypes.forEach(type => {
-		event.remove([{ output: `tconstruct:${type}_red_sand_cast` }, { input: `tconstruct:${type}_red_sand_cast` }])
-		event.remove([{ output: `tconstruct:${type}_sand_cast` }, { input: `tconstruct:${type}_sand_cast` }])
-		event.remove([{ output: `tconstruct:${type}_cast` }, { input: `tconstruct:${type}_cast` }])
-	})
-	event.remove({ type: `tconstruct:casting_table`, output: `#forge:plates` })
-	event.remove({ type: `tconstruct:casting_table`, output: `#forge:wires` })
-	event.remove({ type: `tconstruct:casting_table`, output: `#forge:gears` })
-
-	/* スライムスリングを削除 */
-	event.remove([{ output: `tconstruct:earth_slime_sling` }, { input: `tconstruct:earth_slime_sling` }])
-	event.remove([{ output: `tconstruct:ender_slime_sling` }, { input: `tconstruct:ender_slime_sling` }])
-	event.remove([{ output: `tconstruct:ichor_slime_sling` }, { input: `tconstruct:ichor_slime_sling` }])
-	event.remove([{ output: `tconstruct:sky_slime_sling` }, { input: `tconstruct:sky_slime_sling` }])
+	event.remove({ type: `tconstruct:casting_table`, output: /#forge:plates\/.*/ })
+	event.remove({ type: `tconstruct:casting_table`, output: /#forge:wires\/.*/ })
+	event.remove({ type: `tconstruct:casting_table`, output: /#forge:gears\/.*/ })
 
 	/* グラウトのレシピを変更 */
 	event.remove({ id: `tconstruct:smeltery/seared/grout_multiple` })
+	event.remove({ id: `tconstruct:smeltery/seared/grout` })
 	event.recipes.create.mixing(
 		[`2x tconstruct:grout`, Item.of(`tconstruct:grout`).withChance(0.5)],
 		[`minecraft:clay_ball`, `#minecraft:sand`, `minecraft:gravel`]
 	)
-	event.recipes.create.mixing(
-		[`8x tconstruct:grout`, Item.of(`tconstruct:grout`, 6).withChance(0.7)],
-		[`minecraft:clay`, `#minecraft:sand`, `#minecraft:sand`, `#minecraft:sand`, `#minecraft:sand`, `minecraft:gravel`, `minecraft:gravel`, `minecraft:gravel`, `minecraft:gravel`]
-	)
 
 	// create
-	/* 不要なアイテムのレシピを削除 */
-	event.remove({ id: `davebuildingmod:rec_steel_block` })
-
 	/* 合金をつくった時の出力を液体に変更 */
 	event.replaceOutput({ id: `alloyed:mixing/bronze_ingot` }, `alloyed:bronze_ingot`, Fluid.of(`tconstruct:molten_bronze`, 90))
 	event.replaceOutput({ id: `alloyed:mixing/bronze_ingot_x3` }, `alloyed:bronze_ingot`, Fluid.of(`tconstruct:molten_bronze`, 270))
 	event.replaceOutput({ id: `alloyed:mixing/steel_ingot` }, `alloyed:steel_ingot`, Fluid.of(`tconstruct:molten_steel`, 270))
 	event.replaceOutput({ id: `create:mixing/brass_ingot` }, `create:brass_ingot`, Fluid.of(`tconstruct:molten_brass`, 180))
 
-	/* 液体をインゴットに */
-	event.recipes.create.compacting(`alloyed:bronze_ingot`, Fluid.of(`tconstruct:molten_bronze`, 90))
-	event.recipes.create.compacting(`alloyed:steel_ingot`, Fluid.of(`tconstruct:molten_steel`, 90))
-	event.recipes.create.compacting(`create:brass_ingot`, Fluid.of(`tconstruct:molten_brass`, 90))
+	/* 液体⇄インゴット */
+	let melt = (output, item, gem) => {
+		if (gem) {
+			event.recipes.create.compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 100))
+			event.recipes.create.mixing(Fluid.of(TC(`molten_${item}`), 100), `#forge:gems/${item}`).superheated()
+		} else {
+			event.recipes.create.compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 90))
+			event.recipes.create.mixing(Fluid.of(TC(`molten_${item}`), 90), `#forge:ingots/${item}`).heated()
+		}
+	}
+	melt(`iron_ingot`, `iron`, false)
+	melt(`gold_ingot`, `gold`, false)
+	melt(`create:brass_ingot`, `brass`, false)
+	melt(`alloyed:bronze_ingot`, `bronze`, false)
+	melt(`aloyed:steel_ingot`, `steel`, false)
+	melt(`diamond`, `diamond`, true)
 
 	/* 雑多なレシピを追加 */
-	event.recipes.create.crushing([`create:copper_nugget`, `minecraft:red_sand`], `minecraft:terracotta`).processingTime(150)
-	event.recipes.create.filling(`minecraft:magma_block`, [`minecraft:netherrack`, Fluid.of(`minecraft:lava`, 500)])
-	event.recipes.create.emptying([`minecraft:obsidian`, Fluid.of(`minecraft:lava`, 250)], `minecraft:magma_block`)
-	event.recipes.create.haunting(`minecraft:netherrack`, `minecraft:clay`)
+	event.recipes.create.crushing([`create:copper_nugget`, `red_sand`], `terracotta`).processingTime(150)
+	event.recipes.create.filling(`magma_block`, [`netherrack`, Fluid.of(`lava`, 500)])
+	event.recipes.create.emptying([`obsidian`, Fluid.of(`lava`, 250)], `magma_block`)
+	event.recipes.create.haunting(`netherrack`, `clay`)
 
 	// immersiveengineering
+	event.replaceInput({ id: IE(`crafting/hammer`) }, `#forge:ingots/iron`, `#forge:ingots/steel`)
+
 	/* component_iron */
-	event.remove({ id: `immersiveengineering:crafting/component_iron` })
+	event.remove({ id: IE(`crafting/component_iron`) })
 	let inter = `kubejs:incomplete_component_iron`
-	event.recipes.create.sequencedAssembly(`immersiveengineering:component_iron`, `#forge:rods/iron`, [
+	event.recipes.create.sequencedAssembly(IE(`component_iron`), `#forge:rods/iron`, [
 		event.recipes.create.deploying(inter, [inter, `immersiveengineering:wirecoil_copper`]),
 		event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
 		event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
@@ -317,12 +336,16 @@ onEvent(`recipes`, event => {
 
 onEvent(`item.tags`, event => {
 	// item tag
+	/**
+	 * deleteItems.forEach(item => {
+	 * 	event.removeAllTagsFrom(`${item}`)
+	 * })
+	 */
 })
 
 onEvent("lootjs", (event) => {
 	event.addLootTableModifier(`minecraft:blocks/grass`)
 		.removeLoot(`minecraft:wheat_seeds`);
-
 	event.addLootTableModifier(`minecraft:blocks/tall_grass`)
 		.removeLoot(`minecraft:wheat_seeds`);
 });
