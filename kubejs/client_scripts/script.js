@@ -16,17 +16,6 @@ onEvent(`jei.hide.items`, event => {
 	hideTool(`diamond`)
 	hideTool(`netherite`)
 	hideTool(`immersiveengineering:steel`)
-	hideTool(`create_sa:copper`)
-	hideTool(`create_sa:brass`)
-	hideTool(`create_sa:zinc`)
-
-	let hideArmor =(material) => {
-		event.hide(`${material}_helmet`)
-		event.hide(`${material}_chestplate`)
-		event.hide(`${material}_leggings`)
-		event.hide(`${material}_boots`)
-	}
-	hideArmor(`create_sa:zinc`)
 
 	// create
 	event.hide(`davebuildingmod:steel_block`)

@@ -6,7 +6,7 @@
 	amethyst_knife = false
 	black_opal_knife = false
 	bone_knife = false
-	brass_knife = true
+	brass_knife = false
 	bronze_knife = true
 	constantan_knife = false
 	copper_knife = true
@@ -17,7 +17,7 @@
 	enderite_knife = false
 	experience_knife = true
 	fiery_knife = false
-	gilded_quartz_knife = false
+	gilded_quartz_knife = true
 	invar_knife = false
 	ironwood_knife = false
 	kiwano_knife = false

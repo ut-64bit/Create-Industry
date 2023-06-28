@@ -7,13 +7,14 @@ settings.logErroringRecipes = true
 
 let TC = (id) => `tconstruct:${id}`
 let IE = (id) => `immersiveengineering:${id}`
+let DBE = (id) => `davebuildingmod:${id}`
 
 const deleteItems = [
 	`oldguns:iron_with_coal`,
-	`tconstruct:earth_slime_sling`,
-	`tconstruct:ender_slime_sling`,
-	`tconstruct:ichor_slime_sling`,
-	`tconstruct:sky_slime_sling`,
+	TC(`earth_slime_sling`),
+	TC(`ender_slime_sling`),
+	TC(`ichor_slime_sling`),
+	TC(`sky_slime_sling`),
 	`davebuildingmod:steel_ingot`,
 	`davebuildingmod:steel_block`,
 	TC(`plate_cast`),
@@ -35,33 +36,7 @@ onEvent(`recipes`, event => {
 		event.remove([{ output: `${item}` }, { input: `${item}` }])
 	})
 
-	/* 金属の圧縮レシピを変更 */
-	MetalMaterials.forEach(material => {
-		event.remove({ type: `minecraft:craft_shaped`, output: `#forge:ingots/${material}`, input: `#forge:nuggets/${material}` })
-		event.remove({ type: `minecraft:craft_shaped`, output: `#forge:storage_blocks/${material}`, input: `#forge:ingots/${material}` })
-	})
-	/**
-	 * event.remove({id:`alloyed:crafting/bronze_ingot_from_compacting`})
-	 * event.remove({id:`alloyed:crafting/bronze/bronze_block`})
-	 * event.remove({id:`alloyed:crafting/steel_block_from_compacting`})
-	 * event.remove({id:`alloyed:crafting/steel_ingot_from_compacting`})
-	 */
-	MetalMaterials.forEach(material => {
-		let input = `#forge:nuggets/${material}`
-		event.recipes.create.compacting(`#forge:ingots/${material}`, [
-			input, input, input,
-			input, input, input,
-			input, input, input
-		]).heated()
-		let input = `#forge:ingots/${material}`
-		event.recipes.create.compacting(`#forge:storage_blocks/${material}`, [
-			input, input, input,
-			input, input, input,
-			input, input, input
-		]).heated()
-	})
-
-	/* バニラ型のツールを削除 */
+	/* バニラ型のツールのレシピを変更 */
 	let removeTool = (material, removeInput) => {
 		event.remove({ output: `${material}_pickaxe` })
 		event.remove({ output: `${material}_axe` })
@@ -78,16 +53,22 @@ onEvent(`recipes`, event => {
 	}
 	removeTool(`wooden`, true)
 	removeTool(`stone`, true)
-	removeTool(`golden`, true)
-	removeTool(`iron`, true)
-	removeTool(`diamond`, true)
-	removeTool(`netherite`, true)
-	removeTool(`immersiveengineering:steel`, true)
-	removeTool(`create_sa:copper`, true)
-	removeTool(`create_sa:brass`, true)
-	removeTool(`create_sa:zinc`, true)
+	removeTool(`iron`, false)
+	removeTool(`diamond`, false)
+	removeTool(IE(`steel`), true)
+	event.smithing(`iron_pickaxe`, `golden_pickaxe`, `iron_ingot`)
+	event.smithing(`iron_axe`, `golden_axe`, `iron_ingot`)
+	event.smithing(`iron_shovel`, `golden_shovel`, `iron_ingot`)
+	event.smithing(`iron_hoe`, `golden_hoe`, `iron_ingot`)
+	event.smithing(`iron_sword`, `golden_sword`, `iron_ingot`)
+	event.create.filling(`diamond_pickaxe`, [`iron_pickaxe`, Fluid.of(TC(`molten_diamond`), 100)])
+	event.create.filling(`diamond_axe`, [`iron_axe`, Fluid.of(TC(`molten_diamond`), 100)])
+	event.create.filling(`diamond_shovel`, [`iron_shovel`, Fluid.of(TC(`molten_diamond`), 100)])
+	event.create.filling(`diamond_hoe`, [`iron_hoe`, Fluid.of(TC(`molten_diamond`), 100)])
+	event.create.filling(`diamond_sword`, [`iron_sword`, Fluid.of(TC(`molten_diamond`), 100)])
 
-	/* 防具のレシピを削除 */
+
+	/* 防具のレシピを変更 */
 	let removeArmor = (material, removeInput) => {
 		event.remove({ output: `${material}_helmet` })
 		event.remove({ output: `${material}_chestplate` })
@@ -103,11 +84,6 @@ onEvent(`recipes`, event => {
 	removeArmor(`iron`, false)
 	removeArmor(`golden`, false)
 	removeArmor(`diamond`, false)
-	removeArmor(`create_sa:brass`, false)
-	removeArmor(`create_sa:copper`, false)
-	removeArmor(`create_sa:zinc`, true)
-
-	/* 防具のレシピを変更 */
 	let addPlateArmor = (material, plate) => {
 		event.shaped(`${material}_helmet`,
 			[
@@ -115,7 +91,7 @@ onEvent(`recipes`, event => {
 				`PLP`
 			], {
 			P: `#forge:plates/${plate}`,
-			L: `minecraft:leather_helmet`
+			L: `leather_helmet`
 		})
 		event.shaped(`${material}_chestplate`,
 			[
@@ -124,7 +100,7 @@ onEvent(`recipes`, event => {
 				`PPP`
 			], {
 			P: `#forge:plates/${plate}`,
-			L: `minecraft:leather_chestplate`
+			L: `leather_chestplate`
 		})
 		event.shaped(`${material}_leggings`,
 			[
@@ -133,7 +109,7 @@ onEvent(`recipes`, event => {
 				`P P`
 			], {
 			P: `#forge:plates/${plate}`,
-			L: `minecraft:leather_leggings`
+			L: `leather_leggings`
 		})
 		event.shaped(`${material}_boots`,
 			[
@@ -141,60 +117,53 @@ onEvent(`recipes`, event => {
 				`PLP`
 			], {
 			P: `#forge:plates/${plate}`,
-			L: `minecraft:leather_boots`
+			L: `leather_boots`
 		})
 	}
 	addPlateArmor(`iron`, `iron`)
 	addPlateArmor(`golden`, `gold`)
-	addPlateArmor(`create_sa:brass`, `brass`)
-	addPlateArmor(`create_sa:copper`, `copper`)
-	event.recipes.create.filling(`diamond_helmet`, [`iron_helmet`, Fluid.of(`tconstruct:molten_diamond`, 500)])
-	event.recipes.create.filling(`diamond_chestplate`, [`iron_chestplate`, Fluid.of(`tconstruct:molten_diamond`, 800)])
-	event.recipes.create.filling(`diamond_leggings`, [`iron_leggings`, Fluid.of(`tconstruct:molten_diamond`, 700)])
-	event.recipes.create.filling(`diamond_boots`, [`iron_boots`, Fluid.of(`tconstruct:molten_diamond`, 400)])
+	event.recipes.create.filling(`diamond_helmet`, [`iron_helmet`, Fluid.of(TC(`molten_diamond`), 500)])
+	event.recipes.create.filling(`diamond_chestplate`, [`iron_chestplate`, Fluid.of(TC(`molten_diamond`), 800)])
+	event.recipes.create.filling(`diamond_leggings`, [`iron_leggings`, Fluid.of(TC(`molten_diamond`), 700)])
+	event.recipes.create.filling(`diamond_boots`, [`iron_boots`, Fluid.of(TC(`molten_diamond`), 400)])
 
 	// minecraft
 	/* 鋼鉄の変換レシピ */
 	event.shapeless(`alloyed:steel_ingot`, `#forge:ingots/steel`)
-	event.shapeless(`immersiveengineering:ingot_steel`, `#forge:ingots/steel`)
+	event.shapeless(IE(`ingot_steel`), `#forge:ingots/steel`)
 	event.shapeless(`thermal:steel_ingot`, `#forge:ingots/steel`)
-
-	/* かまど製錬レシピを変更 */
-	event.replaceOutput({ id: `minecraft:iron_ingot_from_smelting_raw_iron` }, `iron_ingot`, `9x iron_nugget`)
-	event.replaceOutput({ id: `minecraft:gold_ingot_from_smelting_raw_gold` }, `gold_ingot`, `9x gold_nugget`)
-	event.replaceOutput({ id: `minecraft:copper_ingot_from_smelting_raw_copper` }, `iron_ingot`, `9x copper_nugget`)
 
 	// oldguns
 	/* 銃器用鋼鉄のレシピを変更 */
 	event.remove({ output: `oldguns:steel_ingot` })
 	let inter = `kubejs:unprocessed_steel_ingot`
 	event.recipes.create.sequencedAssembly(`oldguns:steel_ingot`, `#forge:ingots/steel`, [
-		event.recipes.create.filling(inter, [inter, Fluid.of(`minecraft:lava`, 500)]),
+		event.recipes.create.filling(inter, [inter, Fluid.of(`lava`, 500)]),
 		event.recipes.create.pressing(inter, inter),
 		event.recipes.create.pressing(inter, inter),
-		event.recipes.create.filling(inter, [inter, Fluid.of(`minecraft:water`, 500)]),
+		event.recipes.create.filling(inter, [inter, Fluid.of(`water`, 500)]),
 	]).transitionalItem(inter).loops(1)
 
 	// tconstruct
 	/* 一部のキャストレシピを削除 */
-	event.remove({ type: `tconstruct:casting_table`, output: /#forge:plates\/.*/ })
-	event.remove({ type: `tconstruct:casting_table`, output: /#forge:wires\/.*/ })
-	event.remove({ type: `tconstruct:casting_table`, output: /#forge:gears\/.*/ })
+	event.remove({ type: TC(`casting_table`), output: /#forge:plates\/.*/ })
+	event.remove({ type: TC(`casting_table`), output: /#forge:wires\/.*/ })
+	event.remove({ type: TC(`casting_table`), output: /#forge:gears\/.*/ })
 
 	/* グラウトのレシピを変更 */
 	event.remove({ id: `tconstruct:smeltery/seared/grout_multiple` })
 	event.remove({ id: `tconstruct:smeltery/seared/grout` })
 	event.recipes.create.mixing(
 		[`2x tconstruct:grout`, Item.of(`tconstruct:grout`).withChance(0.5)],
-		[`minecraft:clay_ball`, `#minecraft:sand`, `minecraft:gravel`]
+		[`clay_ball`, `#sand`, `gravel`]
 	)
 
 	// create
 	/* 合金をつくった時の出力を液体に変更 */
-	event.replaceOutput({ id: `alloyed:mixing/bronze_ingot` }, `alloyed:bronze_ingot`, Fluid.of(`tconstruct:molten_bronze`, 90))
-	event.replaceOutput({ id: `alloyed:mixing/bronze_ingot_x3` }, `alloyed:bronze_ingot`, Fluid.of(`tconstruct:molten_bronze`, 270))
-	event.replaceOutput({ id: `alloyed:mixing/steel_ingot` }, `alloyed:steel_ingot`, Fluid.of(`tconstruct:molten_steel`, 270))
-	event.replaceOutput({ id: `create:mixing/brass_ingot` }, `create:brass_ingot`, Fluid.of(`tconstruct:molten_brass`, 180))
+	event.replaceOutput({ id: `alloyed:mixing/bronze_ingot` }, `alloyed:bronze_ingot`, Fluid.of(TC(`molten_bronze`), 90))
+	event.replaceOutput({ id: `alloyed:mixing/bronze_ingot_x3` }, `alloyed:bronze_ingot`, Fluid.of(TC(`molten_bronze`), 270))
+	event.replaceOutput({ id: `alloyed:mixing/steel_ingot` }, `alloyed:steel_ingot`, Fluid.of(TC(`molten_steel`), 270))
+	event.replaceOutput({ id: `create:mixing/brass_ingot` }, `create:brass_ingot`, Fluid.of(TC(`molten_brass`), 180))
 
 	/* 液体⇄インゴット */
 	let melt = (output, item, gem) => {
@@ -220,13 +189,13 @@ onEvent(`recipes`, event => {
 	event.recipes.create.haunting(`netherrack`, `clay`)
 
 	// immersiveengineering
-	event.replaceInput({ id: IE(`crafting/hammer`) }, `#forge:ingots/iron`, `#forge:ingots/steel`)
+	event.replaceInput({ id: `immersiveengineering:crafting/hammer` }, `#forge:ingots/iron`, `#forge:ingots/steel`)
 
 	/* component_iron */
-	event.remove({ id: IE(`crafting/component_iron`) })
+	event.remove({ id: `immersiveengineering:crafting/component_iron` })
 	let inter = `kubejs:incomplete_component_iron`
 	event.recipes.create.sequencedAssembly(IE(`component_iron`), `#forge:rods/iron`, [
-		event.recipes.create.deploying(inter, [inter, `immersiveengineering:wirecoil_copper`]),
+		event.recipes.create.deploying(inter, [inter, IE(`wirecoil_copper`)]),
 		event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
 		event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
 		event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`])
@@ -235,8 +204,8 @@ onEvent(`recipes`, event => {
 	/* component_steel */
 	event.remove({ id: `immersiveengineering:crafting/component_steel` })
 	let inter = `kubejs:incomplete_component_steel`
-	event.recipes.create.sequencedAssembly(`immersiveengineering:component_steel`, `#forge:rods/iron`, [
-		event.recipes.create.deploying(inter, [inter, `immersiveengineering:wirecoil_copper`]),
+	event.recipes.create.sequencedAssembly(IE(`component_steel`), `#forge:rods/iron`, [
+		event.recipes.create.deploying(inter, [inter, IE(`wirecoil_copper`)]),
 		event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`]),
 		event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`]),
 		event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`])
@@ -245,45 +214,45 @@ onEvent(`recipes`, event => {
 	// armor_trims
 	/* 強化と装飾 */
 	let inter = `kubejs:incomplete_netherite_upgrade_smithing_template`
-	event.recipes.create.sequencedAssembly(`armor_trims:netherite_upgrade_smithing_template`, `minecraft:netherrack`, [
+	event.recipes.create.sequencedAssembly(`armor_trims:netherite_upgrade_smithing_template`, `netherrack`, [
 		event.recipes.create.deploying(inter, [inter, `armor_trims:netherite_upgrade_smithing_template`]).keepHeldItem(),
 		event.recipes.create.pressing(inter, inter),
-		event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 300)]),
+		event.recipes.create.filling(inter, [inter, Fluid.of(TC(`molten_diamond`), 300)]),
 		event.recipes.create.pressing(inter, inter)
 	]).transitionalItem(inter).loops(1)
 	let inter = `kubejs:incomplete_coast_armor_trim_smithing_template`
 	event.recipes.create.sequencedAssembly(`armor_trims:coast_armor_trim_smithing_template`, `#forge:cobblestone/normal`, [
 		event.recipes.create.deploying(inter, [inter, `armor_trims:coast_armor_trim_smithing_template`]).keepHeldItem(),
 		event.recipes.create.pressing(inter, inter),
-		event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 300)]),
+		event.recipes.create.filling(inter, [inter, Fluid.of(TC(`molten_diamond`), 300)]),
 		event.recipes.create.pressing(inter, inter)
 	]).transitionalItem(inter).loops(1)
 	let inter = `kubejs:incomplete_dune_armor_trim_smithing_template`
 	event.recipes.create.sequencedAssembly(`armor_trims:dune_armor_trim_smithing_template`, `forge:sandstone`, [
 		event.recipes.create.deploying(inter, [inter, `armor_trims:dune_armor_trim_smithing_template`]).keepHeldItem(),
 		event.recipes.create.pressing(inter, inter),
-		event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 300)]),
+		event.recipes.create.filling(inter, [inter, Fluid.of(TC(`molten_diamond`), 300)]),
 		event.recipes.create.pressing(inter, inter)
 	]).transitionalItem(inter).loops(1)
 	let inter = `kubejs:incomplete_eye_armor_trim_smithing_template`
 	event.recipes.create.sequencedAssembly(`armor_trims:eye_armor_trim_smithing_template`, `forge:end_stones`, [
 		event.recipes.create.deploying(inter, [inter, `armor_trims:eye_armor_trim_smithing_template`]).keepHeldItem(),
 		event.recipes.create.pressing(inter, inter),
-		event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 300)]),
+		event.recipes.create.filling(inter, [inter, Fluid.of(TC(`molten_diamond`), 300)]),
 		event.recipes.create.pressing(inter, inter)
 	]).transitionalItem(inter).loops(1)
 	let inter = `kubejs:incomplete_host_armor_trim_smithing_template`
-	event.recipes.create.sequencedAssembly(`armor_trims:host_armor_trim_smithing_template`, `minecraft:terracotta`, [
+	event.recipes.create.sequencedAssembly(`armor_trims:host_armor_trim_smithing_template`, `terracotta`, [
 		event.recipes.create.deploying(inter, [inter, `armor_trims:host_armor_trim_smithing_template`]).keepHeldItem(),
 		event.recipes.create.pressing(inter, inter),
-		event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 300)]),
+		event.recipes.create.filling(inter, [inter, Fluid.of(TC(`molten_diamond`), 300)]),
 		event.recipes.create.pressing(inter, inter)
 	]).transitionalItem(inter).loops(1)
 	let inter = `kubejs:incomplete_raiser_armor_trim_smithing_template`
-	event.recipes.create.sequencedAssembly(`armor_trims:raiser_armor_trim_smithing_template`, `minecraft:terracotta`, [
+	event.recipes.create.sequencedAssembly(`armor_trims:raiser_armor_trim_smithing_template`, `terracotta`, [
 		event.recipes.create.deploying(inter, [inter, `armor_trims:raiser_armor_trim_smithing_template`]).keepHeldItem(),
 		event.recipes.create.pressing(inter, inter),
-		event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 300)]),
+		event.recipes.create.filling(inter, [inter, Fluid.of(TC(`molten_diamond`), 300)]),
 		event.recipes.create.pressing(inter, inter)
 	]).transitionalItem(inter).loops(1)
 
@@ -299,6 +268,15 @@ onEvent(`recipes`, event => {
 			`S `
 		], {
 		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:iron"}`),
+		S: `#forge:rods/wooden`
+	})
+	event.shaped(
+		Item.of(`farmersdelight:golden_knife`),
+		[
+			` H`,
+			`S `
+		], {
+		H: `gold_ingot`,
 		S: `#forge:rods/wooden`
 	})
 	event.shaped(
@@ -328,10 +306,11 @@ onEvent(`recipes`, event => {
 		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:bronze"}`),
 		S: `#forge:rods/wooden`
 	})
-	event.recipes.create.filling(Item.of(`farmersdelight:diamond_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_diamond`, 100)])
-	event.recipes.create.filling(Item.of(`farmersdelight:golden_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_gold`, 90)])
-	event.recipes.create.filling(Item.of(`delightful:brass_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_brass`, 90)])
-	event.recipes.create.filling(Item.of(`delightful:nickel_knife`), [`#farmersdelight:tools/knives`, Fluid.of(`tconstruct:molten_nickel`, 90)])
+	event.recipes.create.filling(Item.of(`farmersdelight:diamond_knife`), [`#farmersdelight:tools/knives`, Fluid.of(TC(`molten_diamond`), 100)])
+
+	// Replace
+	event.replaceOutput({ output: `#forge:ingots/steel` }, `#forge:ingots/steel`, `alloyed:steel_ingot`)
+
 })
 
 onEvent(`item.tags`, event => {
@@ -345,7 +324,7 @@ onEvent(`item.tags`, event => {
 
 onEvent("lootjs", (event) => {
 	event.addLootTableModifier(`minecraft:blocks/grass`)
-		.removeLoot(`minecraft:wheat_seeds`);
+		.removeLoot(`wheat_seeds`);
 	event.addLootTableModifier(`minecraft:blocks/tall_grass`)
-		.removeLoot(`minecraft:wheat_seeds`);
+		.removeLoot(`wheat_seeds`);
 });
