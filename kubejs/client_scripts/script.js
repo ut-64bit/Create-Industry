@@ -2,7 +2,7 @@
 
 onEvent(`jei.hide.items`, event => {
 	// minecraft
-	let hideTool =(material) => {
+	let hideTool = (material) => {
 		event.hide(`${material}_pickaxe`)
 		event.hide(`${material}_axe`)
 		event.hide(`${material}_shovel`)
@@ -11,10 +11,6 @@ onEvent(`jei.hide.items`, event => {
 	}
 	hideTool(`wooden`)
 	hideTool(`stone`)
-	hideTool(`iron`)
-	hideTool(`golden`)
-	hideTool(`diamond`)
-	hideTool(`netherite`)
 	hideTool(`immersiveengineering:steel`)
 
 	// create
