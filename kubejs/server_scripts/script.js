@@ -47,6 +47,17 @@ const colors = [
 	`yellow`
 ]
 
+const woods = [
+	`oak`,
+	`dark_oak`,
+	`spruce`,
+	`birch`,
+	`jungle`,
+	`acacia`,
+	`crimson`,
+	`warped`
+]
+
 onEvent(`recipes`, event => {
 	const MetalMaterials = [`aluminum`, `amethyst_bronze`, `brass`, `bronze`, `cobalt`, `constantan`, `copper`, `electrum`, `emerald`, `enderium`, `gold`, `hepatizon`, `invar`, `iron`, `knightslime`, `lead`, `lumium`, `manyullyn`, `molten_debris`, `netherite`, `nickel`, `osmium`, `pewter`, `pig_iron`, `platinum`, `queens_slime`, `refined_glowstone`, `refined_obsidian`, `rose_gold`, `signalum`, `silver`, `slimesteel`, `soulsteel`, `steel`, `tin`, `tungsten`, `uranium`, `zinc`]
 
@@ -376,28 +387,33 @@ onEvent(`recipes`, event => {
 	let recipe = `vs_eureka:floater`
 	event.remove({ id: `${recipe}` })
 	event.shapeless(`${recipe}`, [`create:linear_chassis`, `#forge:dusts/redstone`]).id(`${recipe}`)
+	/* ship_helms */
+	woods.forEach(wood=>{
+		let recipe=`vs_eureka:${wood}_ship_helm`
+		event.shaped(`${recipe}`,
+		[
+			` B `,
+			`RCP`,
+			` I `
+		],{
+			B:`extendedgears:${wood}_cogwheel`,
+			R:`create:rope_pulley`,
+			C:`create:railway_casing`,
+			P:`${wood}_planks`,
+			I:`create:precision_mechanism`
+		}).id(`${recipe}`)
+	})
 
 })
 
 onEvent(`item.tags`, event => {
-	// item tag
+	// eureka
 	event.add(`vs_eureka:balloons`, `vs_eureka:bolloon`)
 	colors.forEach(color => {
 		event.add(`vs_eureka:balloons`, `vs_eureka:${color}_bolloon`)
 	})
-
-	const ship_helms = [
-		`vs_eureka:oak_ship_helm`,
-		`vs_eureka:spruce_ship_helm`,
-		`vs_eureka:birch_ship_helm`,
-		`vs_eureka:jungle_ship_helm`,
-		`vs_eureka:acacia_ship_helm`,
-		`vs_eureka:dark_oak_ship_helm`,
-		`vs_eureka:crimson_ship_helm`,
-		`vs_eureka:warped_ship_helm`
-	]
-	ship_helms.forEach(helm => {
-		event.add(`vs_eureka:ship_helms`, helm)
+	woods.forEach(wood => {
+		event.add(`vs_eureka:ship_helms`, `vs_eureka:${wood}_ship_helm`)
 	})
 })
 
