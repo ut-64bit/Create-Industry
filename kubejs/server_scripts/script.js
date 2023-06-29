@@ -7,7 +7,6 @@ settings.logErroringRecipes = true
 
 let TC = (id) => `tconstruct:${id}`
 let IE = (id) => `immersiveengineering:${id}`
-let DBE = (id) => `davebuildingmod:${id}`
 
 const deleteItems = [
 	`oldguns:iron_with_coal`,
@@ -15,8 +14,6 @@ const deleteItems = [
 	TC(`ender_slime_sling`),
 	TC(`ichor_slime_sling`),
 	TC(`sky_slime_sling`),
-	`davebuildingmod:steel_ingot`,
-	`davebuildingmod:steel_block`,
 	TC(`plate_cast`),
 	TC(`plate_sand_cast`),
 	TC(`plate_red_sand_cast`),
