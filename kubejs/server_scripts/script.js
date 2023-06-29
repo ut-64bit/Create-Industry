@@ -527,7 +527,7 @@ onEvent(`recipes`, event => {
 		], {
 		S: `#forge:rods/wooden`,
 		X: `create:brass_tunnel`
-	})
+	}).id(`${recipe}`)
 })
 
 onEvent(`item.tags`, event => {
