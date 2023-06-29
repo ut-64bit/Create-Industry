@@ -28,6 +28,25 @@ const deleteItems = [
 	TC(`gear_red_sand_cast`)
 ]
 
+const colors = [
+	`black`,
+	`blue`,
+	`brown`,
+	`cyan`,
+	`gray`,
+	`green`,
+	`light_blue`,
+	`light_gray`,
+	`lime`,
+	`magenta`,
+	`orange`,
+	`pink`,
+	`purple`,
+	`red`,
+	`white`,
+	`yellow`
+]
+
 onEvent(`recipes`, event => {
 	const MetalMaterials = [`aluminum`, `amethyst_bronze`, `brass`, `bronze`, `cobalt`, `constantan`, `copper`, `electrum`, `emerald`, `enderium`, `gold`, `hepatizon`, `invar`, `iron`, `knightslime`, `lead`, `lumium`, `manyullyn`, `molten_debris`, `netherite`, `nickel`, `osmium`, `pewter`, `pig_iron`, `platinum`, `queens_slime`, `refined_glowstone`, `refined_obsidian`, `rose_gold`, `signalum`, `silver`, `slimesteel`, `soulsteel`, `steel`, `tin`, `tungsten`, `uranium`, `zinc`]
 
@@ -306,20 +325,80 @@ onEvent(`recipes`, event => {
 		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:bronze"}`),
 		S: `#forge:rods/wooden`
 	})
-	event.recipes.create.filling(Item.of(`farmersdelight:diamond_knife`), [`#farmersdelight:tools/knives`, Fluid.of(TC(`molten_diamond`), 100)])
+	event.recipes.create.filling(Item.of(`farmersdelight:damond_knife`), [`#farmersdelight:tools/knives`, Fluid.of(TC(`molten_diamond`), 100)])
 
-	// Replace
-	event.replaceOutput({ output: `#forge:ingots/steel` }, `#forge:ingots/steel`, `alloyed:steel_ingot`)
+	// ValkyrienSkies
+	/* balloon */
+	event.remove({ id: `vs_eureka:balloon_leather` })
+	event.remove({ id: `vs_eureka:balloon_membrane` })
+	event.remove({ id: `vs_eureka:balloon_paper` })
+	event.remove({ id: `vs_eureka:balloon_string` })
+	event.remove({ id: `vs_eureka:balloon_wool` })
+	colors.forEach(color => {
+		event.shaped(`vs_eureka:${color}_balloon`,
+			[
+				` s `,
+				`s s`,
+				` s `
+			], {
+			s: `create:${color}_sail`
+		})
+	})
+	/* anchor */
+	let recipe = `vs_eureka:anchor`
+	event.remove({ id: `${recipe}` })
+	event.shaped(`${recipe}`,
+		[
+			`sSs`,
+			` S `,
+			`SSS`
+		], {
+		s: `#forge:ingots/steel`,
+		S: `#forge:nuggets/steel`
+	}).id(`${recipe}`)
+	/* ballast */
+	let recipe = `vs_eureka:ballast`
+	event.remove({ id: `${recipe}` })
+	event.shapeless(`${recipe}`, [`create:fluid_tank`, `#forge:dusts/redstone`]).id(`${recipe}`)
+	/* engine */
+	let recipe = `vs_eureka:engine`
+	event.shaped(`${recipe}`,
+		[
+			`P`,
+			`B`,
+			`R`
+		], {
+		P: `create:precision_mechanism`,
+		B: `blast_furnace`,
+		R: `create:railway_casing`
+	}).id(`${recipe}`)
+	/* floater */
+	let recipe = `vs_eureka:floater`
+	event.remove({ id: `${recipe}` })
+	event.shapeless(`${recipe}`, [`create:linear_chassis`, `#forge:dusts/redstone`]).id(`${recipe}`)
 
 })
 
 onEvent(`item.tags`, event => {
 	// item tag
-	/**
-	 * deleteItems.forEach(item => {
-	 * 	event.removeAllTagsFrom(`${item}`)
-	 * })
-	 */
+	event.add(`vs_eureka:balloons`, `vs_eureka:bolloon`)
+	colors.forEach(color => {
+		event.add(`vs_eureka:balloons`, `vs_eureka:${color}_bolloon`)
+	})
+
+	const ship_helms = [
+		`vs_eureka:oak_ship_helm`,
+		`vs_eureka:spruce_ship_helm`,
+		`vs_eureka:birch_ship_helm`,
+		`vs_eureka:jungle_ship_helm`,
+		`vs_eureka:acacia_ship_helm`,
+		`vs_eureka:dark_oak_ship_helm`,
+		`vs_eureka:crimson_ship_helm`,
+		`vs_eureka:warped_ship_helm`
+	]
+	ship_helms.forEach(helm => {
+		event.add(`vs_eureka:ship_helms`, helm)
+	})
 })
 
 onEvent("lootjs", (event) => {
