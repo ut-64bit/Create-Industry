@@ -176,9 +176,11 @@ onEvent(`recipes`, event => {
 
 	// tconstruct
 	/* 一部のキャストレシピを削除 */
-	event.remove({ type: TC(`casting_table`), output: /#forge:plates\/.*/ })
-	event.remove({ type: TC(`casting_table`), output: /#forge:wires\/.*/ })
-	event.remove({ type: TC(`casting_table`), output: /#forge:gears\/.*/ })
+	MetalMaterials.forEach(material => {
+		event.remove({ type: TC(`casting_table`), output: `#forge:plates/${material}` })
+		event.remove({ type: TC(`casting_table`), output: `#forge:wire/${material}` })
+		event.remove({ type: TC(`casting_table`), output: `#forge:gears/${material}` })
+	})
 
 	/* グラウトのレシピを変更 */
 	event.remove({ id: `tconstruct:smeltery/seared/grout_multiple` })
@@ -388,19 +390,19 @@ onEvent(`recipes`, event => {
 	event.remove({ id: `${recipe}` })
 	event.shapeless(`${recipe}`, [`create:linear_chassis`, `#forge:dusts/redstone`]).id(`${recipe}`)
 	/* ship_helms */
-	woods.forEach(wood=>{
-		let recipe=`vs_eureka:${wood}_ship_helm`
+	woods.forEach(wood => {
+		let recipe = `vs_eureka:${wood}_ship_helm`
 		event.shaped(`${recipe}`,
-		[
-			` B `,
-			`RCP`,
-			` I `
-		],{
-			B:`extendedgears:${wood}_cogwheel`,
-			R:`create:rope_pulley`,
-			C:`create:railway_casing`,
-			P:`${wood}_planks`,
-			I:`create:precision_mechanism`
+			[
+				` B `,
+				`RCP`,
+				` I `
+			], {
+			B: `extendedgears:${wood}_cogwheel`,
+			R: `create:rope_pulley`,
+			C: `create:railway_casing`,
+			P: `${wood}_planks`,
+			I: `create:precision_mechanism`
 		}).id(`${recipe}`)
 	})
 

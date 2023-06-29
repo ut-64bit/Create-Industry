@@ -33,6 +33,10 @@ onEvent(`jei.hide.items`, event => {
 	})
 })
 
+onEvent('jei.add.items', event => {
+	event.add(`kubejs:blaze_core`)
+})
+
 onEvent(`item.tooltip`, tooltip => {
 	const mags = [`oldguns:mags/asval_mag`, `oldguns:mags/aks-74u_mag`, `oldguns:mags/sten_mag`, `oldguns:mags/mp40_mag`, `oldguns:mags/luger_mag`, `oldguns:mags/thompson_drum_mag`, `oldguns:mags/thompson_mag`, `oldguns:mags/colt_mag`]
 	mags.forEach(mag => {
