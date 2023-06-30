@@ -164,7 +164,7 @@ onEvent(`recipes`, event => {
 	// oldguns
 	/* 銃器用鋼鉄のレシピを変更 */
 	event.remove({ output: `oldguns:steel_ingot` })
-	let inter = `kubejs:unprocessed_steel_ingot`
+	var inter = `kubejs:unprocessed_steel_ingot`
 	event.recipes.create.sequencedAssembly(`oldguns:steel_ingot`, `#forge:ingots/steel`, [
 		event.recipes.create.filling(inter, [inter, Fluid.of(`lava`, 500)]),
 		event.recipes.create.pressing(inter, inter),
@@ -237,7 +237,7 @@ onEvent(`recipes`, event => {
 
 	/* component_iron */
 	event.remove({ id: `immersiveengineering:crafting/component_iron` })
-	let inter = `kubejs:incomplete_component_iron`
+	var inter = `kubejs:incomplete_component_iron`
 	event.recipes.create.sequencedAssembly(IE(`component_iron`), `#forge:rods/iron`, [
 		event.recipes.create.deploying(inter, [inter, IE(`wirecoil_copper`)]),
 		event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
@@ -247,7 +247,7 @@ onEvent(`recipes`, event => {
 
 	/* component_steel */
 	event.remove({ id: `immersiveengineering:crafting/component_steel` })
-	let inter = `kubejs:incomplete_component_steel`
+	var inter = `kubejs:incomplete_component_steel`
 	event.recipes.create.sequencedAssembly(IE(`component_steel`), `#forge:rods/iron`, [
 		event.recipes.create.deploying(inter, [inter, IE(`wirecoil_copper`)]),
 		event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`]),

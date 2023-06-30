@@ -2,7 +2,7 @@
 
 onEvent(`recipes`, event => {
     let trim = (base, trim) => {
-        let inter = `kubejs:incomplete_${trim}_armor_trim_smithing_template`
+        var inter = `kubejs:incomplete_${trim}_armor_trim_smithing_template`
         event.recipes.create.sequencedAssembly(`armor_trims:${trim}_armor_trim_smithing_template`, `${base}`, [
             event.recipes.create.deploying(inter, [inter, `armor_trims:${trim}_armor_trim_smithing_template`]).keepHeldItem(),
             event.recipes.create.pressing(inter, inter),
@@ -13,7 +13,7 @@ onEvent(`recipes`, event => {
     }
     // armor_trims
     /* 強化と装飾 */
-    let inter = `kubejs:incomplete_netherite_upgrade_smithing_template`
+    var inter = `kubejs:incomplete_netherite_upgrade_smithing_template`
     event.recipes.create.sequencedAssembly(`armor_trims:netherite_upgrade_smithing_template`, `netherrack`, [
         event.recipes.create.deploying(inter, [inter, `armor_trims:netherite_upgrade_smithing_template`]).keepHeldItem(),
         event.recipes.create.pressing(inter, inter),
