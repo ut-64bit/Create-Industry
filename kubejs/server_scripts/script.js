@@ -196,18 +196,18 @@ onEvent(`recipes`, event => {
 	event.replaceOutput({ id: `create:mixing/brass_ingot` }, `create:brass_ingot`, Fluid.of(TC(`molten_brass`), 180))
 
 	/* 一部の歯車のレシピを削除 */
-	event.remove({id:`extendedgears:smelting/half_shaft_steel_cogwheel_from_iron`})
-	event.remove({id:`extendedgears:smelting/half_shaft_steel_cogwheel_from_steel`})
-	event.remove({id:`extendedgears:smelting/large_half_shaft_steel_cogwheel_from_iron`})
-	event.remove({id:`extendedgears:smelting/large_half_shaft_steel_cogwheel_from_steel`})
-	event.remove({id:`extendedgears:smelting/shaftless_steel_cogwheel_from_iron`})
-	event.remove({id:`extendedgears:smelting/shaftless_steel_cogwheel_from_steel`})
-	event.remove({id:`extendedgears:smelting/large_shaftless_steel_cogwheel_from_iron`})
-	event.remove({id:`extendedgears:smelting/large_shaftless_steel_cogwheel_from_steel`})
-	event.remove({id:`extendedgears:smelting/steel_cogwheel_from_iron`})
-	event.remove({id:`extendedgears:smelting/steel_cogwheel_from_steel`})
-	event.remove({id:`extendedgears:smelting/large_steel_cogwheel_from_iron`})
-	event.remove({id:`extendedgears:smelting/large_steel_cogwheel_from_steel`})
+	event.remove({ id: `extendedgears:smelting/half_shaft_steel_cogwheel_from_iron` })
+	event.remove({ id: `extendedgears:smelting/half_shaft_steel_cogwheel_from_steel` })
+	event.remove({ id: `extendedgears:smelting/large_half_shaft_steel_cogwheel_from_iron` })
+	event.remove({ id: `extendedgears:smelting/large_half_shaft_steel_cogwheel_from_steel` })
+	event.remove({ id: `extendedgears:smelting/shaftless_steel_cogwheel_from_iron` })
+	event.remove({ id: `extendedgears:smelting/shaftless_steel_cogwheel_from_steel` })
+	event.remove({ id: `extendedgears:smelting/large_shaftless_steel_cogwheel_from_iron` })
+	event.remove({ id: `extendedgears:smelting/large_shaftless_steel_cogwheel_from_steel` })
+	event.remove({ id: `extendedgears:smelting/steel_cogwheel_from_iron` })
+	event.remove({ id: `extendedgears:smelting/steel_cogwheel_from_steel` })
+	event.remove({ id: `extendedgears:smelting/large_steel_cogwheel_from_iron` })
+	event.remove({ id: `extendedgears:smelting/large_steel_cogwheel_from_steel` })
 
 	/* 液体⇄インゴット */
 	let melt = (output, item, gem) => {
