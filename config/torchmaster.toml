@@ -42,7 +42,7 @@
 	feralFlareLanternLightCountHardcap = 255
 	#Durability of the frozen pearl. Each removed light will remove one charge from the pearl. Set to 0 to disable durability
 	#Range: 0 ~ 32767
-	frozenPearlDurability = 1024
+	frozenPearlDurability = 0
 	#Print entity spawn checks to the debug log
 	logSpawnChecks = false
 	#Configures the spawn check to be more aggressive, effectivly overriding the CheckSpawn results of other mods
