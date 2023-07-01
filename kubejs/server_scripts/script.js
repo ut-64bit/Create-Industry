@@ -56,9 +56,48 @@ const woods = [
 	`warped`
 ]
 
-onEvent(`recipes`, event => {
-	const MetalMaterials = [`aluminum`, `amethyst_bronze`, `brass`, `bronze`, `cobalt`, `constantan`, `copper`, `electrum`, `emerald`, `enderium`, `gold`, `hepatizon`, `invar`, `iron`, `knightslime`, `lead`, `lumium`, `manyullyn`, `molten_debris`, `netherite`, `nickel`, `osmium`, `pewter`, `pig_iron`, `platinum`, `queens_slime`, `refined_glowstone`, `refined_obsidian`, `rose_gold`, `signalum`, `silver`, `slimesteel`, `soulsteel`, `steel`, `tin`, `tungsten`, `uranium`, `zinc`]
+const MetalMaterials = [
+	`aluminum`,
+	`amethyst_bronze`,
+	`brass`,
+	`bronze`,
+	`cobalt`,
+	`constantan`,
+	`copper`,
+	`electrum`,
+	`emerald`,
+	`enderium`,
+	`gold`,
+	`hepatizon`,
+	`invar`,
+	`iron`,
+	`knightslime`,
+	`lead`,
+	`lumium`,
+	`manyullyn`,
+	`molten_debris`,
+	`netherite`,
+	`nickel`,
+	`osmium`,
+	`pewter`,
+	`pig_iron`,
+	`platinum`,
+	`queens_slime`,
+	`refined_glowstone`,
+	`refined_obsidian`,
+	`rose_gold`,
+	`signalum`,
+	`silver`,
+	`slimesteel`,
+	`soulsteel`,
+	`steel`,
+	`tin`,
+	`tungsten`,
+	`uranium`,
+	`zinc`
+]
 
+onEvent(`recipes`, event => {
 	// common
 	deleteItems.forEach(item => {
 		event.remove([{ output: `${item}` }, { input: `${item}` }])
@@ -233,6 +272,7 @@ onEvent(`recipes`, event => {
 	event.recipes.create.haunting(`netherrack`, `clay`)
 
 	// immersiveengineering
+	/* hammer */
 	event.replaceInput({ id: `immersiveengineering:crafting/hammer` }, `#forge:ingots/iron`, `#forge:ingots/steel`)
 
 	/* component_iron */
