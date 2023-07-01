@@ -8,6 +8,7 @@ onEvent(`item.registry`, event => {
 	event.create(`incomplete_component_steel`, `create:sequenced_assembly`)
 
 	// armor trim
+	event.create(`incomplete_netherite_upgrade_smithing_template`, `create:sequenced_assembly`)
 	event.create(`incomplete_coast_armor_trim_smithing_template`, `create:sequenced_assembly`)
 	event.create(`incomplete_dune_armor_trim_smithing_template`, `create:sequenced_assembly`)
 	event.create(`incomplete_eye_armor_trim_smithing_template`, `create:sequenced_assembly`)

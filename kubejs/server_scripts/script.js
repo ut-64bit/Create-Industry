@@ -128,11 +128,11 @@ onEvent(`recipes`, event => {
 	event.smithing(`iron_shovel`, `golden_shovel`, `iron_ingot`)
 	event.smithing(`iron_hoe`, `golden_hoe`, `iron_ingot`)
 	event.smithing(`iron_sword`, `golden_sword`, `iron_ingot`)
-	event.create.filling(`diamond_pickaxe`, [`iron_pickaxe`, Fluid.of(TC(`molten_diamond`), 100)])
-	event.create.filling(`diamond_axe`, [`iron_axe`, Fluid.of(TC(`molten_diamond`), 100)])
-	event.create.filling(`diamond_shovel`, [`iron_shovel`, Fluid.of(TC(`molten_diamond`), 100)])
-	event.create.filling(`diamond_hoe`, [`iron_hoe`, Fluid.of(TC(`molten_diamond`), 100)])
-	event.create.filling(`diamond_sword`, [`iron_sword`, Fluid.of(TC(`molten_diamond`), 100)])
+	event.recipes.create.filling(`diamond_pickaxe`, [`iron_pickaxe`, Fluid.of(TC(`molten_diamond`), 100)])
+	event.recipes.create.filling(`diamond_axe`, [`iron_axe`, Fluid.of(TC(`molten_diamond`), 100)])
+	event.recipes.create.filling(`diamond_shovel`, [`iron_shovel`, Fluid.of(TC(`molten_diamond`), 100)])
+	event.recipes.create.filling(`diamond_hoe`, [`iron_hoe`, Fluid.of(TC(`molten_diamond`), 100)])
+	event.recipes.create.filling(`diamond_sword`, [`iron_sword`, Fluid.of(TC(`molten_diamond`), 100)])
 
 
 	/* 防具のレシピを変更 */
@@ -262,7 +262,7 @@ onEvent(`recipes`, event => {
 	melt(`gold_ingot`, `gold`, false)
 	melt(`create:brass_ingot`, `brass`, false)
 	melt(`alloyed:bronze_ingot`, `bronze`, false)
-	melt(`aloyed:steel_ingot`, `steel`, false)
+	melt(`alloyed:steel_ingot`, `steel`, false)
 	melt(`diamond`, `diamond`, true)
 
 	/* 雑多なレシピを追加 */
@@ -345,18 +345,7 @@ onEvent(`recipes`, event => {
 		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:bronze"}`),
 		S: `#forge:rods/wooden`
 	})
-	event.recipes.create.filling(Item.of(`farmersdelight:damond_knife`), [`#farmersdelight:tools/knives`, Fluid.of(TC(`molten_diamond`), 100)])
-})
-
-onEvent(`item.tags`, event => {
-	// eureka
-	event.add(`vs_eureka:balloons`, `vs_eureka:bolloon`)
-	colors.forEach(color => {
-		event.add(`vs_eureka:balloons`, `vs_eureka:${color}_bolloon`)
-	})
-	woods.forEach(wood => {
-		event.add(`vs_eureka:ship_helms`, `vs_eureka:${wood}_ship_helm`)
-	})
+	event.recipes.create.filling(Item.of(`farmersdelight:diamond_knife`), [`#farmersdelight:tools/knives`, Fluid.of(TC(`molten_diamond`), 100)])
 })
 
 onEvent("lootjs", (event) => {

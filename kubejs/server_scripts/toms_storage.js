@@ -11,7 +11,7 @@ onEvent(`recipes`, event => {
     /* crafting_terminal */
     recipe = `toms_storage:crafting_terminal`
     event.remove({ id: `${recipe}` })
-    event.create.mechanicalCrafting(`toms_storage:ts.crafting_terminal`,
+    event.recipes.create.mechanicalCrafting(`toms_storage:ts.crafting_terminal`,
         [
             ` P `,
             `SSS`,

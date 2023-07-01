@@ -9,7 +9,7 @@ onEvent(`recipes`, event => {
             event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 100)]),
             event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 100)]),
             event.recipes.create.pressing(inter, inter)
-        ]).transitionalItem(inter).loops(1)
+        ]).transitionalItem(`${inter}`).loops(1)
     }
     // armor_trims
     /* 強化と装飾 */
@@ -18,7 +18,7 @@ onEvent(`recipes`, event => {
         event.recipes.create.deploying(trans, [trans, `armor_trims:netherite_upgrade_smithing_template`]).keepHeldItem(),
         event.recipes.create.pressing(trans, trans),
         event.recipes.create.filling(trans, [trans, Fluid.of(`tconstruct:molten_diamond`, 100)]),
-        event.recipes.create.filling(trans, [inter, Fluid.of(`tconstruct:molten_diamond`, 100)]),
+        event.recipes.create.filling(trans, [trans, Fluid.of(`tconstruct:molten_diamond`, 100)]),
         event.recipes.create.pressing(trans, trans)
     ]).transitionalItem(trans).loops(1)
 
