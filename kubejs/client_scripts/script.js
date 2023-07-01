@@ -14,8 +14,6 @@ onEvent(`jei.hide.items`, event => {
 	hideTool(`immersiveengineering:steel`)
 
 	// create
-	event.hide(`davebuildingmod:steel_block`)
-	event.hide(`davebuildingmod:steel_ingot`)
 
 	// oldguns
 	event.hide(`oldguns:iron_with_coal`)
@@ -31,6 +29,13 @@ onEvent(`jei.hide.items`, event => {
 		event.hide(`tconstruct:${type}_sand_cast`)
 		event.hide(`tconstruct:${type}_cast`)
 	})
+
+	// tom_storage
+	event.hide(`tom_storage:ts.adv_wireless_terminal`)
+	event.hide(`tom_storage:ts.wireless_terminal`)
+	event.hide(`tom_storage:ts.inventory_hopper_basic`)
+
+	// 
 })
 
 onEvent('jei.add.items', event => {

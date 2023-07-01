@@ -38,6 +38,17 @@ onEvent(`recipes`, event => {
 	event.remove({ id: `vs_eureka:balloon_paper` })
 	event.remove({ id: `vs_eureka:balloon_string` })
 	event.remove({ id: `vs_eureka:balloon_wool` })
+	var recipe = `vs_eureka:black_balloon`
+	event.remove({ id: `${recipe}` })
+	event.shaped(`${recipe}`,
+		[
+			`KKK`,
+			`KSK`,
+			`KKK`
+		], {
+		K: `dried_kelp`,
+		S: `#forge:string`
+	})
 	colors.forEach(color => {
 		event.shaped(`vs_eureka:${color}_balloon`,
 			[

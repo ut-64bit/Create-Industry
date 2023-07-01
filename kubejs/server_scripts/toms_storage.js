@@ -2,6 +2,12 @@
 
 onEvent(`recipes`, event => {
     // toms_storage
+    const deleteItem = [`toms_storage:ts.adv_wireless_terminal`, `toms_storage:ts.wireless_terminal`, `toms_storage:ts.inventory_hopper_basic`]
+    deleteItem.forEach(item => {
+        event.remove([{ output: `${item}` }, { input: `${item}` }])
+    })
+
+    /* crafting_terminal */
     var recipe = `toms_storage:crafting_terminal`
     event.remove({ id: `${recipe}` })
     event.create.mechanicalCrafting(`toms_storage:ts.crafting_terminal`,
@@ -19,6 +25,7 @@ onEvent(`recipes`, event => {
         L: `create:linked_controller`
     }).id(`${recipe}`)
 
+    /* inventory_cable_connector_filtered */
     var recipe = `toms_storage:inventory_cable_connector_filtered`
     event.remove({ id: `${recipe}` })
     event.shaped(`toms_storage:ts.inventory_cable_connector_filtered`,
@@ -32,6 +39,7 @@ onEvent(`recipes`, event => {
         P: `create:electron_tube`
     }).id(`${recipe}`)
 
+    /* inventory_cable_connector_framed */
     var recipe = `toms_storage:inventory_cable_connector_framed`
     event.remove({ id: `${recipe}` })
     event.shaped(`toms_storage:ts.inventory_cable_connector_framed`,
@@ -44,10 +52,12 @@ onEvent(`recipes`, event => {
         C: `toms_storage:ts.inventory_cable_connector`
     }).id(`${recipe}`)
 
+    /* inventory_cable_connector */
     var recipe = `toms_storage:inventory_cable_connector`
     event.remove({ id: `${recipe}` })
     event.shapeless(`toms_storage:ts.inventory_cable_connector`, [`toms_storage:ts.inventory_cable`, `create:chute`]).id(`${recipe}`)
 
+    /* inventory_cable_framed */
     var recipe = `toms_storage:inventory_cable_framed`
     event.remove({ id: `${recipe}` })
     event.shaped(`toms_storage:ts.inventory_cable_framed`,
@@ -60,22 +70,27 @@ onEvent(`recipes`, event => {
         C: `toms_storage:ts.inventory_cable`
     }).id(`${recipe}`)
 
+    /* inventory_cable */
     var recipe = `toms_storage:inventory_cable`
     event.remove({ id: `${recipe}` })
     event.shapeless(`toms_storage:ts.inventory_cable`, [`#forge:plates/brass`, `dried_kelp`]).id(`${recipe}`)
 
+    /* inventory_connector */
     var recipe = `toms_storage:inventory_connector`
     event.remove({ id: `${recipe}` })
     event.shapeless(`toms_storage:ts.inventory_connector`, [`create:brass_casing`, `create:chute`]).id(`${recipe}`)
 
+    /* inventory_proxy */
     var recipe = `toms_storage:inventory_proxy`
     event.remove({ id: `${recipe}` })
     event.shapeless(`toms_storage:ts.inventory_proxy`, [`toms_storage:ts.inventory_connector`, `create:smart_chute`]).id(`${recipe}`)
 
+    /* level_emitter */
     var recipe = `toms_storage:level_emitter`
     event.remove({ id: `${recipe}` })
     event.shapeless(`toms_storage:ts.level_emitter`, [`create:content_observer`, `toms_storage:ts.inventory_cable`]).id(`${recipe}`)
 
+    /* open_crate */
     var recipe = `toms_storage:open_crate`
     event.remove({ id: `${recipe}` })
     event.shaped(`toms_storage:ts.open_crate`,
@@ -90,6 +105,7 @@ onEvent(`recipes`, event => {
         T: `#minecraft:trapdoors`
     }).id(`${recipe}`)
 
+    /* paint_kit */
     var recipe = `toms_storage:paint_kit`
     event.remove({ id: `${recipe}` })
     event.shaped(`toms_storage:ts.paint_kit`,
@@ -108,6 +124,7 @@ onEvent(`recipes`, event => {
         S: `#forge:rods/wooden`
     }).id(`${recipe}`)
 
+    /* storage_terminal */
     var recipe = `toms_storage:storage_terminal`
     event.remove({ id: `${recipe}` })
     event.shaped(`toms_storage:ts.storage_terminal`,
@@ -126,6 +143,7 @@ onEvent(`recipes`, event => {
     event.remove({ id: `${recipe}` })
     event.shapeless(`toms_storage:ts.trim`, [`toms_storage:ts.painted_trim`, `water_bucket`]).id(`${recipe}`)
 
+    /* trim */
     var recipe = `toms_storage:trim`
     event.remove({ id: `${recipe}` })
     event.shaped(`toms_storage:ts.trim`,
