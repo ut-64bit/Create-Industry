@@ -30,6 +30,7 @@ const woods = [
 	`warped`
 ]
 
+let recipe = `recipe id`;
 onEvent(`recipes`, event => {
 	// ValkyrienSkies
 	/* balloon */
@@ -38,7 +39,7 @@ onEvent(`recipes`, event => {
 	event.remove({ id: `vs_eureka:balloon_paper` })
 	event.remove({ id: `vs_eureka:balloon_string` })
 	event.remove({ id: `vs_eureka:balloon_wool` })
-	var recipe = `vs_eureka:black_balloon`
+	recipe = `vs_eureka:black_balloon`
 	event.remove({ id: `${recipe}` })
 	event.shaped(`${recipe}`,
 		[
@@ -61,7 +62,7 @@ onEvent(`recipes`, event => {
 	})
 
 	/* anchor */
-	var recipe = `vs_eureka:anchor`
+	recipe = `vs_eureka:anchor`
 	event.remove({ id: `${recipe}` })
 	event.shaped(`${recipe}`,
 		[
@@ -74,12 +75,12 @@ onEvent(`recipes`, event => {
 	}).id(`${recipe}`)
 
 	/* ballast */
-	var recipe = `vs_eureka:ballast`
+	recipe = `vs_eureka:ballast`
 	event.remove({ id: `${recipe}` })
 	event.shapeless(`${recipe}`, [`create:fluid_tank`, `#forge:dusts/redstone`]).id(`${recipe}`)
 
 	/* engine */
-	var recipe = `vs_eureka:engine`
+	recipe = `vs_eureka:engine`
 	event.shaped(`${recipe}`,
 		[
 			`P`,
@@ -92,13 +93,13 @@ onEvent(`recipes`, event => {
 	}).id(`${recipe}`)
 
 	/* floater */
-	var recipe = `vs_eureka:floater`
+	recipe = `vs_eureka:floater`
 	event.remove({ id: `${recipe}` })
 	event.shapeless(`${recipe}`, [`create:linear_chassis`, `#forge:dusts/redstone`]).id(`${recipe}`)
 
 	/* ship_helms */
 	woods.forEach(wood => {
-		var recipe = `vs_eureka:${wood}_ship_helm`
+		recipe = `vs_eureka:${wood}_ship_helm`
 		event.shaped(`${recipe}`,
 			[
 				` B `,

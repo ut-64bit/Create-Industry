@@ -2,7 +2,7 @@
 
 onEvent(`recipes`, event => {
     let trim = (base, trim) => {
-        var inter = `kubejs:incomplete_${trim}_armor_trim_smithing_template`
+        let inter = `kubejs:incomplete_${trim}_armor_trim_smithing_template`
         event.recipes.create.sequencedAssembly(`armor_trims:${trim}_armor_trim_smithing_template`, `${base}`, [
             event.recipes.create.deploying(inter, [inter, `armor_trims:${trim}_armor_trim_smithing_template`]).keepHeldItem(),
             event.recipes.create.pressing(inter, inter),
@@ -13,14 +13,14 @@ onEvent(`recipes`, event => {
     }
     // armor_trims
     /* 強化と装飾 */
-    var inter = `kubejs:incomplete_netherite_upgrade_smithing_template`
+    let trans = `kubejs:incomplete_netherite_upgrade_smithing_template`
     event.recipes.create.sequencedAssembly(`armor_trims:netherite_upgrade_smithing_template`, `netherrack`, [
-        event.recipes.create.deploying(inter, [inter, `armor_trims:netherite_upgrade_smithing_template`]).keepHeldItem(),
-        event.recipes.create.pressing(inter, inter),
-        event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 100)]),
-        event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_diamond`, 100)]),
-        event.recipes.create.pressing(inter, inter)
-    ]).transitionalItem(inter).loops(1)
+        event.recipes.create.deploying(trans, [trans, `armor_trims:netherite_upgrade_smithing_template`]).keepHeldItem(),
+        event.recipes.create.pressing(trans, trans),
+        event.recipes.create.filling(trans, [trans, Fluid.of(`tconstruct:molten_diamond`, 100)]),
+        event.recipes.create.filling(trans, [inter, Fluid.of(`tconstruct:molten_diamond`, 100)]),
+        event.recipes.create.pressing(trans, trans)
+    ]).transitionalItem(trans).loops(1)
 
     trim(`#forge:cobblestone/normal`, `coast`)
     trim(`#forge:sandstone`, `dune`)
