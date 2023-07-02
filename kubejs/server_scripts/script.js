@@ -20,10 +20,7 @@ const deleteItems = [
 	TC(`plate_red_sand_cast`),
 	TC(`wire_cast`),
 	TC(`wire_sand_cast`),
-	TC(`wire_red_sand_cast`),
-	TC(`gear_cast`),
-	TC(`gear_sand_cast`),
-	TC(`gear_red_sand_cast`)
+	TC(`wire_red_sand_cast`)
 ]
 
 const colors = [
@@ -198,7 +195,6 @@ onEvent(`recipes`, event => {
 	/* 鋼鉄の変換レシピ */
 	event.shapeless(`alloyed:steel_ingot`, `#forge:ingots/steel`)
 	event.shapeless(IE(`ingot_steel`), `#forge:ingots/steel`)
-	event.shapeless(`thermal:steel_ingot`, `#forge:ingots/steel`)
 
 	// oldguns
 	/* 銃器用鋼鉄のレシピを変更 */
@@ -216,7 +212,6 @@ onEvent(`recipes`, event => {
 	MetalMaterials.forEach(material => {
 		event.remove({ type: TC(`casting_table`), output: `#forge:plates/${material}` })
 		event.remove({ type: TC(`casting_table`), output: `#forge:wire/${material}` })
-		event.remove({ type: TC(`casting_table`), output: `#forge:gears/${material}` })
 	})
 
 	/* グラウトのレシピを変更 */
@@ -266,8 +261,6 @@ onEvent(`recipes`, event => {
 	melt(`diamond`, `diamond`, true)
 
 	/* 雑多なレシピを追加 */
-	event.recipes.create.crushing([`create:copper_nugget`, `red_sand`], `terracotta`).processingTime(150)
-	event.recipes.create.filling(`magma_block`, [`netherrack`, Fluid.of(`lava`, 500)])
 	event.recipes.create.emptying([`obsidian`, Fluid.of(`lava`, 250)], `magma_block`)
 	event.recipes.create.haunting(`netherrack`, `clay`)
 
