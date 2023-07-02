@@ -1,0 +1,269 @@
+
+[Crafting]
+	#Do you want to prevent players from crafting aks74-u?
+	"cancel aks74-u crafting?" = false
+	#Do you want to prevent players from crafting colt1911?
+	"cancel colt1911 crafting?" = false
+	#Do you want to prevent players from crafting Galil?
+	"cancel galil crafting?" = false
+	#Do you want to prevent players from crafting Ithaca Model 37?
+	"cancel ithaca model 37 crafting?" = false
+	#Do you want to prevent players from crafting Kar98k?
+	"cancel kar98k crafting?" = false
+	#Do you want to prevent players from crafting Mp40?
+	"cancel mp40 crafting?" = false
+	#Do you want to prevent players from crafting Scorpion?
+	"cancel scorpion crafting?" = false
+	#Do you want to prevent players from crafting Sten?
+	"cancel sten crafting?" = false
+	#Do you want to prevent players from crafting Thompson?
+	"cancel thompson crafting?" = false
+	#Do you want to prevent players from crafting Winchester?
+	"cancel winchester crafting?" = false
+
+	[Crafting."How many bullets would you like to get by crafting a bullet recipe?"]
+		#smallBullet
+		#Range: 1 ~ 20
+		"smallBullet result" = 4
+		#mediumBullet
+		#Range: 1 ~ 20
+		"mediumBullet result" = 3
+		#bigBullet
+		#Range: 1 ~ 20
+		"bigBullet result" = 2
+		#shotgunBullet
+		#Range: 1 ~ 20
+		"shotgunBullet result" = 3
+
+[guns]
+
+	[guns.Aks-74u]
+		#aksDamage
+		#Range: 0.10000000149011612 ~ 20.0
+		aksDamage = 4.0
+		#aksShootTime
+		#Range: 0 ~ 20
+		aksShootTime = 2
+		#aksPower
+		#Range: 0 ~ 200
+		aksPower = 12
+		#aks - This value will multiply gunDmg when bullet range is rechead - for example: dmgRed: 0.9 dmg: 4 -> 4 * 0.9 = 3.6 <- this will happen every time the range is reached
+		#Range: 0.1 ~ 20.0
+		aksRange = 14.0
+		#aksRangeDmgRed - This value will multiply gunDmg when bullet range is rechead - for example: dmgRed: 0.9 dmg: 4 -> 4 * 0.9 = 3.6 <- this will happen every time the range is reached
+		#Range: 0.1 ~ 20.0
+		aksRangeDmgRed = 0.9800000190734863
+		#aksInnacuracy
+		#Range: 0.01 ~ 20.0
+		aksInnacuracy = 0.10000000149011612
+		#aksMeleeDamage
+		#Range: 0.1 ~ 20.0
+		aksMeleeDamage = 4.0
+
+	[guns.Colt1911]
+		#colt1911Damage
+		#Range: 0.1 ~ 20.0
+		colt1911Damage = 3.0
+		#colt1911ShootTime
+		#Range: 0 ~ 20
+		colt1911ShootTime = 4
+		#colt1911Power
+		#Range: 0 ~ 200
+		colt1911Power = 8
+		#colt1911Range - This value will multiply gunDmg when bullet range is rechead - for example: dmgRed: 0.9 dmg: 4 -> 4 * 0.9 = 3.6 <- this will happen every time the range is reached
+		#Range: 0.1 ~ 20.0
+		colt1911Range = 6.0
+		#colt1911RangeDmgRed
+		#Range: 0.1 ~ 20.0
+		colt1911RangeDmgRed = 0.699999988079071
+		#colt1911Innacuracy
+		#Range: 0.01 ~ 20.0
+		colt1911Innacuracy = 0.10000000149011612
+		#colt1911MeleeDamage
+		#Range: 0.1 ~ 20.0
+		colt1911MeleeDamage = 4.0
+
+	[guns.Galil]
+		#galilDamage
+		#Range: 0.10000000149011612 ~ 20.0
+		galilDamage = 6.0
+		#galilShootTime
+		#Range: 0 ~ 20
+		galilShootTime = 3
+		#galilPower
+		#Range: 0 ~ 200
+		galilPower = 16
+		#galil - This value will multiply gunDmg when bullet range is rechead - for example: dmgRed: 0.9 dmg: 4 -> 4 * 0.9 = 3.6 <- this will happen every time the range is reached
+		#Range: 0.1 ~ 20.0
+		galilRange = 20.0
+		#galilRangeDmgRed
+		#Range: 0.1 ~ 20.0
+		galilRangeDmgRed = 0.9300000071525574
+		#galilInnacuracy
+		#Range: 0.01 ~ 20.0
+		galilInnacuracy = 0.10000000149011612
+		#galilMeleeDamage
+		#Range: 0.1 ~ 20.0
+		galilMeleeDamage = 6.0
+
+	[guns.IthacaModel37]
+		#ithacaModel37Damage
+		#Range: 0.10000000149011612 ~ 20.0
+		ithacaDamage = 2.0
+		#ithacaModel37ShootTime
+		#Range: 0 ~ 20
+		ithacaModel37ShootTime = 4
+		#ithacaModel37Power
+		#Range: 0 ~ 200
+		ithacaModel37Power = 8
+		#ithacaModel37 - This value will multiply gunDmg when bullet range is rechead - for example: dmgRed: 0.9 dmg: 4 -> 4 * 0.9 = 3.6 <- this will happen every time the range is reached
+		#Range: 0.1 ~ 20.0
+		ithacaModel37Range = 4.0
+		#ithacaModel37RangeDmgRed
+		#Range: 0.1 ~ 20.0
+		ithacaModel37RangeDmgRed = 0.4000000059604645
+		#ithacaModel37Innacuracy
+		#Range: 0.01 ~ 20.0
+		ithacaModel37Innacuracy = 2.0
+		#ithacaModel37MeleeDamage
+		#Range: 0.1 ~ 20.0
+		ithacaModel37MeleeDamage = 6.0
+
+	[guns.Kar98k]
+		#kar98kDamage
+		#Range: 0.10000000149011612 ~ 20.0
+		kar98kDamage = 12.0
+		#kar98kShootTime
+		#Range: 0 ~ 20
+		kar98kShootTime = 2
+		#kar98kPower
+		#Range: 0 ~ 200
+		kar98kPower = 16
+		#kar98k - This value will multiply gunDmg when bullet range is rechead - for example: dmgRed: 0.9 dmg: 4 -> 4 * 0.9 = 3.6 <- this will happen every time the range is reached
+		#Range: 0.1 ~ 20.0
+		kar98kRange = 20.0
+		#kar98kRangeDmgRed
+		#Range: 0.1 ~ 20.0
+		kar98kRangeDmgRed = 0.8999999761581421
+		#kar98kInnacuracy
+		#Range: 0.01 ~ 20.0
+		kar98kInnacuracy = 0.03999999910593033
+		#kar98kMeleeDamage
+		#Range: 0.1 ~ 20.0
+		kar98kMeleeDamage = 6.0
+
+	[guns.Mp40]
+		#mp40Damage
+		#Range: 0.10000000149011612 ~ 20.0
+		mp40Damage = 2.0
+		#mp40ShootTime
+		#Range: 0 ~ 20
+		mp40ShootTime = 3
+		#mp40Power
+		#Range: 0 ~ 200
+		mp40Power = 8
+		#mp40 - This value will multiply gunDmg when bullet range is rechead - for example: dmgRed: 0.9 dmg: 4 -> 4 * 0.9 = 3.6 <- this will happen every time the range is reached
+		#Range: 0.1 ~ 20.0
+		mp40Range = 8.0
+		#mp40RangeDmgRed
+		#Range: 0.1 ~ 20.0
+		mp40RangeDmgRed = 0.699999988079071
+		#mp40Innacuracy
+		#Range: 0.01 ~ 20.0
+		mp40Innacuracy = 0.10000000149011612
+		#mp40MeleeDamage
+		#Range: 0.1 ~ 20.0
+		mp40MeleeDamage = 4.0
+
+	[guns.Scorpion]
+		#scorpionDamage
+		#Range: 0.10000000149011612 ~ 20.0
+		scorpionDamage = 3.4000000953674316
+		#scorpionShootTime
+		#Range: 0 ~ 20
+		scorpionShootTime = 1
+		#scorpionPower
+		#Range: 0 ~ 200
+		scorpionPower = 9
+		#scorpion - This value will multiply gunDmg when bullet range is rechead - for example: dmgRed: 0.9 dmg: 4 -> 4 * 0.9 = 3.6 <- this will happen every time the range is reached
+		#Range: 0.1 ~ 20.0
+		scorpionRange = 7.0
+		#scorpionRangeDmgRed
+		#Range: 0.1 ~ 20.0
+		scorpionRangeDmgRed = 0.699999988079071
+		#scorpionInnacuracy
+		#Range: 0.01 ~ 20.0
+		scorpionInnacuracy = 0.30000001192092896
+		#scorpionMeleeDamage
+		#Range: 0.1 ~ 20.0
+		scorpionMeleeDamage = 4.0
+
+	[guns.Sten]
+		#stenDamage
+		#Range: 0.10000000149011612 ~ 20.0
+		stenDamage = 4.0
+		#stenShootTime
+		#Range: 0 ~ 20
+		stenShootTime = 2
+		#stenPower
+		#Range: 0 ~ 200
+		stenPower = 12
+		#sten - This value will multiply gunDmg when bullet range is rechead - for example: dmgRed: 0.9 dmg: 4 -> 4 * 0.9 = 3.6 <- this will happen every time the range is reached
+		#Range: 0.1 ~ 20.0
+		stenRange = 8.0
+		#stenRangeDmgRed
+		#Range: 0.1 ~ 20.0
+		stenRangeDmgRed = 0.800000011920929
+		#stenInnacuracy
+		#Range: 0.01 ~ 20.0
+		stenInnacuracy = 0.20000000298023224
+		#stenMeleeDamage
+		#Range: 0.1 ~ 20.0
+		stenMeleeDamage = 4.0
+
+	[guns.Thompson]
+		#thompsonDamage
+		#Range: 0.10000000149011612 ~ 20.0
+		thompsonDamage = 6.0
+		#thompsonShootTime
+		#Range: 0 ~ 20
+		thompsonShootTime = 2
+		#thompsonPower
+		#Range: 0 ~ 200
+		thompsonPower = 8
+		#thompson - This value will multiply gunDmg when bullet range is rechead - for example: dmgRed: 0.9 dmg: 4 -> 4 * 0.9 = 3.6 <- this will happen every time the range is reached
+		#Range: 0.1 ~ 20.0
+		thompsonRange = 9.0
+		#thompsonRangeDmgRed
+		#Range: 0.1 ~ 20.0
+		thompsonRangeDmgRed = 0.8999999761581421
+		#thompsonInnacuracy
+		#Range: 0.01 ~ 20.0
+		thompsonInnacuracy = 0.30000001192092896
+		#thompsonMeleeDamage
+		#Range: 0.1 ~ 20.0
+		thompsonMeleeDamage = 5.0
+
+	[guns.Winchester]
+		#winchesterDamage
+		#Range: 0.10000000149011612 ~ 20.0
+		winchesterDamage = 6.0
+		#winchesterShootTime
+		#Range: 0 ~ 20
+		winchesterShootTime = 2
+		#winchesterPower
+		#Range: 0 ~ 200
+		winchesterPower = 14
+		#winchester - This value will multiply gunDmg when bullet range is rechead - for example: dmgRed: 0.9 dmg: 4 -> 4 * 0.9 = 3.6 <- this will happen every time the range is reached
+		#Range: 0.1 ~ 20.0
+		winchesterRange = 20.0
+		#winchesterRangeDmgRed
+		#Range: 0.1 ~ 20.0
+		winchesterRangeDmgRed = 0.800000011920929
+		#winchesterInnacuracy
+		#Range: 0.01 ~ 20.0
+		winchesterInnacuracy = 0.10000000149011612
+		#winchesterMeleeDamage
+		#Range: 0.1 ~ 20.0
+		winchesterMeleeDamage = 6.0
+
