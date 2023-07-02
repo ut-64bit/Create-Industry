@@ -1,6 +1,6 @@
 // priority: 1
 
-let recipe = `recipe id`;
+let recipe = `recipe id`
 onEvent(`recipes`, event => {
     // toms_storage
     const deleteItem = [`toms_storage:ts.adv_wireless_terminal`, `toms_storage:ts.wireless_terminal`, `toms_storage:ts.inventory_hopper_basic`]

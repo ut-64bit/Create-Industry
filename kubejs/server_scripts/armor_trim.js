@@ -24,7 +24,7 @@ onEvent(`recipes`, event => {
 
     trim(`#forge:cobblestone/normal`, `coast`)
     trim(`#forge:sandstone`, `dune`)
-    trim(`endstone`, `eye`)
+    trim(`#forge:endstone`, `eye`)
     trim(`terracotta`, `host`)
     trim(`terracotta`, `raiser`)
     trim(`netherrack`, `rib`)
