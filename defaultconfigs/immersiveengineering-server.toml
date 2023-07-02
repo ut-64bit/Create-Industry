@@ -27,7 +27,7 @@
 	[wires.electrum]
 		#The maximum length of electrum wires
 		#Range: > 0
-		maxLength = 16
+		maxLength = 32
 		#The transfer rate of electrum wire in IF/t
 		#Range: > 0
 		transferRate = 8192
@@ -41,7 +41,7 @@
 	[wires.hv]
 		#The maximum length of hv wires
 		#Range: > 0
-		maxLength = 32
+		maxLength = 64
 		#The transfer rate of hv wire in IF/t
 		#Range: > 0
 		transferRate = 32768
@@ -75,7 +75,7 @@
 	[wires.insulated_electrum]
 		#The maximum length of insulated_electrum wires
 		#Range: > 0
-		maxLength = 16
+		maxLength = 32
 
 [machines]
 	#The base Flux that is output by the dynamo. This will be modified by the rotation modifier of the attached water- or windmill
@@ -203,7 +203,7 @@
 		fluid = 250
 		#A modifier to apply to the cloches total growing speed
 		#Range: 0.001 ~ 1000.0
-		growth_modifier = 1.0
+		growth_modifier = 0.5
 
 	[machines.lantern]
 		#Set this to false to disable the mob-spawn prevention of the Powered Lantern

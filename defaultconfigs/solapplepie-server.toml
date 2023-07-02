@@ -48,7 +48,7 @@
 	# Whether or not to reset food diversity on death, effectively losing all benefits.
 	#
 	#
-	resetOnDeath = false
+	resetOnDeath = true
 	#
 	# If true, eating foods outside of survival mode (e.g. creative/adventure) is not tracked.
 	#
