@@ -201,7 +201,6 @@ onEvent(`recipes`, event => {
 		n: `#forge:nuggets/iron`
 	})
 
-
 	// minecraft
 	MetalMaterials.forEach(material => {
 		event.replaceOutput({ type: `minecraft:smelting`, output: `#forge:ingots/${material}` }, `#forge:ingots/${material}`, `8x #forge:ingots/${material}`)
