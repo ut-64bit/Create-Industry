@@ -2,6 +2,10 @@
 
 onEvent(`item.registry`, event => {
 	event.create(`unprocessed_steel_ingot`, `create:sequenced_assembly`)
+	event.create(`steam_engine`)
+	event.create(`incomplete_steam_engine`, `create:sequenced_assembly`)
+	event.create(`electric_engine`)
+	event.create(`incomplete_electric_engine`, `create:sequenced_assembly`)
 
 	// immersiveengineering
 	event.create(`incomplete_component_iron`, `create:sequenced_assembly`)

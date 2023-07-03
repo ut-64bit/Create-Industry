@@ -23,7 +23,7 @@ onEvent(`jei.hide.items`, event => {
 	event.hide(`tconstruct:ender_slime_sling`)
 	event.hide(`tconstruct:ichor_slime_sling`)
 	event.hide(`tconstruct:sky_slime_sling`)
-	const hideCastTypes = [`plate`, `wire`, `gear`]
+	const hideCastTypes = [`plate`, `wire`]
 	hideCastTypes.forEach(type => {
 		event.hide(`tconstruct:${type}_red_sand_cast`)
 		event.hide(`tconstruct:${type}_sand_cast`)
@@ -40,6 +40,8 @@ onEvent(`jei.hide.items`, event => {
 
 onEvent('jei.add.items', event => {
 	event.add(`kubejs:blaze_core`)
+	event.add(`kubejs:steam_engine`)
+	event.add(`kubejs:electric_engine`)
 })
 
 onEvent(`item.tooltip`, tooltip => {

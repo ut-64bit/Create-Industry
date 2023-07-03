@@ -222,48 +222,6 @@ onEvent(`recipes`, event => {
 		[`clay_ball`, `#sand`, `gravel`]
 	)
 
-	// create
-	/* 合金をつくった時の出力を液体に変更 */
-	event.replaceOutput({ id: `alloyed:mixing/bronze_ingot` }, `alloyed:bronze_ingot`, Fluid.of(TC(`molten_bronze`), 90))
-	event.replaceOutput({ id: `alloyed:mixing/bronze_ingot_x3` }, `alloyed:bronze_ingot`, Fluid.of(TC(`molten_bronze`), 270))
-	event.replaceOutput({ id: `alloyed:mixing/steel_ingot` }, `alloyed:steel_ingot`, Fluid.of(TC(`molten_steel`), 270))
-	event.replaceOutput({ id: `create:mixing/brass_ingot` }, `create:brass_ingot`, Fluid.of(TC(`molten_brass`), 180))
-
-	/* 一部の歯車のレシピを削除 */
-	event.remove({ id: `extendedgears:smelting/half_shaft_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:blasting/half_shaft_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:smelting/large_half_shaft_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:blasting/large_half_shaft_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:smelting/shaftless_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:blasting/shaftless_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:smelting/large_shaftless_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:blasting/large_shaftless_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:smelting/steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:blasting/steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:smelting/large_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:blasting/large_steel_cogwheel_from_iron` })
-
-	/* 液体⇄インゴット */
-	let melt = (output, item, gem) => {
-		if (gem) {
-			event.recipes.create.compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 100))
-			event.recipes.create.mixing(Fluid.of(TC(`molten_${item}`), 100), `#forge:gems/${item}`).superheated()
-		} else {
-			event.recipes.create.compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 90))
-			event.recipes.create.mixing(Fluid.of(TC(`molten_${item}`), 90), `#forge:ingots/${item}`).heated()
-		}
-	}
-	melt(`iron_ingot`, `iron`, false)
-	melt(`gold_ingot`, `gold`, false)
-	melt(`create:brass_ingot`, `brass`, false)
-	melt(`alloyed:bronze_ingot`, `bronze`, false)
-	melt(`alloyed:steel_ingot`, `steel`, false)
-	melt(`diamond`, `diamond`, true)
-
-	/* 雑多なレシピを追加 */
-	event.recipes.create.emptying([`obsidian`, Fluid.of(`lava`, 250)], `magma_block`)
-	event.recipes.create.haunting(`netherrack`, `clay`)
-
 	// immersiveengineering
 	/* hammer */
 	event.replaceInput({ id: `immersiveengineering:crafting/hammer` }, `#forge:ingots/iron`, `#forge:ingots/steel`)
