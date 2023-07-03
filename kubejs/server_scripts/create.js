@@ -66,18 +66,6 @@ onEvent(`recipes`, event => {
         event.recipes.create.deploying(inter, [inter, '#forge:nuggets/brass'])
     ]).transitionalItem(inter).loops(3)
 
-    /* steam_engine */
-    event.remove({ id: `create:crafting/kinetics/steam_engine` })
-    event.shaped(`create:steam_engine`, [
-        `P`,
-        `A`,
-        `S`
-    ], {
-        P: `#forge:plates/gold`,
-        A: `create:andesite_alloy`,
-        S: `kubejs:steam_engine`
-    })
-
     /* electric_motor */
     event.remove({ id: `createaddition:mechanical_crafting/electric_motor` })
     event.recipes.create.mechanicalCrafting(`createaddition:electric_motor`, [
