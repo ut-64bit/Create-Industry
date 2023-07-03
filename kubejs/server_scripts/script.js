@@ -22,8 +22,7 @@ const deleteItems = [
 	TC(`wire_sand_cast`),
 	TC(`wire_red_sand_cast`),
 	IE(`blastbrick`),
-	IE(`alloybrick`),
-	IE(`blastbrick`),
+	IE(`alloybrick`)
 ]
 
 const colors = [
@@ -226,8 +225,10 @@ onEvent(`recipes`, event => {
 	)
 
 	// immersiveengineering
-	/* hammer */
-	event.replaceInput({ id: `immersiveengineering:crafting/hammer` }, `#forge:ingots/iron`, `#forge:ingots/steel`)
+	/* tools */
+	event.replaceInput({ output: IE(`hammer`) }, `#forge:ingots/iron`, `#forge:ingots/steel`)
+	event.replaceInput({ output: IE(`wirecutter`) }, `#forge:ingots/iron`, `#forge:ingots/steel`)
+	event.replaceInput({ output: IE(`screwdriver`) }, `#forge:rods/iron`, `#forge:rods/steel`)
 
 	/* component_iron */
 	event.remove({ id: `immersiveengineering:crafting/component_iron` })
@@ -249,28 +250,31 @@ onEvent(`recipes`, event => {
 		event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`])
 	]).transitionalItem(inter).loops(1)
 
+	/* dynamo */
 	event.remove({ id: `immersiveengineering:crafting/dynamo` })
 	event.shaped(IE(`dynamo`), [
-		`rer`,
-		`sls`
+		`ses`,
+		`rlr`,
+		`sss`
 	], {
-		r: `#forge:dusts/redstone`,
-		e: `kubejs:electric_engine`,
 		s: `#forge:ingots/steel`,
+		e: `kubejs:electric_engine`,
+		r: `#forge:dusts/redstone`,
 		l: IE(`coil_lv`),
 	})
 
+	/* blastbrick_reinforced */
 	event.recipes.create.mechanicalCrafting(Item.of(IE(`blastbrick_reinforced`), 3), [
 		` ppp `,
 		`pcscp`,
-		`psmsp`,
+		`psbsp`,
 		`pcscp`,
 		` ppp `
 	], {
 		p: `#forge:ingots/steel`,
 		c: `#forge:ingots/nether_brick`,
 		s: `#forge:ingots/brick`,
-		m: `magma_block`
+		b: `blaze_powder`
 	})
 
 	// delight
