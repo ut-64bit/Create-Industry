@@ -20,7 +20,10 @@ const deleteItems = [
 	TC(`plate_red_sand_cast`),
 	TC(`wire_cast`),
 	TC(`wire_sand_cast`),
-	TC(`wire_red_sand_cast`)
+	TC(`wire_red_sand_cast`),
+	IE(`blastbrick`),
+	IE(`alloybrick`),
+	IE(`blastbrick`),
 ]
 
 const colors = [
@@ -245,6 +248,30 @@ onEvent(`recipes`, event => {
 		event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`]),
 		event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`])
 	]).transitionalItem(inter).loops(1)
+
+	event.remove({ id: `immersiveengineering:crafting/dynamo` })
+	event.shaped(IE(`dynamo`), [
+		`rer`,
+		`sls`
+	], {
+		r: `#forge:dusts/redstone`,
+		e: `kubejs:electric_engine`,
+		s: `#forge:ingots/steel`,
+		l: IE(`coil_lv`),
+	})
+
+	event.recipes.create.mechanicalCrafting(Item.of(IE(`blastbrick_reinforced`), 3), [
+		` ppp `,
+		`pcscp`,
+		`psmsp`,
+		`pcscp`,
+		` ppp `
+	], {
+		p: `#forge:ingots/steel`,
+		c: `#forge:ingots/nether_brick`,
+		s: `#forge:ingots/brick`,
+		m: `magma_block`
+	})
 
 	// delight
 	/* 一部を除いたナイフのレシピを削除 */

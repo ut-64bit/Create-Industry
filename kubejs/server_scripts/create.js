@@ -81,6 +81,7 @@ onEvent(`recipes`, event => {
         S: `kubejs:steam_engine`
     })
 
+    /* electric_motor */
     event.remove({ id: `createaddition:mechanical_crafting/electric_motor` })
     event.recipes.create.mechanicalCrafting(`createaddition:electric_motor`, [
         `  A  `,
@@ -90,6 +91,22 @@ onEvent(`recipes`, event => {
     ], {
         A: `create:andesite_alloy`,
         B: `#forge:plates/brass`,
+        E: `kubejs:electric_engine`,
+        S: `createaddition:copper_spool`,
+        R: `#forge:rods/iron`,
+        C: `createaddition:capacitor`
+    })
+
+    /* alternator */
+    event.remove({ id: `createaddition:mechanical_crafting/alternator` })
+    event.recipes.create.mechanicalCrafting(`createaddition:alternator`, [
+        `  A  `,
+        ` IEI `,
+        `ISRSI`,
+        ` ICI `
+    ], {
+        A: `create:andesite_alloy`,
+        I: `#forge:plates/iron`,
         E: `kubejs:electric_engine`,
         S: `createaddition:copper_spool`,
         R: `#forge:rods/iron`,

@@ -17,6 +17,7 @@ onEvent(`jei.hide.items`, event => {
 
 	// oldguns
 	event.hide(`oldguns:iron_with_coal`)
+	event.hide(`immersiveengineering:blastbrick`)
 
 	// tconstruct
 	event.hide(`tconstruct:earth_slime_sling`)
