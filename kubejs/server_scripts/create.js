@@ -1,8 +1,5 @@
 // priority: 1
 
-const create = true
-if (!create) return
-
 /* func */
 let TC = (id) => `tconstruct:${id}`
 
@@ -49,7 +46,7 @@ const MetalMaterials = [
 ]
 
 /* var */
-let inter = ``;
+let inter = `inter`
 
 onEvent(`recipes`, event => {
     // create

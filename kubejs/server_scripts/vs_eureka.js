@@ -1,7 +1,9 @@
 // priority: 1
 
-const vs_eureka = false
-if (!vs_eureka) return
+const vs_eureka = false,
+	extendedgears = false;
+if (!vs_eureka || !extendedgears) return
+
 const colors = [
 	`black`,
 	`blue`,
@@ -32,7 +34,7 @@ const woods = [
 	`warped`
 ]
 
-let recipe = `recipe id`;
+let recipe = `recipe`
 onEvent(`recipes`, event => {
 	// ValkyrienSkies
 	/* balloon */
