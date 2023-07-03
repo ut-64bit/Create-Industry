@@ -110,6 +110,9 @@ onEvent(`recipes`, event => {
         C: `createaddition:capacitor`
     })
 
+    /* whisk */
+    event.replaceInput({ id: `create:crafting/kinetics/whisk` }, `#forge:plates/iron`, `#forge:rods/iron`)
+
     /* 合金をつくった時の出力を液体に変更 */
     event.replaceOutput({ id: `alloyed:mixing/bronze_ingot` }, `alloyed:bronze_ingot`, Fluid.of(TC(`molten_bronze`), 90))
     event.replaceOutput({ id: `alloyed:mixing/bronze_ingot_x3` }, `alloyed:bronze_ingot`, Fluid.of(TC(`molten_bronze`), 270))

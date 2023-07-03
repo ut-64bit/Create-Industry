@@ -133,7 +133,6 @@ onEvent(`recipes`, event => {
 	event.recipes.create.filling(`diamond_hoe`, [`iron_hoe`, Fluid.of(TC(`molten_diamond`), 100)])
 	event.recipes.create.filling(`diamond_sword`, [`iron_sword`, Fluid.of(TC(`molten_diamond`), 100)])
 
-
 	/* 防具のレシピを変更 */
 	let removeArmor = (material, removeInput) => {
 		event.remove({ output: `${material}_helmet` })
@@ -193,10 +192,20 @@ onEvent(`recipes`, event => {
 	event.recipes.create.filling(`diamond_leggings`, [`iron_leggings`, Fluid.of(TC(`molten_diamond`), 700)])
 	event.recipes.create.filling(`diamond_boots`, [`iron_boots`, Fluid.of(TC(`molten_diamond`), 400)])
 
+	/* rods */
+	event.shaped(`#forge:rods/iron`, [
+		`nn`,
+		`nn`,
+		`nn`
+	], {
+		n: `#forge:nuggets/iron`
+	})
+
+
 	// minecraft
-	/* 鋼鉄の変換レシピ */
-	event.shapeless(`alloyed:steel_ingot`, `#forge:ingots/steel`)
-	event.shapeless(IE(`ingot_steel`), `#forge:ingots/steel`)
+	MetalMaterials.forEach(material => {
+		event.replaceOutput({ type: `minecraft:smelting`, output: `#forge:ingots/${material}` }, `#forge:ingots/${material}`, `8x #forge:ingots/${material}`)
+	})
 
 	// oldguns
 	/* 銃器用鋼鉄のレシピを変更 */
