@@ -9,6 +9,7 @@ let TC = (id) => `tconstruct:${id}`
 let TS = (id) => `toms_storage:${id}`
 let IE = (id) => `immersiveengineering:${id}`
 
+/* const */
 const deleteItems = [
 	`oldguns:iron_with_coal`,
 	TC(`earth_slime_sling`),
@@ -24,7 +25,6 @@ const deleteItems = [
 	IE(`blastbrick`),
 	IE(`alloybrick`)
 ]
-
 const colors = [
 	`black`,
 	`blue`,
@@ -43,7 +43,6 @@ const colors = [
 	`white`,
 	`yellow`
 ]
-
 const woods = [
 	`oak`,
 	`dark_oak`,
@@ -54,7 +53,6 @@ const woods = [
 	`crimson`,
 	`warped`
 ]
-
 const MetalMaterials = [
 	`aluminum`,
 	`amethyst_bronze`,
@@ -94,6 +92,17 @@ const MetalMaterials = [
 	`tungsten`,
 	`uranium`,
 	`zinc`
+]
+const IEMetal = [
+	`aluminum`,
+	`constantan`,
+	`copper`,
+	`electrum`,
+	`lead`,
+	`nickel`,
+	`silver`,
+	`steel`,
+	`uranium`
 ]
 
 onEvent(`recipes`, event => {
@@ -201,9 +210,26 @@ onEvent(`recipes`, event => {
 		n: `#forge:nuggets/iron`
 	})
 
-	// minecraft
-	MetalMaterials.forEach(material => {
-		event.replaceOutput({ type: `minecraft:smelting`, output: `#forge:ingots/${material}` }, `#forge:ingots/${material}`, `8x #forge:ingots/${material}`)
+	IEMetal.forEach(material => {
+		event.remove({ id: IE(`crafting/ingot_${material}_to_storage_${material}`) })
+		event.recipes.create.mechanicalCrafting(IE(`storage_${material}`), [
+			`iii`,
+			`iIi`,
+			`iii`
+		], {
+			i: `#forge:ingots/${material}`,
+			I: IE(`ingot_${material}`)
+		})
+		event.remove({ id: IE(`crafting/nugget_${material}_to_ingot_${material}`) })
+		event.recipes.create.mechanicalCrafting(IE(`ingot_${material}`), [
+			`nnn`,
+			`nNn`,
+			`nnn`
+		], {
+			n: `#forge:nuggets/${material}`,
+			N: IE(`nugget_${material}`)
+		})
+
 	})
 
 	// oldguns
