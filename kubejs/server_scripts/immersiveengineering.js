@@ -10,8 +10,7 @@ onEvent(`recipes`, event => {
     /* component_iron */
     event.remove({ id: `immersiveengineering:crafting/component_iron` })
     inter = `kubejs:incomplete_component_iron`
-    event.recipes.create.sequencedAssembly(IE(`component_iron`), `#forge:rods/iron`, [
-        event.recipes.create.deploying(inter, [inter, IE(`wirecoil_copper`)]),
+    event.recipes.create.sequencedAssembly(IE(`component_iron`), `kubejs:copper_coil`, [
         event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
         event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
         event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`])
@@ -20,12 +19,14 @@ onEvent(`recipes`, event => {
     /* component_steel */
     event.remove({ id: `immersiveengineering:crafting/component_steel` })
     inter = `kubejs:incomplete_component_steel`
-    event.recipes.create.sequencedAssembly(IE(`component_steel`), `#forge:rods/iron`, [
-        event.recipes.create.deploying(inter, [inter, IE(`wirecoil_copper`)]),
+    event.recipes.create.sequencedAssembly(IE(`component_steel`), `kubejs:copper_coil`, [
         event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`]),
         event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`]),
         event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`])
     ]).transitionalItem(inter).loops(1)
+
+    /* copper_coil */
+    event.recipes.create.deploying(`kubejs:copper_coil`, [`#forge:rods/iron`, IE(`wirecoil_copper`)])
 
     /* dynamo */
     event.remove({ id: `immersiveengineering:crafting/dynamo` })

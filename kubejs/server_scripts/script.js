@@ -93,29 +93,6 @@ const MetalMaterials = [
 	`uranium`,
 	`zinc`
 ]
-const IEMetal = [
-	`aluminum`,
-	`constantan`,
-	`copper`,
-	`electrum`,
-	`lead`,
-	`nickel`,
-	`silver`,
-	`steel`,
-	`uranium`
-]
-const TCMetal = [
-	`amethyst_bronze`,
-	`cobalt`,
-	`copper`,
-	`hepatizon`,
-	`manyullyn`,
-	`netherite`,
-	`pig_iron`,
-	`queens_slime`,
-	`rose_gold`,
-	`slimesteel`
-]
 
 onEvent(`recipes`, event => {
 	// common
@@ -212,65 +189,6 @@ onEvent(`recipes`, event => {
 	event.recipes.create.filling(`diamond_chestplate`, [`iron_chestplate`, Fluid.of(TC(`molten_diamond`), 800)])
 	event.recipes.create.filling(`diamond_leggings`, [`iron_leggings`, Fluid.of(TC(`molten_diamond`), 700)])
 	event.recipes.create.filling(`diamond_boots`, [`iron_boots`, Fluid.of(TC(`molten_diamond`), 400)])
-
-	/* rods */
-	event.shaped(`#forge:rods/iron`, [
-		`nn`,
-		`nn`,
-		`nn`
-	], {
-		n: `#forge:nuggets/iron`
-	})
-
-	IEMetal.forEach(material => {
-		event.remove({ id: IE(`crafting/ingot_${material}_to_storage_${material}`) })
-		let compact = IE(`ingot_${material}`)
-		event.recipes.create.compacting(IE(`storage_${material}`), [compact, compact, compact, compact, compact, compact, compact, compact, compact])
-		event.recipes.create.mechanicalCrafting(IE(`storage_${material}`), [
-			`iii`,
-			`iIi`,
-			`iii`
-		], {
-			i: `#forge:ingots/${material}`,
-			I: IE(`ingot_${material}`)
-		})
-		event.remove({ id: IE(`crafting/nugget_${material}_to_ingot_${material}`) })
-		compact = IE(`nugget_${material}`)
-		event.recipes.create.compacting(IE(`ingot_${material}`), [compact, compact, compact, compact, compact, compact, compact, compact, compact])
-		event.recipes.create.mechanicalCrafting(IE(`ingot_${material}`), [
-			`nnn`,
-			`nNn`,
-			`nnn`
-		], {
-			n: `#forge:nuggets/${material}`,
-			N: IE(`nugget_${material}`)
-		})
-	})
-
-	TCMetal.forEach(material => {
-		event.remove({ id: TC(`common/materials/${material}_block_from_ingots`) })
-		let compact = `#forge:ingots/${material}`
-		event.recipes.create.compacting(TC(`${material}_block`), [compact, compact, compact, compact, compact, compact, compact, compact, compact])
-		event.recipes.create.mechanicalCrafting(TC(`${material}_block`), [
-			`iii`,
-			`iIi`,
-			`iii`
-		], {
-			i: `#forge:ingots/${material}`,
-			I: TC(`${material}_ingot`)
-		})
-		event.remove({ id: TC(`common/materials/${material}_ingot_from_nuggets`) })
-		compact = `#forge:nuggets/${material}`
-		event.recipes.create.compacting(TC(`${material}_ingot`), [compact, compact, compact, compact, compact, compact, compact, compact, compact])
-		event.recipes.create.mechanicalCrafting(TC(`${material}_ingot`), [
-			`nnn`,
-			`nNn`,
-			`nnn`
-		], {
-			n: `#forge:nuggets/${material}`,
-			N: TC(`${material}_nugget`)
-		})
-	})
 
 	// oldguns
 	/* 銃器用鋼鉄のレシピを変更 */

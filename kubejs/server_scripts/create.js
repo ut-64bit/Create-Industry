@@ -53,17 +53,18 @@ onEvent(`recipes`, event => {
     /* steam_engine */
     inter = `kubejs:incomplete_steam_engine`
     event.recipes.create.sequencedAssembly(`kubejs:steam_engine`, `#forge:plates/copper`, [
-        event.recipes.create.deploying(inter, [inter, 'create:propeller']),
-        event.recipes.create.deploying(inter, [inter, 'create:cogwheel']),
-        event.recipes.create.deploying(inter, [inter, '#forge:nuggets/copper'])
+        event.recipes.create.deploying(inter, [inter, `create:propeller`]),
+        event.recipes.create.deploying(inter, [inter, `create:cogwheel`]),
+        event.recipes.create.deploying(inter, [inter, `#forge:nuggets/copper`])
     ]).transitionalItem(inter).loops(3)
 
     /* electric_engine */
     inter = `kubejs:incomplete_electric_engine`
     event.recipes.create.sequencedAssembly(`kubejs:electric_engine`, `#forge:plates/brass`, [
-        event.recipes.create.deploying(inter, [inter, '#forge:wires/copper']),
-        event.recipes.create.deploying(inter, [inter, 'create:shaft']),
-        event.recipes.create.deploying(inter, [inter, '#forge:nuggets/brass'])
+        event.recipes.create.deploying(inter, [inter, `#forge:nuggets/steel`]),
+        event.recipes.create.deploying(inter, [inter, `createaddition:copper_spool`]),
+        event.recipes.create.deploying(inter, [inter, `create:shaft`]),
+        event.recipes.create.deploying(inter, [inter, `#forge:nuggets/brass`])
     ]).transitionalItem(inter).loops(3)
 
     /* electric_motor */
@@ -97,9 +98,6 @@ onEvent(`recipes`, event => {
         R: `#forge:rods/iron`,
         C: `createaddition:capacitor`
     })
-
-    /* whisk */
-    event.replaceInput({ id: `create:crafting/kinetics/whisk` }, `#forge:plates/iron`, `#forge:rods/iron`)
 
     /* 合金をつくった時の出力を液体に変更 */
     event.replaceOutput({ id: `alloyed:mixing/bronze_ingot` }, `alloyed:bronze_ingot`, Fluid.of(TC(`molten_bronze`), 90))
