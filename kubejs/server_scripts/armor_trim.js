@@ -1,5 +1,8 @@
 // priority: 1
 
+const armor_trims = true
+if (!armor_trims) return
+
 onEvent(`recipes`, event => {
     let trim = (base, trim) => {
         let inter = `kubejs:incomplete_${trim}_armor_trim_smithing_template`
