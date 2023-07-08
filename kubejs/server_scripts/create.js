@@ -128,15 +128,21 @@ onEvent(`recipes`, event => {
     melt(`iron_ingot`, `iron`, false)
     melt(`gold_ingot`, `gold`, false)
     melt(`create:brass_ingot`, `brass`, false)
+    /*
     melt(`alloyed:bronze_ingot`, `bronze`, false)
     melt(`alloyed:steel_ingot`, `steel`, false)
+    */
+    melt(`createindustry:steel_ingot`, `steel`, false)
     melt(`diamond`, `diamond`, true)
 
     /* 雑多なレシピを追加 */
     event.recipes.create.emptying([`obsidian`, Fluid.of(`lava`, 250)], `magma_block`)
     event.recipes.create.haunting(`netherrack`, `clay`)
+    event.replaceInput({id:`create:crafting/kinetics/whisk`},`#forge:plates/iron`,`#forge:rods/iron`)
+    /*
     event.replaceOutput({ id: `createindustry:mixing/steel_ingot` }, `createindustry:steel_ingot`, Item.of(`alloyed:steel_ingot`, 3))
     event.replaceOutput({ id: `alloyed:mixing/steel_ingot` }, `createindustry:steel_ingot`, Item.of(`alloyed:steel_ingot`, 1))
+    */
 })
 
 onEvent(`item.tags`, event => {

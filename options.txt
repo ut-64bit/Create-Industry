@@ -36,8 +36,8 @@ ao:2
 prioritizeChunkUpdates:0
 biomeBlendRadius:2
 renderClouds:true
-resourcePacks:["vanilla","mod_resources","file/[1.3] Enhanced Boss Bars.zip","file/Zen Font.zip"]
-incompatibleResourcePacks:["file/Zen Font.zip"]
+resourcePacks:["vanilla","mod_resources","file/[1.3] Enhanced Boss Bars.zip","file/SmoothFont_1.18.zip"]
+incompatibleResourcePacks:["file/SmoothFont_1.18.zip"]
 lastServer:
 lang:ja_jp
 soundDevice:
@@ -66,10 +66,10 @@ tutorialStep:none
 mouseWheelSensitivity:1.0
 rawMouseInput:true
 glDebugVerbosity:1
-skipMultiplayerWarning:false
+skipMultiplayerWarning:true
 skipRealms32bitWarning:false
 hideMatchedNames:true
-joinedFirstServer:false
+joinedFirstServer:true
 hideBundleTutorial:false
 syncChunkWrites:true
 showAutosaveIndicator:true
@@ -171,17 +171,20 @@ key_key.jei.closeRecipeGui:key.keyboard.escape
 key_key.jei.copy.recipe.id:key.keyboard.c
 key_key.immersivepetroleum.projector.flip:key.keyboard.unknown
 key_key.entityculling.toggle:key.keyboard.unknown
-key_placebo.toggleTrails:key.keyboard.unknown
 key_treechop.key.toggle_chopping:key.keyboard.unknown
+key_placebo.toggleTrails:key.keyboard.unknown
 key_treechop.key.toggle_felling:key.keyboard.unknown
 key_treechop.key.cycle_sneak_behavior:key.keyboard.unknown
 key_treechop.key.open_settings_overlay:key.keyboard.unknown
 key_placebo.toggleWings:key.keyboard.unknown
-key_key.solapplepie.open_food_book:key.keyboard.unknown
 key_key.oldguns.reload:key.keyboard.r
 key_key.oldguns.kickback:key.keyboard.unknown
 key_key.oldguns.inspectanim:key.keyboard.left.alt
 key_key.oldguns.attachments:key.keyboard.z
+key_key.solapplepie.open_food_book:key.keyboard.unknown
+key_iris.keybind.reload:key.keyboard.r
+key_iris.keybind.toggleShaders:key.keyboard.k
+key_iris.keybind.shaderPackSelection:key.keyboard.o
 key_fpsreducer.key.openGui:key.keyboard.unknown
 key_fpsreducer.key.forceIdle:key.keyboard.pause
 key_key.curios.open.desc:key.keyboard.unknown
@@ -189,13 +192,13 @@ key_framedblocks.key.update_cull:key.keyboard.unknown
 key_framedblocks.key.wipe_cache:key.keyboard.unknown
 key_key.toms_storage.open_terminal:key.keyboard.unknown
 key_key.immersiveengineering.magnetEquip:key.keyboard.s
+key_create.keyinfo.toolmenu:key.keyboard.left.alt
+key_create.keyinfo.toolbelt:key.keyboard.left.alt
 key_key.immersiveengineering.railgunZoom:key.mouse.middle
 key_key.immersiveengineering.chemthrowerSwitch:key.keyboard.unknown
 key_key.valkyrienskies.ship_down:key.keyboard.v
 key_key.valkyrienskies.ship_cruise:key.keyboard.c
 key_options.narrator:key.keyboard.unknown
-key_create.keyinfo.toolmenu:key.keyboard.left.alt
-key_create.keyinfo.toolbelt:key.keyboard.left.alt
 key_key.zoom:key.keyboard.unknown
 key_key.tconstruct.helmet_interact:key.keyboard.unknown
 key_key.tconstruct.leggings_interact:key.keyboard.i
