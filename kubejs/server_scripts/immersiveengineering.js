@@ -1,5 +1,7 @@
 // priority: 1
 
+let IE = (id) => `immersiveengineering:${id}`
+
 onEvent(`recipes`, event => {
     // immersiveengineering
     /* tools */

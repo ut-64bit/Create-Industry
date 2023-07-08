@@ -17,7 +17,10 @@ onEvent(`jei.hide.items`, event => {
 
 	// oldguns
 	event.hide(`oldguns:iron_with_coal`)
+
+	// immersiveengineering
 	event.hide(`immersiveengineering:blastbrick`)
+	event.hide(`immersiveengineering:alloybrick`)
 
 	// tconstruct
 	event.hide(`tconstruct:earth_slime_sling`)
@@ -35,25 +38,23 @@ onEvent(`jei.hide.items`, event => {
 	event.hide(`tom_storage:ts.adv_wireless_terminal`)
 	event.hide(`tom_storage:ts.wireless_terminal`)
 	event.hide(`tom_storage:ts.inventory_hopper_basic`)
-
-	// 
 })
 
-onEvent('jei.add.items', event => {
+onEvent(`jei.add.items`, event => {
 	event.add(`kubejs:blaze_core`)
 	event.add(`kubejs:steam_engine`)
 	event.add(`kubejs:electric_engine`)
 })
 
 onEvent(`item.tooltip`, tooltip => {
-	const mags = [`oldguns:mags/asval_mag`, `oldguns:mags/aks-74u_mag`, `oldguns:mags/sten_mag`, `oldguns:mags/mp40_mag`, `oldguns:mags/luger_mag`, `oldguns:mags/thompson_drum_mag`, `oldguns:mags/thompson_mag`, `oldguns:mags/colt_mag`]
+	const mags = [`oldguns:mp40_mag`, `oldguns:aks-74u_mag`, `oldguns:colt1911_mag`, `oldguns:galil_mag`, `oldguns:sten_mag`, `oldguns:scorpion_mag`, `oldguns:thompson_mag`]
 	mags.forEach(mag => {
 		tooltip.addAdvanced(mag, (item, advanced, text) => {
 			let bullets = item.nbt?.bullets
 			if (bullets) {
-				text.add(`Bullet: ${bullets}`)
+				text.add(`Bullets: ${bullets}`)
 			} else {
-				text.add(`Bullet: 0`)
+				text.add(`Bullets: ?`)
 			}
 		})
 	})

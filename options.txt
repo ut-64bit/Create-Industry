@@ -36,8 +36,8 @@ ao:2
 prioritizeChunkUpdates:0
 biomeBlendRadius:2
 renderClouds:true
-resourcePacks:["vanilla","mod_resources"]
-incompatibleResourcePacks:[]
+resourcePacks:["vanilla","mod_resources","file/[1.3] Enhanced Boss Bars.zip","file/Zen Font.zip"]
+incompatibleResourcePacks:["file/Zen Font.zip"]
 lastServer:
 lang:ja_jp
 soundDevice:
@@ -177,25 +177,26 @@ key_treechop.key.toggle_felling:key.keyboard.unknown
 key_treechop.key.cycle_sneak_behavior:key.keyboard.unknown
 key_treechop.key.open_settings_overlay:key.keyboard.unknown
 key_placebo.toggleWings:key.keyboard.unknown
-key_key.solapplepie.open_food_book:key.keyboard.n
+key_key.solapplepie.open_food_book:key.keyboard.unknown
 key_key.oldguns.reload:key.keyboard.r
 key_key.oldguns.kickback:key.keyboard.unknown
-key_key.oldguns.look:key.keyboard.left.alt
+key_key.oldguns.inspectanim:key.keyboard.left.alt
 key_key.oldguns.attachments:key.keyboard.z
-key_key.oldguns.getoutmag:key.keyboard.u
+key_fpsreducer.key.openGui:key.keyboard.unknown
+key_fpsreducer.key.forceIdle:key.keyboard.pause
 key_key.curios.open.desc:key.keyboard.unknown
+key_framedblocks.key.update_cull:key.keyboard.unknown
+key_framedblocks.key.wipe_cache:key.keyboard.unknown
+key_key.toms_storage.open_terminal:key.keyboard.unknown
 key_key.immersiveengineering.magnetEquip:key.keyboard.s
 key_key.immersiveengineering.railgunZoom:key.mouse.middle
 key_key.immersiveengineering.chemthrowerSwitch:key.keyboard.unknown
-key_framedblocks.key.update_cull:key.keyboard.f9
-key_framedblocks.key.wipe_cache:key.keyboard.unknown
-key_key.toms_storage.open_terminal:key.keyboard.b
+key_key.valkyrienskies.ship_down:key.keyboard.v
+key_key.valkyrienskies.ship_cruise:key.keyboard.c
 key_options.narrator:key.keyboard.unknown
 key_create.keyinfo.toolmenu:key.keyboard.left.alt
 key_create.keyinfo.toolbelt:key.keyboard.left.alt
 key_key.zoom:key.keyboard.unknown
-key_key.cofh.mode_change_increment:key.keyboard.unknown
-key_key.cofh.mode_change_decrement:key.keyboard.unknown
 key_key.tconstruct.helmet_interact:key.keyboard.unknown
 key_key.tconstruct.leggings_interact:key.keyboard.i
 soundCategory_master:1.0

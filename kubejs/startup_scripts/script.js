@@ -34,6 +34,9 @@ onEvent(`item.registry`, event => {
 	event.create(`blaze_core`)
 })
 
-onEvent(`block.registry`, event => {
-	// Register new blocks here
+onEvent(`item.modification`, event => {
+	const mags = [`oldguns:mp40_mag`, `oldguns:aks-74u_mag`, `oldguns:colt1911_mag`, `oldguns:galil_mag`, `oldguns:sten_mag`, `oldguns:scorpion_mag`, `oldguns:thompson_mag`]
+	mags.forEach(mag => {
+		event.modify(mag, item => item.maxStackSize = 1)
+	})
 })

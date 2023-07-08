@@ -4,46 +4,48 @@
 let TC = (id) => `tconstruct:${id}`
 
 /* const */
-const MetalMaterials = [
-    `aluminum`,
-    `amethyst_bronze`,
-    `brass`,
-    `bronze`,
-    `cobalt`,
-    `constantan`,
-    `copper`,
-    `electrum`,
-    `emerald`,
-    `enderium`,
-    `gold`,
-    `hepatizon`,
-    `inlet`,
-    `iron`,
-    `knightslime`,
-    `lead`,
-    `lumium`,
-    `manyullyn`,
-    `molten_debris`,
-    `netherite`,
-    `nickel`,
-    `osmium`,
-    `pewter`,
-    `pig_iron`,
-    `platinum`,
-    `queens_slime`,
-    `refined_glowstone`,
-    `refined_obsidian`,
-    `rose_gold`,
-    `signalum`,
-    `silver`,
-    `slimesteel`,
-    `soulsteel`,
-    `steel`,
-    `tin`,
-    `tungsten`,
-    `uranium`,
-    `zinc`
-]
+/**
+ * const MetalMaterials = [
+ *     `aluminum`,
+ *     `amethyst_bronze`,
+ *     `brass`,
+ *     `bronze`,
+ *     `cobalt`,
+ *     `constantan`,
+ *     `copper`,
+ *     `electrum`,
+ *     `emerald`,
+ *     `enderium`,
+ *     `gold`,
+ *     `hepatizon`,
+ *     `inlet`,
+ *     `iron`,
+ *     `knightslime`,
+ *     `lead`,
+ *     `lumium`,
+ *     `manyullyn`,
+ *     `molten_debris`,
+ *     `netherite`,
+ *     `nickel`,
+ *     `osmium`,
+ *     `pewter`,
+ *     `pig_iron`,
+ *     `platinum`,
+ *     `queens_slime`,
+ *     `refined_glowstone`,
+ *     `refined_obsidian`,
+ *     `rose_gold`,
+ *     `signalum`,
+ *     `silver`,
+ *     `slimesteel`,
+ *     `soulsteel`,
+ *     `steel`,
+ *     `tin`,
+ *     `tungsten`,
+ *     `uranium`,
+ *     `zinc`
+ * ]
+ */
 
 /* var */
 let inter = `inter`
@@ -99,12 +101,6 @@ onEvent(`recipes`, event => {
         C: `createaddition:capacitor`
     })
 
-    /* 合金をつくった時の出力を液体に変更 */
-    event.replaceOutput({ id: `alloyed:mixing/bronze_ingot` }, `alloyed:bronze_ingot`, Fluid.of(TC(`molten_bronze`), 90))
-    event.replaceOutput({ id: `alloyed:mixing/bronze_ingot_x3` }, `alloyed:bronze_ingot`, Fluid.of(TC(`molten_bronze`), 270))
-    event.replaceOutput({ id: `alloyed:mixing/steel_ingot` }, `alloyed:steel_ingot`, Fluid.of(TC(`molten_steel`), 270))
-    event.replaceOutput({ id: `create:mixing/brass_ingot` }, `create:brass_ingot`, Fluid.of(TC(`molten_brass`), 180))
-
     /* 一部の歯車のレシピを削除 */
     event.remove({ id: `extendedgears:smelting/half_shaft_steel_cogwheel_from_iron` })
     event.remove({ id: `extendedgears:blasting/half_shaft_steel_cogwheel_from_iron` })
@@ -139,4 +135,10 @@ onEvent(`recipes`, event => {
     /* 雑多なレシピを追加 */
     event.recipes.create.emptying([`obsidian`, Fluid.of(`lava`, 250)], `magma_block`)
     event.recipes.create.haunting(`netherrack`, `clay`)
+    event.replaceOutput({ id: `createindustry:mixing/steel_ingot` }, `createindustry:steel_ingot`, Item.of(`alloyed:steel_ingot`, 3))
+    event.replaceOutput({ id: `alloyed:mixing/steel_ingot` }, `createindustry:steel_ingot`, Item.of(`alloyed:steel_ingot`, 1))
+})
+
+onEvent(`item.tags`, event => {
+    event.add(`vs_eureka:balloons`, `vs_eureka:balloon`)
 })

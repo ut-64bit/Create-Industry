@@ -25,34 +25,36 @@ const deleteItems = [
 	IE(`blastbrick`),
 	IE(`alloybrick`)
 ]
-const colors = [
-	`black`,
-	`blue`,
-	`brown`,
-	`cyan`,
-	`gray`,
-	`green`,
-	`light_blue`,
-	`light_gray`,
-	`lime`,
-	`magenta`,
-	`orange`,
-	`pink`,
-	`purple`,
-	`red`,
-	`white`,
-	`yellow`
-]
-const woods = [
-	`oak`,
-	`dark_oak`,
-	`spruce`,
-	`birch`,
-	`jungle`,
-	`acacia`,
-	`crimson`,
-	`warped`
-]
+/**
+ * const colors = [
+ * 	`black`,
+ * 	`blue`,
+ * 	`brown`,
+ * 	`cyan`,
+ * 	`gray`,
+ * 	`green`,
+ * 	`light_blue`,
+ * 	`light_gray`,
+ * 	`lime`,
+ * 	`magenta`,
+ * 	`orange`,
+ * 	`pink`,
+ * 	`purple`,
+ * 	`red`,
+ * 	`white`,
+ * 	`yellow`
+ * ]
+ * const woods = [
+ * 	`oak`,
+ * 	`dark_oak`,
+ * 	`spruce`,
+ * 	`birch`,
+ * 	`jungle`,
+ * 	`acacia`,
+ * 	`crimson`,
+ * 	`warped`
+ * ]
+ */
 const MetalMaterials = [
 	`aluminum`,
 	`amethyst_bronze`,

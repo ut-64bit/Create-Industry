@@ -1,8 +1,6 @@
 // priority: 1
 
-const vs_eureka = false,
-	extendedgears = false;
-if (!vs_eureka || !extendedgears) return
+const vs_eureka = true
 
 const colors = [
 	`black`,
@@ -36,6 +34,8 @@ const woods = [
 
 let recipe = `recipe`
 onEvent(`recipes`, event => {
+	if (!vs_eureka) return
+
 	// ValkyrienSkies
 	/* balloon */
 	event.remove({ id: `vs_eureka:balloon_leather` })
@@ -54,15 +54,13 @@ onEvent(`recipes`, event => {
 		K: `dried_kelp`,
 		S: `#forge:string`
 	})
-	colors.forEach(color => {
-		event.shaped(`vs_eureka:${color}_balloon`,
-			[
-				` s `,
-				`s s`,
-				` s `
-			], {
-			s: `create:${color}_sail`
-		})
+	event.shaped(`vs_eureka:balloon`,
+		[
+			` s `,
+			`s s`,
+			` s `
+		], {
+		s: `create:white_sail`
 	})
 
 	/* anchor */
@@ -110,7 +108,7 @@ onEvent(`recipes`, event => {
 				`RCP`,
 				` I `
 			], {
-			B: `extendedgears:${wood}_cogwheel`,
+			B: `create:cogwheel`,
 			R: `create:rope_pulley`,
 			C: `create:railway_casing`,
 			P: `${wood}_planks`,
@@ -120,10 +118,12 @@ onEvent(`recipes`, event => {
 })
 
 onEvent(`item.tags`, event => {
+	if (!vs_eureka) return
+
 	// eureka
-	event.add(`vs_eureka:balloons`, `vs_eureka:bolloon`)
+	event.add(`vs_eureka:balloons`, `vs_eureka:balloon`)
 	colors.forEach(color => {
-		event.add(`vs_eureka:balloons`, `vs_eureka:${color}_bolloon`)
+		event.add(`vs_eureka:balloons`, `vs_eureka:${color}_balloon`)
 	})
 	woods.forEach(wood => {
 		event.add(`vs_eureka:ship_helms`, `vs_eureka:${wood}_ship_helm`)
