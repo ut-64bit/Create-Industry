@@ -3,11 +3,11 @@
 /lightspeed-cache
 /logs
 /minecraftinstance.json
-/rhino.local.properties
 /saves
 /schematics
 /screenshots
 /usercache.json
 /usernamecache.json
-/journeymap/data
+/journeymap/data/
 /journeymap/journeymap.log
+/config/jei/world
