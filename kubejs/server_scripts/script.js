@@ -127,6 +127,11 @@ onEvent(`recipes`, event => {
 	event.smithing(`iron_shovel`, `golden_shovel`, `iron_ingot`)
 	event.smithing(`iron_hoe`, `golden_hoe`, `iron_ingot`)
 	event.smithing(`iron_sword`, `golden_sword`, `iron_ingot`)
+	event.smithing(`diamond_pickaxe`, `iron_pickaxe`, `diamond`)
+	event.smithing(`diamond_axe`, `iron_axe`, `diamond`)
+	event.smithing(`diamond_shovel`, `iron_shovel`, `diamond`)
+	event.smithing(`diamond_hoe`, `iron_hoe`, `diamond`)
+	event.smithing(`diamond_sword`, `iron_sword`, `diamond`)
 	event.recipes.create.filling(`diamond_pickaxe`, [`iron_pickaxe`, Fluid.of(TC(`molten_diamond`), 100)])
 	event.recipes.create.filling(`diamond_axe`, [`iron_axe`, Fluid.of(TC(`molten_diamond`), 100)])
 	event.recipes.create.filling(`diamond_shovel`, [`iron_shovel`, Fluid.of(TC(`molten_diamond`), 100)])
@@ -210,6 +215,9 @@ onEvent(`recipes`, event => {
 		event.remove({ type: TC(`casting_table`), output: `#forge:wire/${material}` })
 	})
 
+	/* 燃え盛る血液 */
+	event.recipes.create.mixing(Fluid.of(`tconstruct:blazing_blood`, 200), `kubejs:blaze_core`).superheated()
+
 	/* グラウトのレシピを変更 */
 	event.remove({ id: `tconstruct:smeltery/seared/grout_multiple` })
 	event.remove({ id: `tconstruct:smeltery/seared/grout` })
@@ -217,6 +225,12 @@ onEvent(`recipes`, event => {
 		[`2x tconstruct:grout`, Item.of(`tconstruct:grout`).withChance(0.5)],
 		[`clay_ball`, `#sand`, `gravel`]
 	)
+	/* ネザーグラウトのレシピを変更 */
+	event.remove({ id: `tconstruct:smeltery/scorched/nether_grout` })
+	event.recipes.create.mixing(
+		[`2x tconstruct:nether_grout`, Item.of(`tconstruct:nether_grout`).withChance(0.5)],
+		[`magma_cream`, `#minecraft:soul_fire_base_blocks`, `gravel`]
+	).heated()
 
 	// delight
 	/* 一部を除いたナイフのレシピを削除 */
@@ -271,9 +285,17 @@ onEvent(`recipes`, event => {
 	event.recipes.create.filling(Item.of(`farmersdelight:diamond_knife`), [`#farmersdelight:tools/knives`, Fluid.of(TC(`molten_diamond`), 100)])
 })
 
-onEvent("lootjs", (event) => {
+onEvent("lootjs", event => {
 	event.addLootTableModifier(`minecraft:blocks/grass`)
-		.removeLoot(`wheat_seeds`);
+		.removeLoot(`wheat_seeds`)
 	event.addLootTableModifier(`minecraft:blocks/tall_grass`)
-		.removeLoot(`wheat_seeds`);
-});
+		.removeLoot(`wheat_seeds`)
+})
+
+onEvent('entity.loot_tables', event => {
+	event.modifyEntity('minecraft:blaze', table => {
+		table.addPool(pool => {
+			pool.addItem('kubejs:blaze_core').randomChance(0.1)
+		})
+	})
+})

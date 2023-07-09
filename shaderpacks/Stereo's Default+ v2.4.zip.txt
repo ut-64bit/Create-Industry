@@ -1,5 +1,0 @@
-#Sun Jul 09 11:59:58 GMT+09:00 2023
-shadowMapResolution=256
-WavingLiquids=false
-TransparentShadowHardness=0.5
-ShadowSamples=1
