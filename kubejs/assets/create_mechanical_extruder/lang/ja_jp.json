@@ -1,0 +1,9 @@
+{
+  "block.create_mechanical_extruder.mechanical_extruder": "メカニカルエクストルーダー",
+  "create.recipe.extruding": "押し出し",
+  "create_mechanical_extruder.ponder.extruder.header": "ブロックの生成",
+  "create_mechanical_extruder.ponder.extruder.text_1": "エクストルーダーは回転力を利用してブロックを生成します",
+  "create_mechanical_extruder.ponder.extruder.text_2": "左右と下のブロックにより生成物が異なります",
+  "create_mechanical_extruder.ponder.extruder.text_3": "処理が完了したら、右クリックで成果物を取り出せます",
+  "create_mechanical_extruder.ponder.extruder.text_4": "また、搬出は自動化することも可能です"
+}

@@ -1,0 +1,22 @@
+{
+	"item.oldguns.guns.galil": "Galil",
+	"item.oldguns.guns.galil_barrel": "Galil Barrel",
+	"item.oldguns.guns.galil_body": "Galil Body",
+	"item.oldguns.guns.galil_stock": "Galil Stock",
+	"item.oldguns.mags.galil_mag": "Galil Mag",
+	"item.oldguns.guns.mp5": "MP5",
+	"item.oldguns.guns.mp5_barrel": "MP5 Barrel",
+	"item.oldguns.guns.mp5_body": "MP5 Body",
+	"item.oldguns.guns.mp5_stock": "MP5 Stock",
+	"item.oldguns.mags.mp5_mag": "MP5 Mag",
+	"item.oldguns.guns.bizon": "PP-19 Bizon",
+	"item.oldguns.guns.bizon_barrel": "PP-19 Bizon Barrel",
+	"item.oldguns.guns.bizon_body": "PP-19 Bizon Body",
+	"item.oldguns.guns.bizon_stock": "PP-19 Bizon Stock",
+	"item.oldguns.mags.bizon_mag": "PP-19 Bizon Mag",
+	"item.oldguns.guns.skorpion": "Skorpion",
+	"item.oldguns.guns.skorpion_barrel": "Skorpion Barrel",
+	"item.oldguns.guns.skorpion_body": "Skorpion Body",
+	"item.oldguns.guns.skorpion_stock": "Skorpion Stock",
+	"item.oldguns.mags.skorpion_mag": "Skorpion Mag"
+}
