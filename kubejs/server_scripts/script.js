@@ -9,7 +9,7 @@ let TC = (id) => `tconstruct:${id}`
 let TS = (id) => `toms_storage:${id}`
 let IE = (id) => `immersiveengineering:${id}`
 
-/* const */
+// #region const
 const deleteItems = [
 	`oldguns:iron_with_coal`,
 	TC(`earth_slime_sling`),
@@ -25,36 +25,6 @@ const deleteItems = [
 	IE(`blastbrick`),
 	IE(`alloybrick`)
 ]
-/**
- * const colors = [
- * 	`black`,
- * 	`blue`,
- * 	`brown`,
- * 	`cyan`,
- * 	`gray`,
- * 	`green`,
- * 	`light_blue`,
- * 	`light_gray`,
- * 	`lime`,
- * 	`magenta`,
- * 	`orange`,
- * 	`pink`,
- * 	`purple`,
- * 	`red`,
- * 	`white`,
- * 	`yellow`
- * ]
- * const woods = [
- * 	`oak`,
- * 	`dark_oak`,
- * 	`spruce`,
- * 	`birch`,
- * 	`jungle`,
- * 	`acacia`,
- * 	`crimson`,
- * 	`warped`
- * ]
- */
 const MetalMaterials = [
 	`aluminum`,
 	`amethyst_bronze`,
@@ -95,6 +65,7 @@ const MetalMaterials = [
 	`uranium`,
 	`zinc`
 ]
+// #endregion
 
 onEvent(`recipes`, event => {
 	// common
@@ -102,7 +73,7 @@ onEvent(`recipes`, event => {
 		event.remove([{ output: `${item}` }, { input: `${item}` }])
 	})
 
-	/* バニラ型のツールのレシピを変更 */
+	// #region バニラ型のツールのレシピを変更
 	let removeTool = (material, removeInput) => {
 		event.remove({ output: `${material}_pickaxe` })
 		event.remove({ output: `${material}_axe` })
@@ -137,8 +108,10 @@ onEvent(`recipes`, event => {
 	event.recipes.create.filling(`diamond_shovel`, [`iron_shovel`, Fluid.of(TC(`molten_diamond`), 100)])
 	event.recipes.create.filling(`diamond_hoe`, [`iron_hoe`, Fluid.of(TC(`molten_diamond`), 100)])
 	event.recipes.create.filling(`diamond_sword`, [`iron_sword`, Fluid.of(TC(`molten_diamond`), 100)])
+	// #endregion
 
-	/* 防具のレシピを変更 */
+
+	// #region 防具のレシピを変更
 	let removeArmor = (material, removeInput) => {
 		event.remove({ output: `${material}_helmet` })
 		event.remove({ output: `${material}_chestplate` })
@@ -196,9 +169,10 @@ onEvent(`recipes`, event => {
 	event.recipes.create.filling(`diamond_chestplate`, [`iron_chestplate`, Fluid.of(TC(`molten_diamond`), 800)])
 	event.recipes.create.filling(`diamond_leggings`, [`iron_leggings`, Fluid.of(TC(`molten_diamond`), 700)])
 	event.recipes.create.filling(`diamond_boots`, [`iron_boots`, Fluid.of(TC(`molten_diamond`), 400)])
+	// #endregion
 
 	// oldguns
-	/* 銃器用鋼鉄のレシピを変更 */
+	// #region 銃器用鋼鉄のレシピを変更
 	event.remove({ output: `oldguns:steel_ingot` })
 	let inter = `kubejs:unprocessed_steel_ingot`
 	event.recipes.create.sequencedAssembly(`oldguns:steel_ingot`, `#forge:ingots/steel`, [
@@ -207,36 +181,47 @@ onEvent(`recipes`, event => {
 		event.recipes.create.pressing(inter, inter),
 		event.recipes.create.filling(inter, [inter, Fluid.of(`water`, 500)]),
 	]).transitionalItem(inter).loops(1)
+	// #endregion
 
 	// tconstruct
-	/* 一部のキャストレシピを削除 */
+	// #region 一部のキャストレシピを削除
 	MetalMaterials.forEach(material => {
 		event.remove({ type: TC(`casting_table`), output: `#forge:plates/${material}` })
 		event.remove({ type: TC(`casting_table`), output: `#forge:wire/${material}` })
 	})
+	// #endregion
 
-	/* 燃え盛る血液 */
+	// 燃え盛る血液
 	event.recipes.create.mixing(Fluid.of(`tconstruct:blazing_blood`, 200), `kubejs:blaze_core`).superheated()
 
-	/* グラウトのレシピを変更 */
+	// #region グラウトのレシピを変更
 	event.remove({ id: `tconstruct:smeltery/seared/grout_multiple` })
 	event.remove({ id: `tconstruct:smeltery/seared/grout` })
 	event.recipes.create.mixing(
 		[`2x tconstruct:grout`, Item.of(`tconstruct:grout`).withChance(0.5)],
 		[`clay_ball`, `#sand`, `gravel`]
 	)
-	/* ネザーグラウトのレシピを変更 */
+	// #endregion
+
+	// #region ネザーグラウトのレシピを変更
 	event.remove({ id: `tconstruct:smeltery/scorched/nether_grout` })
 	event.recipes.create.mixing(
 		[`2x tconstruct:nether_grout`, Item.of(`tconstruct:nether_grout`).withChance(0.5)],
 		[`magma_cream`, `#minecraft:soul_fire_base_blocks`, `gravel`]
 	).heated()
+	// #endregion
 
 	// delight
-	/* 一部を除いたナイフのレシピを削除 */
-	event.remove({ output: `#farmersdelight:tools/knives`, not: [{ output: `allyed:steel_knife` }, { output: `delightful:experience_knife` }, { output: `delightful:gilded_quartz_knife` }, { output: `farmersdelight:netherite_knife` }] })
+	// #region 一部を除いたナイフのレシピを削除
+		event.remove({id:`delightful:knives/silver_knife`})
+		event.remove({id:`delightful:knives/copper_knife`})
+		event.remove({id:`farmersdelight:golden_knife`})
+		event.remove({id:`farmersdelight:diamond_knife`})
+		event.remove({id:`farmersdelight:iron_knife`})
+		event.remove({id:`farmersdelight:flint_knife`})
+	// #endregion
 
-	/* ナイフのレシピを変更 */
+	// #region ナイフのレシピを変更
 	event.shaped(
 		Item.of(`farmersdelight:iron_knife`),
 		[
@@ -274,15 +259,21 @@ onEvent(`recipes`, event => {
 		S: `#forge:rods/wooden`
 	})
 	event.shaped(
-		Item.of(`delightful:bronze_knife`),
+		Item.of(`delightful:copper_knife`),
 		[
 			` H`,
 			`S `
 		], {
-		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:bronze"}`),
+		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:copper"}`),
 		S: `#forge:rods/wooden`
 	})
 	event.recipes.create.filling(Item.of(`farmersdelight:diamond_knife`), [`#farmersdelight:tools/knives`, Fluid.of(TC(`molten_diamond`), 100)])
+	// #endregion
+
+})
+
+onEvent(`item.tags`, event => {
+
 })
 
 onEvent("lootjs", event => {
@@ -292,10 +283,10 @@ onEvent("lootjs", event => {
 		.removeLoot(`wheat_seeds`)
 })
 
-onEvent('entity.loot_tables', event => {
-	event.modifyEntity('minecraft:blaze', table => {
+onEvent(`entity.loot_tables`, event => {
+	event.modifyEntity(`minecraft:blaze`, table => {
 		table.addPool(pool => {
-			pool.addItem('kubejs:blaze_core').randomChance(0.1)
+			pool.addItem(`kubejs:blaze_core`).randomChance(0.1)
 		})
 	})
 })

@@ -4,51 +4,9 @@
 let TC = (id) => `tconstruct:${id}`
 
 /** const */
-/**
- * const MetalMaterials = [
- *     `aluminum`,
- *     `amethyst_bronze`,
- *     `brass`,
- *     `bronze`,
- *     `cobalt`,
- *     `constantan`,
- *     `copper`,
- *     `electrum`,
- *     `emerald`,
- *     `enderium`,
- *     `gold`,
- *     `hepatizon`,
- *     `inlet`,
- *     `iron`,
- *     `knightslime`,
- *     `lead`,
- *     `lumium`,
- *     `manyullyn`,
- *     `molten_debris`,
- *     `netherite`,
- *     `nickel`,
- *     `osmium`,
- *     `pewter`,
- *     `pig_iron`,
- *     `platinum`,
- *     `queens_slime`,
- *     `refined_glowstone`,
- *     `refined_obsidian`,
- *     `rose_gold`,
- *     `signalum`,
- *     `silver`,
- *     `slimesteel`,
- *     `soulsteel`,
- *     `steel`,
- *     `tin`,
- *     `tungsten`,
- *     `uranium`,
- *     `zinc`
- * ]
- */
 
-/** var */
-let inter = `inter`
+/** let */
+let inter
 
 onEvent(`recipes`, event => {
 	// #region function

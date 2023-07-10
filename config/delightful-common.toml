@@ -7,7 +7,7 @@
 	black_opal_knife = false
 	bone_knife = false
 	brass_knife = false
-	bronze_knife = true
+	bronze_knife = false
 	constantan_knife = false
 	copper_knife = true
 	deorum_knife = false
@@ -29,7 +29,7 @@
 	living_knife = false
 	mythril_knife = false
 	netherite_opal_knife = false
-	nickel_knife = true
+	nickel_knife = false
 	obsidian_infused_enderite_knife = false
 	onyx_knife = false
 	osmium_knife = false
