@@ -18,7 +18,8 @@ onEvent(`jei.hide.items`, event => {
 		`aquaculture:stone_fillet_knife`,
 		`aquaculture:iron_fillet_knife`,
 		`aquaculture:gold_fillet_knife`,
-		`aquaculture:diamond_fillet_knife`
+		`aquaculture:diamond_fillet_knife`,
+		/valkyrienskies:.*/
 	]
 
 	hideItem.forEach(item => {

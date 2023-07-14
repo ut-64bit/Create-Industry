@@ -2,6 +2,9 @@
   "modPriorities": [
     "minecraft",
     "kubejs",
+    "farmersdelight",
+    "delightful",
+    "culturaldelights",
     "create",
     "alloyed",
     "createindustry",
@@ -28,7 +31,8 @@
     "forge:rods/{material}",
     "forge:wires/{material}",
     "forge:storage_blocks/{material}",
-    "forge:storage_blocks/raw_{material}"
+    "forge:storage_blocks/raw_{material}",
+    "#forge:dough/wheat"
   ],
   "materials": [
     "aeternium",

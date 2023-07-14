@@ -213,12 +213,12 @@ onEvent(`recipes`, event => {
 
 	// delight
 	// #region 一部を除いたナイフのレシピを削除
-		event.remove({id:`delightful:knives/silver_knife`})
-		event.remove({id:`delightful:knives/copper_knife`})
-		event.remove({id:`farmersdelight:golden_knife`})
-		event.remove({id:`farmersdelight:diamond_knife`})
-		event.remove({id:`farmersdelight:iron_knife`})
-		event.remove({id:`farmersdelight:flint_knife`})
+	event.remove({ id: `delightful:knives/silver_knife` })
+	event.remove({ id: `delightful:knives/copper_knife` })
+	event.remove({ id: `farmersdelight:golden_knife` })
+	event.remove({ id: `farmersdelight:diamond_knife` })
+	event.remove({ id: `farmersdelight:iron_knife` })
+	event.remove({ id: `farmersdelight:flint_knife` })
 	// #endregion
 
 	// #region ナイフのレシピを変更
@@ -270,6 +270,12 @@ onEvent(`recipes`, event => {
 	event.recipes.create.filling(Item.of(`farmersdelight:diamond_knife`), [`#farmersdelight:tools/knives`, Fluid.of(TC(`molten_diamond`), 100)])
 	// #endregion
 
+	// #region パン生地のレシピを追加
+	event.shapeless(`#forge:dough/wheat`, [`#forge:milk`, `wheat`, `wheat`, `wheat`])
+	event.shapeless(`#forge:dough/wheat`, [`#forge:milk/milk_bottle`, `create:wheat_flour`])
+	event.replaceInput({ input: `create:dough` }, `create:dough`, `#forge:dough/wheat`)
+	event.replaceInput({ input: `farmersdelight:wheat_dough` }, `farmersdelight:wheat_dough`, `#forge:dough/wheat`)
+	// #endregion
 })
 
 onEvent(`item.tags`, event => {

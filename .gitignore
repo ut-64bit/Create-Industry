@@ -1,6 +1,5 @@
 .curseclient
 crash-reports/
-lightspeed-cache/
 logs/
 minecraftinstance.json
 saves/
