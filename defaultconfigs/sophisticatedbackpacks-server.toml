@@ -20,7 +20,7 @@
 	[server.leatherBackpack]
 		#Number of inventory slots in the backpack
 		#Range: 1 ~ 144
-		inventorySlotCount = 9
+		inventorySlotCount = 27
 		#Number of upgrade slots in the backpack
 		#Range: 0 ~ 10
 		upgradeSlotCount = 0
@@ -29,7 +29,7 @@
 	[server.ironBackpack]
 		#Number of inventory slots in the backpack
 		#Range: 1 ~ 144
-		inventorySlotCount = 18
+		inventorySlotCount = 36
 		#Number of upgrade slots in the backpack
 		#Range: 0 ~ 10
 		upgradeSlotCount = 2
@@ -38,7 +38,7 @@
 	[server.goldBackpack]
 		#Number of inventory slots in the backpack
 		#Range: 1 ~ 144
-		inventorySlotCount = 36
+		inventorySlotCount = 45
 		#Number of upgrade slots in the backpack
 		#Range: 0 ~ 10
 		upgradeSlotCount = 3
@@ -56,7 +56,7 @@
 	[server.netheriteBackpack]
 		#Number of inventory slots in the backpack
 		#Range: 1 ~ 144
-		inventorySlotCount = 144
+		inventorySlotCount = 99
 		#Number of upgrade slots in the backpack
 		#Range: 0 ~ 10
 		upgradeSlotCount = 7
@@ -242,7 +242,7 @@
 	[server.smeltingUpgrade]
 		#Smelting speed multiplier (1.0 equals speed at which vanilla furnace smelts items)
 		#Range: 0.25 ~ 4.0
-		smeltingSpeedMultiplier = 1.0
+		smeltingSpeedMultiplier = 0.9
 		#Fuel efficiency multiplier (1.0 equals speed at which it's used in vanilla furnace)
 		#Range: 0.25 ~ 4.0
 		fuelEfficiencyMultiplier = 1.0
@@ -251,7 +251,7 @@
 	[server.smokingUpgrade]
 		#Smelting speed multiplier (1.0 equals speed at which vanilla furnace smelts items)
 		#Range: 0.25 ~ 4.0
-		smeltingSpeedMultiplier = 1.0
+		smeltingSpeedMultiplier = 0.9
 		#Fuel efficiency multiplier (1.0 equals speed at which it's used in vanilla furnace)
 		#Range: 0.25 ~ 4.0
 		fuelEfficiencyMultiplier = 1.0
@@ -260,7 +260,7 @@
 	[server.blastingUpgrade]
 		#Smelting speed multiplier (1.0 equals speed at which vanilla furnace smelts items)
 		#Range: 0.25 ~ 4.0
-		smeltingSpeedMultiplier = 1.0
+		smeltingSpeedMultiplier = 0.9
 		#Fuel efficiency multiplier (1.0 equals speed at which it's used in vanilla furnace)
 		#Range: 0.25 ~ 4.0
 		fuelEfficiencyMultiplier = 1.0
@@ -269,7 +269,7 @@
 	[server.autoSmeltingUpgrade]
 		#Smelting speed multiplier (1.0 equals speed at which vanilla furnace smelts items)
 		#Range: 0.25 ~ 4.0
-		smeltingSpeedMultiplier = 1.0
+		smeltingSpeedMultiplier = 0.9
 		#Fuel efficiency multiplier (1.0 equals speed at which it's used in vanilla furnace)
 		#Range: 0.25 ~ 4.0
 		fuelEfficiencyMultiplier = 1.0
@@ -290,7 +290,7 @@
 	[server.autoSmokingUpgrade]
 		#Smelting speed multiplier (1.0 equals speed at which vanilla furnace smelts items)
 		#Range: 0.25 ~ 4.0
-		smeltingSpeedMultiplier = 1.0
+		smeltingSpeedMultiplier = 0.9
 		#Fuel efficiency multiplier (1.0 equals speed at which it's used in vanilla furnace)
 		#Range: 0.25 ~ 4.0
 		fuelEfficiencyMultiplier = 1.0
@@ -311,7 +311,7 @@
 	[server.autoBlastingUpgrade]
 		#Smelting speed multiplier (1.0 equals speed at which vanilla furnace smelts items)
 		#Range: 0.25 ~ 4.0
-		smeltingSpeedMultiplier = 1.0
+		smeltingSpeedMultiplier = 0.9
 		#Fuel efficiency multiplier (1.0 equals speed at which it's used in vanilla furnace)
 		#Range: 0.25 ~ 4.0
 		fuelEfficiencyMultiplier = 1.0
