@@ -1,5 +1,16 @@
 // priority: 0
 
+onEvent(`jei.remove.categories`, event => {
+	// const
+	const hideCategory = [
+		`immersiveengineering:alloysmelter`
+	]
+
+	hideCategory.forEach(categories => {
+		event.remove(categories)
+	})
+})
+
 onEvent(`jei.hide.items`, event => {
 	// const
 	const hideItem = [
@@ -14,12 +25,7 @@ onEvent(`jei.hide.items`, event => {
 		`tom_storage:ts.adv_wireless_terminal`,
 		`tom_storage:ts.wireless_terminal`,
 		`tom_storage:ts.inventory_hopper_basic`,
-		`aquaculture:wooden_fillet_knife`,
-		`aquaculture:stone_fillet_knife`,
-		`aquaculture:iron_fillet_knife`,
-		`aquaculture:gold_fillet_knife`,
-		`aquaculture:diamond_fillet_knife`,
-		/valkyrienskies:.*/
+		`@valkyrienskies`
 	]
 
 	hideItem.forEach(item => {
