@@ -271,11 +271,32 @@ onEvent(`recipes`, event => {
 	// #endregion
 
 	// #region パン生地のレシピを追加
-	event.shapeless(`#forge:dough/wheat`, [`#forge:milk`, `wheat`, `wheat`, `wheat`])
-	event.shapeless(`#forge:dough/wheat`, [`#forge:milk/milk_bottle`, `create:wheat_flour`])
+	event.remove({ id: `create:smelting/bread` })
+	event.remove({ id: `create:crafting/appliances/dough` })
+	event.remove({ id: `farmersdelight:wheat_dough_from_water` })
+	event.remove({ id: `farmersdelight:wheat_dough_from_eggs` })
+	event.shapeless(`2x farmersdelight:wheat_dough`, [`milk_bucket`, `wheat`, `wheat`, `wheat`])
+	event.shapeless(`2x farmersdelight:wheat_dough`, [`water_bucket`, `wheat`, `wheat`, `wheat`])
+	event.shapeless(`2x farmersdelight:wheat_dough`, [`#forge:milk/milk_bottle`, `create:wheat_flour`, `create:wheat_flour`])
+	event.shapeless(`2x farmersdelight:wheat_dough`, [`#balm:eggs`, `create:wheat_flour`, `create:wheat_flour`])
 	event.replaceInput({ input: `create:dough` }, `create:dough`, `#forge:dough/wheat`)
 	event.replaceInput({ input: `farmersdelight:wheat_dough` }, `farmersdelight:wheat_dough`, `#forge:dough/wheat`)
+	event.replaceOutput({ output: 'create:dough' }, 'create:dough', `farmersdelight:wheat_dough`)
 	// #endregion
+
+	// 飯
+	event.replaceInput({ id: `culturaldelights:cooking/wheat_dough` }, `wheat`, `create:wheat_flour`)
+
+	// 飲料のレシピ
+	/**
+	event.remove({ id: `farmersdelight:cooking/apple_cider` })
+	event.remove({ id: `delightful:food/cooking/ender_nectar` })
+	event.remove({ id: `farmersdelight:cooking/hot_cocoa` })
+	event.remove({ id: `farmersdelight:cooking/apple_cider` })
+	event.remove({ id: `farmersdelight:cooking/apple_cider` })
+	event.remove({ id: `farmersdelight:cooking/apple_cider` })
+	event.remove({ id: `farmersdelight:cooking/apple_cider` })
+	*/
 })
 
 onEvent(`item.tags`, event => {

@@ -14,6 +14,7 @@ onEvent(`jei.remove.categories`, event => {
 onEvent(`jei.hide.items`, event => {
 	// const
 	const hideItem = [
+		`create:dough`,
 		`createaddition:digital_adapter`,
 		`oldguns:iron_with_coal`,
 		`immersiveengineering:blastbrick`,
