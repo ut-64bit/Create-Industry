@@ -4,10 +4,11 @@ let IE = (id) => `immersiveengineering:${id}`
 
 onEvent(`recipes`, event => {
     // immersiveengineering
-    /* tools */
+    // #region tools
     event.replaceInput({ output: IE(`hammer`) }, `#forge:ingots/iron`, `#forge:ingots/steel`)
     event.replaceInput({ output: IE(`wirecutter`) }, `#forge:ingots/iron`, `#forge:ingots/steel`)
     event.replaceInput({ output: IE(`screwdriver`) }, `#forge:rods/iron`, `#forge:rods/steel`)
+    // #endregion
 
     /* component_iron */
     event.remove({ id: `immersiveengineering:crafting/component_iron` })

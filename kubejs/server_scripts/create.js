@@ -12,7 +12,7 @@ onEvent(`recipes`, event => {
 	// #region function
 	let item_application = (output, inputItem, inputBlock) => {
 		event.custom({
-			type: 'create:item_application',
+			type: `create:item_application`,
 			ingredients: [
 				Ingredient.of(inputBlock).toJson(),
 				Ingredient.of(inputItem).toJson()
@@ -114,7 +114,7 @@ onEvent(`recipes`, event => {
 	event.recipes.create.emptying([`obsidian`, Fluid.of(`lava`, 250)], `magma_block`)
 	event.recipes.create.haunting(`netherrack`, `clay`)
 	event.replaceInput({ id: `create:crafting/kinetics/whisk` }, `#forge:plates/iron`, `#forge:rods/iron`)
-	item_application('tconstruct:crafting_station','tconstruct:pattern','minecraft:crafting_table')
+	item_application(`tconstruct:crafting_station`, `tconstruct:pattern`, `minecraft:crafting_table`)
 	/**	Create:Alloyedが0.5.1cに対応するまで封印
 	 * event.replaceOutput({ id: `createindustry:mixing/steel_ingot` }, `createindustry:steel_ingot`, Item.of(`alloyed:steel_ingot`, 3))
 	 * event.replaceOutput({ id: `alloyed:mixing/steel_ingot` }, `createindustry:steel_ingot`, Item.of(`alloyed:steel_ingot`, 1))

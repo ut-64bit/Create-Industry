@@ -70,7 +70,7 @@ onEvent(`recipes`, event => {
 	event.shapeless(`2x farmersdelight:wheat_dough`, [`#balm:eggs`, `create:wheat_flour`, `create:wheat_flour`])
 	event.replaceInput({ input: `create:dough` }, `create:dough`, `#forge:dough/wheat`)
 	event.replaceInput({ input: `farmersdelight:wheat_dough` }, `farmersdelight:wheat_dough`, `#forge:dough/wheat`)
-	event.replaceOutput({ output: 'create:dough' }, 'create:dough', `farmersdelight:wheat_dough`)
+	event.replaceOutput({ output: `create:dough` }, `create:dough`, `farmersdelight:wheat_dough`)
 	// #endregion
 
 	// 飯

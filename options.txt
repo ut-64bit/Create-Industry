@@ -36,8 +36,8 @@ ao:2
 prioritizeChunkUpdates:0
 biomeBlendRadius:2
 renderClouds:true
-resourcePacks:["vanilla","mod_resources","file/SmoothFont_1.18.zip","file/Crosshair_TXF_1.18.zip"]
-incompatibleResourcePacks:["file/SmoothFont_1.18.zip"]
+resourcePacks:["vanilla","mod_resources","Supplementaries Generated Pack","file/Crosshair_TXF_1.18.zip","file/Create Simple Storage 2.1.zip","file/Eureka Create 1.0.zip","file/Smarter Chutes 1.18.2.zip","file/SmoothFont_1.18.zip"]
+incompatibleResourcePacks:["file/Create Simple Storage 2.1.zip"]
 lastServer:
 lang:ja_jp
 soundDevice:
@@ -195,16 +195,15 @@ key_key.immersiveengineering.chemthrowerSwitch:key.keyboard.unknown
 key_create.keyinfo.toolmenu:key.keyboard.left.alt
 key_create.keyinfo.toolbelt:key.keyboard.left.alt
 key_options.narrator:key.keyboard.unknown
-key_cos.key.opencosarmorinventory:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.open_backpack:key.keyboard.b
 key_keybind.sophisticatedbackpacks.inventory_interaction:key.keyboard.c
 key_keybind.sophisticatedbackpacks.tool_swap:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.sort:key.mouse.middle
-key_keybind.sophisticatedbackpacks.toggle_upgrade_1:key.keyboard.z:ALT
 key_keybind.sophisticatedbackpacks.toggle_upgrade_5:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.toggle_upgrade_4:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.toggle_upgrade_3:key.keyboard.unknown
-key_keybind.sophisticatedbackpacks.toggle_upgrade_2:key.keyboard.x:ALT
+key_keybind.sophisticatedbackpacks.toggle_upgrade_2:key.keyboard.unknown
+key_keybind.sophisticatedbackpacks.toggle_upgrade_1:key.keyboard.unknown
 key_keybind.sophisticatedstorage.sort:key.mouse.middle
 key_key.zoom:key.keyboard.unknown
 key_key.tconstruct.helmet_interact:key.keyboard.unknown
