@@ -210,6 +210,18 @@ onEvent(`recipes`, event => {
 		[`magma_cream`, `#minecraft:soul_fire_base_blocks`, `gravel`]
 	).heated()
 	// #endregion
+
+	// misc
+	event.replaceInput({ input: 'supplementaries:rope' }, 'supplementaries:rope', `#supplementaries:ropes`)
+	event.replaceInput({ input: 'farmersdelight:rope' }, 'farmersdelight:rope', `#supplementaries:ropes`)
+	event.replaceOutput({ output: 'supplementaries:rope' }, 'supplementaries:rope', `farmersdelight:rope`)
+	event.remove({ id: `farmersdelight:rope` })
+	event.shaped(`farmersdelight:rope`,
+		[
+			`a`,
+			`a`
+		], { a: 'farmersdelight:straw' }
+	).id(`farmersdelight:rope`)
 })
 
 onEvent(`item.tags`, event => {
