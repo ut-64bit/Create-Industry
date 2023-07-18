@@ -1,0 +1,22 @@
+{
+  "screen.screenshot_viewer.manage_screenshots": "スクリーンショット一覧",
+  "screen.screenshot_viewer.screenshot_manager.zoom": "Zoom Mode (Hold CTRL)",
+  "screen.screenshot_viewer.screenshot_manager.no_screenshots": "まだスクリーンショットがありません...(´・ω・`)",
+  "screen.screenshot_viewer.button.refresh": "再読み込み",
+  "screen.screenshot_viewer.no_config": "ゲーム内でコンフィグを設定することはできません。",
+  "screen.screenshot_viewer.button.config": "Configure...",
+  "screen.screenshot_viewer.button.order": "並び替え",
+  "screen.screenshot_viewer.button.order.ascending": "昇順",
+  "screen.screenshot_viewer.button.order.descending": "降順",
+  "screen.screenshot_viewer.button.screenshot_folder": "フォルダを開く",
+  "screen.screenshot_viewer.button.delete_screenshot": "削除",
+  "screen.screenshot_viewer.button.open_file": "開く",
+  "screen.screenshot_viewer.button.rename_file": "名前の変更",
+  "screen.screenshot_viewer.button.close_properties_menu": "キャンセル",
+  "screen.screenshot_viewer.delete_prompt": "[ %s ]",
+  "screen.screenshot_viewer.delete_prompt.message": "本当にこのスクリーンショットを削除しますか？",
+  "screen.screenshot_viewer.rename_screenshot": "新しい名前を入力してください",
+  "screen.screenshot_viewer.field.screenshot_name": "名前",
+
+  "key.screenshot_viewer.open_screenshots_screen": "スクリーンショット一覧を開く"
+}

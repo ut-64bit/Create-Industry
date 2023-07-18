@@ -214,19 +214,14 @@ onEvent(`recipes`, event => {
 	// misc
 	event.replaceInput({ input: 'supplementaries:rope' }, 'supplementaries:rope', `#supplementaries:ropes`)
 	event.replaceInput({ input: 'farmersdelight:rope' }, 'farmersdelight:rope', `#supplementaries:ropes`)
-	event.replaceOutput({ output: 'farmersdelight:rope' }, 'farmersdelight:rope', `supplementaries:rope`)
+	event.replaceOutput({ output: 'supplementaries:rope' }, 'supplementaries:rope', `farmersdelight:rope`)
 	event.remove({ id: `farmersdelight:rope` })
-	event.shaped(`supplementaries:rope`,
+	event.shaped(`farmersdelight:rope`,
 		[
 			`a`,
 			`a`
 		], { a: 'farmersdelight:straw' }
-	)
-	event.shapeless(`string`, [`farmersdelight:straw`])
-	event.replaceInput({ id: `create:crafting/kinetics/goggles` }, 'string', `#supplementaries:ropes`)
-	event.replaceInput({ id: `supplementaries:sack` }, 'string', `#supplementaries:ropes`)
-	event.replaceInput({ id: `supplementaries:slingshot` }, 'string', `#supplementaries:ropes`)
-
+	).id(`farmersdelight:rope`)
 })
 
 onEvent(`item.tags`, event => {

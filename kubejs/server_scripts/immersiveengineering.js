@@ -2,6 +2,9 @@
 
 let IE = (id) => `immersiveengineering:${id}`
 
+/* var */
+let inter
+
 onEvent(`recipes`, event => {
     // immersiveengineering
     // #region tools

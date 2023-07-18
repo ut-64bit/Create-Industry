@@ -26,6 +26,7 @@ onEvent(`jei.hide.items`, event => {
 		`tom_storage:ts.adv_wireless_terminal`,
 		`tom_storage:ts.wireless_terminal`,
 		`tom_storage:ts.inventory_hopper_basic`,
+		`supplementaries:rope`,
 		`@valkyrienskies`
 	]
 
