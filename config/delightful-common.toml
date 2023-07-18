@@ -15,9 +15,9 @@
 	electrum_knife = false
 	emerald_knife = false
 	enderite_knife = false
-	experience_knife = true
+	experience_knife = false
 	fiery_knife = false
-	gilded_quartz_knife = true
+	gilded_quartz_knife = false
 	invar_knife = false
 	ironwood_knife = false
 	kiwano_knife = false
