@@ -251,6 +251,11 @@ onEvent("lootjs", event => {
 		.removeLoot(`wheat_seeds`)
 	event.addLootTableModifier(`minecraft:blocks/tall_grass`)
 		.removeLoot(`wheat_seeds`)
+
+	deleteItems.forEach(item => {
+		event.addLootTypeModifier(LootType.CHEST)
+			.removeLoot(`${item}`)
+	})
 })
 
 onEvent(`entity.loot_tables`, event => {
