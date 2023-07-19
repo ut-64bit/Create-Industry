@@ -183,32 +183,50 @@ onEvent(`recipes`, event => {
 	]).transitionalItem(inter).loops(1)
 	// #endregion
 
-	// tconstruct
-	// #region 一部のキャストレシピを削除
+	// #region tconstruct
+	// 一部のキャストレシピを削除
 	MetalMaterials.forEach(material => {
 		event.remove({ type: TC(`casting_table`), output: `#forge:plates/${material}` })
 		event.remove({ type: TC(`casting_table`), output: `#forge:wire/${material}` })
 	})
-	// #endregion
 
 	// 燃え盛る血液
 	event.recipes.create.mixing(Fluid.of(`tconstruct:blazing_blood`, 200), `kubejs:blaze_core`).superheated()
 
-	// #region グラウトのレシピを変更
+	// グラウトのレシピを変更
 	event.remove({ id: `tconstruct:smeltery/seared/grout_multiple` })
 	event.remove({ id: `tconstruct:smeltery/seared/grout` })
 	event.recipes.create.mixing(
 		[`2x tconstruct:grout`, Item.of(`tconstruct:grout`).withChance(0.5)],
 		[`clay_ball`, `#sand`, `gravel`]
 	)
-	// #endregion
 
-	// #region ネザーグラウトのレシピを変更
+	// ネザーグラウトのレシピを変更
 	event.remove({ id: `tconstruct:smeltery/scorched/nether_grout` })
 	event.recipes.create.mixing(
 		[`2x tconstruct:nether_grout`, Item.of(`tconstruct:nether_grout`).withChance(0.5)],
 		[`magma_cream`, `#minecraft:soul_fire_base_blocks`, `gravel`]
 	).heated()
+
+	// #region smeltery_controller
+	event.remove({ id: `tconstruct:smeltery/casting/seared/smeltery_controller` })
+	event.recipes.create.mechanicalCrafting(`tconstruct:smeltery_controller`,
+		[
+			`bbbbb`,
+			`bsssb`,
+			`bsBsb`,
+			`bcccb`,
+			`bbbbb`
+		], {
+		b: `tconstruct:scorched_brick`,
+		s: `#forge:plates/steel`,
+		B: `kubejs:blaze_core`,
+		c: `#forge:ingots/copper`
+	})
+	// #endregion
+
+	// compat
+	event.remove({ id: /tconstruct:compat\/.+/ })
 	// #endregion
 
 	// misc
