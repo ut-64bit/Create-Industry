@@ -1,25 +1,22 @@
 // priority: 1
 
 if (Item.exists(`toms_storage:ts.storage_terminal`)) {
-	// #region let
+	// const
+	const deleteItem = [
+		`toms_storage:ts.adv_wireless_terminal`,
+		`toms_storage:ts.wireless_terminal`,
+		`toms_storage:ts.inventory_hopper_basic`
+	]
+
+	// var
 	let recipe
-	// #endregion
 
 	onEvent(`recipes`, event => {
-		// #region const
-		const deleteItem = [
-			`toms_storage:ts.adv_wireless_terminal`,
-			`toms_storage:ts.wireless_terminal`,
-			`toms_storage:ts.inventory_hopper_basic`
-		]
-		// #endregion
-
-		// delete item
 		deleteItem.forEach(item => {
 			event.remove([{ output: `${item}` }, { input: `${item}` }])
 		})
 
-		// #region crafting_terminal
+		// crafting_terminal
 		recipe = `toms_storage:crafting_terminal`
 		event.remove({ id: `${recipe}` })
 		event.recipes.create.mechanicalCrafting(`toms_storage:ts.crafting_terminal`,
@@ -36,9 +33,8 @@ if (Item.exists(`toms_storage:ts.storage_terminal`)) {
 			M: `create:precision_mechanism`,
 			L: `create:linked_controller`
 		}).id(`${recipe}`)
-		// #endregion
 
-		// #region inventory_cable_connector_filtered
+		// inventory_cable_connector_filtered
 		recipe = `toms_storage:inventory_cable_connector_filtered`
 		event.remove({ id: `${recipe}` })
 		event.shaped(`toms_storage:ts.inventory_cable_connector_filtered`,
@@ -51,9 +47,8 @@ if (Item.exists(`toms_storage:ts.storage_terminal`)) {
 			S: `toms_storage:ts.inventory_cable_connector`,
 			P: `create:electron_tube`
 		}).id(`${recipe}`)
-		// #endregion
 
-		// #region inventory_cable_connector_framed
+		// inventory_cable_connector_framed
 		recipe = `toms_storage:inventory_cable_connector_framed`
 		event.remove({ id: `${recipe}` })
 		event.shaped(`toms_storage:ts.inventory_cable_connector_framed`,
@@ -65,15 +60,13 @@ if (Item.exists(`toms_storage:ts.storage_terminal`)) {
 			S: `#forge:rods/wooden`,
 			C: `toms_storage:ts.inventory_cable_connector`
 		}).id(`${recipe}`)
-		// #endregion
 
-		// #region inventory_cable_connector
+		// inventory_cable_connector
 		recipe = `toms_storage:inventory_cable_connector`
 		event.remove({ id: `${recipe}` })
 		event.shapeless(`toms_storage:ts.inventory_cable_connector`, [`toms_storage:ts.inventory_cable`, `create:chute`]).id(`${recipe}`)
-		// #endregion
 
-		// #region inventory_cable_framed
+		// inventory_cable_framed
 		recipe = `toms_storage:inventory_cable_framed`
 		event.remove({ id: `${recipe}` })
 		event.shaped(`toms_storage:ts.inventory_cable_framed`,
@@ -85,33 +78,28 @@ if (Item.exists(`toms_storage:ts.storage_terminal`)) {
 			S: `#forge:rods/wooden`,
 			C: `toms_storage:ts.inventory_cable`
 		}).id(`${recipe}`)
-		// #endregion
 
-		// #region inventory_cable
+		// inventory_cable
 		recipe = `toms_storage:inventory_cable`
 		event.remove({ id: `${recipe}` })
 		event.shapeless(`toms_storage:ts.inventory_cable`, [`#forge:plates/brass`, `dried_kelp`]).id(`${recipe}`)
-		// #endregion
 
-		// #region inventory_connector
+		// inventory_connector
 		recipe = `toms_storage:inventory_connector`
 		event.remove({ id: `${recipe}` })
 		event.shapeless(`toms_storage:ts.inventory_connector`, [`create:brass_casing`, `create:chute`]).id(`${recipe}`)
-		// #endregion
 
-		// #region inventory_proxy
+		// inventory_proxy
 		recipe = `toms_storage:inventory_proxy`
 		event.remove({ id: `${recipe}` })
 		event.shapeless(`toms_storage:ts.inventory_proxy`, [`toms_storage:ts.inventory_connector`, `create:smart_chute`]).id(`${recipe}`)
-		// #endregion
 
-		// #region level_emitter
+		// level_emitter
 		recipe = `toms_storage:level_emitter`
 		event.remove({ id: `${recipe}` })
 		event.shapeless(`toms_storage:ts.level_emitter`, [`create:content_observer`, `toms_storage:ts.inventory_cable`]).id(`${recipe}`)
-		// #endregion
 
-		// #region open_crate
+		// open_crate
 		recipe = `toms_storage:open_crate`
 		event.remove({ id: `${recipe}` })
 		event.shaped(`toms_storage:ts.open_crate`,
@@ -125,9 +113,8 @@ if (Item.exists(`toms_storage:ts.storage_terminal`)) {
 			C: `#forge:chests/wooden`,
 			T: `#minecraft:trapdoors`
 		}).id(`${recipe}`)
-		// #endregion
 
-		// #region paint_kit
+		// paint_kit
 		recipe = `toms_storage:paint_kit`
 		event.remove({ id: `${recipe}` })
 		event.shaped(`toms_storage:ts.paint_kit`,
@@ -145,9 +132,8 @@ if (Item.exists(`toms_storage:ts.storage_terminal`)) {
 			b: `water_bucket`,
 			S: `#forge:rods/wooden`
 		}).id(`${recipe}`)
-		// #endregion
 
-		// #region storage_terminal
+		// storage_terminal
 		recipe = `toms_storage:storage_terminal`
 		event.remove({ id: `${recipe}` })
 		event.shaped(`toms_storage:ts.storage_terminal`,
@@ -165,9 +151,8 @@ if (Item.exists(`toms_storage:ts.storage_terminal`)) {
 		recipe = `toms_storage:trim_clean`
 		event.remove({ id: `${recipe}` })
 		event.shapeless(`toms_storage:ts.trim`, [`toms_storage:ts.painted_trim`, `water_bucket`]).id(`${recipe}`)
-		// #endregion
 
-		// #region trim
+		// trim
 		recipe = `toms_storage:trim`
 		event.remove({ id: `${recipe}` })
 		event.shaped(`toms_storage:ts.trim`,
@@ -179,6 +164,5 @@ if (Item.exists(`toms_storage:ts.storage_terminal`)) {
 			S: `#forge:rods/wooden`,
 			X: `create:brass_tunnel`
 		}).id(`${recipe}`)
-		// #endregion
 	})
 }

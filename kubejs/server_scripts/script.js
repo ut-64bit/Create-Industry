@@ -5,25 +5,14 @@ settings.logRemovedRecipes = true
 settings.logSkippedRecipes = false
 settings.logErroringRecipes = true
 
+// func
 let TC = (id) => `tconstruct:${id}`
 let TS = (id) => `toms_storage:${id}`
 let IE = (id) => `immersiveengineering:${id}`
 
 // #region const
 const deleteItems = [
-	`oldguns:iron_with_coal`,
-	TC(`earth_slime_sling`),
-	TC(`ender_slime_sling`),
-	TC(`ichor_slime_sling`),
-	TC(`sky_slime_sling`),
-	TC(`plate_cast`),
-	TC(`plate_sand_cast`),
-	TC(`plate_red_sand_cast`),
-	TC(`wire_cast`),
-	TC(`wire_sand_cast`),
-	TC(`wire_red_sand_cast`),
-	IE(`blastbrick`),
-	IE(`alloybrick`)
+	`oldguns:iron_with_coal`
 ]
 const MetalMaterials = [
 	`aluminum`,
@@ -110,7 +99,6 @@ onEvent(`recipes`, event => {
 	event.recipes.create.filling(`diamond_sword`, [`iron_sword`, Fluid.of(TC(`molten_diamond`), 100)])
 	// #endregion
 
-
 	// #region 防具のレシピを変更
 	let removeArmor = (material, removeInput) => {
 		event.remove({ output: `${material}_helmet` })
@@ -183,52 +171,6 @@ onEvent(`recipes`, event => {
 	]).transitionalItem(inter).loops(1)
 	// #endregion
 
-	// #region tconstruct
-	// 一部のキャストレシピを削除
-	MetalMaterials.forEach(material => {
-		event.remove({ type: TC(`casting_table`), output: `#forge:plates/${material}` })
-		event.remove({ type: TC(`casting_table`), output: `#forge:wire/${material}` })
-	})
-
-	// 燃え盛る血液
-	event.recipes.create.mixing(Fluid.of(`tconstruct:blazing_blood`, 200), `kubejs:blaze_core`).superheated()
-
-	// グラウトのレシピを変更
-	event.remove({ id: `tconstruct:smeltery/seared/grout_multiple` })
-	event.remove({ id: `tconstruct:smeltery/seared/grout` })
-	event.recipes.create.mixing(
-		[`2x tconstruct:grout`, Item.of(`tconstruct:grout`).withChance(0.5)],
-		[`clay_ball`, `#sand`, `gravel`]
-	)
-
-	// ネザーグラウトのレシピを変更
-	event.remove({ id: `tconstruct:smeltery/scorched/nether_grout` })
-	event.recipes.create.mixing(
-		[`2x tconstruct:nether_grout`, Item.of(`tconstruct:nether_grout`).withChance(0.5)],
-		[`magma_cream`, `#minecraft:soul_fire_base_blocks`, `gravel`]
-	).heated()
-
-	// #region smeltery_controller
-	event.remove({ id: `tconstruct:smeltery/casting/seared/smeltery_controller` })
-	event.recipes.create.mechanicalCrafting(`tconstruct:smeltery_controller`,
-		[
-			`bbbbb`,
-			`bsssb`,
-			`bsBsb`,
-			`bcccb`,
-			`bbbbb`
-		], {
-		b: `tconstruct:scorched_brick`,
-		s: `#forge:plates/steel`,
-		B: `kubejs:blaze_core`,
-		c: `#forge:ingots/copper`
-	})
-	// #endregion
-
-	// compat
-	event.remove({ id: /tconstruct:compat\/.+/ })
-	// #endregion
-
 	// misc
 	event.replaceInput({ input: 'supplementaries:rope' }, 'supplementaries:rope', `#supplementaries:ropes`)
 	event.replaceInput({ input: 'farmersdelight:rope' }, 'farmersdelight:rope', `#supplementaries:ropes`)
@@ -243,7 +185,6 @@ onEvent(`recipes`, event => {
 })
 
 onEvent(`item.tags`, event => {
-
 })
 
 onEvent("lootjs", event => {

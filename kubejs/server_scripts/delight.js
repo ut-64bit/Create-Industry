@@ -1,14 +1,13 @@
 // priority: 1
 
 onEvent(`recipes`, event => {
-	// #region 一部を除いたナイフのレシピを削除
+	// 一部を除いたナイフのレシピを削除
 	event.remove({ id: `delightful:knives/silver_knife` })
 	event.remove({ id: `delightful:knives/copper_knife` })
 	event.remove({ id: `farmersdelight:golden_knife` })
 	event.remove({ id: `farmersdelight:diamond_knife` })
 	event.remove({ id: `farmersdelight:iron_knife` })
 	event.remove({ id: `farmersdelight:flint_knife` })
-	// #endregion
 
 	// #region ナイフのレシピを変更
 	event.shaped(

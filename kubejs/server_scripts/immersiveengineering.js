@@ -1,9 +1,16 @@
 // priority: 1
 
+// func
 let IE = (id) => `immersiveengineering:${id}`
 
-/* var */
+// var
 let inter
+
+// const
+const deleteItems = [
+	IE(`blastbrick`),
+	IE(`alloybrick`)
+]
 
 onEvent(`recipes`, event => {
     // immersiveengineering
@@ -20,7 +27,9 @@ onEvent(`recipes`, event => {
         event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
         event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
         event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`])
-    ]).transitionalItem(inter).loops(1)
+    ])
+    .transitionalItem(inter)
+    .loops(1);
 
     /* component_steel */
     event.remove({ id: `immersiveengineering:crafting/component_steel` })
@@ -29,7 +38,9 @@ onEvent(`recipes`, event => {
         event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`]),
         event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`]),
         event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`])
-    ]).transitionalItem(inter).loops(1)
+    ])
+    .transitionalItem(inter)
+    .loops(1);
 
     /* copper_coil */
     event.recipes.create.deploying(`kubejs:copper_coil`, [`#forge:rods/iron`, IE(`wirecoil_copper`)])

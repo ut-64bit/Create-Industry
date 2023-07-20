@@ -1,15 +1,13 @@
 // priority: 1
 
-/** func */
+// func
 let TC = (id) => `tconstruct:${id}`
 
-/** const */
-
-/** let */
-let inter
+// var
+const alloyed = Item.exists(`extendedgears:steel_cogwheel`)
 
 onEvent(`recipes`, event => {
-	// #region function
+	// func
 	let item_application = (output, inputItem, inputBlock) => {
 		event.custom({
 			type: `create:item_application`,
@@ -22,10 +20,8 @@ onEvent(`recipes`, event => {
 			]
 		})
 	}
-	// #endregion
 
-	// #region recipe
-	/** steam_engine */
+	// steam_engine
 	inter = `kubejs:incomplete_steam_engine`
 	event.recipes.create.sequencedAssembly(`kubejs:steam_engine`, `#forge:plates/copper`, [
 		event.recipes.create.deploying(inter, [inter, `create:propeller`]),
@@ -33,7 +29,7 @@ onEvent(`recipes`, event => {
 		event.recipes.create.deploying(inter, [inter, `#forge:nuggets/copper`])
 	]).transitionalItem(inter).loops(3)
 
-	/** electric_engine */
+	// electric_engine
 	inter = `kubejs:incomplete_electric_engine`
 	event.recipes.create.sequencedAssembly(`kubejs:electric_engine`, `#forge:plates/brass`, [
 		event.recipes.create.deploying(inter, [inter, `#forge:nuggets/steel`]),
@@ -42,7 +38,7 @@ onEvent(`recipes`, event => {
 		event.recipes.create.deploying(inter, [inter, `#forge:nuggets/brass`])
 	]).transitionalItem(inter).loops(3)
 
-	/** electric_motor */
+	// electric_motor
 	event.remove({ id: `createaddition:mechanical_crafting/electric_motor` })
 	event.recipes.create.mechanicalCrafting(`createaddition:electric_motor`, [
 		`  A  `,
@@ -58,7 +54,7 @@ onEvent(`recipes`, event => {
 		C: `createaddition:capacitor`
 	})
 
-	/** alternator */
+	// alternator
 	event.remove({ id: `createaddition:mechanical_crafting/alternator` })
 	event.recipes.create.mechanicalCrafting(`createaddition:alternator`, [
 		`  A  `,
@@ -74,23 +70,23 @@ onEvent(`recipes`, event => {
 		C: `createaddition:capacitor`
 	})
 
-	/** 一部の歯車のレシピを削除 */
-	// #region remove_extendedgears
-	event.remove({ id: `extendedgears:smelting/half_shaft_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:blasting/half_shaft_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:smelting/large_half_shaft_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:blasting/large_half_shaft_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:smelting/shaftless_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:blasting/shaftless_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:smelting/large_shaftless_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:blasting/large_shaftless_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:smelting/steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:blasting/steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:smelting/large_steel_cogwheel_from_iron` })
-	event.remove({ id: `extendedgears:blasting/large_steel_cogwheel_from_iron` })
-	// #endregion
+	// 一部の歯車のレシピを削除
+	if (alloyed) {
+		event.remove({ id: `extendedgears:smelting/half_shaft_steel_cogwheel_from_iron` })
+		event.remove({ id: `extendedgears:blasting/half_shaft_steel_cogwheel_from_iron` })
+		event.remove({ id: `extendedgears:smelting/large_half_shaft_steel_cogwheel_from_iron` })
+		event.remove({ id: `extendedgears:blasting/large_half_shaft_steel_cogwheel_from_iron` })
+		event.remove({ id: `extendedgears:smelting/shaftless_steel_cogwheel_from_iron` })
+		event.remove({ id: `extendedgears:blasting/shaftless_steel_cogwheel_from_iron` })
+		event.remove({ id: `extendedgears:smelting/large_shaftless_steel_cogwheel_from_iron` })
+		event.remove({ id: `extendedgears:blasting/large_shaftless_steel_cogwheel_from_iron` })
+		event.remove({ id: `extendedgears:smelting/steel_cogwheel_from_iron` })
+		event.remove({ id: `extendedgears:blasting/steel_cogwheel_from_iron` })
+		event.remove({ id: `extendedgears:smelting/large_steel_cogwheel_from_iron` })
+		event.remove({ id: `extendedgears:blasting/large_steel_cogwheel_from_iron` })
+	}
 
-	/** 液体⇄インゴット */
+	// 液体⇄インゴット
 	let melt = (output, item, gem) => {
 		if (gem) {
 			event.recipes.create.compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 100))
@@ -103,24 +99,19 @@ onEvent(`recipes`, event => {
 	melt(`iron_ingot`, `iron`, false)
 	melt(`gold_ingot`, `gold`, false)
 	melt(`create:brass_ingot`, `brass`, false)
-	/** Create:Alloyedが0.5.1cに対応するまで封印
-	 * melt(`alloyed:bronze_ingot`, `bronze`, false)
-	 * melt(`alloyed:steel_ingot`, `steel`, false)
-	 */
-	melt(`createindustry:steel_ingot`, `steel`, false)
 	melt(`diamond`, `diamond`, true)
+	melt(`createindustry:steel_ingot`, `steel`, false)
+	if (alloyed) {
+		melt(`alloyed:bronze_ingot`, `bronze`, false)
+		melt(`alloyed:steel_ingot`, `steel`, false)
+	}
 
-	/** 雑多なレシピを追加 */
+	// 雑多なレシピを追加
 	event.recipes.create.emptying([`obsidian`, Fluid.of(`lava`, 250)], `magma_block`)
 	event.recipes.create.haunting(`netherrack`, `clay`)
 	event.replaceInput({ id: `create:crafting/kinetics/whisk` }, `#forge:plates/iron`, `#forge:rods/iron`)
 	item_application(`tconstruct:crafting_station`, `tconstruct:pattern`, `minecraft:crafting_table`)
-	/**	Create:Alloyedが0.5.1cに対応するまで封印
-	 * event.replaceOutput({ id: `createindustry:mixing/steel_ingot` }, `createindustry:steel_ingot`, Item.of(`alloyed:steel_ingot`, 3))
-	 * event.replaceOutput({ id: `alloyed:mixing/steel_ingot` }, `createindustry:steel_ingot`, Item.of(`alloyed:steel_ingot`, 1))
-	 */
 })
 
 onEvent(`item.tags`, event => {
-
 })

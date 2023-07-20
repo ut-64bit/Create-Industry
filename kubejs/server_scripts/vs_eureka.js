@@ -1,15 +1,13 @@
 // priority: 1
 
-// #region const
-const colors = [`black`, `blue`, `brown`, `cyan`, `gray`, `green`, `light_blue`, `light_gray`, `lime`, `magenta`, `orange`, `pink`, `purple`, `red`, `white`, `yellow`]
-const woods = [`oak`, `dark_oak`, `spruce`, `birch`, `jungle`, `acacia`, `crimson`, `warped`]
-// #endregion
-
-// #region let
-let recipe
-// #endregion
-
 if (Item.exists(`vs_eureka:balloon`)) {
+	// const
+	const colors = [`black`, `blue`, `brown`, `cyan`, `gray`, `green`, `light_blue`, `light_gray`, `lime`, `magenta`, `orange`, `pink`, `purple`, `red`, `white`, `yellow`]
+	const woods = [`oak`, `dark_oak`, `spruce`, `birch`, `jungle`, `acacia`, `crimson`, `warped`]
+
+	// var
+	let recipe
+
 	onEvent(`recipes`, event => {
 		// #region balloon
 		event.remove({ id: `vs_eureka:balloon_leather` })

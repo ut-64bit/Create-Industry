@@ -2,7 +2,7 @@
 
 if (Item.exists(`armor_trims:netherite_upgrade_smithing_template`)) {
 	onEvent(`recipes`, event => {
-		// #region func
+		// func
 		let trim = (base, trim) => {
 			let inter = `kubejs:incomplete_${trim}_armor_trim_smithing_template`
 			event.recipes.create.sequencedAssembly(`armor_trims:${trim}_armor_trim_smithing_template`, `${base}`, [
@@ -13,7 +13,6 @@ if (Item.exists(`armor_trims:netherite_upgrade_smithing_template`)) {
 				event.recipes.create.pressing(inter, inter)
 			]).transitionalItem(`${inter}`).loops(1)
 		}
-		// #endregion
 
 		// netherite_upgrade
 		let trans = `kubejs:incomplete_netherite_upgrade_smithing_template`
