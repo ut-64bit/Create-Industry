@@ -1,18 +1,18 @@
 // priority: 1
 
+// const
+const ts_deleteItems = [
+	`toms_storage:ts.adv_wireless_terminal`,
+	`toms_storage:ts.wireless_terminal`,
+	`toms_storage:ts.inventory_hopper_basic`
+]
+
+// var
+let recipe
+
 if (Item.exists(`toms_storage:ts.storage_terminal`)) {
-	// const
-	const deleteItem = [
-		`toms_storage:ts.adv_wireless_terminal`,
-		`toms_storage:ts.wireless_terminal`,
-		`toms_storage:ts.inventory_hopper_basic`
-	]
-
-	// var
-	let recipe
-
 	onEvent(`recipes`, event => {
-		deleteItem.forEach(item => {
+		ts_deleteItems.forEach(item => {
 			event.remove([{ output: `${item}` }, { input: `${item}` }])
 		})
 
@@ -164,5 +164,12 @@ if (Item.exists(`toms_storage:ts.storage_terminal`)) {
 			S: `#forge:rods/wooden`,
 			X: `create:brass_tunnel`
 		}).id(`${recipe}`)
+	})
+
+	onEvent("lootjs", event => {
+		ts_deleteItems.forEach(item => {
+			event.addLootTypeModifier(LootType.CHEST)
+				.removeLoot(`${item}`)
+		})
 	})
 }

@@ -3,7 +3,7 @@
 let TC = (id) => `tconstruct:${id}`
 
 // #region const
-const deleteItems = [
+const tconstruct_deleteItems = [
 	TC(`earth_slime_sling`),
 	TC(`ender_slime_sling`),
 	TC(`ichor_slime_sling`),
@@ -15,50 +15,10 @@ const deleteItems = [
 	TC(`wire_sand_cast`),
 	TC(`wire_red_sand_cast`)
 ]
-const MetalMaterials = [
-	`aluminum`,
-	`amethyst_bronze`,
-	`brass`,
-	`bronze`,
-	`cobalt`,
-	`constantan`,
-	`copper`,
-	`electrum`,
-	`emerald`,
-	`enderium`,
-	`gold`,
-	`hepatizon`,
-	`inlet`,
-	`iron`,
-	`knightslime`,
-	`lead`,
-	`lumium`,
-	`manyullyn`,
-	`molten_debris`,
-	`netherite`,
-	`nickel`,
-	`osmium`,
-	`pewter`,
-	`pig_iron`,
-	`platinum`,
-	`queens_slime`,
-	`refined_glowstone`,
-	`refined_obsidian`,
-	`rose_gold`,
-	`signalum`,
-	`silver`,
-	`slimesteel`,
-	`soulsteel`,
-	`steel`,
-	`tin`,
-	`tungsten`,
-	`uranium`,
-	`zinc`
-]
 // #endregion
 
 onEvent(`recipes`, event => {
-	deleteItems.forEach(item => {
+	tconstruct_deleteItems.forEach(item => {
 		event.remove([{ output: `${item}` }, { input: `${item}` }])
 	})
 
@@ -110,11 +70,12 @@ onEvent(`item.tags`, event => {
 })
 
 onEvent("lootjs", event => {
-	deleteItems.forEach(item => {
+	tconstruct_deleteItems.forEach(item => {
 		event.addLootTypeModifier(LootType.CHEST)
 			.removeLoot(`${item}`)
 	})
 })
 
 onEvent(`entity.loot_tables`, event => {
+
 })

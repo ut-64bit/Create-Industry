@@ -11,7 +11,7 @@ let TS = (id) => `toms_storage:${id}`
 let IE = (id) => `immersiveengineering:${id}`
 
 // #region const
-const deleteItems = [
+const common_deleteItems = [
 	`oldguns:iron_with_coal`
 ]
 const MetalMaterials = [
@@ -57,8 +57,7 @@ const MetalMaterials = [
 // #endregion
 
 onEvent(`recipes`, event => {
-	// common
-	deleteItems.forEach(item => {
+	common_deleteItems.forEach(item => {
 		event.remove([{ output: `${item}` }, { input: `${item}` }])
 	})
 
@@ -193,7 +192,7 @@ onEvent("lootjs", event => {
 	event.addLootTableModifier(`minecraft:blocks/tall_grass`)
 		.removeLoot(`wheat_seeds`)
 
-	deleteItems.forEach(item => {
+	common_deleteItems.forEach(item => {
 		event.addLootTypeModifier(LootType.CHEST)
 			.removeLoot(`${item}`)
 	})
