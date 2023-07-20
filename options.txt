@@ -159,6 +159,7 @@ key_key.entityculling.toggle:key.keyboard.unknown
 key_key.immersivepetroleum.projector.flip:key.keyboard.unknown
 key_placebo.toggleTrails:key.keyboard.unknown
 key_placebo.toggleWings:key.keyboard.unknown
+key_key.justenoughkeys.dropstack:key.keyboard.q
 key_iris.keybind.reload:key.keyboard.unknown
 key_iris.keybind.toggleShaders:key.keyboard.k
 key_iris.keybind.shaderPackSelection:key.keyboard.o
@@ -168,7 +169,6 @@ key_treechop.key.toggle_felling:key.keyboard.unknown
 key_treechop.key.cycle_sneak_behavior:key.keyboard.unknown
 key_net.clayborn.accurateblockplacement.togglevanillaplacement:key.mouse.5
 key_treechop.key.open_settings_overlay:key.keyboard.unknown
-key_key.curios.open.desc:key.keyboard.unknown
 key_key.oldguns.reload:key.keyboard.r
 key_key.oldguns.kickback:key.keyboard.unknown
 key_key.oldguns.look:key.keyboard.left.alt
@@ -176,6 +176,7 @@ key_key.oldguns.attachments:key.keyboard.z
 key_key.oldguns.getoutmag:key.keyboard.u
 key_fpsreducer.key.openGui:key.keyboard.unknown
 key_fpsreducer.key.forceIdle:key.keyboard.pause
+key_key.curios.open.desc:key.keyboard.unknown
 key_options.narrator:key.keyboard.unknown
 key_key.toms_storage.open_terminal:key.keyboard.unknown
 key_framedblocks.key.update_cull:key.keyboard.unknown
