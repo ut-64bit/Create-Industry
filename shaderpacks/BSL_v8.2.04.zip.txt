@@ -1,0 +1,7 @@
+#Fri Jul 21 17:01:53 GMT+09:00 2023
+shadowDistance=128.0
+LIGHT_SHAFT=false
+SHADOW_FILTER=false
+shadowMapResolution=1024
+SHADOW_COLOR=false
+AO=false
