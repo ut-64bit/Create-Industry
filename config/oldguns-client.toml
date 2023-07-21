@@ -1,0 +1,8 @@
+
+["Debug config"]
+	#if you want to make transforms to the gun parts or hands active this
+	"do debug stuff" = false
+	#Hitmarker duration
+	#Range: 0 ~ 50
+	"Hitmarker Duration" = 4
+

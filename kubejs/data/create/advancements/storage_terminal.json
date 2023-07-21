@@ -1,0 +1,35 @@
+{
+  "parent": "create:clockwork_bearing",
+  "display": {
+    "icon": {
+      "item": "toms_storage:ts.storage_terminal"
+    },
+    "title": {
+      "translate": "Still Alive"
+    },
+    "description": {
+      "color": "#DBA213",
+      "translate": "Place a storage terminal"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "0": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "toms_storage:ts.storage_terminal",
+        "item": {
+          "item": "toms_storage:ts.storage_terminal"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ]
+}
