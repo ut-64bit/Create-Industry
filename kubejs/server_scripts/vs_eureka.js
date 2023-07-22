@@ -26,7 +26,7 @@ if (Item.exists(`vs_eureka:balloon`)) {
 			], {
 			K: `dried_kelp`,
 			S: `#forge:string`
-		})
+		}).id(`kubejs:vs_eureka/crafting/black_balloon`)
 		event.shaped(`vs_eureka:balloon`,
 			[
 				` s `,
@@ -34,7 +34,7 @@ if (Item.exists(`vs_eureka:balloon`)) {
 				` s `
 			], {
 			s: `create:white_sail`
-		})
+		}).id(`kubejs:vs_eureka/crafting/balloon`)
 		// #endregion
 
 		// #region anchor
@@ -48,13 +48,14 @@ if (Item.exists(`vs_eureka:balloon`)) {
 			], {
 			s: `#forge:ingots/steel`,
 			S: `#forge:nuggets/steel`
-		}).id(recipe)
+		}).id(`kubejs:vs_eureka/crafting/anchor`)
 		// #endregion
 
 		// #region ballast
 		recipe = `vs_eureka:ballast`
 		event.remove({ id: recipe })
-		event.shapeless(recipe, [`create:fluid_tank`, `#forge:dusts/redstone`]).id(recipe)
+		event.shapeless(recipe, [`create:fluid_tank`, `#forge:dusts/redstone`])
+			.id(`kubejs:vs_eureka/crafting/ballast`)
 		// #endregion
 
 		// #region engine
@@ -68,13 +69,14 @@ if (Item.exists(`vs_eureka:balloon`)) {
 			P: `create:precision_mechanism`,
 			B: `blast_furnace`,
 			R: `create:railway_casing`
-		}).id(recipe)
+		}).id(`kubejs:vs_eureka/crafting/engine`)
 		// #endregion
 
 		// #region floater
 		recipe = `vs_eureka:floater`
 		event.remove({ id: recipe })
-		event.shapeless(recipe, [`create:linear_chassis`, `#forge:dusts/redstone`]).id(recipe)
+		event.shapeless(recipe, [`create:linear_chassis`, `#forge:dusts/redstone`])
+			.id(`kubejs:vs_eureka/crafting/floater`)
 		// #endregion
 
 		// ship_helms
@@ -91,7 +93,7 @@ if (Item.exists(`vs_eureka:balloon`)) {
 				C: `create:railway_casing`,
 				P: `${wood}_planks`,
 				I: `create:precision_mechanism`
-			}).id(recipe)
+			}).id(`kubejs:vs_eureka/crafting/${wood}_ship_helm`)
 		})
 	})
 

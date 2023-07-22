@@ -18,7 +18,7 @@ onEvent(`recipes`, event => {
 		], {
 		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:iron"}`),
 		S: `#forge:rods/wooden`
-	})
+	}).id(`kubejs:delight/crafting/iron_knife`)
 	event.shaped(
 		Item.of(`farmersdelight:golden_knife`),
 		[
@@ -27,7 +27,7 @@ onEvent(`recipes`, event => {
 		], {
 		H: `gold_ingot`,
 		S: `#forge:rods/wooden`
-	})
+	}).id(`kubejs:delight/crafting/golden_knife`)
 	event.shaped(
 		Item.of(`farmersdelight:flint_knife`),
 		[
@@ -36,7 +36,7 @@ onEvent(`recipes`, event => {
 		], {
 		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:flint"}`),
 		S: `#forge:rods/wooden`
-	})
+	}).id(`kubejs:delight/crafting/flint_knife`)
 	event.shaped(
 		Item.of(`delightful:silver_knife`),
 		[
@@ -45,7 +45,7 @@ onEvent(`recipes`, event => {
 		], {
 		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:silver"}`),
 		S: `#forge:rods/wooden`
-	})
+	}).id(`kubejs:delight/crafting/silver_knife`)
 	event.shaped(
 		Item.of(`delightful:copper_knife`),
 		[
@@ -54,8 +54,9 @@ onEvent(`recipes`, event => {
 		], {
 		H: Item.of(`tconstruct:small_blade`, `{Material:"tconstruct:copper"}`),
 		S: `#forge:rods/wooden`
-	})
+	}).id(`kubejs:delight/crafting/copper_knife`)
 	event.recipes.create.filling(Item.of(`farmersdelight:diamond_knife`), [`#farmersdelight:tools/knives`, Fluid.of(TC(`molten_diamond`), 100)])
+		.id(`kubejs:delight/filling/diamond_knife`)
 	// #endregion
 
 	// #region パン生地のレシピを追加
@@ -64,9 +65,13 @@ onEvent(`recipes`, event => {
 	event.remove({ id: `farmersdelight:wheat_dough_from_water` })
 	event.remove({ id: `farmersdelight:wheat_dough_from_eggs` })
 	event.shapeless(`2x farmersdelight:wheat_dough`, [`milk_bucket`, `wheat`, `wheat`, `wheat`])
+		.id(`kubejs:delight/crafting/wheat_dough_from_milk_wheat`)
 	event.shapeless(`2x farmersdelight:wheat_dough`, [`water_bucket`, `wheat`, `wheat`, `wheat`])
+		.id(`kubejs:delight/crafting/wheat_dough_from_water_wheat`)
 	event.shapeless(`2x farmersdelight:wheat_dough`, [`#forge:milk/milk_bottle`, `create:wheat_flour`, `create:wheat_flour`])
+		.id(`kubejs:delight/crafting/wheat_dough_from_water_flour`)
 	event.shapeless(`2x farmersdelight:wheat_dough`, [`#balm:eggs`, `create:wheat_flour`, `create:wheat_flour`])
+		.id(`kubejs:delight/crafting/wheat_dough_from_egg_flour`)
 	event.replaceInput({ input: `create:dough` }, `create:dough`, `#forge:dough/wheat`)
 	event.replaceInput({ input: `farmersdelight:wheat_dough` }, `farmersdelight:wheat_dough`, `#forge:dough/wheat`)
 	event.replaceOutput({ output: `create:dough` }, `create:dough`, `farmersdelight:wheat_dough`)

@@ -27,7 +27,7 @@ onEvent(`recipes`, event => {
 		event.recipes.create.deploying(inter, [inter, `create:propeller`]),
 		event.recipes.create.deploying(inter, [inter, `create:cogwheel`]),
 		event.recipes.create.deploying(inter, [inter, `#forge:nuggets/copper`])
-	]).transitionalItem(inter).loops(3)
+	]).transitionalItem(inter).loops(3).id(`kubejs:create/sequenced_assembly/steam_engine`)
 
 	// electric_engine
 	inter = `kubejs:incomplete_electric_engine`
@@ -36,7 +36,7 @@ onEvent(`recipes`, event => {
 		event.recipes.create.deploying(inter, [inter, `createaddition:copper_spool`]),
 		event.recipes.create.deploying(inter, [inter, `create:shaft`]),
 		event.recipes.create.deploying(inter, [inter, `#forge:nuggets/brass`])
-	]).transitionalItem(inter).loops(3)
+	]).transitionalItem(inter).loops(3).id(`kubejs:create/sequenced_assembly/electric_engine`)
 
 	// electric_motor
 	event.remove({ id: `createaddition:mechanical_crafting/electric_motor` })
@@ -52,7 +52,7 @@ onEvent(`recipes`, event => {
 		S: `createaddition:copper_spool`,
 		R: `#forge:rods/iron`,
 		C: `createaddition:capacitor`
-	})
+	}).id(`kubejs:create/mechanical_crafting/electric_motor`)
 
 	// alternator
 	event.remove({ id: `createaddition:mechanical_crafting/alternator` })
@@ -68,7 +68,7 @@ onEvent(`recipes`, event => {
 		S: `createaddition:copper_spool`,
 		R: `#forge:rods/iron`,
 		C: `createaddition:capacitor`
-	})
+	}).id(`kubejs:create/mechanical_crafting/alternator`)
 
 	// 一部の歯車のレシピを削除
 	if (alloyed) {
@@ -90,10 +90,16 @@ onEvent(`recipes`, event => {
 	let melt = (output, item, gem) => {
 		if (gem) {
 			event.recipes.create.compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 100))
-			event.recipes.create.mixing(Fluid.of(TC(`molten_${item}`), 100), `#forge:gems/${item}`).superheated()
+				.id(`kubejs:create/compacting/${output}_from_molten_${item}`)
+			event.recipes.create.mixing(Fluid.of(TC(`molten_${item}`), 100), `#forge:gems/${item}`)
+				.superheated()
+				.id(`kubejs:create/mixing/molten_${item}`)
 		} else {
 			event.recipes.create.compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 90))
-			event.recipes.create.mixing(Fluid.of(TC(`molten_${item}`), 90), `#forge:ingots/${item}`).heated()
+				.id(`kubejs:create/compacting/${output}_from_molten_${item}`)
+			event.recipes.create.mixing(Fluid.of(TC(`molten_${item}`), 90), `#forge:ingots/${item}`)
+				.heated()
+				.id(`kubejs:create/mixing/molten_${item}`)
 		}
 	}
 	melt(`iron_ingot`, `iron`, false)
@@ -108,7 +114,9 @@ onEvent(`recipes`, event => {
 
 	// 雑多なレシピを追加
 	event.recipes.create.emptying([`obsidian`, Fluid.of(`lava`, 250)], `magma_block`)
+		.id(`kubejs:create/emptying/magma_block`)
 	event.recipes.create.haunting(`netherrack`, `clay`)
+		.id(`kubejs:create/haunting/netherrack`)
 	event.replaceInput({ id: `create:crafting/kinetics/whisk` }, `#forge:plates/iron`, `#forge:rods/iron`)
 	item_application(`tconstruct:crafting_station`, `tconstruct:pattern`, `minecraft:crafting_table`)
 })
