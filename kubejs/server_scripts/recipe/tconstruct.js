@@ -2,26 +2,9 @@
 
 let TC = (id) => `tconstruct:${id}`
 
-// #region const
-const tconstruct_deleteItems = [
-	TC(`earth_slime_sling`),
-	TC(`ender_slime_sling`),
-	TC(`ichor_slime_sling`),
-	TC(`sky_slime_sling`),
-	TC(`plate_cast`),
-	TC(`plate_sand_cast`),
-	TC(`plate_red_sand_cast`),
-	TC(`wire_cast`),
-	TC(`wire_sand_cast`),
-	TC(`wire_red_sand_cast`)
-]
-// #endregion
+// const
 
 onEvent(`recipes`, event => {
-	tconstruct_deleteItems.forEach(item => {
-		event.remove([{ output: `${item}` }, { input: `${item}` }])
-	})
-
 	// 一部のキャストレシピを削除
 	MetalMaterials.forEach(material => {
 		event.remove({ type: TC(`casting_table`), output: `#forge:plates/${material}` })
@@ -56,7 +39,7 @@ onEvent(`recipes`, event => {
 			`sBs`,
 			`bcb`
 		], {
-		b: `tconstruct:scorched_brick`,
+		b: `tconstruct:seared_brick`,
 		s: `#forge:plates/steel`,
 		B: `kubejs:blaze_core`,
 		c: `#forge:ingots/copper`

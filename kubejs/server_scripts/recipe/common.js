@@ -11,8 +11,23 @@ let TS = (id) => `toms_storage:${id}`
 let IE = (id) => `immersiveengineering:${id}`
 
 // #region const
-const common_deleteItems = [
-	`oldguns:iron_with_coal`
+const deleteItems = [
+	`oldguns:iron_with_coal`,
+	`toms_storage:ts.adv_wireless_terminal`,
+	`toms_storage:ts.wireless_terminal`,
+	`toms_storage:ts.inventory_hopper_basic`,
+	IE(`blastbrick`),
+    IE(`alloybrick`),
+	TC(`earth_slime_sling`),
+	TC(`ender_slime_sling`),
+	TC(`ichor_slime_sling`),
+	TC(`sky_slime_sling`),
+	TC(`plate_cast`),
+	TC(`plate_sand_cast`),
+	TC(`plate_red_sand_cast`),
+	TC(`wire_cast`),
+	TC(`wire_sand_cast`),
+	TC(`wire_red_sand_cast`)
 ]
 const MetalMaterials = [
 	`aluminum`,
@@ -57,7 +72,7 @@ const MetalMaterials = [
 // #endregion
 
 onEvent(`recipes`, event => {
-	common_deleteItems.forEach(item => {
+	deleteItems.forEach(item => {
 		event.remove([{ output: `${item}` }, { input: `${item}` }])
 	})
 
@@ -192,7 +207,7 @@ onEvent("lootjs", event => {
 	event.addLootTableModifier(`minecraft:blocks/tall_grass`)
 		.removeLoot(`wheat_seeds`)
 
-	common_deleteItems.forEach(item => {
+	deleteItems.forEach(item => {
 		event.addLootTypeModifier(LootType.CHEST)
 			.removeLoot(`${item}`)
 	})

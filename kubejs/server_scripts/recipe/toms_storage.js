@@ -1,20 +1,11 @@
 // priority: 1
 
 // const
-const ts_deleteItems = [
-	`toms_storage:ts.adv_wireless_terminal`,
-	`toms_storage:ts.wireless_terminal`,
-	`toms_storage:ts.inventory_hopper_basic`
-]
 
 // var
 
 if (Item.exists(`toms_storage:ts.storage_terminal`)) {
 	onEvent(`recipes`, event => {
-		ts_deleteItems.forEach(item => {
-			event.remove([{ output: `${item}` }, { input: `${item}` }])
-		})
-
 		// crafting_terminal
 		event.remove({ id: `toms_storage:crafting_terminal` })
 		event.recipes.create.mechanicalCrafting(`toms_storage:ts.crafting_terminal`,

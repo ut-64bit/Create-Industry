@@ -1,23 +1,14 @@
 // priority: 1
 
 // func
-//let IE = (id) => `immersiveengineering:${id}`
+let IE = (id) => `immersiveengineering:${id}`
 
 // var
 let inter
 
 // const
-const ie_deleteItems = [
-    IE(`blastbrick`),
-    IE(`alloybrick`)
-]
 
 onEvent(`recipes`, event => {
-    ie_deleteItems.forEach(item => {
-        event.remove([{ output: `${item}` }, { input: `${item}` }])
-    })
-
-    // immersiveengineering
     // #region tools
     event.replaceInput({ output: IE(`hammer`) }, `#forge:ingots/iron`, `#forge:ingots/steel`)
     event.replaceInput({ output: IE(`wirecutter`) }, `#forge:ingots/iron`, `#forge:ingots/steel`)
@@ -77,8 +68,4 @@ onEvent(`recipes`, event => {
 })
 
 onEvent("lootjs", event => {
-    ie_deleteItems.forEach(item => {
-        event.addLootTypeModifier(LootType.CHEST)
-            .removeLoot(`${item}`)
-    })
 })
