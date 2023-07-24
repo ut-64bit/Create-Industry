@@ -71,10 +71,6 @@ onEvent(`item.tags`, event => {
 })
 
 onEvent("lootjs", event => {
-	tconstruct_deleteItems.forEach(item => {
-		event.addLootTypeModifier(LootType.CHEST)
-			.removeLoot(`${item}`)
-	})
 })
 
 onEvent(`entity.loot_tables`, event => {

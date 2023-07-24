@@ -151,9 +151,5 @@ if (Item.exists(`toms_storage:ts.storage_terminal`)) {
 	})
 
 	onEvent("lootjs", event => {
-		ts_deleteItems.forEach(item => {
-			event.addLootTypeModifier(LootType.CHEST)
-				.removeLoot(`${item}`)
-		})
 	})
 }
