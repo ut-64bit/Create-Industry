@@ -8,6 +8,7 @@ const alloyed = Item.exists(`extendedgears:steel_cogwheel`)
 
 onEvent(`recipes`, event => {
 	// func
+	const { sequencedAssembly, deploying, filling, mechanicalCrafting, compacting, mixing, emptying, haunting } = event.recipes.create;
 	let item_application = (output, inputItem, inputBlock) => {
 		event.custom({
 			type: `create:item_application`,
@@ -21,26 +22,29 @@ onEvent(`recipes`, event => {
 		})
 	}
 
+	// heavy_plate
+	event.replaceInput({ id: `createindustry:sequenced_assembly/heavy_plate` }, `#forge:ingots/steel`, `#forge:plates/steel`)
+
 	// steam_engine
 	inter = `kubejs:incomplete_steam_engine`
-	event.recipes.create.sequencedAssembly(`kubejs:steam_engine`, `#forge:plates/copper`, [
-		event.recipes.create.deploying(inter, [inter, `create:propeller`]),
-		event.recipes.create.deploying(inter, [inter, `create:cogwheel`]),
-		event.recipes.create.deploying(inter, [inter, `#forge:nuggets/copper`])
+	sequencedAssembly(`kubejs:steam_engine`, `#forge:plates/copper`, [
+		deploying(inter, [inter, `create:propeller`]),
+		deploying(inter, [inter, `create:cogwheel`]),
+		deploying(inter, [inter, `#forge:nuggets/copper`])
 	]).transitionalItem(inter).loops(3).id(`kubejs:create/sequenced_assembly/steam_engine`)
 
 	// electric_engine
 	inter = `kubejs:incomplete_electric_engine`
-	event.recipes.create.sequencedAssembly(`kubejs:electric_engine`, `#forge:plates/brass`, [
-		event.recipes.create.deploying(inter, [inter, `#forge:nuggets/steel`]),
-		event.recipes.create.deploying(inter, [inter, `createaddition:copper_spool`]),
-		event.recipes.create.deploying(inter, [inter, `create:shaft`]),
-		event.recipes.create.deploying(inter, [inter, `#forge:nuggets/brass`])
+	sequencedAssembly(`kubejs:electric_engine`, `#forge:plates/brass`, [
+		deploying(inter, [inter, `#forge:nuggets/steel`]),
+		deploying(inter, [inter, `createaddition:copper_spool`]),
+		deploying(inter, [inter, `create:shaft`]),
+		deploying(inter, [inter, `#forge:nuggets/brass`])
 	]).transitionalItem(inter).loops(3).id(`kubejs:create/sequenced_assembly/electric_engine`)
 
 	// electric_motor
 	event.remove({ id: `createaddition:mechanical_crafting/electric_motor` })
-	event.recipes.create.mechanicalCrafting(`createaddition:electric_motor`, [
+	mechanicalCrafting(`createaddition:electric_motor`, [
 		`  A  `,
 		` BEB `,
 		`BSRSB`,
@@ -56,7 +60,7 @@ onEvent(`recipes`, event => {
 
 	// alternator
 	event.remove({ id: `createaddition:mechanical_crafting/alternator` })
-	event.recipes.create.mechanicalCrafting(`createaddition:alternator`, [
+	mechanicalCrafting(`createaddition:alternator`, [
 		`  A  `,
 		` IEI `,
 		`ISRSI`,
@@ -89,15 +93,15 @@ onEvent(`recipes`, event => {
 	// 液体⇄インゴット
 	let melt = (output, item, gem) => {
 		if (gem) {
-			event.recipes.create.compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 100))
+			compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 100))
 				.id(`kubejs:create/compacting/${output}_from_molten_${item}`)
-			event.recipes.create.mixing(Fluid.of(TC(`molten_${item}`), 100), `#forge:gems/${item}`)
+			mixing(Fluid.of(TC(`molten_${item}`), 100), `#forge:gems/${item}`)
 				.superheated()
 				.id(`kubejs:create/mixing/molten_${item}`)
 		} else {
-			event.recipes.create.compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 90))
+			compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 90))
 				.id(`kubejs:create/compacting/${output}_from_molten_${item}`)
-			event.recipes.create.mixing(Fluid.of(TC(`molten_${item}`), 90), `#forge:ingots/${item}`)
+			mixing(Fluid.of(TC(`molten_${item}`), 90), `#forge:ingots/${item}`)
 				.heated()
 				.id(`kubejs:create/mixing/molten_${item}`)
 		}
@@ -113,9 +117,9 @@ onEvent(`recipes`, event => {
 	}
 
 	// 雑多なレシピを追加
-	event.recipes.create.emptying([`obsidian`, Fluid.of(`lava`, 250)], `magma_block`)
+	emptying([`obsidian`, Fluid.of(`lava`, 250)], `magma_block`)
 		.id(`kubejs:create/emptying/magma_block`)
-	event.recipes.create.haunting(`netherrack`, `clay`)
+	haunting(`netherrack`, `clay`)
 		.id(`kubejs:create/haunting/netherrack`)
 	event.replaceInput({ id: `create:crafting/kinetics/whisk` }, `#forge:plates/iron`, `#forge:rods/iron`)
 	item_application(`tconstruct:crafting_station`, `tconstruct:pattern`, `minecraft:crafting_table`)

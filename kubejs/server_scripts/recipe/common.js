@@ -17,7 +17,7 @@ const deleteItems = [
 	`toms_storage:ts.wireless_terminal`,
 	`toms_storage:ts.inventory_hopper_basic`,
 	IE(`blastbrick`),
-    IE(`alloybrick`),
+	IE(`alloybrick`),
 	TC(`earth_slime_sling`),
 	TC(`ender_slime_sling`),
 	TC(`ichor_slime_sling`),
@@ -206,6 +206,16 @@ onEvent("lootjs", event => {
 		.removeLoot(`wheat_seeds`)
 	event.addLootTableModifier(`minecraft:blocks/tall_grass`)
 		.removeLoot(`wheat_seeds`)
+
+	event.addBlockLootModifier('#forge:ores').modifyLoot('#forge:raw_materials', item => {
+		const replacement = AlmostUnified.getReplacementForItem(item);
+		if (replacement.isEmpty()) {
+			return item;
+		}
+		replacement.setCount(item.getCount());
+		return replacement;
+	});
+
 
 	deleteItems.forEach(item => {
 		event.addLootTypeModifier(LootType.CHEST)

@@ -15,29 +15,19 @@ onEvent(`recipes`, event => {
     event.replaceInput({ output: IE(`screwdriver`) }, `#forge:rods/iron`, `#forge:rods/steel`)
     // #endregion
 
-    /*
-    // component_iron
-    event.remove({ id: `immersiveengineering:crafting/component_iron` })
-    inter = `kubejs:incomplete_component_iron`
-    event.recipes.create.sequencedAssembly(IE(`component_iron`), `kubejs:copper_coil`, [
-        event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
-        event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`]),
-        event.recipes.create.deploying(inter, [inter, `#forge:plates/iron`])
+    // electron_tube
+    event.remove({ id: `immersiveengineering:blueprint/electron_tube` })
+    inter = `kubejs:incomplete_electron_tube`
+    event.recipes.create.sequencedAssembly(`immersiveengineering:electron_tube`, `#forge:plates/nickel`, [
+        event.recipes.create.deploying(inter, [inter, `#forge:wires/copper`]),
+        event.recipes.create.deploying(inter, [inter, `#forge:wires/copper`]),
+        event.recipes.create.deploying(inter, [inter, `redstone`]),
+        event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_glass`, 250)])
     ]).transitionalItem(inter).loops(1)
-
-    // component_steel
-    event.remove({ id: `immersiveengineering:crafting/component_steel` })
-    inter = `kubejs:incomplete_component_steel`
-    event.recipes.create.sequencedAssembly(IE(`component_steel`), `kubejs:copper_coil`, [
-        event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`]),
-        event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`]),
-        event.recipes.create.deploying(inter, [inter, `#forge:plates/steel`])
-    ]).transitionalItem(inter).loops(1)
-    */
 
     // copper_coil
     event.recipes.create.deploying(`kubejs:copper_coil`, [`#forge:rods/iron`, IE(`wirecoil_copper`)])
-		.id(`kubejs:immersiveengineering/deploying/copper_coil`)
+        .id(`kubejs:immersiveengineering/deploying/copper_coil`)
 
     // dynamo
     event.remove({ id: `immersiveengineering:crafting/dynamo` })
@@ -68,4 +58,5 @@ onEvent(`recipes`, event => {
 })
 
 onEvent("lootjs", event => {
+
 })

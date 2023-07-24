@@ -10,6 +10,7 @@ onEvent(`item.registry`, event => {
 	// immersiveengineering
 	event.create(`incomplete_component_iron`, `create:sequenced_assembly`)
 	event.create(`incomplete_component_steel`, `create:sequenced_assembly`)
+	event.create(`incomplete_electron_tube`, `create:sequenced_assembly`)
 	event.create(`copper_coil`)
 
 	// armor trim
