@@ -11,3 +11,7 @@ journeymap/data/
 config/jei/world/
 journeymap/journeymap.log
 rhino.local.properties
+essential/cosmetic-cache/
+essential/avatar-cache/
+essential/screenshot-cache/
+essential/lwjgl3-natives/
