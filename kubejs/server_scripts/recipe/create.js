@@ -117,12 +117,12 @@ onEvent(`recipes`, event => {
 	}
 	melt(`iron_ingot`, `iron`, false)
 	melt(`gold_ingot`, `gold`, false)
-	melt(`create:brass_ingot`, `brass`, false)
+	//melt(`create:brass_ingot`, `brass`, false)
 	melt(`diamond`, `diamond`, true)
-	melt(`createindustry:steel_ingot`, `steel`, false)
+	//melt(`createindustry:steel_ingot`, `steel`, false)
 	if (alloyed) {
-		melt(`alloyed:bronze_ingot`, `bronze`, false)
-		melt(`alloyed:steel_ingot`, `steel`, false)
+	//	melt(`alloyed:bronze_ingot`, `bronze`, false)
+	//	melt(`alloyed:steel_ingot`, `steel`, false)
 	}
 
 	// 雑多なレシピを追加
@@ -130,7 +130,7 @@ onEvent(`recipes`, event => {
 		.id(`kubejs:create/emptying/magma_block`)
 	haunting(`netherrack`, `clay`)
 		.id(`kubejs:create/haunting/netherrack`)
-	event.remove({ id: `create:crafting/kinetics/whisk` })
+	event.remove({ output: 'create:whisk' })
 	event.shaped(`create:whisk`, [
 		` a `,
 		`pap`,
