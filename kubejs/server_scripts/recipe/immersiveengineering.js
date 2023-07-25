@@ -9,6 +9,22 @@ let inter
 // const
 
 onEvent(`recipes`, event => {
+    // #region func
+	const { sequencedAssembly, deploying, filling, mechanicalCrafting, compacting, mixing, emptying, haunting, pressing } = event.recipes.create;
+    let item_application = (output, inputBlock, inputItem) => {
+        event.custom({
+            type: `create:item_application`,
+            ingredients: [
+                Ingredient.of(inputBlock).toJson(),
+                Ingredient.of(inputItem).toJson()
+            ],
+            results: [
+                Item.of(output).toResultJson()
+            ]
+        })
+    }
+    // #endregion
+
     // #region tools
     event.replaceInput({ output: IE(`hammer`) }, `#forge:ingots/iron`, `#forge:ingots/steel`)
     event.replaceInput({ output: IE(`wirecutter`) }, `#forge:ingots/iron`, `#forge:ingots/steel`)
@@ -18,15 +34,15 @@ onEvent(`recipes`, event => {
     // electron_tube
     event.remove({ id: `immersiveengineering:blueprint/electron_tube` })
     inter = `kubejs:incomplete_electron_tube`
-    event.recipes.create.sequencedAssembly(`immersiveengineering:electron_tube`, `#forge:plates/nickel`, [
-        event.recipes.create.deploying(inter, [inter, `#forge:wires/copper`]),
-        event.recipes.create.deploying(inter, [inter, `#forge:wires/copper`]),
-        event.recipes.create.deploying(inter, [inter, `redstone`]),
-        event.recipes.create.filling(inter, [inter, Fluid.of(`tconstruct:molten_glass`, 250)])
+    sequencedAssembly(`immersiveengineering:electron_tube`, `#forge:plates/nickel`, [
+        deploying(inter, [inter, `#forge:wires/copper`]),
+        deploying(inter, [inter, `#forge:wires/copper`]),
+        deploying(inter, [inter, `redstone`]),
+        filling(inter, [inter, Fluid.of(`tconstruct:molten_glass`, 250)])
     ]).transitionalItem(inter).loops(1)
 
     // copper_coil
-    event.recipes.create.deploying(`kubejs:copper_coil`, [`#forge:rods/iron`, IE(`wirecoil_copper`)])
+    deploying(`kubejs:copper_coil`, [`#forge:rods/iron`, IE(`wirecoil_copper`)])
         .id(`kubejs:immersiveengineering/deploying/copper_coil`)
 
     // dynamo
@@ -43,7 +59,7 @@ onEvent(`recipes`, event => {
     }).id(`kubejs:immersiveengineering/crafting/dynamo`)
 
     // blastbrick_reinforced
-    event.recipes.create.mechanicalCrafting(Item.of(IE(`blastbrick_reinforced`), 3), [
+    mechanicalCrafting(Item.of(IE(`blastbrick_reinforced`), 3), [
         ` ppp `,
         `pcscp`,
         `psbsp`,

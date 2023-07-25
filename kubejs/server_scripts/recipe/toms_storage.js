@@ -6,9 +6,25 @@
 
 if (Item.exists(`toms_storage:ts.storage_terminal`)) {
 	onEvent(`recipes`, event => {
+		// #region func
+		const { sequencedAssembly, deploying, filling, mechanicalCrafting, compacting, mixing, emptying, haunting, pressing } = event.recipes.create;
+		let item_application = (output, inputBlock, inputItem) => {
+			event.custom({
+				type: `create:item_application`,
+				ingredients: [
+					Ingredient.of(inputBlock).toJson(),
+					Ingredient.of(inputItem).toJson()
+				],
+				results: [
+					Item.of(output).toResultJson()
+				]
+			})
+		}
+		// #endregion
+
 		// crafting_terminal
 		event.remove({ id: `toms_storage:crafting_terminal` })
-		event.recipes.create.mechanicalCrafting(`toms_storage:ts.crafting_terminal`,
+		mechanicalCrafting(`toms_storage:ts.crafting_terminal`,
 			[
 				` P `,
 				`SSS`,

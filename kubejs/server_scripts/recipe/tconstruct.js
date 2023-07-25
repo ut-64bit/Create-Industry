@@ -5,35 +5,54 @@ let TC = (id) => `tconstruct:${id}`
 // const
 
 onEvent(`recipes`, event => {
+	// #region func
+	const { sequencedAssembly, deploying, filling, mechanicalCrafting, compacting, mixing, emptying, haunting, pressing } = event.recipes.create;
+	let item_application = (output, inputBlock, inputItem) => {
+		event.custom({
+			type: `create:item_application`,
+			ingredients: [
+				Ingredient.of(inputBlock).toJson(),
+				Ingredient.of(inputItem).toJson()
+			],
+			results: [
+				Item.of(output).toResultJson()
+			]
+		})
+	}
+	// #endregion
+
 	// 一部のキャストレシピを削除
 	MetalMaterials.forEach(material => {
 		event.remove({ type: TC(`casting_table`), output: `#forge:plates/${material}` })
 		event.remove({ type: TC(`casting_table`), output: `#forge:wire/${material}` })
 	})
 
+	// crafting_station
+	item_application(`tconstruct:crafting_station`, `minecraft:crafting_table`, `tconstruct:pattern`)
+
 	// 燃え盛る血液のレシピを追加
-	event.recipes.create.mixing(Fluid.of(`tconstruct:blazing_blood`, 200), `kubejs:blaze_core`)
+	mixing(Fluid.of(`tconstruct:blazing_blood`, 200), `kubejs:blaze_core`)
 		.superheated()
 		.id(`kubejs:tconstruct/mixing/blazing_blood_from_blaze_core`)
 
 	// グラウトのレシピを変更
 	event.remove({ id: `tconstruct:smeltery/seared/grout_multiple` })
 	event.remove({ id: `tconstruct:smeltery/seared/grout` })
-	event.recipes.create.mixing(
+	mixing(
 		[`2x tconstruct:grout`, Item.of(`tconstruct:grout`).withChance(0.5)],
 		[`clay_ball`, `#sand`, `gravel`]
 	).id(`kubejs:tconstruct/mixing/grout`)
 
 	// ネザーグラウトのレシピを変更
 	event.remove({ id: `tconstruct:smeltery/scorched/nether_grout` })
-	event.recipes.create.mixing(
+	mixing(
 		[`2x tconstruct:nether_grout`, Item.of(`tconstruct:nether_grout`).withChance(0.5)],
 		[`magma_cream`, `#minecraft:soul_fire_base_blocks`, `gravel`]
 	).heated().id(`kubejs:tconstruct/mixing/nether_grout`)
 
 	// smeltery_controller
 	event.remove({ id: `tconstruct:smeltery/casting/seared/smeltery_controller` })
-	event.recipes.create.mechanicalCrafting(`tconstruct:smeltery_controller`,
+	mechanicalCrafting(`tconstruct:smeltery_controller`,
 		[
 			`bsb`,
 			`sBs`,
@@ -48,7 +67,7 @@ onEvent(`recipes`, event => {
 	// foundry_controller
 	/*
 	event.remove({ id: `tconstruct:smeltery/casting/scorched/foundry_controller` })
-	event.recipes.create.mechanicalCrafting(`tconstruct:foundry_controller`,
+	mechanicalCrafting(`tconstruct:foundry_controller`,
 		[
 			`bbbbb`,
 			`bsssb`,

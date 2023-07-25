@@ -7,9 +7,9 @@ let TC = (id) => `tconstruct:${id}`
 const alloyed = Item.exists(`extendedgears:steel_cogwheel`)
 
 onEvent(`recipes`, event => {
-	// func
-	const { sequencedAssembly, deploying, filling, mechanicalCrafting, compacting, mixing, emptying, haunting } = event.recipes.create;
-	let item_application = (output, inputItem, inputBlock) => {
+	// #region func
+	const { sequencedAssembly, deploying, filling, mechanicalCrafting, compacting, mixing, emptying, haunting, pressing } = event.recipes.create;
+	let item_application = (output, inputBlock, inputItem) => {
 		event.custom({
 			type: `create:item_application`,
 			ingredients: [
@@ -17,10 +17,19 @@ onEvent(`recipes`, event => {
 				Ingredient.of(inputItem).toJson()
 			],
 			results: [
-				Item.of(output).toResultJson(),
+				Item.of(output).toResultJson()
 			]
 		})
 	}
+	// #endregion
+
+	// 縦ハーフしねえええええ！！！
+	event.remove({ output: /createdeco:.*_slab_vert/ })
+
+	// ダイヤの粉
+	event.remove({ id: `createaddition:crushing/diamond` })
+	event.recipes.immersiveengineering.crusher('createaddition:diamond_grit', `diamond`)
+		.id(`kubejs:create/crusher/diamond_dust`)
 
 	// heavy_plate
 	event.replaceInput({ id: `createindustry:sequenced_assembly/heavy_plate` }, `#forge:ingots/steel`, `#forge:plates/steel`)
@@ -122,7 +131,6 @@ onEvent(`recipes`, event => {
 	haunting(`netherrack`, `clay`)
 		.id(`kubejs:create/haunting/netherrack`)
 	event.replaceInput({ id: `create:crafting/kinetics/whisk` }, `#forge:plates/iron`, `#forge:rods/iron`)
-	item_application(`tconstruct:crafting_station`, `tconstruct:pattern`, `minecraft:crafting_table`)
 })
 
 onEvent(`item.tags`, event => {

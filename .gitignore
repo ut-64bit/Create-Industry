@@ -11,7 +11,7 @@ journeymap/data/
 config/jei/world/
 journeymap/journeymap.log
 rhino.local.properties
-essential/cosmetic-cache/
-essential/avatar-cache/
-essential/screenshot-cache/
-essential/lwjgl3-natives/
+essential/*/
+essential/Essential (forge_1.18.2).jar
+essential/screenshot-checksum-caches.json
+essential/version.json

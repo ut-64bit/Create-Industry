@@ -72,6 +72,22 @@ const MetalMaterials = [
 // #endregion
 
 onEvent(`recipes`, event => {
+	// #region func
+	const { sequencedAssembly, deploying, filling, mechanicalCrafting, compacting, mixing, emptying, haunting, pressing } = event.recipes.create;
+	let item_application = (output, inputBlock, inputItem) => {
+		event.custom({
+			type: `create:item_application`,
+			ingredients: [
+				Ingredient.of(inputBlock).toJson(),
+				Ingredient.of(inputItem).toJson()
+			],
+			results: [
+				Item.of(output).toResultJson()
+			]
+		})
+	}
+	// #endregion
+
 	deleteItems.forEach(item => {
 		event.remove([{ output: `${item}` }, { input: `${item}` }])
 	})
@@ -106,14 +122,15 @@ onEvent(`recipes`, event => {
 	event.smithing(`diamond_shovel`, `iron_shovel`, `diamond`)
 	event.smithing(`diamond_hoe`, `iron_hoe`, `diamond`)
 	event.smithing(`diamond_sword`, `iron_sword`, `diamond`)
-	event.recipes.create.filling(`diamond_pickaxe`, [`iron_pickaxe`, Fluid.of(TC(`molten_diamond`), 100)])
-	event.recipes.create.filling(`diamond_axe`, [`iron_axe`, Fluid.of(TC(`molten_diamond`), 100)])
-	event.recipes.create.filling(`diamond_shovel`, [`iron_shovel`, Fluid.of(TC(`molten_diamond`), 100)])
-	event.recipes.create.filling(`diamond_hoe`, [`iron_hoe`, Fluid.of(TC(`molten_diamond`), 100)])
-	event.recipes.create.filling(`diamond_sword`, [`iron_sword`, Fluid.of(TC(`molten_diamond`), 100)])
+	filling(`diamond_pickaxe`, [`iron_pickaxe`, Fluid.of(TC(`molten_diamond`), 100)])
+	filling(`diamond_axe`, [`iron_axe`, Fluid.of(TC(`molten_diamond`), 100)])
+	filling(`diamond_shovel`, [`iron_shovel`, Fluid.of(TC(`molten_diamond`), 100)])
+	filling(`diamond_hoe`, [`iron_hoe`, Fluid.of(TC(`molten_diamond`), 100)])
+	filling(`diamond_sword`, [`iron_sword`, Fluid.of(TC(`molten_diamond`), 100)])
 	// #endregion
 
 	// #region 防具のレシピを変更
+	// func
 	let removeArmor = (material, removeInput) => {
 		event.remove({ output: `${material}_helmet` })
 		event.remove({ output: `${material}_chestplate` })
@@ -126,9 +143,6 @@ onEvent(`recipes`, event => {
 			event.remove({ input: `${material}_boots` })
 		}
 	}
-	removeArmor(`iron`, false)
-	removeArmor(`golden`, false)
-	removeArmor(`diamond`, false)
 	let addPlateArmor = (material, plate) => {
 		event.shaped(`${material}_helmet`,
 			[
@@ -165,24 +179,77 @@ onEvent(`recipes`, event => {
 			L: `leather_boots`
 		})
 	}
+
+	// 鉄防具
+	removeArmor(`iron`, false)
 	addPlateArmor(`iron`, `iron`)
+
+	// 金防具
+	removeArmor(`golden`, false)
 	addPlateArmor(`golden`, `gold`)
-	event.recipes.create.filling(`diamond_helmet`, [`iron_helmet`, Fluid.of(TC(`molten_diamond`), 500)])
-	event.recipes.create.filling(`diamond_chestplate`, [`iron_chestplate`, Fluid.of(TC(`molten_diamond`), 800)])
-	event.recipes.create.filling(`diamond_leggings`, [`iron_leggings`, Fluid.of(TC(`molten_diamond`), 700)])
-	event.recipes.create.filling(`diamond_boots`, [`iron_boots`, Fluid.of(TC(`molten_diamond`), 400)])
+
+	// #region ieの鋼鉄防具
+	event.remove({ id: `immersiveengineering:crafting/armor_steel_head` })
+	event.remove({ id: `immersiveengineering:crafting/armor_steel_chest` })
+	event.remove({ id: `immersiveengineering:crafting/armor_steel_legs` })
+	event.remove({ id: `immersiveengineering:crafting/armor_steel_feet` })
+
+	event.shaped(`immersiveengineering:armor_steel_head`,
+		[
+			`PPP`,
+			`PLP`
+		], {
+		P: `#forge:plates/steel`,
+		L: `leather_helmet`
+	})
+	event.shaped(`immersiveengineering:armor_steel_chest`,
+		[
+			`PLP`,
+			`PPP`,
+			`PPP`
+		], {
+		P: `#forge:plates/steel`,
+		L: `leather_chestplate`
+	})
+	event.shaped(`immersiveengineering:armor_steel_legs`,
+		[
+			`PPP`,
+			`PLP`,
+			`P P`
+		], {
+		P: `#forge:plates/steel`,
+		L: `leather_leggings`
+	})
+	event.shaped(`immersiveengineering:armor_steel_feet`,
+		[
+			`P P`,
+			`PLP`
+		], {
+		P: `#forge:plates/steel`,
+		L: `leather_boots`
+	})
+	// #endregion
+
+	// #region ダイヤ防具
+	removeArmor(`diamond`, false)
+
+	filling(`diamond_helmet`, [`iron_helmet`, Fluid.of(TC(`molten_diamond`), 500)])
+	filling(`diamond_chestplate`, [`iron_chestplate`, Fluid.of(TC(`molten_diamond`), 800)])
+	filling(`diamond_leggings`, [`iron_leggings`, Fluid.of(TC(`molten_diamond`), 700)])
+	filling(`diamond_boots`, [`iron_boots`, Fluid.of(TC(`molten_diamond`), 400)])
+	// #endregion
 	// #endregion
 
 	// oldguns
 	// #region 銃器用鋼鉄のレシピを変更
 	event.remove({ output: `oldguns:steel_ingot` })
 	let inter = `kubejs:unprocessed_steel_ingot`
-	event.recipes.create.sequencedAssembly(`oldguns:steel_ingot`, `#forge:ingots/steel`, [
-		event.recipes.create.filling(inter, [inter, Fluid.of(`lava`, 500)]),
-		event.recipes.create.pressing(inter, inter),
-		event.recipes.create.pressing(inter, inter),
-		event.recipes.create.filling(inter, [inter, Fluid.of(`water`, 500)]),
-	]).transitionalItem(inter).loops(1)
+	sequencedAssembly(`oldguns:steel_ingot`, `#forge:ingots/steel`, [
+		filling(inter, [inter, Fluid.of(`lava`, 500)]),
+		pressing(inter, inter),
+		pressing(inter, inter),
+		filling(inter, [inter, Fluid.of(`water`, 500)]),
+	]).transitionalItem(inter).loops(1).id(`kubejs:oldguns/sequenced_assembly/steel_ingot`)
 	// #endregion
 
 	// misc

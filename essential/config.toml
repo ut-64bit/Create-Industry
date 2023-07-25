@@ -75,7 +75,7 @@
 
 	[quality_of_life.screenshots]
 		vanilla_screenshot_message = false
-		essential_screenshots = false
+		essential_screenshots = true
 		screenshot_sounds = true
 
 [cosmetics]
