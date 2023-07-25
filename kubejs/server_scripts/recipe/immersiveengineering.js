@@ -10,7 +10,7 @@ let inter
 
 onEvent(`recipes`, event => {
     // #region func
-	const { sequencedAssembly, deploying, filling, mechanicalCrafting, compacting, mixing, emptying, haunting, pressing } = event.recipes.create;
+    const { sequencedAssembly, deploying, filling, mechanicalCrafting, compacting, mixing, emptying, haunting, pressing } = event.recipes.create;
     let item_application = (output, inputBlock, inputItem) => {
         event.custom({
             type: `create:item_application`,
@@ -66,11 +66,65 @@ onEvent(`recipes`, event => {
         `pcscp`,
         ` ppp `
     ], {
-        p: `#forge:ingots/steel`,
+        p: `#forge:plates/steel`,
         c: `#forge:ingots/nether_brick`,
         s: `#forge:ingots/brick`,
         b: `blaze_powder`
     }).id(`kubejs:immersiveengineering/mechanical_crafting/blastbrick_reinforced`)
+
+    // #region wire_coil
+    event.remove({ id: /immersiveengineering:crafting\/wirecoil_.*/, input: `#balm:wooden_rods` })
+    event.shaped('immersiveengineering:wirecoil_copper', [
+        ` w `,
+        `wsw`,
+        ` w `
+    ], {
+        w: `#forge:wires/copper`,
+        s: `createaddition:spool`
+    }).id(`kubejs:immersiveengineering/crafting/wirecoil_copper`)
+    event.shaped('immersiveengineering:wirecoil_electrum', [
+        ` w `,
+        `wsw`,
+        ` w `
+    ], {
+        w: `#forge:wires/electrum`,
+        s: `createaddition:spool`
+    }).id(`kubejs:immersiveengineering/crafting/wirecoil_electrum`)
+    event.shaped('immersiveengineering:wirecoil_steel', [
+        ` s `,
+        `aSa`,
+        ` s `
+    ], {
+        s: `#forge:wires/steel`,
+        a: `#forge:wires/aluminum`,
+        S: `createaddition:spool`
+    }).id(`kubejs:immersiveengineering/crafting/wirecoil_steel`),
+    event.shaped('immersiveengineering:wirecoil_structure_rope', [
+        ` w `,
+        `wsw`,
+        ` w `
+    ], {
+        w: `farmersdelight:rope`,
+        s: `createaddition:spool`
+    }).id(`kubejs:immersiveengineering/crafting/wirecoil_structure_rope`)
+    event.shaped('immersiveengineering:wirecoil_structure_steel', [
+        ` w `,
+        `wsw`,
+        ` w `
+    ], {
+        w: `#forge:wires/steel`,
+        s: `createaddition:spool`
+    }).id(`kubejs:immersiveengineering/crafting/wirecoil_structure_steel`)
+    event.shaped('immersiveengineering:wirecoil_redstone', [
+        ` a `,
+        `rsr`,
+        ` a `
+    ], {
+        a: `#forge:wires/aluminum`,
+        r: `redstone`,
+        s: `createaddition:spool`
+    }).id(`kubejs:immersiveengineering/crafting/wirecoil_redstone`)
+    // #endregion
 })
 
 onEvent("lootjs", event => {

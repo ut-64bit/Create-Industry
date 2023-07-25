@@ -131,6 +131,7 @@ onEvent(`recipes`, event => {
 	haunting(`netherrack`, `clay`)
 		.id(`kubejs:create/haunting/netherrack`)
 	event.replaceInput({ id: `create:crafting/kinetics/whisk` }, `#forge:plates/iron`, `#forge:rods/iron`)
+	event.replaceInput({ id: `create:crafting/kinetics/whisk` }, `#railways:internal/plates/iron_plates`, `#forge:rods/iron`)
 })
 
 onEvent(`item.tags`, event => {

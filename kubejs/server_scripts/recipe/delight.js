@@ -77,6 +77,8 @@ onEvent(`recipes`, event => {
 	event.replaceOutput({ output: `create:dough` }, `create:dough`, `farmersdelight:wheat_dough`)
 	// #endregion
 
+	event.replaceInput({ id: `farmersdelight:cooking_pot` }, `wooden_shovel`, `stick`)
+
 	// 飯
 	event.replaceInput({ id: `culturaldelights:cooking/wheat_dough` }, `wheat`, `create:wheat_flour`)
 })

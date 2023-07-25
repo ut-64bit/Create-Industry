@@ -253,6 +253,7 @@ onEvent(`recipes`, event => {
 	// #endregion
 
 	// misc
+	event.remove({ id: `minecraft:glass_bottle` })
 	event.replaceInput({ input: 'supplementaries:rope' }, 'supplementaries:rope', `#supplementaries:ropes`)
 	event.replaceInput({ input: 'farmersdelight:rope' }, 'farmersdelight:rope', `#supplementaries:ropes`)
 	event.replaceOutput({ output: 'supplementaries:rope' }, 'supplementaries:rope', `farmersdelight:rope`)
