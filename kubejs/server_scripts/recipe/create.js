@@ -130,8 +130,15 @@ onEvent(`recipes`, event => {
 		.id(`kubejs:create/emptying/magma_block`)
 	haunting(`netherrack`, `clay`)
 		.id(`kubejs:create/haunting/netherrack`)
-	event.replaceInput({ id: `create:crafting/kinetics/whisk` }, `#forge:plates/iron`, `#forge:rods/iron`)
-	event.replaceInput({ id: `create:crafting/kinetics/whisk` }, `#railways:internal/plates/iron_plates`, `#forge:rods/iron`)
+	event.remove({ id: `create:crafting/kinetics/whisk` })
+	event.shaped(`create:whisk`, [
+		` a `,
+		`pap`,
+		`ppp`
+	], {
+		a: `create:andesite_alloy`,
+		p: `#forge:rods/iron`
+	})
 })
 
 onEvent(`item.tags`, event => {
