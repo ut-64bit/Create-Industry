@@ -36,7 +36,7 @@ ao:2
 prioritizeChunkUpdates:0
 biomeBlendRadius:2
 renderClouds:true
-resourcePacks:["vanilla","mod_resources","Supplementaries Generated Pack","file/Crosshair_TXF_1.18.zip","file/Create Simple Storage 2.1.zip","file/Eureka Create 1.0.zip","file/Smarter Chutes 1.18.2.zip","file/SmoothFont_1.18.zip"]
+resourcePacks:["vanilla","mod_resources","Supplementaries Generated Pack","file/Crosshair_TXF_1.18.zip","file/Create Simple Storage 2.1.zip","file/Eureka Create 1.0.zip","file/Smarter Chutes 1.18.2.zip","file/SmoothFont_1.18.zip","file/Updated_Engineering_v1.7.zip"]
 incompatibleResourcePacks:["file/Create Simple Storage 2.1.zip"]
 lastServer:
 lang:ja_jp
@@ -112,7 +112,6 @@ key_keybind.name.ESSENTIAL_FRIENDS:key.keyboard.unknown
 key_keybind.name.COSMETIC_STUDIO:key.keyboard.unknown
 key_keybind.name.SCREENSHOT_MANAGER:key.keyboard.unknown
 key_keybind.name.COSMETICS_VISIBILITY_TOGGLE:key.keyboard.unknown
-key_keybind.name.ADD_FRIEND:key.keyboard.unknown
 key_keybind.name.CHAT_PEEK:key.keyboard.unknown
 key_keybind.name.INVITE_FRIENDS:key.keyboard.unknown
 key_keybind.name.EMOTE_WHEEL:key.keyboard.unknown
@@ -177,8 +176,8 @@ key_placebo.toggleTrails:key.keyboard.keypad.9
 key_treechop.key.toggle_chopping:key.keyboard.unknown
 key_treechop.key.toggle_felling:key.keyboard.unknown
 key_treechop.key.cycle_sneak_behavior:key.keyboard.unknown
-key_placebo.toggleWings:key.keyboard.keypad.8
 key_treechop.key.open_settings_overlay:key.keyboard.unknown
+key_placebo.toggleWings:key.keyboard.keypad.8
 key_key.oldguns.reload:key.keyboard.r
 key_key.oldguns.kickback:key.keyboard.unknown
 key_key.oldguns.look:key.keyboard.left.alt
@@ -187,28 +186,27 @@ key_key.oldguns.getoutmag:key.keyboard.u
 key_key.solapplepie.open_food_book:key.keyboard.unknown
 key_fpsreducer.key.openGui:key.keyboard.unknown
 key_fpsreducer.key.forceIdle:key.keyboard.pause
-key_net.clayborn.accurateblockplacement.togglevanillaplacement:key.mouse.5
 key_key.curios.open.desc:key.keyboard.unknown
-key_framedblocks.key.update_cull:key.keyboard.unknown
-key_framedblocks.key.wipe_cache:key.keyboard.unknown
-key_key.toms_storage.open_terminal:key.keyboard.unknown
 key_create.keyinfo.toolmenu:key.keyboard.left.alt
 key_create.keyinfo.toolbelt:key.keyboard.left.alt
+key_net.clayborn.accurateblockplacement.togglevanillaplacement:key.mouse.5
 key_key.immersiveengineering.magnetEquip:key.keyboard.s
 key_key.immersiveengineering.railgunZoom:key.mouse.middle
 key_key.immersiveengineering.chemthrowerSwitch:key.keyboard.unknown
+key_framedblocks.key.update_cull:key.keyboard.unknown
+key_framedblocks.key.wipe_cache:key.keyboard.unknown
 key_options.narrator:key.keyboard.unknown
+key_keybind.sophisticatedstorage.sort:key.mouse.middle
+key_key.zoom:key.mouse.4
 key_keybind.sophisticatedbackpacks.open_backpack:key.keyboard.b
 key_keybind.sophisticatedbackpacks.inventory_interaction:key.keyboard.c
 key_keybind.sophisticatedbackpacks.tool_swap:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.sort:key.mouse.middle
+key_keybind.sophisticatedbackpacks.toggle_upgrade_1:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.toggle_upgrade_5:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.toggle_upgrade_4:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.toggle_upgrade_3:key.keyboard.unknown
 key_keybind.sophisticatedbackpacks.toggle_upgrade_2:key.keyboard.unknown
-key_keybind.sophisticatedbackpacks.toggle_upgrade_1:key.keyboard.unknown
-key_keybind.sophisticatedstorage.sort:key.mouse.middle
-key_key.zoom:key.mouse.4
 key_key.tconstruct.helmet_interact:key.keyboard.unknown
 key_key.tconstruct.leggings_interact:key.keyboard.unknown
 soundCategory_master:1.0

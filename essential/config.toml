@@ -16,6 +16,7 @@
 	[general.experience]
 		closer_placement_of_minimal_essential_menu = true
 		essential_menu_layout = 1
+		automatic_updates = false
 		enable_essential = true
 		show_menus = true
 		quick_action_bar = true
@@ -75,8 +76,12 @@
 
 	[quality_of_life.screenshots]
 		vanilla_screenshot_message = false
+		"screenshot_quick_action_#2_-_top_right" = 2
+		"screenshot_quick_action_#3_-_bottom_left" = 1
 		essential_screenshots = true
 		screenshot_sounds = true
+		"screenshot_quick_action_#1_-_top_left" = 5
+		"screenshot_quick_action_#4_-_bottom_right" = 4
 
 [cosmetics]
 
