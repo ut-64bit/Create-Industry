@@ -1,0 +1,6 @@
+{
+  "name": "コンプレッサー",
+  "description": "コンプレッサーは、空気を圧縮して$(l:base_concepts/pressure)圧力/$を生成する機械。 これらは$(pncr)の発電機。",
+  "icon": "pneumaticcraft:air_compressor",
+  "sortnum": 1
+}

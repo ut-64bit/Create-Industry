@@ -1,0 +1,78 @@
+{
+  "name": "空気圧式チェストプレート",
+  "icon": "pneumaticcraft:pneumatic_chestplate",
+  "category": "pneumaticcraft:armor",
+  "advancement": "pneumaticcraft:printed_circuit_board",
+  "pages": [
+
+    {
+      "type": "text",
+      "text": "$(item)空気圧式チェストプレート/$は、4つの$(thing)空気圧式防具/$のピースの1つです。$(p)他の3つのピースよりも$(l:base_concepts/pressure)空気量/$が大きくなっています。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:pneumatic_chestplate",
+      "text": "空気圧式チェストプレートの制作"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:security_upgrade",
+      "text": "$(l:base_concepts/upgrades#security)セキュリティアップグレード/$をインストールすると、チェストプレートが大量の空気コストを使い、火と溶岩からの保護を提供します。チェストプレートから空気が急速に放出され、近くの炎を消し、涼しさを保ちます。付近の溶岩もゆっくりと固まっていきます。"
+    },
+    {
+      "type": "text",
+      "title": "Security Upgrade (cont)",
+      "text": "注：この保護は火属性ダメージを受ける場合に発動するので、すでに保護されている場合（例：ポーション）、子のアップグレードは何もしません。"
+    },
+    {
+      "type": "spotlight",
+      "flag": "mod:immersiveengineering",
+      "title": "Immersive Engineering",
+      "item": "immersiveengineering:wirecoil_copper",
+      "text": "$(item)セキュリティアップグレード/$は、被覆されていない$(l:https://minecraft.curseforge.com/projects/immersive-engineering)Immersive Engineering/$のwiresからの保護も提供します。そのような感電からでは負傷しませんが、ダメージ量と比例して空気を消費します。また、ノックバックは防げません。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:magnet_upgrade",
+      "text": "1つ以上の$(l:base_concepts/upgrades#magnet)マグネットアップグレード/$をいストールすると、極僅かな空気コストで近くのアイテムやXPオーブを引き付けられます。基本的な範囲は5ブロックですが、アップグレードを追加することで、最大10ブロックまで拡大できます。"
+    },
+    {
+      "type": "text",
+      "title": "Magnet Upgrade (cont.)",
+      "text": "マグネットアップグレードは、Botaniaの花$(item)Solegnolia/$を尊重し、同様にImmersive Engineeringの$(item)conveyor belts/$からアイテムを引き付けません。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:charging_upgrade",
+      "text": "1つ以上の$(l:base_concepts/upgrades#charging)チャージングアップグレード/$をインストールスト、着用中と持ち運び中の両方のインベントリ内にある空気圧アイテムを加圧する機能を得ます。チェストプレート自体の圧力レベルまでしかアイテムを充填出来ません。チャージアップグレード追加（最大6つ）すると、充填速度が上昇します。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:dispenser_upgrade",
+      "text": "$(l:base_concepts/upgrades#dispenser)ディスペンサーアップグレード/$を使用すると、$(thing)$(k:pneumaticcraft.chestplate.launcher)/$を押してから離すと、オフハンドスロットからアイテム/ブロックを発射します。$(l:machines/air_cannon)エアキャノン/$に似ています。ランチャーをフルチャージするには、15 ticks (0.75 秒) 必要で、早くキーを離すと発射速度が低下します。"
+    },
+    {
+      "type": "text",
+      "title": "Dispenser Upgrade (cont.)",
+      "text": "$(li)一部のブロックには、$(item)TNT/$や$(item)矢/$...等$(item)ディスペンサー/$に似た特別な挙動をします。$(li)その他のブロック($(item)松明/$等)は「タンブリング」ブロックとして発射され、何かに当たるとブロックとして再形成されます。$(li)その他は単にアイテムエンティティとして発射されます。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:range_upgrade",
+      "text": "$(l:base_concepts/upgrades#range)範囲アップグレード/$をインストールすると、有効な状態でブロックインタラクション（近接攻撃ではない）の到達距離が3.5ブロック分増加します。ただし、これには僅かな継続的な空気コストが伴います。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:air_conditioning_upgrade",
+      "flag": "mod:toughasnails",
+      "title": "A/C Upgrade",
+      "text": "最大4つの$(l:base_concepts/upgrades#air_conditioning)エアコンアップグレード/$をインストールすると、$(l:https://minecraft.curseforge.com/projects/tough-as-nails)Tough As Nails/$ modによって追加された環境温度からある程度保護されるようになります。エアコンは、体温が通常よりも高い、または低い事を検知すると自動的に作動し、平衡状態に戻ると解除されます。"
+    },
+    {
+      "type": "text",
+      "flag": "mod:toughasnails",
+      "title": "A/C Upgrade (cont.)",
+      "text": "ただし、これには適度な圧力コストがかかります。これは必要な冷暖房のレベルやインストールされたアップグレード数によって異なります。作業環境によっては、快適性を保つために4つのアップグレードを必要としない場合もあります。"
+    }
+  ]
+}

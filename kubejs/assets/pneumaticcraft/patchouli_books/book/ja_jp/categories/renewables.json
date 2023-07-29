@@ -1,0 +1,6 @@
+{
+  "name": "再生可能エネルギー",
+  "description": "$(pncr)には、再生可能な資源、特にバイオディーゼルを製造するためのプロセス。",
+  "icon": "pneumaticcraft:biodiesel_bucket",
+  "sortnum": 11
+}

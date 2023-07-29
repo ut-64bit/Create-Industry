@@ -1,0 +1,16 @@
+{
+  "name": "アップグレードマトリクス",
+  "icon": "pneumaticcraft:upgrade_matrix",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:tp_plant",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)アップグレードマトリクス/$は、$(item)ラピスラズリ/$の代わりに、あらゆる$(l:base_concepts/upgrades)アップグレード/$の作成に使用することが出来ます。アップグレードマトリクスの利点は、ラピスの使用量を大幅に減少させることで、ラピスに限りがあり、多くのアップグレードを作成したい場合、とても役に立つかもしれません。"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/upgrade_matrix"
+    }
+  ]
+}

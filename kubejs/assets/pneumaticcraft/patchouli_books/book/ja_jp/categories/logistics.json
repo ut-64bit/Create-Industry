@@ -1,0 +1,6 @@
+{
+  "name": "ロジスティクス",
+  "description": "ロジスティクスシステムは、アイテムや液体を移動させたり、インベントリやタンクの在庫を維持するための強力な手段。",
+  "icon": "pneumaticcraft:logistics_drone",
+  "sortnum": 8
+}

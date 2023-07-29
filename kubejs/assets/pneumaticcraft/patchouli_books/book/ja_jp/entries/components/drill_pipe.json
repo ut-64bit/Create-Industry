@@ -1,0 +1,17 @@
+{
+  "name": "ドリルパイプ",
+  "icon": "pneumaticcraft:drill_pipe",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)ドリルパイプ/$は、$(l:machines/gas_lift)ガスリフト/$で液体まで掘り下げる為に必要な物です。$(p)またお好みで、一般的な建材としても使用できます。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting an Drill Pipe",
+      "recipe": "pneumaticcraft:drill_pipe"
+    }
+  ]
+}

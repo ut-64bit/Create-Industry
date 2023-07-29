@@ -1,0 +1,25 @@
+{
+  "name": "スポーナー抽出機",
+  "icon": "pneumaticcraft:spawner_extractor",
+  "category": "pneumaticcraft:spawning",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)スポーナー抽出機/$は、$(l:spawning/spawner_core)スポナーコア/$を入手する2つの方法の1つで、$(l:spawning/pressurized_spawner)圧力スポナー/$を使う為に、世界のどこかで見つかるバニラの$(item)スポナー/$の上にのせて置いて使用します。"
+    },
+    {
+      "type": "text",
+      "text": "そして、スポーナー抽出機に$(thing)-0.5 bar/$以下の真空を手教師、戦いの準備をします。スポナーは抽出されるのを$(italic)本当に/$嫌がり、自衛のため大量のMobを生み出すことが判明しています。いくつかの役立つヒント：$(li)基本抽出時間は約60秒です。$(li)ただし、近くに防衛Mobがいると抽出が遅くなり、多すぎると停止してしまいます。"
+    },
+    {
+      "type": "text",
+      "text": "$(li)少なくとも近くに1人のプレイヤーがいないと、抽出は停止します。$(li)$(thing)スポナー/$が防衛者を生み出せない場合（例えば光源が悪い、地面が無い等）も、処理は遅くなり最終的に停止してしまいます。$(p)抽出が完了すると、$(thing)スポナーコア/$が排出され、スポナーは$(item)空のスポナー/$に変わります。このブロックは$(l:spawning/pressurized_spawner)圧力スポナー/$を作成する為に使用するので、拾うことが出来る（はず）です。"
+    },
+    {
+      "type": "crafting",
+      "text": "スポナー抽出機の作成",
+      "recipe": "pneumaticcraft:spawner_extractor"
+    }
+  ]
+}

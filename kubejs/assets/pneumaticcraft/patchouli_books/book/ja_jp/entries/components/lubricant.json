@@ -1,0 +1,17 @@
+{
+  "name": "潤滑油",
+  "icon": "pneumaticcraft:lubricant_bucket",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:tp_plant",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)潤滑油/$は、$(l:base_concepts/upgrades#speed)スピードアップグレード/$の作成に必要です。$(p)$(l:manufacturing/refinery)ディーゼル/$ (または$(l:renewables/biodiesel)バイオディーゼル/$)と$(item)レッドストーン/$を使用して、$(l:manufacturing/thermopneumatic_processing_plant)熱空気圧処理プラント/$で作成できます。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:lubricant_bucket",
+      "text": "$(italic)Slippery stuff/$"
+    }
+  ]
+}

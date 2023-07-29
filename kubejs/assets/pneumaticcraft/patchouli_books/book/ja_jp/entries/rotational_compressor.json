@@ -1,17 +1,17 @@
 {
-  "name": "Rotational Compressor",
+  "name": "回転式コンプレッサー",
   "icon": "compressedcreativity:rotational_compressor",
   "category": "pneumaticcraft:compressors",
   "advancement": "pneumaticcraft:pressure_tube",
   "pages": [
     {
       "type": "text",
-      "text": "The $(item)Rotational Compressor$() is a type of compressor that uses rotation from Create to generate pressure."
+      "text": "$(l:compressedcreativity:rotational_compressor)回転式コンプレッサー$()は、Createの回転動力を利用して、圧力を生成するコンプレッサーです。"
     },
     {
       "type": "crafting",
       "recipe": "compressedcreativity:crafting/rotational_compressor",
-      "text": "Creating a $(item)Rotational Compressor$()"
+      "text": "$(item)回転式コンプレッサー$()の作成"
     }
   ]
 }

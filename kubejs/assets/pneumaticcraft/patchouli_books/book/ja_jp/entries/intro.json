@@ -1,0 +1,33 @@
+{
+  "name": "クリエイティビティを付加する",
+  "icon": "create:cogwheel",
+  "category": "pneumaticcraft:compressed_creativity",
+  "advancement": "create:its_alive",
+  "priority": "true",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(o)\"空気圧の機械ってカッコイイな！もっとカッコよく出来たら…\"$()と思ったことはありませんか？PneumaticCraftとCreateのセットアップを統合して作成することができます！"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "compressedcreativity:rotational_compressor",
+      "text": "$(l:pneumaticcraft:rotational_compressor)回転式コンプレッサー$()は、Createの回転動力を利用して、圧力を生成するコンプレッサーです。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "compressedcreativity:air_blower",
+      "text": "$(l:pneumaticcraft:air_blower)エアブロワー$()は、加圧空気を使用して$(item)ケース入りファン$()と同様に、気流を生成する機械です。."
+    },
+    {
+      "type": "patchouli:spotlight",
+	  "item": "compressedcreativity:compressed_air_engine",
+      "text": "$(l:pneumaticcraft:compressed_air_engine)圧縮空気エンジン$()は、加圧された空気を利用した動力エンジンです。動いていなくても空気を使うので、十分な圧力があることを確認しましょう！"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "compressedcreativity:mechanical_visor_upgrade",
+      "text": "$(l:armor/pneumatic_helmet)空気圧式ヘルメット$()に$(l:pneumaticcraft:mechanical_visor_upgrade)メカニカルバイザーアップグレード$()をインストールすると、エンジニアのゴーグルの機能が得られます。"
+    }
+  ]
+}

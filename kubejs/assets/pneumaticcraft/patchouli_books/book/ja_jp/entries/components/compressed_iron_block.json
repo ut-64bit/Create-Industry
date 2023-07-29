@@ -1,0 +1,11 @@
+{
+  "name": "圧縮鉄ブロック",
+  "icon": "pneumaticcraft:compressed_iron_block",
+  "category": "pneumaticcraft:components",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:base_concepts/basic_materials#compressed_iron_block)基礎素材/$をご覧ください。"
+    }
+  ]
+}

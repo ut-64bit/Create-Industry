@@ -1,0 +1,48 @@
+{
+  "name": "ネットワークコンポーネント",
+  "icon": "pneumaticcraft:network_api",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "これらのコンポーネントは、主に$(l:programming/security_station)セキュリティステーション/$のセットアップに使用されますが、一部はクラフト部品としても使用され、$(l:components/network_components#network_storage)ネットワークストレージ/$と$(l:components/network_components#network_api)ネットワークAPI/$は、$(l:tools/drone)ドローン/$のプログラムを保存するために使用することができます。"
+    },
+    {
+      "type": "crafting",
+      "anchor": "diagnostic",
+      "text": "$(item)診断サブルーチン/$は、$(l:machines/security_station)セキュリティステーション/$に必要なコンポーネントです。$(br)このサブルーチンは、$(l:machines/security_station#hacking)ハッキング試行/$を追跡し、ハッカーを特定する役割を担っています。 すべての$(item)診断サブルーチン/$がハッキングされた場合、$(item)セキュリティステーション/$は侵害されたことになります。",
+      "recipe": "pneumaticcraft:diagnostic_subroutine"
+    },
+    {
+      "type": "crafting",
+      "anchor": "io_port",
+      "text": "$(item)ネットワークIOポート/$は $(l:machines/security_station)セキュリティステーション/$に必要なコンポーネントです。$(br)これは$(item)セキュリティステーション/$のハッキングを試みるためのエントリーポイントです。",
+      "recipe": "pneumaticcraft:network_io_port"
+    },
+    {
+      "type": "crafting",
+      "anchor": "registry",
+      "text": "$(item)ネットワークレジストリ/$は $(l:machines/security_station)セキュリティステーション/$に必要なコンポーネントです。$(br)これはハッカーの標的であり、もし$(italic)すべて/$のレジストリがハッキングされたら、あなたの$(item)セキュリティステーション/$は危険にさらされたことになります。",
+      "recipe": "pneumaticcraft:network_registry"
+    },
+    {
+      "type": "crafting",
+      "anchor": "node",
+      "text": "$(item)ネットワークノード/$は、$(l:machines/security_station)セキュリティステーション/$の一般的なコンポーネントで、必要なコンポーネント間の経路を形成するために使用されます。",
+      "recipe": "pneumaticcraft:network_node"
+    },
+    {
+      "type": "crafting",
+      "anchor": "network_api",
+      "text": "$(item)ネットワークAPI/$は、$(l:tools/drone)ドローン/$のプログラムを保存するために使用することができます。プログラミングには$(l:programming/puzzle_pieces)パズルピース/$が必要で、 $(l:programming/programmable_controller)プログラマブルコントローラ/$や$(l:programming/external_program)外部プログラム/$ウィジェットによるプログラムの実行に使用することができます。",
+      "recipe": "pneumaticcraft:network_api"
+    },
+    {
+      "type": "crafting",
+      "anchor": "network_storage",
+      "text": "$(item)ネットワークデータストレージ/$は、$(l:tools/drone)ドローン/$のプログラムを保存するために使用します。プログラムの実行に$(l:programming/puzzle_pieces)パズルピース/$を$(italic)必要としない/$ため、プログラムの実行には使用できませんが、プログラムのライブラリーを保存したり、他のプレイヤーとプログラムを交換したりするのに便利です。",
+      "recipe": "pneumaticcraft:network_data_storage"
+    }
+  ]
+}

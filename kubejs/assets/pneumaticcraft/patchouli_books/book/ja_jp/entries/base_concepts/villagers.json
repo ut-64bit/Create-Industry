@@ -1,0 +1,17 @@
+{
+  "name": "メカニック村人",
+  "icon": "minecraft:emerald",
+  "category": "pneumaticcraft:base_concepts",
+  "pages": [
+    {
+      "type": "text",
+      "text": "いくつか$(pncr)部品を仕入れいている$(thing)村人/$がいると報告を聞いたことがあります。どうやら彼は、$(l:manufacturing/pressure_chamber)圧力室/$で事故に巻き込まれたらしい？とにかく、彼は最近、村にある自分の家で佇むのが好きなようです。$(l:machines/charging_station)チャージングステーション/$があれば、失業中の村人が興味を持つかもしれません..."
+    },
+    {
+      "type": "entity",
+      "name": "メカニック",
+      "entity": "minecraft:villager{VillagerData:{profession:'pneumaticcraft:mechanic'}}",
+      "text": "$(italic)$(l:tools/amadron_tablet)アマドロン/$のファンではない。"
+    }
+  ]
+}

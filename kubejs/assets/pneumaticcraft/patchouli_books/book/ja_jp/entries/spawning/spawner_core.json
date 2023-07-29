@@ -1,0 +1,30 @@
+{
+  "name": "スポナーコア",
+  "icon": "pneumaticcraft:spawner_core",
+  "category": "pneumaticcraft:spawning",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)スポナーコア/$は、バニラの$(item)スポナー/$の心臓部であり、スポーンさせるMobのエッセンスが含まれています。$(p)これは、$(l:spawning/spawner_extractor)スポーナー抽出機/$でスポナーから強制的に取り出し、これを使ってより強力な$(l:spawning/pressurized_spawner)加圧スポナー/$を使用することが可能です。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:spawner_core",
+      "text": "スポナーコアを取得するには2つの方法があります：$(li)$(l:spawning/spawner_extractor)スポナー抽出機/$を使用してスポナーから１つを強制的に抽出します。（戦いに備えろ！）この様なコアは100%のエッセンスで満たされており、そのスポナーのMobの$(li)独自のスポナーコアを作成し、$(l:spawning/vacuum_trap)真空トラップ/$を使用して、Mobのエッセンスを埋められます。"
+    },
+    {
+      "type": "text",
+      "text": "$(item)真空トラップ/$によって満たされたスポナーコアには、複数の異なるMobエッセンスが含まれていることがあり、それは望ましい場合とそうでない場合があることに注意してください。$(thing)右クリック/$することで$(p)コアからランダムなMobを解放できます。しかし、これにはちょっとした当たりとハズレがあり、$(thing)真空トラップ/$で、純度100%のコアを作成することは簡単ではなく、注意が必要です。"
+    },
+    {
+      "type": "crafting",
+      "text": "スポナーコアシェルを作成する。$(item)スポナーコア/$の作成に使用します。",
+      "recipe": "pneumaticcraft:spawner_core_shell"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/spawner_core"
+    }
+  ]
+}

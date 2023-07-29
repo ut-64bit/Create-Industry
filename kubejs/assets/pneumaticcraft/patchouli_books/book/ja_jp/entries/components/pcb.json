@@ -1,0 +1,47 @@
+{
+  "name": "プリント回路基板",
+  "icon": "pneumaticcraft:printed_circuit_board",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)プリント回路基板/$（PCB）は、多くの高級機械や工具に使用される重要な部品です。$(item)PCB/$を作るにはいくつかのステップが必要です。$(p)まず最初に、反対側の図のように、$(l:manufacturing/pressure_chamber)圧力チャンバー/$で$(item)空のPCB/$を作成します。その後、2つの方法があります（上図参照）。"
+    },
+    {
+      "type": "pneumaticcraft:pressure_chamber",
+      "recipe": "pneumaticcraft:pressure_chamber/empty_pcb"
+    },
+    {
+      "type": "text",
+      "title": "Method #1",
+      "text": "この方法は、当初はこの方法しかなく、自動化や加熱のインフラを追加しないとやや時間がかかります。$(item)PCB/$を$(l:manufacturing/uv_light_box)UVライトボックス/$に入れて化学的に現像し、露出した$(item)空のPCB/$を$(l:manufacturing/etching_tank)エッチングタンク/$に入れ、$(item)組み立てられていないPCB/$にすることが可能です。"
+    },
+    {
+      "type": "blasting",
+      "title": "Recycling Failed PCB's",
+      "recipe": "pneumaticcraft:empty_pcb_from_failed_pcb",
+      "text": "エッチング工程は、$(item)空のPCB/$が$(l:manufacturing/uv_light_box)UVライトボックス/$で100％露光されていない場合、失敗する可能性があるため、$(item)故障したPCB/$は高炉でリサイクルすることができます。"
+    },
+    {
+      "type": "spotlight",
+      "title": "Method #2",
+      "item": "pneumaticcraft:assembly_controller",
+      "text": "$(l:manufacturing/assembly_system)アセンブリシステム/$が作れるようになれば、それを使って$(item)空のPCB/$を$(item)組み立てプログラム:レーザー/$で直接$(item)組み立てられていないPCB/$にすることができます。この場合、$(item)UVライトボックス/$で露光したり、$(item)エッチングタンク/$を使ったりする必要はない。"
+    },
+    {
+      "type": "text",
+      "title": "Method #2 (cont)",
+      "text": "$(p)アセンブリシステムは、$(item)組み立てられていないPCB/$を製造するのに非常に便利で合理的なオプションですが、十分な自動化と加熱インフラがあれば、$(thing)UVライトボックスとエッチングタンク/$のコンボは、特にPCBの大量生産が必要な場合は、より速くすることができます。"
+    },
+    {
+      "type": "pneumaticcraft:assembly_system",
+      "recipe": "pneumaticcraft:assembly/unassembled_pcb"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:printed_circuit_board",
+      "text": "最後に$(l:components/capacitor)コンデンサ/$と$(l:components/transistor)トランジスタ/$を追加して、$(item)プリント回路基板/$を完成させます！"
+    }
+  ]
+}

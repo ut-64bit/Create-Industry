@@ -1,0 +1,17 @@
+{
+  "name": "ヌカウィルス",
+  "icon": "pneumaticcraft:nuke_virus",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:machines/security_station)セキュリティステーション/$をハッキングする際にのみ使用される特殊な部品です。クラフトすることは出来ず、ダンジョンの戦利品か、（まれに）村人をの取引でしか入手できません。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:nuke_virus",
+      "text": "ハッキング中に$(thing)ヌカウィルス/$をノードに適用すると、そのノードがヌカされ、即座にハッキングされます。ヌカウィルスには、連続使用に3秒間のクールダウンがあることに注意してください。"
+    }
+  ]
+}

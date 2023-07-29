@@ -1,0 +1,74 @@
+{
+  "name": "空気圧式ヘルメット",
+  "icon": "pneumaticcraft:pneumatic_helmet",
+  "category": "pneumaticcraft:armor",
+  "advancement": "pneumaticcraft:printed_circuit_board",
+  "pages": [
+
+    {
+      "type": "text",
+      "text": "$(item)空気圧式ヘルメット/$は、4つの$(thing)空気圧式防具/$のピースの1つです。$(p)長い間、このピースだけが利用可能な唯一の物でした。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:pneumatic_helmet",
+      "text": "空気圧式ヘルメットの制作"
+    },
+    {
+      "type": "spotlight",
+      "anchor": "entity_tracker",
+      "item": "pneumaticcraft:entity_tracker_upgrade",
+      "text": "$(l:base_concepts/upgrades#entity_tracker)エンティティトラッカーアップグレード/$をインストールすると、16ブロック範囲内の生物を、壁越しでも自動的に追跡可能になります。エンティティが攻撃的なMobである場合、あなたがターゲットされると警告が出ます。これにより、戦闘の準備（あるいは逃走！）が可能になります。GUIで$(l:base_concepts/entity_filter)エンティティフィルター/$を使用して、追跡するエンティティをフィルタリング出来ます。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:block_tracker_upgrade",
+      "text": "$(l:base_concepts/upgrades#block_tracker)ブロックトラッカーアップグレード/$をインストールすると、壁越しでも30ブロック範囲内の特別なブロックが追跡できます。次のブロックが追跡されます：$(li)あらゆるインベントリ (中身も表示)$(li)スポナー (スポーン時間も表示)$(li)シルバーフィッシュブロック$(li)エンドポータルフレーム$(li)TNT$(li)トリップワイヤーフック"
+    },
+    {
+      "type": "text",
+      "title": "Block Tracker (cont.)",
+      "text": "これらのブロックの中にはかなり一般的な物もある為（プレイヤーの家や要塞のシルバーフィッシュブロック等）、特定のタイプのブロックが一定数に達すると、HUDは自動的にラベル表示を停止します。ただし、追跡中のブロックはクロスヘアを合わせると、そのブロックの情報を主読できます。また設定GUIでチェックを外すことで、追跡したいブロックを指定することも可能です。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:coordinate_tracker_upgrade",
+      "text": "$(l:base_concepts/upgrades#coordinate_tracker)座標トラッカーアップグレード/$は、選択した場所への最短距離を計算し、そこへ到達する為にMinecraft独自の経路探索を使用します。$(p)これは、洞窟で迷ったときに非常に便利です。オプションを開き($(thing)$(k:pneumaticcraft.armor.options)/$を押す)、$(bold)サーフェスに移動/$を選択します。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:search_upgrade",
+      "text": "沢山のチェストがある拠点で、特定のアイテムを探そうとする大変ですね？もしそうなら、$(l:base_concepts/upgrades#item_searcher)サーチアップグレード/$があなたにぴったりです。GUIでアイテムを検索できます。スクロールバーで探しているアイテムを参照するか、検索ボックスにアイテム名を入力します。アイテムが見つかったら、それをターゲットスロットに入れます。"
+    },
+    {
+      "type": "text",
+      "title": "Item Searcher (cont.)",
+      "text": "これで、16ブロック範囲内の地面や、インベントリにある選択されたアイテムのどれかが、$(thing)緑色の光/$るようになります。光のサイズは、見つかったアイテムの総数に対するその場所のアイテムの比率によって異なります。$(p)$(l:base_concepts/upgrades#entity_tracker)エンティティトラッカー/$（地上のアイテムの場合）および/または$(l:base_concepts/upgrades#block_tracker)ブロックトラッカー/$（インベントリのアイテムの場合）も必要です。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:dispenser_upgrade",
+      "text": "$(l:base_concepts/upgrades#dispenser)ディスペンサーアップグレード/$を$(l:base_concepts/upgrades#entity_tracker)エンティティトラッカーアップグレード/$と一緒にインストールすると、$(l:tools/drone)ドローン/$を監視/デバッグできます。$(thing)$(k:pneumaticcraft.helmet.debugging.drone)/$を押すだけで起動します。それでトラッキングアニメーションに赤い枠が付きます。次に、$(thing)$(k:pneumaticcraft.armor.options)/$を押して、ヘルメットのオプションを開き、$(bold)Drone Debugging/$パネルに移動します。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:range_upgrade",
+      "text": "$(l:base_concepts/upgrades#range)範囲アップグレード/$は、$(l:base_concepts/upgrades#entity_tracker)エンティティトラッカー/$と$(l:base_concepts/upgrades#block_tracker)ブロックトラッカー/$の範囲を、アップグレード毎5ブロック拡大します。エンティティトラッカーの場合、無制限ですが、ブロックトラッカーの場合、最大5つのアップグレードが可能です。$(p)このアップグレードはヘルメットの空気使用量を増加させるのに注意してください。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:night_vision_upgrade",
+      "text": "$(l:base_concepts/upgrades#night_vision)ナイトビジョンアップグレード/$は、その名の通り、暗視効果を得られます。この機能の$(l:base_concepts/pressure)空気コスト/$は非常に小さいです。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:scuba_upgrade",
+      "text": "$(l:base_concepts/upgrades#scuba)スキューバアップグレード/$を使用すると、ヘルメットの予備空気で水中で呼吸が可能になります。追加のボーナスとして、水中での視認性を向上させるフェイスマスクも付いてきます。$(l:base_concepts/upgrades#night_vision)ナイトビジョンアップグレード/$と併用することで、素敵な水中の景色を楽しむことができます。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:ender_visor_upgrade",
+      "text": "$(l:base_concepts/upgrades#ender_visor)エンダーバイザーアップグレード/$は、高度な$(thing)かぼちゃ/$研究に基づき、実際のかぼちゃを頭に突っ込む視覚的困難を軽減しつつ、$(thing)エンダーマン/$の苛立ちを回避する切り替え機能を提供します。"
+    }
+  ]
+}

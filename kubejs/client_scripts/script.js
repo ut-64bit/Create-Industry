@@ -27,7 +27,8 @@ onEvent(`jei.hide.items`, event => {
 		`tom_storage:ts.wireless_terminal`,
 		`tom_storage:ts.inventory_hopper_basic`,
 		`supplementaries:rope`,
-		`@valkyrienskies`
+		`@valkyrienskies`,
+		/createdeco:.*_slab_vert/
 	]
 
 	hideItem.forEach(item => {
@@ -44,7 +45,7 @@ onEvent(`jei.hide.items`, event => {
 	}
 	hideTool(`wooden`)
 	hideTool(`stone`)
-	hideTool(`immersiveengineering:steel`)
+	//hideTool(`immersiveengineering:steel`)
 
 	// tconstruct
 	const hideCastTypes = [`plate`, `wire`]

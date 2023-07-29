@@ -1,0 +1,6 @@
+{
+  "name": "モブ・スポーニング",
+  "description": "モブのスポーン制御を行うための機械やガジェット。",
+  "icon": "pneumaticcraft:pressurized_spawner",
+  "sortnum": 12
+}

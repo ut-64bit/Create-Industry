@@ -1,0 +1,17 @@
+{
+  "name": "圧縮空気エンジン",
+  "icon": "compressedcreativity:compressed_air_engine",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)圧縮空気エンジン$()は、加圧された空気を使って回転力を生み出す機械です。圧力や作業状態に関係なく空気を使うので、空気を無駄にしないように気をつけましょう！"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "compressedcreativity:crafting/compressed_air_engine",
+      "text": "$(item)圧縮空気エンジン$()の作成"
+    }
+  ]
+}

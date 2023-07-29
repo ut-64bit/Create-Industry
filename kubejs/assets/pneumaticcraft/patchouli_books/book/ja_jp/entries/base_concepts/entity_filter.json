@@ -1,0 +1,50 @@
+{
+  "name": "エンティティーフィルター",
+  "icon": "minecraft:player_head",
+  "category": "pneumaticcraft:base_concepts",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)エンティティフィルター/$は、$(pncr)のいくつかの場所で使用できます。ここでは、機械やツールが何等かの方法で影響を与えるべき$(thing)エンティティ/$を指定する必要があります。$(p)フィルタが入力できるほとんどの場所で、$(thing)F1/$キーを押し続けると、ポップアップヘルプが表示されます。"
+    },
+    {
+      "type": "text",
+      "text": "特定のエンティティを指定するには、同じタイプ（「クリーパー」）であるか、同じ名前（'MineMaarten'というプレーヤー）でも、エンティティ名を使ってください。$(p)特定のエンティティ$(italic)タイプ/$（例：動物、攻撃的Mob、プレイヤー全般）を指定場合は、前に「@」を付けます。受け付けられる$(thing)@指定子/$を含む、例の全リストは以下の通りです。"
+    },
+    {
+      "type": "text",
+      "title": "Examples",
+      "text": "$(li)$(#800)@player/$は、全てのプレイヤーにマッチします。$(li)$(#800)@mob/$は、全ての攻撃的な生物に、$(li)$(#800)@animal/$は、全ての動物（中立Mob）に、$(li)$(#800)@animal(age = adult)/$は、全ての大人の動物に、$(li)$(#800)@animal(age = baby)/$は、全ての子供の動物に、$(li)$(#800)@animal(breedable = yes)/$は、今すぐ繁殖可能な全ての動物に、$(li)$(#800)sheep(shearable = yes)/$は、毛刈りが可能な全ての羊にマッチします。"
+    },
+    {
+      "type": "text",
+      "title": "Examples (cont.)",
+      "text": "$(li)$(#800)sheep(shearable = yes,color = black)/$は、毛刈りが可能な黒色の羊にマッチします。$(li)$(#800)wolf(color = blue)/$は、青色の首輪を付けた全ての狼/犬に、$(li)$(#800)cat(color = white)/$は、白色の全ての猫に、$(li)$(#800)@minecart/$Minecraftの物に、$(li)$(#800)@boat/$は、全てのボートに、$(li)$(#800)@living/$は、全ての生きているエンティティに、$(li)$(#800)@item/$は、エンティティ状態のアイテムに、$(li)$(#800)@orb/$は、XPオーブとマッチします。"
+    },
+    {
+      "type": "text",
+      "title": "Examples (cont.)",
+      "text": "$(li)$(#800)@drone/$は、$(l:tools/drone)ドローン/$にマッチします。$(li)$(#800)Creeper/$は、クリーパーに、$(li)$(#800)MineMaarten/$「MineMaarten」という名前のエンティティに、(li)$(#800)c*/$は、「c」から始まる全てのエンティティに（クリーパーや牛等）$(li)$(#800)*pig*/$は、「pig」を含む全てのエンティティに（豚やピグリン等）とマッチします。"
+    },
+    {
+      "type": "text",
+      "text": "全てで大文字と小文字の区別はされません。例えば、$(#800)zombie/$や$(#800)Zombie/$の両方がゾンビにマッチします。$(p)フィルターの$(thing)連続/$させる場合、「;(セミコロン)」で区切れます。これは$(italic)match any/$関数です。$(li)$(#800)creeper;zombie/$とすれば、クリーパー$(italic)と/$ゾンビの両方にマッチします。"
+    },
+    {
+      "type": "text",
+      "text": "$(li)$(#800)!@player/$で、プレイヤー$(italic)/$以外を、$(li)$(#800)!Creeper;Zombie/$で、クリーパーやゾンビ$(italic)以外を、/$といったように、フィルタの前に「!」を付けることで、そのフィルターを除外設定にすることができます。$(li)$(#800)Creeper;!Zombie/$のように、最初以外の「!」は$(#f00)無効/$になります。/$$(p)$(bold)注意：/$$(l:programming/text)Text/$を使うプログラミングウィジェットである、$(l:tools/drone)ドローン/$のエンティティフィルターでは、「!」はサポートしていません。通常のように左側のテキストウィジェットに接続してください。"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "pneumaticcraft:tools/micromissiles",
+        "pneumaticcraft:tubes/air_grate_module",
+        "pneumaticcraft:armor/pneumatic_helmet",
+        "pneumaticcraft:machines/sentry_turret",
+        "pneumaticcraft:machines/universal_sensor",
+        "pneumaticcraft:programming/text"
+      ],
+      "text": "$(italic)エンティティフィルタリングを使用する機械とツール/$"
+    }
+  ]
+}

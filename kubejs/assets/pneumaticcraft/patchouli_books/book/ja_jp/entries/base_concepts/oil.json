@@ -1,0 +1,31 @@
+{
+  "name": "原油",
+  "icon": "pneumaticcraft:oil_bucket",
+  "category": "pneumaticcraft:base_concepts",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(pncr)では、ワールドに生成されるのは$(thing)原油/$のみです。湖と同様に生成されますが、原油湖は地表よりも地中深く出生成される可能性がかなり高いという違いがあります。その為、$(l:tools/seismic_sensor)地震センサー/$等のツールによる助けを借りる事を強くお勧めします。"
+    },
+    {
+      "type": "text",
+      "text": "原油は、$(l:compressors/liquid_compressor)液体圧縮機/$で使用する高品質の燃料に$(l:manufacturing/refinery)精製/$することと、$(l:components/plastic)プラスチック/$と$(l:components/lubricant)潤滑油/$を製造するといいう、2つの目的で使用されます。$(p)$(item)プラスチック/$は$(pncr)の多くのレシピで使用され、$(l:components/lubricant)潤滑油/$は$(l:base_concepts/upgrades#speed)スピードアップグレード/$作成に必要です。"
+    },
+    {
+      "type": "text",
+      "text": "原油を発見したら、それを抽出して輸送する必要があります。$(pncr)で抽出する為に推奨される方法は、$(l:machines/gas_lift)ガスリフト/$を使う事ですが、他MODの液体ポンプを使用することも可能です。もし自分の拠点から遠く離れた場所で組み上げるのであれば、ゲーム序盤の輸送手段の1つとして、最大32,000mBの液体を保持でき、破壊しても中身を保持できる、単純な$(l:machines/tanks)スモールタンク/$を使用することが出来ます。（ガスリフトも液体を保持出来るので、この目的でも使用できます）"
+    },
+    {
+      "type": "image",
+      "images": [
+          "pneumaticcraft:textures/patchouli/oil_pumping.png"
+      ],
+      "text": "$(italic)ガスリフトでオイルを圧送し、その上に液体ホッパーを設置する/$"
+    },
+    {
+      "type": "text",
+      "title": "Mod Integration",
+      "text": "もちろん原油を追加するのは$(pncr)だけではありません。他のいくつかもMOD（$(thing)BuildCraft/$や$(thing)Immersive Petroleum/$等）も同様です。$(p)ワールド生成の設定によっては、$(pncr)の原油は利用できないかもしれません。しかし、$(l:manufacturing/refinery)製油所/$は他のMODの液体の原油を処理することが出来ます。"
+    }
+  ]
+}

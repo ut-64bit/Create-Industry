@@ -1,0 +1,17 @@
+{
+  "name": "スポナーアジテーター",
+  "icon": "pneumaticcraft:spawner_agitator",
+  "category": "pneumaticcraft:spawning",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "バニラの$(item)スポナー/$の上に置くと、この$(item)スポナー/$を$(thing)攪拌/$します。$(li)プレイヤーが近くにいない間もスポーンし続け、$(li)プレイヤーがエリアを離れてもスポーンしたMobがデスポーンするのを防ぎます。$(p)Mobファームは誰のですか？$(p)$(l:logistics/logistics_configurator)ロジスティクスコンフィギュレーター/$で$(thing)スニーク右クリック/$すると、他のアジテーターを削除できます。"
+    },
+    {
+      "type": "crafting",
+      "text": "スポナーアジテーターを作成",
+      "recipe": "pneumaticcraft:spawner_agitator"
+    }
+  ]
+}

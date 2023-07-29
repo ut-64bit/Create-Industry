@@ -1,0 +1,17 @@
+{
+  "name": "エアキャニスター",
+  "icon": "pneumaticcraft:air_canister",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)エアキャニスター/$は、$(l:base_concepts/pressure)加圧可能/$なアイテムや道具のクラフト部品です。$(l:machines/charging_station)チャージングステーション/$で充填・放出することも可能です。$(item)エアキャニスター/$の容積は3000mLで、10barまで充填できます。（爆発することはありません）$(p)$(item)エアキャニスター/$を使用して制作した空気圧式アイテムは、キャニスター内の空気を保持します。"
+    },
+    {
+      "type": "crafting",
+      "text": "エアキャニスターの作成",
+      "recipe": "pneumaticcraft:air_canister"
+    }
+  ]
+}

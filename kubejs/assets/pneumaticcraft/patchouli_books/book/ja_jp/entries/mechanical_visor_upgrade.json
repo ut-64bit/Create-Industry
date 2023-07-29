@@ -1,0 +1,16 @@
+{
+  "name": "メカニカルバイザーアップグレード",
+  "icon": "compressedcreativity:mechanical_visor_upgrade",
+  "category": "pneumaticcraft:compressed_creativity",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)メカニカルバイザー$()は$(item)エンジニアゴーグル$()と同様に、機械の統計情報を確認できるアップグレードです。$(br2)$(l:base_concepts/upgrades#block_tracker)ブロックトラッカーアップグレード$()をインストールすると、鎧用の独立したウィジェットを作成して、ツールチップをワールド内で見ることが出来るようになります。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "compressedcreativity:crafting/mechanical_visor_upgrade",
+      "text": "$(item)メカニカルバイザー$()の作成"
+    }
+  ]
+}

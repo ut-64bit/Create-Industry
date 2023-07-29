@@ -1,0 +1,78 @@
+{
+  "name": "空気圧式防具の概要",
+  "icon": "minecraft:written_book",
+  "category": "pneumaticcraft:armor",
+  "priority": "true",
+  "advancement": "pneumaticcraft:printed_circuit_board",
+  "pages": [
+    {
+      "type": "text",
+      "text": "もし、$(pncr) と $(thing)アイアンマン/$のHUDを混ぜたらどうなるでしょうか？この$(thing)空気圧式防具/$!$(p)は、トニー・スタークのおもちゃにインスパイアされた物ですが、無敵というわけではありません。デフォルトでは、$(thing)鉄の防具/$よりも、わずかに防御力と耐久性が高いだけです。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/pneumatic_armor.png"
+      ],
+      "border": "true",
+      "text": "Compressed Iron Man"
+    },
+    {
+      "type": "text",
+      "text": "しかし、この防具は高度なアップグレードが可能です。アップグレードを使用するには（そして防具を加圧するには）、防具を$(l:machines/charging_station)充填ステーション/$に入れます。全ピース共通のアップグレードについては、次のページで説明されています。ピース固有のアップグレードは、各防具ピースのページで個別に説明されています。"
+    },
+    {
+      "type": "text",
+      "text": "各防具ピースを装備すると、数秒以内に$(thing)ブートアップ/$されます。$(thing)$(k:pneumaticcraft.armor.options)/$を押してGUIを開くと、インストールしたアップグレードの設定やアーマーHUDを調整することが出来ます。アップグレードが多くあれば、より多くのオプションがGUIに表示されます。$(p)全てのアップグレードは、GUIのチェックボックスでオン/オフを切り替え、更に各チェックボックスにキーバインドしてGUI外でも素早く機能を切り替えられます。"
+    },
+    {
+      "type": "spotlight",
+      "item": "minecraft:anvil",
+      "title": "リペア",
+      "text": "大切な鎧を良い状態に保つには、いくつかの方法があります。$(li)圧縮した鉄のインゴットを使って$(thing)金床/$で修理する。$(li)各パーツに$(thing)Item Life Upgrades/$を適用し、自己修復させる。$(li)各パーツに$(thing)修繕/$エンチャントを適用する。"
+    },
+    {
+      "type": "text",
+      "title": "カラーリング",
+      "text": "すべての防具は、デフォルトの灰色のテクスチャから染色が可能です。各ピースには$(thing)プライマリ/$と$(thing)セカンダリ/$の色があり、個別に調整が可能です。ヘルメットの$(thing)接眼レンズ/$にも、独自の色を付けることが可能です。$(p)色を調整するには、アーマーGUI画面から$(bold)カラー.../$画面を使用するだけです。これには特別なアップグレードは必要ありません。組み込まれた機能です！"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:speed_upgrade",
+      "text": "$(l:base_concepts/upgrades#speed)スピードアップグレード/$は、各防具の起動時間を短縮します。さらに、$(l:armor/pneumatic_helmet)ヘルメット/$はロックオン時間、$(l:base_concepts/upgrades#entity_tracker)エンティティトラッカー/$と$(l:base_concepts/upgrades#block_tracker)ブロックトラッカー/$を短縮します。また、$(l:armor/pneumatic_leggings)レギンス/$では、歩行速度が上昇しますが、$(l:base_concepts/pressure)消費空気量/$が増加します。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:volume_upgrade",
+      "text": "$(l:base_concepts/upgrades#volume)ボリュームアップグレード/$は、各防具の$(l:base_concepts/pressure)空気貯蔵容量/$を増やし、充填に時間がかかりますが、使用中に圧力の低下が遅くなります。ボリュームアップグレードは25個までに制限されており、アップグレードを重ねるごとに減圧量が減少します。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:armor_upgrade",
+      "text": "$(l:base_concepts/upgrades#armor)アーマーアップグレード/$は、各防具の保護力と耐久値を向上させます。2つアップグレードをインストールすると、各防具は対応する$(thing)ダイヤモンドの防具/$と同等の性能を持つようになります。最大4つのアップグレードで、保護が$(thing)ダイヤモンドの防具/$よりも上回る防御力を発揮します。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:item_life_upgrade",
+      "text": "$(l:base_concepts/upgrades#item_life)アイテムライフアップグレード/$は、$(l:base_concepts/pressure)空気/$を使用して、ゆっくりと防具を修理します。各防具に最大5つのアップグレードをインストール出来る為、修理速度は段階的に高速になっていきます。（ただし、空気効率は低下していきます）"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:gilded_upgrade",
+      "text": "$(l:base_concepts/upgrades#gilded)金メッキアップグレード/$は、どの鎧にもインストールでき、$(thing)ピグリン/$を騙し、$(thing)金の防具/$を来ていると信じ込ませられます。愚かなピグリンたち。"
+    },
+    {
+      "type": "spotlight",
+      "flag": "mod:mekanism",
+      "title": "Mekanism Radiation",
+      "item": "pneumaticcraft:radiation_shielding_upgrade",
+      "text": "$(l:base_concepts/upgrades#radiation_shielding)放射線シールドアップグレード/$は、Mekanismの$(l:https://wiki.aidancbrady.com/wiki/Radiation_Shielding_Unit)Radiation Shielding Unit/$と同様に、Mekanismの放射線の有害な影響に対する保護を得られます。完全な保護を受けるには、全ての防具ピースにシールドアップグレードが必要であることに注意してください。"
+    },
+    {
+      "type": "text",
+      "title": "Thaumcraft",
+      "flag": "mod:thaumcraft",
+      "text": "$(l:base_concepts/upgrades#thaumcraft)Thaumcraftアップグレード/$は、対応する$(thing)Thaumaturge's armor/$と同等のvis節約効果を防具に与えます。さらに$(l:armor/helmet)ヘルメット/$にインストールすると、$(item)Goggles of Revealing/$として機能し、$(thing)aura nodes/$内の$(thing)aspect/$量を表示します。"
+    }
+  ]
+}

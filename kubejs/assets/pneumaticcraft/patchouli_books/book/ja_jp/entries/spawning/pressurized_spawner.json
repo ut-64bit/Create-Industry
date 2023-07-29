@@ -1,0 +1,21 @@
+{
+  "name": "圧力スポナー",
+  "icon": "pneumaticcraft:pressurized_spawner",
+  "category": "pneumaticcraft:spawning",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)圧力スポナー/$は、$(l:base_concepts/pressure)圧力/$を使用してMobをスポーンさせる強力なデバイスです。$(p)圧力スポナーを使うには、$(l:spawning/spawner_core)スポナーコア/$と、捕獲したMobエッセンスおよび少なくとも10 barの圧力が必要です。"
+    },
+    {
+      "type": "text",
+      "text": "コアに複数のMobエッセンスが含まれている場合、ランダムなMobが選択されます。例えば、コアが50%ゾンビ、25%クリーパー、25%空の場合、各スポーン試行でゾンビが50%、クリーパーが25%、何もない場合が25%の確率で選ばれます。$(p)空気は何もスポーンしなかった場合でも使われるので、一部が空のコアはあまり効率がよくありません。（ただし、希少なMobの可能性が50%のコアは、コアがまったく空の場合よりも優れています...）"
+    },
+    {
+      "type": "crafting",
+      "text": "圧力スポナーの作成",
+      "recipe": "pneumaticcraft:pressurized_spawner"
+    }
+  ]
+}

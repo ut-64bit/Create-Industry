@@ -1,0 +1,46 @@
+{
+	"itemGroup.compressedcreativity.main": "Compressed Creativity",
+
+	"compressedcreativity.unit.bar": "bar",
+	"compressedcreativity.unit.air": "mL",
+	"compressedcreativity.unit.air_per_tick": "mL/t",
+
+
+	"compressedcreativity.tooltip.pressure_summary": "圧力統計:",
+	"compressedcreativity.tooltip.pressure": "圧力:",
+	"compressedcreativity.tooltip.air": "空気量:",
+	"compressedcreativity.tooltip.air_production": "生成空気量:",
+	"compressedcreativity.tooltip.air_usage": "消費空気量:",
+	"compressedcreativity.tooltip.not_enough_pressure": "要求圧力:",
+	"compressedcreativity.tooltip.not_enough_pressure_2": "この機械は作動するためにより多くの圧力を必要とします。",
+
+	"compressedcreativity.tooltip.rotational_compressor.wrong_direction": "回転方向の条件:",
+	"compressedcreativity.tooltip.rotational_compressor.wrong_direction_desc": "この機械はこの方向の回転では動作しません",
+
+	"compressedcreativity.tooltip.compressed_air_engine.idle_1": "現在休止中：",
+	"compressedcreativity.tooltip.compressed_air_engine.idle_2": "現在動作してないにも関わらず、この機械は空気を使用しています",
+
+	"pneumaticcraft.armor.upgrade.compressedcreativity.mechanical_visor": "メカニカルバイザー",
+
+	"pneumaticcraft.armor.upgrade.compressedcreativity.block_tracker_module_kinetic": "メカニカルブロック",
+
+	"pneumaticcraft.gui.tab.info.item.armor.head.compressedcreativity.mechanical_visorUpgrade": "ยง0メカニカルバイザーは、エンジニアごーるぐを着用しているかのように、一部の機械の統計情報を確認できます。",
+
+	"compressedcreativity.mechanical_visor.armor.gui.title": "メカニカルバイザー",
+
+	"compressedcreativity.mechanical_visor.armor.gui.tooltip_mode": "ツールチップモード",
+	"compressedcreativity.mechanical_visor.armor.gui.tooltip_mode.classic": "クラシック",
+	"compressedcreativity.mechanical_visor.armor.gui.tooltip_mode.widget": "ウィジェット",
+	"compressedcreativity.mechanical_visor.armor.gui.tooltip_mode.both": "両方",
+	"compressedcreativity.mechanical_visor.armor.gui.tooltip_mode.none": "なし",
+
+	"compressedcreativity.mechanical_visor.armor.gui.block_tracker_mode": "ブロックトラッカーモード",
+	"compressedcreativity.mechanical_visor.armor.gui.block_tracker_mode.all": "すべての情報",
+	"compressedcreativity.mechanical_visor.armor.gui.block_tracker_mode.goggles": "ゴーグルのみ",
+	"compressedcreativity.mechanical_visor.armor.gui.block_tracker_mode.tooltip": "非ゴーグルのみ",
+	"compressedcreativity.mechanical_visor.armor.gui.block_tracker_mode.min": "プレースホルダー",
+
+	"compressedcreativity.mechanical_visor.armor.gui.block_tracker.min": "ゴーグル情報あり",
+
+	"compressedcreativity.gui.tooltip.expand": "Shiftキーを押して情報表示"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "圧縮鉄の防具",
+  "icon": "pneumaticcraft:compressed_iron_helmet",
+  "category": "pneumaticcraft:armor",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)圧縮鉄の防具/$は、ゲームの序盤の防具セットで、同等の$(item)鉄の防具/$よりも、わずかに防御力と耐久性に優れ、ノックバック耐性もあります。$(item)金床/$で$(item)圧縮鉄インゴット/$を使用して修理が可能です。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:compressed_iron_helmet",
+      "recipe2": "pneumaticcraft:compressed_iron_chestplate"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:compressed_iron_leggings",
+      "recipe2": "pneumaticcraft:compressed_iron_boots"
+    }
+  ]
+}

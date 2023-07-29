@@ -1,0 +1,11 @@
+{
+  "name": "圧縮鉄インゴット",
+  "icon": "pneumaticcraft:ingot_iron_compressed",
+  "category": "pneumaticcraft:components",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:base_concepts/basic_materials#compressed_iron_block)基礎素材/$をご覧ください。"
+    }
+  ]
+}

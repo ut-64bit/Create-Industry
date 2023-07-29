@@ -1,0 +1,6 @@
+{
+  "name": "製造",
+  "description": "他の$(pncr)機械やツールを制作するための部品を生産する、機械やシステム。",
+  "icon": "pneumaticcraft:assembly_controller",
+  "sortnum": 3
+}

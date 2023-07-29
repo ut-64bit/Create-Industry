@@ -1,0 +1,17 @@
+{
+  "name": "ストーンベース",
+  "icon": "pneumaticcraft:stone_base",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "他のデバイスのクラフト部品です。単体での使用はできません。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Stone Base",
+      "recipe": "pneumaticcraft:stone_base"
+    }
+  ]
+}

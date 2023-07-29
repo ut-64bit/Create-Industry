@@ -1,0 +1,16 @@
+{
+  "name": "はじめに",
+  "icon": "pneumaticcraft:textures/gui/icon/gui_no_problem.png",
+  "category": "pneumaticcraft:base_concepts",
+  "priority": "true",
+  "pages": [
+    {
+      "type": "text",
+      "text": "PneumaticCraftへようこそ！$(li)いくつかの$(thing)鉄/$と$(thing)石/$を手に入れましょう。それぞれのスタック（鉄は少し少ないかもしれません）を使用します。$(li)鉄を地面に投げて、爆破してみましょう。はい、本当に。$(li)出来上がった$(thing)圧縮鉄/$を集めましょう（爆破で少し失われます）。$(li)次にいくつかの$(l:tubes/pressure_tubes)圧力管/$を作りましょう。$(li)$(l:base_concepts/building_materials)強化石/$もいつくか作りましょう。$(li)それらを使い$(l:manufacturing/pressure_chamber)圧力室/$も作成しましょう。"
+    },
+    {
+      "type": "text",
+      "text": "これ以降、$(pncr)を進めることで得られる$(thing)進捗/$に基づいて、このマニュアルの多くのセクションがアンロックされていきます。次に何を作ればいいかは、Modの進捗ページで確認してください（いくつかの進捗を達成すると、少しの$(thing)経験値/$）も貰えるので、嬉しいですね）。"
+    }
+  ]
+}

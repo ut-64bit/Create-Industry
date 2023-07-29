@@ -1,7 +1,5 @@
 // priority: 1
 
-let TC = (id) => `tconstruct:${id}`
-
 // const
 
 onEvent(`recipes`, event => {

@@ -1,0 +1,16 @@
+{
+  "name": "トランジスタ",
+  "icon": "pneumaticcraft:transistor",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "他のデバイスのクラフト部品です。単体での使用はできません。"
+    },
+    {
+      "type": "pneumaticcraft:pressure_chamber",
+      "recipe": "pneumaticcraft:pressure_chamber/transistor"
+    }
+  ]
+}

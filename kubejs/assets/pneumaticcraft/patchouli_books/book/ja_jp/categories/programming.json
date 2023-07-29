@@ -1,0 +1,6 @@
+{
+  "name": "ドローンプログラミング",
+  "description": "チュートリアルや多くのプログラミングウィジェットのリファレンスガイドを含む、 $(l:tools/drone)ドローン/$ プログラミングに関するすべてのこと。",
+  "icon": "pneumaticcraft:programmer",
+  "sortnum": 10
+}

@@ -1,0 +1,17 @@
+{
+  "name": "PCBブループリント",
+  "icon": "pneumaticcraft:pcb_blueprint",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)PCBブループリント/$は$(l:manufacturing/uv_light_box)UVライトボックス/$の製作に必要な特別な部品です。$(p)通常、$(l:tools/amadron_tablet)アマドロンタブレット/$で購入できますが、$(l:base_concepts/villagers)メカニックの村人/$から購入することもできます。"
+    },
+    {
+      "type": "pneumaticcraft:amadron_trade",
+      "recipe": "pneumaticcraft:amadron/pcb_blueprint",
+      "text": "$(item)PCBブループリント/$の取引."
+    }
+  ]
+}

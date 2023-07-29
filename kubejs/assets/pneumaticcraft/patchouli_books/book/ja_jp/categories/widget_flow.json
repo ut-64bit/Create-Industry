@@ -1,0 +1,7 @@
+{
+  "name": "フローコントロールウィジェット",
+  "description": "プログラムの流れに影響を与えるウィジェット。",
+  "icon": "pneumaticcraft:textures/progwidgets/start_piece.png",
+  "parent": "pneumaticcraft:programming",
+  "sortnum": 1
+}

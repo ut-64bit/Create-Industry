@@ -1,0 +1,6 @@
+{
+  "name": "チューブ＆モジュール",
+  "description": "圧力チューブは、$(pncr)で圧縮された空気を移動させるためのもの。",
+  "icon": "pneumaticcraft:pressure_tube",
+  "sortnum": 2
+}

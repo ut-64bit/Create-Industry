@@ -1,0 +1,16 @@
+{
+  "name": "メモリーエッセンス",
+  "icon": "pneumaticcraft:memory_essence_bucket",
+  "category": "pneumaticcraft:base_concepts",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)メモリーエッセンス/$は、プレイヤーの記憶や経験を液状にしたものです。バニラのエンチャントや特定の$(pncr)クラフトに使用する為に抽出して保存することが出来ます。$(p)メモリーエッセンスの入手方法は2通りあります：$(li)1.$(l:tools/memory_stick)メモリースティック/$で入手する方法$(li)2.$(l:machines/aerial_interface)エアリアルインターフェース/$で入手する方法"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:memory_essence_bucket",
+      "text": "$(italic)あなたは経験者ですか？/$"
+    }
+  ]
+}

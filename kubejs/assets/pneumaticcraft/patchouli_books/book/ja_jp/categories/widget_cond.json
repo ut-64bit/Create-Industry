@@ -1,0 +1,7 @@
+{
+  "name": "コンディションウィジェット",
+  "description": "条件を評価するウィジェット。",
+  "icon": "pneumaticcraft:textures/progwidgets/condition_block_piece.png",
+  "parent": "pneumaticcraft:programming",
+  "sortnum": 3
+}

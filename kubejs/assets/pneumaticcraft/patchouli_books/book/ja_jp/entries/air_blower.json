@@ -1,0 +1,17 @@
+{
+  "name": "エアブロワー",
+  "icon": "compressedcreativity:air_blower",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)エアブロワー$()は、$(item)ケース入りファン$()と同様に、加圧空気を使用して気流を生成する機械です。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "compressedcreativity:crafting/air_blower",
+      "text": "$(item)エアブロワー$()の作成"
+    }
+  ]
+}
