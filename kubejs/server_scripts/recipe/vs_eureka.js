@@ -9,6 +9,19 @@ if (Item.exists(`vs_eureka:balloon`)) {
 	let recipe
 
 	onEvent(`recipes`, event => {
+		let item_application = (output, inputBlock, inputItem) => {
+			event.custom({
+				type: `create:item_application`,
+				ingredients: [
+					Ingredient.of(inputBlock).toJson(),
+					Ingredient.of(inputItem).toJson()
+				],
+				results: [
+					Item.of(output).toResultJson()
+				]
+			})
+		}
+
 		// #region balloon
 		event.remove({ id: `vs_eureka:balloon_leather` })
 		event.remove({ id: `vs_eureka:balloon_membrane` })
@@ -94,6 +107,10 @@ if (Item.exists(`vs_eureka:balloon`)) {
 				P: `${wood}_planks`,
 				I: `create:precision_mechanism`
 			}).id(`kubejs:vs_eureka/crafting/${wood}_ship_helm`)
+		})
+
+		colors.forEach(color => {
+			item_application(`vs_eureka:${color}_balloon`, `#vs_eureka:balloons`, `${color}_dye`)
 		})
 	})
 

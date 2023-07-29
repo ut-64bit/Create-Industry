@@ -268,11 +268,12 @@ onEvent(`recipes`, event => {
 			`a`
 		], { a: 'farmersdelight:straw' }
 	).id(`farmersdelight:rope`)
-	event.replaceInput({id:`supplementaries:crimson_lantern`},`gold_ingot`,`#forge:plates/gold`)
+	event.replaceInput({ id: `supplementaries:crimson_lantern` }, `gold_ingot`, `#forge:plates/gold`)
 })
 
 onEvent(`item.tags`, event => {
-	event.add(`forge:storage_blocks/steel`,`createindustry:steel_block`)
+	event.add(`forge:storage_blocks/steel`, `createindustry:steel_block`)
+	event.add(`forge:storage_blocks/cast_iron`, 'createindustry:cast_iron_block')
 })
 
 onEvent("lootjs", event => {

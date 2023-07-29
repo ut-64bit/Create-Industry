@@ -168,4 +168,77 @@ if (Item.exists(`toms_storage:ts.storage_terminal`)) {
 
 	onEvent("lootjs", event => {
 	})
+
+	onEvent('server.datapack.first', event => {
+		event.addJson(`create:advancements/crafting_terminal`, {
+			"parent": "create:storage_terminal",
+			"display": {
+				"icon": {
+					"item": "toms_storage:ts.crafting_terminal"
+				},
+				"title": {
+					"translate": "HUGE SUCCESS."
+				},
+				"description": {
+					"color": "#DBA213",
+					"translate": "Place a crafting terminal"
+				},
+				"frame": "task",
+				"show_toast": true,
+				"announce_to_chat": true,
+				"hidden": false
+			},
+			"criteria": {
+				"0": {
+					"trigger": "minecraft:placed_block",
+					"conditions": {
+						"block": "toms_storage:ts.crafting_terminal",
+						"item": {
+							"item": "toms_storage:ts.crafting_terminal"
+						}
+					}
+				}
+			},
+			"requirements": [
+				[
+					"0"
+				]
+			]
+		})
+		event.addJson(`create:advancements/storage_terminal`, {
+			"parent": "create:clockwork_bearing",
+			"display": {
+				"icon": {
+					"item": "toms_storage:ts.storage_terminal"
+				},
+				"title": {
+					"translate": "Still Alive"
+				},
+				"description": {
+					"color": "#DBA213",
+					"translate": "Place a storage terminal"
+				},
+				"frame": "task",
+				"show_toast": true,
+				"announce_to_chat": true,
+				"hidden": false
+			},
+			"criteria": {
+				"0": {
+					"trigger": "minecraft:placed_block",
+					"conditions": {
+						"block": "toms_storage:ts.storage_terminal",
+						"item": {
+							"item": "toms_storage:ts.storage_terminal"
+						}
+					}
+				}
+			},
+			"requirements": [
+				[
+					"0"
+				]
+			]
+		})
+	})
 }
