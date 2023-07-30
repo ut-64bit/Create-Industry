@@ -24,11 +24,13 @@
     "sky_colors": true
   },
   "render_settings": {
-    "fog_distance": 6,
-    "fog_start": 100,
+    "fog_distance": 8,
+    "fog_start": 70,
     "multi_dimension_fog_control": false,
     "dimensionFogDistance": {
-      "minecraft:overworld": 0
+      "minecraft:overworld": 7,
+      "minecraft:the_nether": 0,
+      "minecraft:the_end": 0
     },
     "use_linear_flat_color_blender": false,
     "light_updates": true,

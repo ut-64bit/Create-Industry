@@ -20,13 +20,17 @@
             "force_compatible": true,
             "fixed_position": false
         },
-        "1": [
+        "mod_resources": {
+            "title": "\"Mod Assets\"",
+            "description": "\"Resource pack from Mods\""
+        },
+        "default_packs": [
             "file/Create Simple Storage 2.1.zip",
             "file/Smarter Chutes 1.18.2.zip",
             "file/Eureka Create 1.0.zip",
             "file/Updated_Engineering_v1.7.zip"
         ],
-        "$1": {
+        "$default_packs": {
             "hidden": true,
             "required": true
         }
