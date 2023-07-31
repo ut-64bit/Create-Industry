@@ -1,0 +1,33 @@
+{
+  "name": "GPSツール",
+  "icon": "pneumaticcraft:gps_tool",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)GPSツール/$は、ブロックに対して$(thing)右クリック/$すると、ブロックの座標を保存するアイテムです。このデータは$(pncr)のいくつかの場所で使用されます; オーバーリーフを参照してください。$(p)空中で$(item)GPSツール/$を$(thing)右クリック/$するとGUIが開き、座標を直接調整することができます。$(p)ホールドした$(item)GPSツール/$は、選択したブロックをハイライト表示します。"
+    },
+    {
+      "type": "text",
+      "anchor": "variables",
+      "title": "グローバル変数のリンク",
+      "text": "$(l:programming/variables#global)グローバル変数/$は、$(l:base_concepts/drone)Drone/$の高度な機能で、$(l:programming/coordinate_operator)座標演算子/$からアクセスします。$(p)空中で$(item)GPS Tool/$を$(thing)右クリック/$すると、変数名を入力することができます。$(p)これで、その$(thing)グローバル変数/$は、$(item)GPSツール/$の選択された座標の値を追跡します。これを利用して、ダイナミックエリアを利用した$(thing)Droneプログラム/$を作成することができます。"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "pneumaticcraft:machines/air_cannon",
+        "pneumaticcraft:machines/universal_sensor",
+        "pneumaticcraft:programming/programmer",
+        "pneumaticcraft:tools/amadron_tablet"
+      ],
+      "text": "$(item)GPS Tool/$を利用する機械や道具。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a GPS Tool",
+      "recipe": "pneumaticcraft:gps_tool"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "ディスプレイテーブル",
+  "icon": "pneumaticcraft:display_table",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)ディスプレイテーブル/$は、1つのアイテムを保存（および表示）することができるシンプルなインベントリです。テーブルの在庫は、ホッパーやドローン、その他の配管システムを通じて操作できるため、装飾的な目的もありますが、自動化にも有用でしょう。"
+    },
+    {
+      "type": "text",
+      "text": "ディスプレイテーブルを隣り合わせに配置すると、視覚的につながり、隣接する脚はレンダリングされず、1つの大きなテーブルが形成されます。ただし、両方のブロックの回転がまったく同じであることが必要です。回転が異なる場合、テーブルはこの方法では接続されません。$(p)視覚的に接続されたテーブルには、各テーブルに個別の 1 アイテム インベントリが存在します。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Display Table",
+      "recipe": "pneumaticcraft:display_table"
+    }
+  ]
+}

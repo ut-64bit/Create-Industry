@@ -1,0 +1,49 @@
+{
+  "name": "サーマルコンプレッサー",
+  "icon": "pneumaticcraft:thermal_compressor",
+  "category": "pneumaticcraft:compressors",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)サーマルコンプレッサー/$は、反対側（水平方向）の$(l:base_concepts/heat)温度差/$を利用して$(l:base_concepts/pressure)圧縮空気/$を作り出すシンプルなコンプレッサーである。温度勾配が大きければ大きいほど、より多くの空気が生成される。$(p)注意：このコンプレッサーを純粋に$(l:machines/vortex_tube)ボルテックスチューブ/$から動かそうとしてもうまくいきません；正味の圧力損失が発生します。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/thermal_compressor.png"
+      ],
+      "border": "true",
+      "text": "$(italic)溶岩とパックアイスで温度勾配をつけたサーマルコンプレッサー/$"
+    },
+    {
+      "type": "text",
+      "text": "$(item)サーマルコンプレッサー/$の南北と東西の面は熱的に接続されていますが、南北と東西の間には相互接続がないため、1台のコンプレッサーで2つの独立した温度勾配を持たせることができます。$(p)熱は接続部を横切って均等化するので、有用な温度差を維持するためには、ある程度の努力が必要です。"
+    },
+    {
+      "type": "text",
+      "title": "Applications",
+      "text": "$(item)サーマルコンプレッサー/$の主な用途は次の3つです：$(li)$(item)ボルテックスチューブ/$の$(italic)片側/$から出る廃熱（または冷熱！）を利用する場合。通常、ボルテックスチューブの高温側または低温側のみを使用し、もう一方は$(l:machines/heat_sink)ヒートシンク/$を介して排気します。しかし、$(item)サーマルコンプレッサー/$は、この廃熱や廃冷媒の一部を空気圧として再生する機会を提供する。"
+    },
+    {
+      "type": "text",
+      "title": "Applications (cont.)",
+      "text": "$(li)$(l:compressors/advanced_air_compressor)アドバンストエアコンプレッサー/$のような高度なコンプレッサーから出る廃熱を利用すること。通常、この熱は1つまたは複数の$(l:tools/heat_sinkヒートシンク/$を使って大気中に捨てられますが、サーマルコンプレッサーでは、この廃熱の一部を圧力として再生することも可能です。"
+    },
+    {
+      "type": "text",
+      "title": "Applications (cont.)",
+      "text": "$(li)もし、$(l:base_concepts/heat_sources)溶岩のような天然の高温・低温物質や、他のMODのブロック/$を大量に入手する手段があれば、それらを使って圧力を発生させることができるかもしれません。また、熱源や使用済みソースの配置と除去を自動化する必要があるでしょう。$(l:tools/drone)ドローン/$はこれを行うことができますし、他の多くのMODによるソリューションも可能です。"
+    },
+    {
+      "type": "text",
+      "title": "Redstone Control",
+      "text": "このコンプレッサーは$(#f00)レッドストーン信号/$で制御できます。無効にすると、圧力発生が停止し、南北と東西の面の間の熱抵抗が大幅に増加します (多少の熱はまだ漏れますが、コンプレッサーが動作しているときよりもはるかに少なくなります)。これは、例えばチューブネットワークが完全に加圧されているときなど、圧力が必要ないときに熱差としてエネルギーを蓄えるのに便利です。"
+    },
+    {
+      "type": "crafting",
+      "text": "$(item)サーマルコンプレッサー/$の製作",
+      "recipe": "pneumaticcraft:thermal_compressor"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "ロジスティクス概要",
+  "icon": "pneumaticcraft:logistics_configurator",
+  "category": "pneumaticcraft:logistics",
+  "advancement": "pneumaticcraft:root",
+  "priority": "true",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(pncr)の$(thing)ロジスティックシステム/$は、アイテムや液体を輸送したり、インベントリやタンクのストックを維持するための興味深い方法を提供します。$(p)インベントリやタンクには、$(l:logistics/frames)ロジスティックフレーム/$というガジェットを取り付けることができ、アイテムや液体をどのようにブロックに出し入れするかをコントロールすることができます。"
+    },
+    {
+      "type": "text",
+      "text": "これらの在庫は、$(l:logistics/logistics_drone)ロジスティクスドローン/$や$(l:tubes/logistics_module)ロジスティクスモジュール/$を取り付けた$(l:tubes/pressure_tubes)圧力チューブ/$で接続されます。$(p)$(thing)ロジスティクスシステム/$は$(l:https://wiki.factorio.com/Logistic_network)Factorio/$に大きく影響を受けており、同ゲームをプレイしたことがあれば、そのコンセプトは馴染みのあるものでしょう。主な違いは、このMODが個別のロジスティックチェストではなく、既存のインベントリやタンクに取り付ける$(l:logistics/frames)フレーム/$を提供することです。"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "pneumaticcraft:logistics/frames",
+        "pneumaticcraft:logistics/logistics_drone",
+        "pneumaticcraft:tubes/logistics_module"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "アフォリズム・タイル",
+  "icon": "pneumaticcraft:aphorism_tile",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:assembly_controller",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)アフォリズムタイル/$は$(item)標識/$のようなものですが、任意の量のテキストを表示することができます。テキストは自動的に拡大縮小され、タイルに収まるように表示されます。$(p)格言タイルを置くと、$(ttcolor)$(t:This can be disabled in client config - see 'B:dramaSplash')デフォルト/$で$(l:http://mc-drama.herokuapp.com/)Drama Generator/$からランダムにスプラッシュテキストが表示されます。"
+    },
+    {
+      "type": "text",
+      "text": "$(li)$(item)Aphorism Tiles/$は、空の手で$(thing)右クリック/$することで、その場で編集することができます。$(li)マークアップは $(thing)Alt + 0-9/a-f/l/m/n/o/r/$ ($(l:https://minecraft.gamepedia.com/Formatting_codes)標準的な Minecraft コード/$) を使って追加することができます。$(li)$(thing)F1/$を押し続けると、エディタのキーバインドに関するポップアップヘルプが表示されます。$(li)$(item)Aphorism タイル/$は、$(thing)右クリック/$で任意の染料アイテムで再色付けすることができます。タイルの境界線と背景は、タイルの対応する部分をクリックすることで独立して色を変更できます。"
+    },
+    {
+      "type": "text",
+      "anchor": "items",
+      "text": "$(li)$(item)Aphorism Tiles/$はテキストの代わりに、あるいはテキストと一緒に、$(thing)アイテム/$を表示することもできます。表示するアイテムは $(thing){item:<modid>:<itemid>}/$ のような形式でテキストを書くことで指定できます。例: $(thing){item:minecraft:diamond}/$.$(li)あるいは、左側の GUI パネルにある$(thing)Insert Item.../$ ボタンをクリックし、検索ポップアップからアイテムを選択します。これで、現在の行のテキストがすべて置き換えられます。1つのタイルに複数のアイテムを表示することができます。"
+    },
+    {
+      "type": "text",
+      "text": "$(li)Tip:表示されるアイテムのサイズは、テキスト行の高さに合わせて拡大縮小されます。テキストとアイテムが混在している場合は、テキスト行を短くしてアイテムが小さくならないようにしてください。$(li)また、左側のGUIパネルのスライダーを使用して、タイルのテキストに$(thing)マージン/$を設定することができますので、タイル上でより少ないスペースを占有させたい場合は、それを使用します。$(li)最後に、左側のGUIパネルのチェックボックスを使って、タイル全体を$(thing)非表示/$にし、テキスト（またはアイテム）$(italic)のみ/$を表示させることができます。"
+    },
+    {
+      "type": "text",
+      "text": "$(li)Invisible Aphorism Tilesはスニークしない限りブロックの形をしていないので、チェストのラベルとして、特にアイテムを表示するときに使う可能性があります。形がないため、チェストを右クリックするなどのインタラクションは、後ろのブロックに渡されます。$(li)見えないタイルは、スニークして右クリックすることで編集できます（通常通り、手ぶらで）。"
+    },
+    {
+      "type": "pneumaticcraft:assembly_system",
+      "recipe": "pneumaticcraft:assembly/aphorism_tile"
+    }
+  ]
+}

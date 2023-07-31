@@ -1,0 +1,17 @@
+{
+  "name": "アドバンストエアコンプレッサー",
+  "icon": "pneumaticcraft:advanced_air_compressor",
+  "category": "pneumaticcraft:compressors",
+  "advancement": "pneumaticcraft:advanced_pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)アドバンストエアコンプレッサー/$は、$(l:compressors/air_compressor)エアコンプレッサー/$の$(l:base_concepts/pressure_tiers)Tier 2/$バージョンで、最大安全圧力は20barです。$(ttcolor)$(t:This can be increased by installing Speed Upgrades)50mL/tickの空気を生成/$し、$(l:base_concepts/upgrades#speed)スピードアップグレード/$が可能です。$(p)ただし、このジェネレータは$(l:base_concepts/heat)冷却/$する必要があります。温度が上昇すると効率が下がり、空気がまったく生成されなくなります。"
+    },
+    {
+      "type": "crafting",
+      "text": "$(item)アドバンストエアコンプレッサー/$を作る",
+      "recipe": "pneumaticcraft:advanced_air_compressor"
+    }
+  ]
+}

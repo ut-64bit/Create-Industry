@@ -1,0 +1,78 @@
+{
+  "name": "セキュリティステーション",
+  "icon": "pneumaticcraft:security_station",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "敵対するプレイヤーからエリアを保護したい場合は、$(thing)セキュリティステーション/$を使用することができます。$(p)この装置は、その範囲内のブロックにおいて、信頼できないプレイヤーによるすべてのプレイヤーの操作を防止します。つまり、インベントリやGUIを開いたり、ブロックを置いたり壊したりすることができなくなります。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:security_station",
+      "text": "これは素晴らしいことですが、$(thing)Security Station/$を設置するためには、そのセキュリティを確保するためにいくつかのことを行う必要があります。というのも、$(thing)Security Station/$は$(l:machines/security_station#hacking)ハッキング/$される可能性があるからです。Security Stationのハッキングシステムは、$(l:https://www.youtube.com/watch?v=nQ0rPLlU8v4)Deus Ex: Revolutionのハッキングシステム/$から多大な影響を受けています。"
+    },
+    {
+      "type": "text",
+      "title": "セットアップ",
+      "text": "$(thing)Security Station/$をセットアップするには、ネットワークグリッドに$(l:components/network_components)ネットワークコンポーネント/$を配置し、$(thing)ネットワーク/$を形成する必要があります。すべてのネットワークには、$(l:components/network_components#diagnostic)診断サブルーチン/$、$(l:components/network_components#io_port)ネットワークIOポート/$、および$(l:components/network_components#registry)ネットワークレジストリ/$を1つずつ配置する必要があります。$(p)これら3つの特殊なノードは、すべて$(l:components/network_components#node)ネットワーク・ノード/$で互いに接続されていなければなりません。"
+    },
+    {
+      "type": "text",
+      "title": "ルール",
+      "text": "$(l:machines/security_station#hacking)ハッカー/$は、$(thing)ネットワークIOポート/$から開始し、$(thing)診断サブルーチン/$または$(thing)ネットワークレジストリ/$のいずれかをキャプチャすることを目的としています。$(p)$(thing)診断サブルーチン/$は、ハッカーのエントリポイントである$(thing)ネットワークIOポート/$まで遡ることを目的としています。"
+    },
+    {
+      "type": "text",
+      "text": "$(thing)ネットワークノード/$コンポーネントを大きなスタックに配置すると、$(italic)ノードのレーティング/$が上がり、$(thing)ハッカー/$と$(thing)Diagnostic/$の両方がそれらを捕らえるのに時間がかかることを意味します。しかし、$(thing)Diagnostic/$は$(thing)ハッカー/$よりも速くトレースできるため、Diagnosticよりもハッカーに不利であることに注意してください。"
+    },
+    {
+      "type": "text",
+      "title": "ハッカーツール",
+      "text": "ハッカーが入手を試みるべき便利なアイテムがいくつかあります。どちらもクラフト可能ではなく、インワールドで見つける必要があります（村人との取引やダンジョンの戦利品）。$(li)$(l:components/nuke_virus)Nuke Virus/$: ノード1つを即座に捕獲するのに使用します。$(li)$(l:components/stop_worm)STOP! Worm/$: Diagnosticのトレースを一時的に凍結させることができる。"
+    },
+    {
+      "type": "text",
+      "title": "アップグレード",
+      "text": "$(thing)セキュリティステーション/$は、いくつかのアップグレードが必要です。$(li)$(l:base_concepts/upgrades#entity_tracker)エンティティトラッカー/$は$(l:machines/security_station#hacking)ハッカー/$が検知される確率を高めます。収穫は逓減し、ノードハック1回につき最大99%の保護となります。$(li)$(l:base_concepts/upgrades#range)範囲アップグレード/$はステーションの保護範囲をアップグレードごとに1つずつ増やし、最大で全方向16ブロック（最大保護範囲は33x33x33ブロック）です。"
+    },
+    {
+      "type": "text",
+      "title": "アップグレード(続き)",
+      "text": "$(li)$(l:base_concepts/upgrades#security)セキュリティ・アップグレード/$は、ハッカーがハッキングを開始するために$(l:armor/pneumatic_helmet)空気圧ヘルメット/$に必要とする$(thing)セキュリティ・アップグレード/$の数を増加させます。ハッカーは必要なセキュリティアップグレードの数を知らされません。また、セキュリティステーションは、ハッキングを試みてもセキュリティアップグレードが足りないためにできないプレイヤーに、少量の無抵抗のダメージを与えます。"
+    },
+    {
+      "type": "text",
+      "title": "友だちの輪を広げる",
+      "text": "$(thing)セキュリティステーション/$に$(bold)友好的/$なプレイヤーを追加して、保護区域内で交流できるようにすることができます。$(p)また、ここで信頼できなくなったプレイヤーを削除することもできます。"
+    },
+    {
+      "type": "text",
+      "title": "ハッキングを受ける",
+      "text": "誰かが$(thing)Security Station/$をハッキングすると、$(bold)Problems/$と$(bold)Status/$タブに表示され、$(italic)誰/$がハッキングしたのかも表示されます。これらのプレイヤーは（これらのプレイヤーのみ）、エリア内のブロックとやり取りできるようになります。セキュリティを回復するには、GUIの$(bold)Reboot/$ボタンで$(thing)Security Station/$を$(italic)再起動/$する必要があります。再起動には60秒かかり、その間はセキュリティが確保されません。"
+    },
+    {
+      "type": "text",
+      "title": "ハッキング",
+      "anchor": "hacking",
+      "text": "自分以外の$(thing)セキュリティステーション/$をハックするには、少なくとも1つ（おそらく多くの）$(l:base_concepts/upgrades#security)セキュリティアップグレード/$がインストールされた$(l:armor/pneumatic_helmet)ニューマチックヘルメット/$が必要です。これを実行すると、反対側のようなGUIが表示されます。ハッキングの方法については、$(l:https://www.youtube.com/watch?v=Lgmpslbrrwo)このビデオ/$（非常に古いですが、まだ適切です）を見てください。$(p)ノードをキャプチャするには、ノードを$(thing)左クリック/$します。捕獲したノードを強化するには、$(thing)右クリック/$します。強化されたノードは、Diagnosticが捕獲するのに若干時間がかかります。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/hacking.png"
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Tips",
+      "text": "$(li)$(thing)Security Station/$をしっかり隠して、しっかり保護する。$(li)複数の$(thing)セキュリティ・ステーション/$でエリアを保護することができますが、すべてがハッキングされる必要があります。$(li)戦闘プログラムを搭載した$(l:tools/drone)ドローン/$や$(l:machines/sentry_turret)セントリータレット/$など、アクティブな防御を考えてみましょう。$(li)ハックされた$(thing)セキュリティ・ステーション/$は$(#f00)レッドストーン・シグナル/$を発することができ、これが追加措置の引き金になります（ステーション下のTNTとか？）"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Security Station",
+      "recipe": "pneumaticcraft:security_station"
+    }
+  ]
+}

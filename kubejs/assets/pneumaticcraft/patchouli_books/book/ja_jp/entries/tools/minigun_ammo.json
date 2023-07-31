@@ -1,0 +1,72 @@
+{
+  "name": "ミニガン用弾薬",
+  "icon": "pneumaticcraft:gun_ammo",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:minigun",
+  "pages": [
+    {
+      "type": "text",
+      "text": "銃弾は、$(l:tools/minigun)ミニガン/$で使用します。$(p)弾薬の種類によって異なりますが、1つの弾薬カートリッジに最大1000発のミニガンの弾丸が入ります。弾薬は$(item)ミニガン/$の発射中に徐々に消費され、弾薬の残量は弾薬アイテムのツールチップ、耐久バー、および（ミニガン装備時は）HUDで画面中央のミニガンサイトの横に表示されます。"
+    },
+    {
+      "type": "text",
+      "anchor": "magazine",
+      "text": "弾薬を使用するには、$(item)Minigun/$のマガジンに挿入する必要があり、プレイヤーのインベントリから消費されることはありません。$(item)Minigun/$を$(thing)Sneak+右クリック/$すると弾薬が装填されます。$(p)弾薬は1～4の番号のスロットから順番に消費されますが、スロットを$(thing)ミドルクリック/$してロックすると、$(item)Minigun/$はそのスロットからのみ弾薬を消費するように強制的に変更できます。複数の種類の弾薬を装填している場合に便利です。ロックされたスロットを$(thing)ミドルクリック/$すると、再びロックが解除されます。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:gun_ammo",
+      "text": "プレーン$(item)ガン弾/$は、それ自体に特別な能力はありませんが、1000発という大容量のカートリッジを持っています。$(p)また、$(l:tools/minigun_ammo#potions)ポーション/$の効果を得るためにクラフトすることができる唯一の弾薬タイプです。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:gun_ammo_incendiary",
+      "text": "$(item)焼夷弾/$はカートリッジサイズが500で、当たったものに火をつけます。$(p)また、ブロックに火がつく可能性もあるので注意が必要です!"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:gun_ammo_weighted",
+      "text": "$(itemWeighted Minigun Ammo/$はカートリッジサイズが250で、非常に高いダメージを与えるが、重量の関係で射程距離が通常の弾薬の20％しかない。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:gun_ammo_ap",
+      "text": "$(item)Armor-piercing Minigun Ammo/$はカートリッジサイズが250で、クラフトコストがやや高いですが、通常の弾薬よりもわずかにダメージが大きく、ターゲットの装甲をバイパスすることができます。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:gun_ammo_explosive",
+      "text": "$(item)爆発性ミニガン弾/$のカートリッジサイズは125です。弾が当たると小さいながらも爆発する可能性があります。爆発は$(ttcolor)$(t:See 'B:explosiveAmmoTerrainDamage' in config)デフォルト/$で地形にダメージを与えません。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:gun_ammo_freezing",
+      "text": "$(item)Freezing Minigun Ammo/$のカートリッジサイズは250。当たった対象はスローになり、確率でダメージを与える凍結雲に包まれるが、この雲は自分も傷つけることがあるので注意。$(p)この弾薬は耐火性のある対象に対して特別なダメージを与えるので、$(#800)ネザー/$での戦闘に最適です。"
+    },
+    {
+      "type": "text",
+      "title": "ポーションチップ弾",
+      "anchor": "potions",
+      "text": "標準的なミニガンの弾薬を任意の$(item)ポーション/$でクラフトすることができ、その弾薬はもはや物理ダメージを与えませんが、ターゲットにそのポーションの効果を適用するチャンスがあります。$(p)$(thing)スプラッシュ/$ポーションと$(thing)リンガリング/$ポーションも使用可能で、これらは期待通りのエリア効果を持ちますが、スプラッシュポーションで弾薬を傾けると3倍、リンガリングポーションで6倍の速さで消費されます!"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:gun_ammo",
+      "recipe2": "pneumaticcraft:gun_ammo_incendiary"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:gun_ammo_weighted",
+      "recipe2": "pneumaticcraft:gun_ammo_ap"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:gun_ammo_explosive",
+      "recipe2": "pneumaticcraft:gun_ammo_freezing"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:gun_ammo_potion_crafting"
+    }
+  ]
+}

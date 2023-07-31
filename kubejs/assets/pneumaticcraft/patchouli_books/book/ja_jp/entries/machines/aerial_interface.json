@@ -1,0 +1,51 @@
+{
+  "name": "エアリアルインターフェース",
+  "icon": "pneumaticcraft:aerial_interface",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:advanced_pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Aerial Interface/$は、プレイヤーのインベントリに直接接続できる非常に強力なデバイスです。十分に$(l:base_concepts/pressure)加圧された/$状態では、他のインベントリーと同じように操作することができます。アイテムはInterfaceに着地するのではなく、$(italic)直接/$持ち主のプレイヤーに送られます。例えば、Interface上の$(l:logistics/frames#requester)Logistics Requester Frame/$を使用して、64本のトーチを供給し続けることができます。"
+    },
+    {
+      "type": "text",
+      "text": "デフォルトでは、メインインベントリはインターフェイスのどの面からもアクセスでき、アーマースロットは上下の面からアクセスできます。ただし、$(bold)サイドコンフィギュレーション/$GUIのサイドタブで再設定することができます。$(p)どの面からも、次のいずれかにアクセスできます。$(li)アーマースロット$(li)オフハンドスロット$(li)エンダーインベントリ(バニラ$(item)エンダーチェスト/$でアクセス可能)。"
+    },
+    {
+      "type": "text",
+      "title": "ウォーターブリージング",
+      "text": "明らかに、$(l:base_concepts/pressure)空気/$で動くプレイヤーとリンクできるものがあるのだから、必要な時にこの空気を転送できるものがあるはずですよね--？80mL/tickのコストで、水中で無限に呼吸することができます。$(p)これは$(l:base_concepts/upgrades#scuba)SCUBAアップグレード/$の$(l:armor/pneumatic_helmet)空気圧式ヘルメット/$より若干効率的ですが、水中でのクリアな視界は得られません。"
+    },
+    {
+      "type": "text",
+      "title": "Forge Energyとの連携",
+      "text": "Forge Energy（RFパワーや他の多くのMODのパワーと互換性がある）を受け入れる$(item)Aerial Interface/$。内部バッファに蓄積されたエネルギー（100,000）は、プレイヤーのインベントリ（およびアーマースロット）にあるFEチャージ可能なアイテムのチャージに使用される。"
+    },
+    {
+      "type": "text",
+      "title": "オートフィーディング",
+      "text": "$(l:base_concepts/upgrades#dispenser)ディスペンサー・アップグレード/$を挿入すると、$(item)空中インターフェース/$を遠隔自動給餌器のように動作させることができます。インターフェイスが受け取るのは食べ物だけで、提供された食事を十分に利用できるほどお腹が空いているときだけです。ただし、インベントリに1個以上のスタックがある場合は、その量を消費するまで待ちます。最小量の食料を利用できるようにするには、$(item)ホッパー/$などの低速インサーターを使用します。"
+    },
+    {
+      "type": "text",
+      "title": "エクスペリエンスハンドリング",
+      "text": "また、$(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$では、$(thing)液体XP/$をインターフェイスに注入したり、インターフェイスから排出したりすることができます。複数の種類のXP液が存在する場合、GUIの$(bold)Experience/$タブで使用するXP液を選択することができます。このタブには、どのMODの経験値が検出され、使用可能であるかも表示されます。$(l:base_concepts/memory_essence)メモリーエッセンス/$は常に使用可能です。"
+    },
+    {
+      "type": "text",
+      "title": "エクスペリエンスハンドリング（続き）",
+      "text": "インターフェイスは内部に液体バッファを持たず、あなたの経験値を直接タンクとして使用することに注意してください。つまり、XPを出し入れする際には、XPポイントあたりの液体XPの量以上の速度で液体を輸送できるデバイスが必要です。このレートは、執筆時点で知られているすべてのXPの液体の場合、20mB/tickです。"
+    },
+    {
+      "type": "text",
+      "title": "オートチャージ",
+      "text": "$(l:tubes/charging_module)チャージングモジュール/$を$(item)エアリアルインターフェース/$に向けると、インベントリ内の$(l:base_concepts/pressure)加圧可能な/$アイテムをチャージすることができます。$(p)ただし、$(l:armor/overview)空気圧式アーマー/$を装着している場合は、アーマースロットに接続されている側のインターフェースにチャージモジュールを向ける必要があります"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting an Aerial Interface",
+      "recipe": "pneumaticcraft:aerial_interface"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "エンティティアタックウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/attack_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)Drone/$は、エリア内のあらゆる生物を攻撃します。$(p)このウィジェットに接続されている$(l:programming/area)エリア/$ウィジェットは、エリアタイプが$(thing)ボックス/$でなければならないことに注意してください。サポートされている形状はこれだけです。ただし、Whitelist側（右）またはBlacklist側（左）で複数のAreaウィジェットを使用することで、異なる形状を作成することができます。"
+    },
+    {
+      "type": "text",
+      "title": "フィルタリングエントリ",
+      "text": "You can specify which creatures may be attacked by using $(l:programming/text)Text/$ widgets as an $(l:base_concepts/entity_filter)Entity Filter/$. E.g. if you want the $(thing)Drone/$ to attack all players, connect a $(thing)Text/$ widget to the $(italic)right/$ of the $(thing)Entity Attack/$ widget containing $(#600)@player/$.$(p)If you don't want to be attacked yourself, connect up a $(thing)Text/$ widget on the $(italic)left/$ containing your player name."
+    },
+    {
+      "type": "spotlight",
+      "item": "minecraft:diamond_sword",
+      "title": "Melee Attacks",
+      "text": "$(l:tools/drone)ドローン/$はインベントリにある任意の近接武器を装備して攻撃する。$(thing)ドローン/$のインベントリに複数の武器がある場合、最もダメージの大きいものを装備する。$(p)$(l:programming/inventory_import)インベントリインポート/$ウィジェットを使ってドローンに武器を持たせることができますが、これは強く推奨されます - ドローンの非武装近接攻撃は弱いのです。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:minigun_upgrade",
+      "text": "$(l:base_concepts/upgrades#minigun)Minigun Upgrade/$を$(l:tools/drone)Drone/$に挿入すると、$(l:tools/minigun)Minigun/$が搭載されます。$(l:programming/inventory_import)インベントリインポート/$ウィジェットを使って$(l:tools/minigun_ammo)銃弾/$が供給されると、$(thing)ドローン/$はこのミニガンを使って範囲攻撃を行います。$(p)デフォルトの射程は16ブロックですが、$(l:base_concepts/upgrades#range_upgrade)射程アップグレード/$を最大16個挿入することで、最大32ブロックまで射程をアップグレードすることができます。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:micromissiles",
+      "text": "$(thing)ドローン/$は$(l:tools/micromissiles)マイクロミサイル/$の発射方法も知っています。このウィジェットの実行時にドローンが$(item)マイクロミサイル/$を保持していれば、現在のターゲットに向けてミサイルを発射します。接続されている$(l:base_concepts/entity_filter)エンティティフィルター/$は、ドローンによってマイクロミサイルのエンティティフィルターにコピーされます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/attack_piece.png"
+      ],
+      "text": "$(italic)I'll be back/$"
+    }
+  ]
+}

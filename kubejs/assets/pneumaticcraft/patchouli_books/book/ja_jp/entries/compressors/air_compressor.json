@@ -1,0 +1,17 @@
+{
+  "name": "エアーコンプレッサー",
+  "icon": "pneumaticcraft:air_compressor",
+  "category": "pneumaticcraft:compressors",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)エアーコンプレッサー/$は、$(l:base_concepts/pressure)圧縮された空気/$を作り出すことができるシンプルな発電機です。バニラ$(item)かまど/$が受け入れるあらゆる固形燃料を燃やし、$(ttcolor)$(t:This can be increased by installing Speed Upgrades)10mL/tickの空気/$を作り出します。$(p)$(item)溶岩入りバケツ/$や液体燃料の入ったバケツは使えません。その場合は$(l:compressors/liquid_compressor)液体コンプレッサー/$を使用してください。"
+    },
+    {
+      "type": "crafting",
+      "text": "$(item)エアコンプレッサー/$の製作",
+      "recipe": "pneumaticcraft:air_compressor"
+    }
+  ]
+}

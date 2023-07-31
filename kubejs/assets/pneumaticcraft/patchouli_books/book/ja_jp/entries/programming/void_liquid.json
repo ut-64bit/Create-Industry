@@ -1,0 +1,19 @@
+{
+  "name": "ボイドフルイドウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/void_fluid_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:programming/void_item)Voidアイテムウィジェット/$のように、これはドローンのタンク内の液体を即座に永久に破壊します。注意！これは$(l:programming/liquid_filter)リキッドフィルター/$と一緒に使用することを強くお勧めします。フィルターがあれば、そのフィルターが許容する液体のみが無効になります。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/void_fluid_piece.png"
+      ],
+      "text": "$(italic)All dried up/$"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "フローディテクターモジュール",
+  "icon": "pneumaticcraft:flow_detector_module",
+  "category": "pneumaticcraft:tubes",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "フローディテクターチューブモジュールは、チューブを通過する$(thing)気流/$を測定する$(l:tubes/tube_modules#inline)インライン/$モジュールです。この結果、以下の計算式で$(#f00)レッドストーン信号/$を発します。$(p)  $(formula)0.2 * 流量 (mL/tick)/$$(p)例：20mL/tickの空気の流れがある場合、信号レベルは20*0.2=4となります。"
+    },
+    {
+      "type": "text",
+      "text": "$(thing)流量/$は$(l:base_concepts/pressure)圧力/$とは異なる物理量であることに注意してください。流量とは、1tickにつきチューブ内を移動する空気の量です。ですから、例えば$(l:machines/elevator)エレベータ/$が動いていなければ、流量は0になりますが、動いていれば空気を消費するので、流量は0ではなくなります。したがって、このモジュールは、機械が空気を使用しているかどうかを検出するために使用することができる。$(p)フローディテクターモジュールは、$(l:tubes/module_expansion_card)モジュール拡張カード/$を受け付けません。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Flow Detector Module",
+      "recipe": "pneumaticcraft:flow_detector_module"
+    }
+  ]
+}

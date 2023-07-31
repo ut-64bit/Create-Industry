@@ -1,0 +1,19 @@
+{
+  "name": "コンディション: レッドストーンウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/condition_redstone_piece.png",
+  "category": "pneumaticcraft:widget_cond",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "これは$(l:programming/conditions)Condition/$ウィジェットです。$(p)$(thing)コンディション: Redstone/$ウィジェットでは、接続された$(l:programming/area)Area/$ウィジェット内のブロックのレッドストーンレベルが、設定されたレッドストーン閾値と一致するかどうかを（リモートで）チェックすることができます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/condition_redstone_piece.png"
+      ],
+      "text": "$(italic)Condition: Redstone Widget/$"
+    }
+  ]
+}

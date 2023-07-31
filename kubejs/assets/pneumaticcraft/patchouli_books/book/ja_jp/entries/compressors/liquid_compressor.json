@@ -1,0 +1,17 @@
+{
+  "name": "液体コンプレッサー",
+  "icon": "pneumaticcraft:liquid_compressor",
+  "category": "pneumaticcraft:compressors",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)液体コンプレッサー/$は、$(l:base_concepts/pressure)圧縮空気/$を作ることができるシンプルな発電機です。そのために液体燃料を燃やします。 使用できる燃料とその効果を見るには、液体コンプレッサーのGUIで$(bold)使用可能な燃料/$タブを開いてください。溶岩のような高温の液体も含まれることに注意してください。"
+    },
+    {
+      "type": "crafting",
+      "text": "$(item)液体コンプレッサー/$の製作",
+      "recipe": "pneumaticcraft:liquid_compressor"
+    }
+  ]
+}

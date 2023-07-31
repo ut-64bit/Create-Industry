@@ -1,0 +1,18 @@
+{
+  "name": "ブラケット",
+  "icon": "create:metal_bracket",
+  "category": "pneumaticcraft:compressed_creativity",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)圧力管$()に$(item)木製$()や$(item)金属製のブラケット$()を付けたいと思ったことはありませんか？今ならそれが可能です！"
+    },
+    {
+      "type": "crafting",
+      "title": "プラスチックブラケット",
+      "recipe": "compressedcreativity:crafting/orange_plastic_bracket",
+      "text": "$(item)プラスチック製のブラケット$()も作れます！木製や金属製と同様の機能を持ち、全16色のカラーバリエーションがあります。"
+    }
+  ]
+}

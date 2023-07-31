@@ -1,0 +1,19 @@
+{
+  "name": "エクスポートRFウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/rf_export_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)ドローン/$は100,000 FE (Forge Energyの内部バッファを持っています。このウィジェットを使用すると、ドローンのストレージからエネルギー供給用ブロック(例: $(item)Thermal Expansion Energy Cell/$や$(item)Immersive Engineering Capacitor/$)にエクスポートすることができます。$(p)$(italic)名前に反して、このウィジェットは RF (Redstone Flux) ではなく FE (Forge Energy) をエクスポートします。この名前は歴史的なものです。/$"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/rf_export_piece.png"
+      ],
+      "text": "$(italic)Export RF Widget/$"
+    }
+  ]
+}

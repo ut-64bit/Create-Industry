@@ -1,0 +1,21 @@
+{
+  "name": "感震センサー",
+  "icon": "pneumaticcraft:seismic_sensor",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Seismic Sensorは、ゲーム序盤で$(l:base_concepts/oil)Oil/$を追跡するために使用されるアイテムです。他のツールとは異なり、センサーは$(l:base_concepts/pressure)圧力/$をかけずに作動します。$(thing)右クリック/$すると、クリックしたブロックの真下でOilが見つかったかどうかが表示される。"
+    },
+    {
+      "type": "text",
+      "text": "感震センサーは、2つの結果を得ることができます。$(p)$(#008)  No Oil found./$$(p)このブロックの真下にはオイルはありません。続けて探す。$(p)$(#008)  距離>m下にオイルを発見。バケツ約<量>のオイルが入っている。/$$(p)オイル発見 このブロックの下に$(l:machines/gas_lift)ガスリフト/$を設置し、オイルを汲み上げるのに適している。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Seismic Sensor",
+      "recipe": "pneumaticcraft:seismic_sensor"
+    }
+  ]
+}

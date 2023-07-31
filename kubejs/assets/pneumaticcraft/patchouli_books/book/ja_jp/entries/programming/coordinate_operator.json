@@ -1,0 +1,27 @@
+{
+  "name": "座標演算子ウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/coordinate_operation_plus_minus.png",
+  "category": "pneumaticcraft:widget_other",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Coordinate Operator/$ウィジェットは、$(l:programming/variables)変数/$の定義や操作に使用され、高度なドローン機能を可能にします。このウィジェットは、使用する値を定義するために1つ以上の接続された$(l:programming/coordinate)座標/$ウィジェットを必要とし、それらの接続された部分に対して所定の算術演算（ウィジェットのGUIで定義）を実行する。"
+    },
+    {
+      "type": "text",
+      "text": "利用可能な操作は以下の通りです。$(li)$(bold)加算/減算/$: 右側のウィジェットを加算し、左側のウィジェットを減算します。$(li)$(bold)乗算/除算/$: 右側のウィジェットを乗算し、その結果を左側のウィジェットで除算します。$(li)$(bold)Min/Max/$: 右のウィジェットからX/Y/Zの最大値を取り、左のウィジェットの最小値と先ほど決定した最大値を取ります。"
+    },
+    {
+      "type": "text",
+      "text": "最終結果は、座標オペレータ GUI で入力された名前で定義される$(l:programming/variables)変数/$に格納されます。この$(thing)変数/$を使用して、後で座標を取得することができます。$(li)$(l:programming/area)エリア/$ウィジェットでは、GPS座標を使用する代わりに、$(thing)変数/$名を使用することができます。$(li)$(l:programming/condition_coordinate)Condition: Coordinate/$を使用することができます。座標を使用して、$(thing)変数/$のテストを実行することができます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/coordinate_operation_plus_minus.png"
+      ],
+      "text": "$(italic)Coordinate Operator Widget/$"
+    }
+  ]
+}

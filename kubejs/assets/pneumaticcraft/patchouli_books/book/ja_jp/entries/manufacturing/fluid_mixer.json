@@ -1,0 +1,17 @@
+{
+  "name": "流体混合機",
+  "icon": "pneumaticcraft:fluid_mixer",
+  "category": "pneumaticcraft:manufacturing",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)フルードミキサー/$は2つの流体を$(l:base_concepts/pressure)圧力/$で結合し、1つの流体または物品にする装置です。その主な用途は、$(l:renewables/biodiesel)バイオディーゼル/$生産に使用されます。$(p)フルードミキサーは、より高い圧力が供給されればより速く作動します（しかし、空気もより速く使用します）。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Fluid Mixer",
+      "recipe": "pneumaticcraft:fluid_mixer"
+    }
+  ]
+}

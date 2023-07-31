@@ -1,0 +1,84 @@
+{
+  "name": "プログラマー",
+  "icon": "pneumaticcraft:programmer",
+  "category": "pneumaticcraft:programming",
+  "advancement": "pneumaticcraft:printed_circuit_board",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Programmer/$は、$(l:programming/puzzle_pieces)Puzzle Pieces/$をGUIで組み立てるビジュアルプログラミングシステムで、$(l:tools/drone)ドローン/$をプログラミングするための機械です。$(thing)プログラマ/$は$(l:base_concepts/pressure圧力/$をかけずに操作することができます。$(thing)プログラミング/$のカテゴリーには、ドローンプログラムの書き方について、より多くの情報が掲載されています。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Programmer",
+      "recipe": "pneumaticcraft:programmer"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/programmer_gui.png"
+      ],
+      "text": "$(italic)プログラマーGUI：各セクションの情報は次のページを参照してください/$"
+    },
+    {
+      "type": "text",
+      "text": "$(bold)1. メインプログラミングエリア/$$(p)このエリアは、実際の実プログラムを構築する場所です。ウィジェットは、$(thing)ウィジェットトレイ（エリア2）/$からここにドラッグされ、プログラムを形成するために「スナップ」されます。$(p)プログラミング・エリアは、マウスのホイール、または右側のスクロールバーで拡大・縮小することができます。"
+    },
+    {
+      "type": "text",
+      "text": "$(bold)2. ウィジェットトレイ/$$(p)このエリアには、プログラム作成に使用するウィジェットが格納されています。トレイの下にある矢印ボタンでページを切り替えたり、$(thing)Space/$や$(thing)Tab/$でトレイを拡張してすべてのウィジェットを表示させることができます。$(p)トレイを展開すると、上部にテキストフィールドが表示され、フィルタ文字列を入力してウィジェットを検索することができます。"
+    },
+    {
+      "type": "text",
+      "text": "$(bold)3. ドローンスロット/$$(p)プログラムする$(l:tools/drone)Drone/$（または$(l:components/network_components)ネットワークストレージ/API/$）をここに置く。Droneをプログラムする準備ができたら、$(thing)⟶/$ボタンを押してプログラムを書き込みます。必要であれば、左側のテキストフィールドでDroneに名前を付けることができます。成功すると、音声によるフィードバックがあります。$(p)また、$(thing)⟵/$ボタンを使って、Drone（またはネットワークストレージ/API）からプログラムをインポートすることができます。"
+    },
+    {
+      "type": "text",
+      "text": "$(bold)4. 難易度選択/$$(p)これらのラジオボタンは、トレイで利用可能なプログラミングウィジェットを制御します。また、$(l:programming/coordinate_operator)変数/$など一部の高度な機能の有効・無効を設定します。$(p)$(bold)5. プレイヤーインベントリ/$$(p)自分のインベントリです。$(l:tools/gps_tool)GPSツール/$や$(l:tools/gps_area_tool)GPSエリアツール/$があれば、$(l:programming/area)エリア/$ウィジェットや$(l:programming/coordinate)座標/$ウィジェットでクリックして、その設定をウィジェットに転送することができます。"
+    },
+    {
+      "type": "text",
+      "text": "$(bold)6. ナビゲーションと表示オプション/$$(p)これらのボタンを使用すると、次のことができます。$(li)プログラムの$(l:programming/start)スタート/$ウィジェットへの移動$(li)最後に配置したウィジェットに移動する$(li)各ウィジェットの追加情報の表示のトグル$(li)$(l:programming/jump)ジャンプ/$ウィジェットと$(l:programming/label)ラベル/$ウィジェットの間の接続線の表示をトグルする"
+    },
+    {
+      "type": "text",
+      "text": "$(bold)7. その他のボタン/$$(p)GUI の左側の端に沿ったボタンで、（順に）以下のことができます。$(li)$(thing)Undo/$: 過去20回までの操作の取り消し$(li)$(thing)Redo/$: 直前の取り消しのやり直し$(li)$(thing)Import or Export/$: プログラムをJSONファイルとして$(l:https://pastebin.com)pastebin.com/$にインポートまたはエクスポートする（pastebinへのログインは任意です）$(li)$(thing)Delete/$: プログラム全体の削除 (元に戻すことができます)$(li)$(thing)Convert/$: プログラムの$(thing)相対/$座標への変換 (詳しくは$(l:programming/programmer#convert_relative)このページ/$をご覧ください)"
+    },
+    {
+      "type": "text",
+      "anchor": "ids",
+      "title": "Progwidget IDs",
+      "text": "$(thing)F3+H/$で拡張ツールチップ情報をオンにすると、各プログラミング・ウィジェットのツールチップの最後に、内部ウィジェット ID が表示されるようになります。これは主に、$(l:machines/drone_interface)Drone Interface/$を使ってドローンプログラミングを行う場合に役立ちます。Drone Interfaceの$(thing)setAction()/$ Luaメソッドは、これらのID（$(thing)pneumaticcraft:/$のプレフィックスはオプション）をパラメータとして受け取ります。"
+    },
+    {
+      "type": "text",
+      "title": "プログラムの共有",
+      "text": "プログラムを他のプレーヤーと共有したい場合、いくつかの選択肢があります。$(li)$(thing)Pastebin/$ボタンを使って、プログラムを$(l:https://pastebin.com)pastebin.com/$にエクスポートすることができます。$(li)$(thing)Pastebin/$ GUIでは、プログラムをクリップボードに書き込んでコピー＆ペーストすることもできます。$(li)プログラムを$(l:tools/drone)Drone/$や$(l:components/network_components)Network Storage/Network API/$に保存し、サーバー上の他のプレイヤーにそのアイテムを渡すことができます。"
+    },
+    {
+      "type": "text",
+      "anchor": "convert_relative",
+      "title": "相対値への変換",
+      "text": "例えば、自動化された農場を運営するプログラムを設計し、これを共有したいとします。別の世界にいる人は農場の座標が異なるので、$(l:programming/area)エリア/$ウィジェットをいちいち変更しなければならず、とても面倒です。$(p)$(thing)相対座標に変換/$ボタンを使えば、この作業が簡単になります。また、プログラムを変換するために必要なことを示すツールチップも表示されます。"
+    },
+    {
+      "type": "text",
+      "anchor": "convert_relative",
+      "title": "相対値への変換（続き）",
+      "text": "固定された$(l:programming/coordinate_operator)Coordinate Operator/$ウィジェットを1つ、$(thing)ベースポジション/$を含む$(l:programming/coordinate)Coordinate/$ウィジェットを1つ追加する必要があります。(例：入力チェストの位置)を含むCoordinateウィジェットを追加する必要があります。そして、プログラム内で使用される絶対位置（面積や座標）を、その基準位置からの相対座標に変換します。$(p)これで、プログラムのユーザーは、たった一つの座標を調整するだけで、プログラムを利用できるようになります。"
+    },
+    {
+      "type": "text",
+      "flag": "mod:jei",
+      "anchor": "jei",
+      "title": "JEIインテグレーション",
+      "text": "JEI がインストールされている場合、Programmer GUI を開いた状態で JEI レシピ表示を開くと、'+' (Move Items) ボタンが表示されることに気づきます。これをクリックすると、レシピの各入力項目に対して$(l:programming/item_filter)Item Filter/$ウィジェットが追加されます。プログラミングエリアにアイテムフィルタが付加されていないCraftingウィジェットがある場合、アイテムフィルタがCraftingウィジェットに付加され、素早く簡単にレシピを設定することができます。そうでない場合は、プログラミングエリアの左上に一列に追加されます。"
+    },
+    {
+      "type": "text",
+      "flag": "mod:jei",
+      "title": "JEIインテグレーション（続き）",
+      "text": "デフォルトでは、それぞれのユニークなアイテムタイプに対して、1つのアイテムフィルターだけが追加されます。(例：$(item)Stone Slab/$ レシピの場合、$(item)Stone/$ フィルタは 3 つではなく、1 つだけ作成されます)。ウィジェットは、中クリックしてドラッグすることでコピーできることを忘れないでください。重複を含むレシピの全てのアイテムに対してアイテムフィルタを追加したい場合は、JEI の '+' ボタンをクリックする際に Shift を押してください。"
+    }
+  ]
+}

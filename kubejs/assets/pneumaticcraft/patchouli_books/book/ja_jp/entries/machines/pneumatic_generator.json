@@ -1,0 +1,27 @@
+{
+  "name": "空気圧発電機",
+  "icon": "pneumaticcraft:pneumatic_generator",
+  "category": "pneumaticcraft:machines",
+  "flag": "pneumaticcraft:pneumaticGeneratorEnabled",
+  "advancement": "pneumaticcraft:advanced_pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Pneumatic Generatorは、$(l:base_concepts/pressure)圧縮空気/$から$(thing)IndustrialCraft 2 EU/$を生成することができます。これはTier2マシンであり、最低使用圧力が15barであることを示しています。デフォルトでは効率は40%だが、$(ttcolor)$(t:See 'I:pneumaticGeneratorEfficiency')コンフィグで変更/$することができる。$(p)$(l:base_concepts/upgrades#speed)スピードアップグレード/$がない場合、32 EU/tick の速度で出力されます。128 EU/tick、2つ挿入した場合は512 EU/tickです。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:pneumatic_generator",
+      "text": "空気使用量（mL/tick）:$(p)$(formula)  出力レート / E * 400/$$(p)ここで、$(formula)E/$はパーセンテージとしての効率です。例: デフォルト効率40%、出力レート32EU/tickの場合、空気使用量 =  $(formula)32 / 40 * 400 = 320mL/tick/$。"
+    },
+    {
+      "type": "text",
+      "text": "効率に影響を与える重要な要因は、発電機の$(l:base_concepts/heat)温度/$である。発電機を$(thing)冷却/$しないと、温度が上がるにつれて効率が下がり、空気が全く発生しなくなります。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Pneumatic Generator",
+      "recipe": "pneumaticcraft:pneumatic_generator"
+    }
+  ]
+}

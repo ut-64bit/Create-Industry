@@ -1,0 +1,17 @@
+{
+  "name": "ロジスティクスモジュール",
+  "icon": "pneumaticcraft:logistics_module",
+  "category": "pneumaticcraft:logistics",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "詳細については、マニュアルの$(thing)圧力チューブ/$セクションの$(l:tubes/logistics_module)ロジスティクスモジュール/$の項目を参照してください。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:logistics_module",
+      "text": "ロジスティクスモジュールの作成"
+    }
+  ]
+}

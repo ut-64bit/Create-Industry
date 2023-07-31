@@ -1,0 +1,32 @@
+{
+  "name": "銅のバックタンク",
+  "icon": "create:copper_backtank",
+  "category": "pneumaticcraft:compressed_creativity",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)銅のバックタンク$()がブロックとアイテムの両形態で追加機能を獲得します!$(br)3 barまでの充電が可能です。$(br2)ブロック形態では、底面から空気圧プロバイダに接続し、安価なエアコンプレッサーとして機能します。余分な空気は放出されます。"
+    },
+    {
+      "type": "image",
+      "images": ["compressedcreativity:textures/gui/bt_block.png"],
+      "border": true,
+      "title": "銅のバックタンク",
+      "text": "コンプレッサーとして機能する銅のバックタンク"
+    },
+    {
+      "type": "text",
+      "text": "アイテム形態では、$(l:pneumaticcraft:components/air_canister)エアキャニスター$()と同じような働きをします。このため、他の空気圧アイテムと同じように充電することができます。"
+    },
+    {
+      "type": "image",
+      "images": ["compressedcreativity:textures/gui/bt_item.png"],
+      "border": false,
+      "title": "銅のバックタンク",
+      "text": "$(l:pneumaticcraft:machines/charging_station)充填ステーション$()での銅のバックタンクの充填"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "create:copper_backtank": 0
+  }
+}

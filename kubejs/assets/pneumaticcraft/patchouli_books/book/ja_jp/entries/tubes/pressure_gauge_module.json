@@ -1,0 +1,30 @@
+{
+  "name": "圧力計モジュール",
+  "icon": "pneumaticcraft:pressure_gauge_module",
+  "category": "pneumaticcraft:tubes",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "このチューブモジュールは、取り付けたチューブ内の$(l:base_concepts/pressure)圧力/$を表示します。また、強度が等しい（指向性のある）$(#f00)レッドストーン信号/$を発する。$(p)$(formula)  強度 = 2 x 圧力/$$(p)例えば、3.5バールの圧力は、7レベルのレッドストーン信号となる。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:module_expansion_card",
+      "text": "圧力計モジュールに$(l:tubes/module_expansion_card)モジュール拡張カード/$を適用すると、GUI（右クリック）がアンロックされ、$(#f00)レッドストーン信号/$の放射をより詳細に制御できるようになります。デフォルトでは、スレッショルドレベルを指定できます。そのレベル以下では信号はオフ、それ以上では完全にオンになります（またはその逆）。GUIで$(bold)Advanced Config/$トグルを選択すると、さらに多くの制御が可能になります（上記参照）。"
+    },
+    {
+      "type": "image",
+      "images": [
+          "pneumaticcraft:textures/patchouli/pressure_gauge_gui.png"
+      ],
+      "text": "$(italic)<10 bar = 0レッドストーン、20 bar = 15 レッドストーン、10～20 bar = 補間 (例:12 bar = 3 レッドストーン)/$",
+      "anchor": "img"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Pressure Gauge Module",
+      "recipe": "pneumaticcraft:pressure_gauge_module"
+    }
+  ]
+}

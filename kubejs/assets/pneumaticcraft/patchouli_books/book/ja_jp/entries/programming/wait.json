@@ -1,0 +1,19 @@
+{
+  "name": "待機ウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/wait_piece.png",
+  "category": "pneumaticcraft:widget_flow",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)Drone/$は、指定された時間、何もせずに待ちます。時間は、テキスト・ウィジェットをアタッチして、デュレーションを入力することで指定します。$(p)以下のデュレーションフォーマットが使用可能です。$(li)$(thing)20/$: 1秒待つ (20回)$(li)$(thing)10s/$: 10秒待つ$(li)$(thing)5m/$: 5分待ち"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/wait_piece.png"
+      ],
+      "text": "$(italic)Godot/$"
+    }
+  ]
+}

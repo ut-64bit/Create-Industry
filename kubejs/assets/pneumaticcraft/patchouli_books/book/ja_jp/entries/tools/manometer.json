@@ -1,0 +1,23 @@
+{
+  "name": "マノメーター",
+  "icon": "pneumaticcraft:manometer",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "マノメーターを使用すると、空気圧ネットワーク上の$(l:base_concepts/pressure)圧力/$を測定することができます。さらに、いくつかの空気圧機器/チューブには、それらに関する特別な情報があります。例えば、$(l:tubes/safety_module)安全弁チューブモジュール/$は、その安全閾値を表示します。ですから、もしあなたがレッドストーンの数学に慣れていないのであれば、このツールは役に立つかもしれません。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Manometer",
+      "recipe": "pneumaticcraft:manometer"
+    },
+    {
+      "type": "text",
+      "title": "Other Mods",
+      "flag": "|mod:theoneprobe,mod:hwyla",
+      "text": "$(thing)The One Probe/$や$(thing)WAILA/HWYLA/$などのMODがインストールされている場合、$(item)マノメーター/$の使用は制限されることがあります。"
+    }
+  ]
+}

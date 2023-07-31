@@ -1,0 +1,33 @@
+{
+  "name": "ハーベスティングドローン",
+  "icon": "pneumaticcraft:harvesting_drone",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:pressure_chamber",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Harvesting Drone/$はノンプログラミングの特殊な$(l:tools/drone)Drone/$で、配置されたブロックを中心とした17x17x17キューブ内で$(l:programming/harvest)作物や木の収穫/$タスクを実行します。ドローンは収穫したアイテムを$(italic)拾わない/$。"
+    },
+    {
+      "type": "spotlight",
+      "title": "自動充電",
+      "item": "pneumaticcraft:charging_station",
+      "text": "他の種類のドローンと同様、これらのドローンは作動するために$(l:base_concepts/pressure)圧力/$を必要とし、空気が少なくなると自動的に$(l:tools/drone#charging)ディスペンサーアップグレードのあるチャージングステーション/$を探します。"
+    },
+    {
+      "type": "entity",
+      "entity": "pneumaticcraft:harvesting_drone",
+      "offset": -0.3
+    },
+    {
+      "type": "text",
+      "title": "ツール使用",
+      "text": "$(item)収穫ドローン/$を、あらゆる種類の鍬を含むインベントリに対して$(thing)スニーク+右クリック/$で配置すると、ドローンはその$(item)鍬/$を使って自動的に作物を植え替え、鍬を装備していない状態ではいかなる作業も行おうとしないようになります。作物の植え替えを気にしないのであれば、他のブロックに対してドローンを配置するだけでよい。"
+    },
+    {
+      "type": "crafting",
+      "text": "なお、収穫用ドローンは、斧ではなく鍬で木を切り倒す方法を発見しています。",
+      "recipe": "pneumaticcraft:harvesting_drone"
+    }
+  ]
+}

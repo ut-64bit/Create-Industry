@@ -1,0 +1,23 @@
+{
+  "name": "外部プログラムウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/external_program_piece.png",
+  "category": "pneumaticcraft:widget_flow",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "このウィジェットは、指定された$(l:programming/area)エリア/$にある在庫を検索します。すべてのインベントリについて、各スロットを調べます。$(l:tools/drone)Drone/$または$(l:components/network_components#network_api)Network API/$が見つかると、そのアイテムに保存されているプログラムを実行します。$(p)プログラムが終了すると、$(item)Drone/$は次のスロットやインベントリに移動します。"
+    },
+    {
+      "type": "text",
+      "text": "$(l:programming/programmer)プログラマ/$もインベントリとしてカウントされるため、このウィジェットは$(item)Drone/$のプログラムのデバッグに使用することができます。$(thing)外部プログラム/$ウィジェットで$(item)プログラマ/$（だけ）の領域を持つ$(item)Drone/$をプログラムして、置くだけです。$(p)次にプログラマに$(item)Drone/$や$(item)Network API/$を置き、プログラムを作成します。$(item)プログラマ/$で$(thing)⟶ (export)/$ボタンを押すと、配置された$(item)Drone/$が即座にプログラムを実行します。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/external_program_piece.png"
+      ],
+      "text": "$(italic)Programception/$"
+    }
+  ]
+}

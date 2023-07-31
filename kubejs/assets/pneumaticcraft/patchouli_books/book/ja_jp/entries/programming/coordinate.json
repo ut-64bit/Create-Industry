@@ -1,0 +1,24 @@
+{
+  "name": "座標ウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/coordinate_piece.png",
+  "category": "pneumaticcraft:widget_other",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Coordinate/$は、$(l:programming/coordinate_operator)Coordinate Operator/$と$(l:programming/condition_coordinate)Condition: Coordinate/$ウィジェットのパラメータとしてのみ使用されるウィジェットです。$(p)このウィジェットは、$(l:programming/area)Area/$ウィジェットに例えることができます。$(thing)Area/$ウィジェットでは、面積を構成するために$(italic)2つ/$の座標を提供しますが、このウィジェットでは$(italic)1つ/$だけ提供します。座標を指定する方法は2つあります。"
+    },
+    {
+      "type": "text",
+      "text": "$(bold)定数/$$(br)一定の座標は、まあ...一定です。$(l:tools/gps_tool)GPSツール/$で選択するか、X/Y/Zの値を直接テキストフィールドに入力してください。$(p)$(bold)変数/$$(br)$(l:programming/variables)variable/$を選択すると、変数に格納されている値を座標として返すことができます。ただし、座標を指定するのみで、変数を変更することはできません。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/coordinate_piece.png"
+      ],
+      "text": "$(italic)Coordinate Widget/$"
+    }
+  ]
+}
+

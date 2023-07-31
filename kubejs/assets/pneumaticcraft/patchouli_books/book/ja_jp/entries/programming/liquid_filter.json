@@ -1,0 +1,19 @@
+{
+  "name": "液体フィルターウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/liquid_filter_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Fluid Filter/$は、他のウィジェットの$(thing)パラメータ/$としてのみ使用されるウィジェットです。ウィジェットを$(thing)右クリック/$し、表示される検索GUIで流体を検索・選択することで、特定の流体を指定するために使用することができます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/liquid_filter_piece.png"
+      ],
+      "text": "$(italic)Fluid Filter Widget/$"
+    }
+  ]
+}

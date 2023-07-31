@@ -1,0 +1,21 @@
+{
+  "name": "GPSエリアツール",
+  "icon": "pneumaticcraft:gps_area_tool",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)GPSエリアツール/$は、$(l:tools/gps_tool)GPSツール/$の進化版で、ワールド内に$(italic)2つ/$の座標を保存することができます。ブロック（または空中）を$(thing)左クリック/$すると1つ目の座標が、$(thing)右クリック/$すると2つ目の座標が変更されます。空中で$(thing)右クリック/$または$(thing)左クリック/$することで、GUIで位置を設定することができます。さらに、$(thing)Area type/$を変更することで、様々な構成でプレビューすることが可能です。"
+    },
+    {
+      "type": "text",
+      "text": "$(item)GPS Area Tool/$は、基本的な$(l:tools/gps_tool#variables)GPS Tool/$と同様に、$(l:programming/variables#global)グローバル変数/$をサポートしています。$(p)$(l:programming/programmer)プログラマ/$で、$(item)GPSエリアツール/$を使ってプログラミングエリアの背景を$(thing)左クリック/$すると、新しい$(l:programming/area)エリア/$パズルのピースが作成され、既存の$(l:programming/area)エリア/$パズルのピースを$(thing)左クリック/$すると、上書きすることができます。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a GPS Area Tool",
+      "recipe": "pneumaticcraft:gps_area_tool"
+    }
+  ]
+}

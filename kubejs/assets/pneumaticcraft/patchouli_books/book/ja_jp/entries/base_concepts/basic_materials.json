@@ -5,7 +5,7 @@
     "pages": [
         {
             "type": "text",
-            "text": "$(pncr)は、地面に鉱石を生成しません。開始するには、$(item)鉄インゴット/$が必要です。これをMod全体で沢山のレシピで必要となる、$(item)圧縮鉄インゴット$()に変換します。方法は、$(item)鉄インゴット/$を地面に置き、近くで爆発を起こします。$(item)TNT/$でうまくいきますが、その他のどんな爆発でも変化します。"
+            "text": "$(pncr)は、地面に鉱石を生成しません。開始するには、$(item)鉄インゴット/$が必要です。これをMod全体で沢山のレシピで必要となる、$(item)圧縮鉄インゴット$()に変換します。方法は、$(item)鉄インゴット/$を地面に置き、近くで爆発を起こします。$(item)TNT/$でうまくいきますが、その他どんな爆発でも変化します。"
         },
         {
             "type": "image",
@@ -18,7 +18,7 @@
             "type": "spotlight",
             "anchor": "compressed_iron_ingot",
             "item": "pneumaticcraft:ingot_iron_compressed",
-            "text": "警告: 爆発の副作用として、インゴットの約20%が失われます。これを避けるには、$(l:manufacturing/pressure_chamber)圧力室/$を使って$(item)圧縮鉄インゴット/$を作成します。ただし、$(l:manufacturing/pressure_chamber)圧力室/$を作る為に$(item)圧縮鉄インゴット/$が必要なので、初期のロスは避けられません。"
+            "text": "警告: 爆発の副作用として、インゴットの約20%が失われます。これを避ける為、$(item)圧縮鉄インゴット/$を使って、$(l:manufacturing/pressure_chamber)圧力室/$を作成できます。ただし、$(l:manufacturing/pressure_chamber)圧力室/$を作る為に$(item)圧縮鉄インゴット/$が必要な為、初期のロスは避けられません。"
         },
         {
             "type": "pneumaticcraft:pressure_chamber",

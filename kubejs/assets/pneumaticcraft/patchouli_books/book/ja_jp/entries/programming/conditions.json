@@ -1,0 +1,74 @@
+{
+  "name": "条件",
+  "icon": "minecraft:comparator",
+  "category": "pneumaticcraft:programming",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)コンディション/$は、何かをチェックし、チェックに成功したらプログラムの別の部分にジャンプすることができるウィジェットのコレクションです。$(p)各$(thing)コンディション/$ウィジェットは、$(thing)ラベル名/$で設定された$(l:programming/text)テキスト/$ウィジェット・パラメータ（常に一番下のパラメータ）を受け取ります。"
+    },
+    {
+      "type": "text",
+      "text": "条件が$(thing)true/$であれば、$(l:programming/flow_control)プログラムの実行/$は、$(italic)右側/$の$(thing)Text/$パラメータと同じ名前の $(l:programming/label)Label/$ウィジェットにジャンプします。コンディションが$(thing)false/$の場合は、$(italic)左側/$の$(thing)Text/$パラメータと同じ名前の$(thing)Label/$ウィジェットにジャンプします。$(p)$(thing)コンディション/$ウィジェットが有効な$(thing)テキスト/$パラメータを見つけられなかったときは、次のウィジェットに進みます($(italic)下に/$接続されています)。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/condition_widget.png"
+      ],
+      "border": "true",
+      "text": "$(italic)シグナルが≧10になるとドローンを殺すレッドストーン・コンディション・ウィジェット/$"
+    },
+    {
+      "type": "text",
+      "text": "ほとんどの$(thing)コンディション/$ウィジェットは、$(thing)右クリック/$で設定GUIを開くことができます。GUIには通常、'='/'>='オプションと、数値を入力するためのテキストフィールドがあります。$(p)これを使えば、例えばチェスト内のアイテム数がちょうど10個（'=' モードと textfield 10）、20個以上（'>=' モードと textfield 21）、12個以下（'>=' モードと textfield 12、ただし条件が偽であることを確認）であるといった条件を設定することが可能です。"
+    },
+    {
+      "type": "text",
+      "title": "測定",
+      "text": "すべての$(thing)Condition/$ウィジェットGUI（$(l:programming/condition_item_filter)Condition: Item Filter/$を除く）には、$(thing)Measure/$テキストフィールドがあり、ここに$(l:programming/variables)変数/$を入力することができます。ここに変数名が与えられると、ドローンで行われた測定は、その変数のXフィールドに保存されます。$(p)これは、他の変数と同じように後で使用することができます。例えば、液体タンクのレベルを測定し、それを標識に書き込むことができます。"
+    },
+    {
+      "type": "text",
+      "title": "測定（続き）",
+      "text": "測定変数名を指定すると、ConditionウィジェットでTextウィジェットの分岐がなくてもエラーにならなくなります（通常は少なくとも1つの分岐が必要です）。つまり、Conditionウィジェットは純粋に量を測定するために使用することができ、実行は通常通り下方に進むだけです。$(p)注：圧力測定条件では、測定された圧力がミリバール単位で保存されます（例えば、5.5バールは5500になります）。"
+    },
+    {
+      "type": "text",
+      "title": "コンディションの種類",
+      "text": "コンディションは2つのカテゴリーに分けられます。$(thing)ワールドコンディション/$と$(thing)ドローンコンディション/$です。$(p)ワールドコンディションは、ワールド内にあるものをチェックするために使用します。例えば、$(item)チェスト/$には特定の数のアイテムがあるか、ブロックがどこかに存在するか、などです。$(p)$(thing)ドローン条件/$とは、特に$(l:tools/drone)ドローン/$を対象とした条件です。例えば、ドローンは特定のアイテムを持っているか、特定の圧力を持っているか、などです。"
+    },
+    {
+      "type": "text",
+      "text": "すべてのブロックベースの$(thing)ワールド条件/$には、$(thing)Any/All/$ blockオプションがあります。これは、一度に複数のブロックをチェックするときに使用します。$(li)$(thing)Any/$モードでは、選択された$(l:programming/area)エリア/$のブロックのうち$(italic)1つ/$だけがマッチすれば条件が$(thing)成立/$します。$(li)$(thing)All/$モードでは、$(italic)すべての/$ブロックが一致しないと条件が$(thing)成立/$しません。"
+    },
+    {
+      "type": "relations",
+      "title": "World Conditions",
+      "entries": [
+        "pneumaticcraft:programming/condition_block",
+        "pneumaticcraft:programming/condition_coordinate",
+        "pneumaticcraft:programming/condition_entity",
+        "pneumaticcraft:programming/condition_item_filter",
+        "pneumaticcraft:programming/condition_item_inventory",
+        "pneumaticcraft:programming/condition_liquid_inventory",
+        "pneumaticcraft:programming/condition_pressure",
+        "pneumaticcraft:programming/condition_redstone",
+        "pneumaticcraft:programming/condition_rf"
+      ]
+    },
+    {
+      "type": "relations",
+      "title": "Drone Conditions",
+      "entries": [
+        "pneumaticcraft:programming/drone_condition_item",
+        "pneumaticcraft:programming/drone_condition_liquid",
+        "pneumaticcraft:programming/drone_condition_entity",
+        "pneumaticcraft:programming/drone_condition_pressure",
+        "pneumaticcraft:programming/drone_condition_rf"
+      ]
+    }
+  ]
+}
+

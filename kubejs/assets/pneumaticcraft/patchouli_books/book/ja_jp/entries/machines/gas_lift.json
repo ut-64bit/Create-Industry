@@ -1,0 +1,30 @@
+{
+  "name": "ガスリフト",
+  "icon": "pneumaticcraft:gas_lift",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)ガスリフト/$は、基本的にはポンプです。$(l:base_concepts/pressure)圧力/$を使って流体の密度を下げ、流体を上方に押し上げます。$(p)圧力がかかると、$(l:components/drill_pipe)ドリルパイプ/$（あなたが用意する必要があります）を下方に押し出し、流体のブロックにぶつかると、それを汲み上げます。このため、地中深くにある$(l:base_concepts/oil)石油/$の採掘に最適です。"
+    },
+    {
+      "type": "text",
+      "text": "邪魔な固いブロックは、歩留まりなく壊されます。ブロックを壊すと空気を消費します。これは土や砂のような柔らかいブロックではごくわずかですが、黒曜石のような硬いブロックでは非常に大きな量になります。$(p)流体を送り出すのに必要な最低圧力は、送り出す深さに比例して変化します。つまり、現在押し出されている$(item)ドリルパイプ/$の本数で、最大4.9barまで変化します。"
+    },
+    {
+      "type": "text",
+      "title": "モードタブ",
+      "text": "ガスリフトは、3つのモードに切り替えることができます。$(li)$(#00f)Pump and allow empty tank/$ ドリルパイプを押し出し、パイプに接触したときに液体を汲み上げます。$(li)$(#00f)Pump and leave fluid in filter/$ 上記と同じですが、常に1000mBの液体をタンク内に保持します。これは、特定の液体をポンピングするときに、他の液体がポンピングされないようにするために便利です。"
+    },
+    {
+      "type": "text",
+      "text": "$(li)$(#00f)Retract Drill Pipes/$ ガスリフトのポンプを停止し、押し出したドリルパイプをインベントリに収納します。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Gas Lift",
+      "recipe": "pneumaticcraft:gas_lift"
+    }
+  ]
+}

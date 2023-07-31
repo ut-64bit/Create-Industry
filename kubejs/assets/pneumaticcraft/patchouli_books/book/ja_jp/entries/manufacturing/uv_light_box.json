@@ -1,0 +1,26 @@
+{
+  "name": "UVライトボックス",
+  "icon": "pneumaticcraft:uv_light_box",
+  "category": "pneumaticcraft:manufacturing",
+  "advancement": "pneumaticcraft:pcb_blueprint",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)UVライトボックス/$は、$(l:components/pcb)PCB/$の上に置かれた$(l:components/pcb_blueprint)ブループリント/$によって決定される特定の場所に、UVライトを照射することができるマシンです。$(p)露光時間は最大10分で、$(l:base_concepts/upgrades#speed)Speed Upgrade/$を追加すればもっと短くなります。"
+    },
+    {
+      "type": "text",
+      "text": "10分間露光すると、100%の確率で$(l:manufacturing/etching_acid)エッチング液/$で$(item)PCB/$をエッチングすることができます。しかし、PCB をより短い時間露光することができ、その場合、PCB が正常にエッチングされる確率は低くなります。$(p)なお、露光の進行は、全体の進行が少ないほど早く、終了に向かうほど遅くなります。"
+    },
+    {
+      "type": "text",
+      "title": "Threshold Automation",
+      "text": "GUIのスライダーで補完しきい値を手動で調整できますが、レッドストーン信号で設定することも可能です。レッドストーンモードを$(thing)Interpolate Threshold/$に設定します。このモードでは、スレッショルドは信号レベルごとに25% + 5% に固定されます (ただし、信号が 0 の場合はマシンが無効になるので、実質は 30%-100% です)。$(p)これは、一度に多くのライトボックスのしきい値を設定したい場合に便利でしょう。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a UV Light Box",
+      "recipe": "pneumaticcraft:uv_light_box"
+    }
+  ]
+}

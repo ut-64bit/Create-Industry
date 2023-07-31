@@ -1,0 +1,32 @@
+{
+  "name": "ユニバーサルセンサー",
+  "icon": "pneumaticcraft:universal_sensor",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)ユニバーサルセンサー/$はその名の通り、様々な用途に使えるセンサーです。ワールド内の状況を測定し、その状況に基づいて$(#f00)レッドストーン信号/$を出力します。$(p)センサーを動かすには、$(ttcolor)$(t:The Constant Redstone Emitter is free to use)ほとんどの/$場合$(l:base_concepts/pressure)空気/$が必要で（1mL/tick）、センサーを動かすには、特定の$(l:base_concepts/upgrades)アップグレード/$が必要です。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:universal_sensor",
+      "text": "現在、センサーが測定できる条件は、ある座標にブロックがあるかどうか、Twitcherが流れているかどうかなど、15種類以上です。$(thing)ユニバーサルセンサー/$のGUIを開くと、測定できる項目とその説明が表示されます。"
+    },
+    {
+      "type": "text",
+      "title": "アップグレード",
+      "text": "対応するカテゴリーのセンサーを選択できるように、$(l:base_concepts/upgrades#entity_tracker)Entity Tracker/$、$(l:base_concepts/upgrades#dispenser)Dispenser/$、または$(l:base_concepts/upgrades#block_tracker)Block Tracker/$と$(l:tools/gps_tool)GPS Tool/$を挿入する必要があります。例：範囲内のエンティティの数を数えるには、$(item)Entity Tracker Upgrade/$をインストールする必要があります。"
+    },
+    {
+      "type": "text",
+      "title": "例: エンティティカウント",
+      "text": "例えば、ペンにたくさんの動物がいて、そのうちの何匹かを殺したいとします。$(p)ペンの大きさをカバーするために、$(l:base_concepts/upgrades#entity_tracker)エンティティ・トラッカー・アップグレード/$と十分な$(l:base_concepts/upgrades#range)範囲のアップグレード/$を追加します。$(p)次にGUIで、$(thing)Entity/$ボタンを選択し、次に$(thing)Within Range/$を選択し、最後に動物の種類（例：'cow'）に一致する$(l:base_concepts/entity_filter)エンティティフィルタ/$を入力してください。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Universal Sensor",
+      "recipe": "pneumaticcraft:universal_sensor"
+    }
+  ]
+}

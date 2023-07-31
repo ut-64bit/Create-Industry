@@ -1,46 +1,65 @@
 {
-	"itemGroup.compressedcreativity.main": "Compressed Creativity",
+  	"itemGroup.compressedcreativity.main": "Compressed Creativity",
 
-	"compressedcreativity.unit.bar": "bar",
-	"compressedcreativity.unit.air": "mL",
-	"compressedcreativity.unit.air_per_tick": "mL/t",
+  	"compressedcreativity.unit.bar": "bar",
+  	"compressedcreativity.unit.air": "mL",
+  	"compressedcreativity.unit.air_per_tick": "mL/t",
+  	"compressedcreativity.unit.temp": "C°",
+  	"compressedcreativity.unit.temp_per_tick": "C°/t",
 
 
-	"compressedcreativity.tooltip.pressure_summary": "圧力統計:",
-	"compressedcreativity.tooltip.pressure": "圧力:",
-	"compressedcreativity.tooltip.air": "空気量:",
-	"compressedcreativity.tooltip.air_production": "生成空気量:",
-	"compressedcreativity.tooltip.air_usage": "消費空気量:",
-	"compressedcreativity.tooltip.not_enough_pressure": "要求圧力:",
-	"compressedcreativity.tooltip.not_enough_pressure_2": "この機械は作動するためにより多くの圧力を必要とします。",
+  	"compressedcreativity.tooltip.pressure_summary": "圧力統計:",
+  	"compressedcreativity.tooltip.pressure": "圧力:",
+  	"compressedcreativity.tooltip.air": "空気量:",
+  	"compressedcreativity.tooltip.air_production": "生成空気量:",
+  	"compressedcreativity.tooltip.air_usage": "消費空気量:",
+  	"compressedcreativity.tooltip.not_enough_pressure": "要求圧力:",
+  	"compressedcreativity.tooltip.not_enough_pressure_2": "この機械は作動するためにより多くの圧力を必要とします。",
 
-	"compressedcreativity.tooltip.rotational_compressor.wrong_direction": "回転方向の条件:",
-	"compressedcreativity.tooltip.rotational_compressor.wrong_direction_desc": "この機械はこの方向の回転では動作しません",
+  	"compressedcreativity.tooltip.heat_summary": "熱情報:",
+  	"compressedcreativity.tooltip.temperature": "温度:",
+  	"compressedcreativity.tooltip.temperature_cooling": "冷却速度:",
 
-	"compressedcreativity.tooltip.compressed_air_engine.idle_1": "現在休止中：",
-	"compressedcreativity.tooltip.compressed_air_engine.idle_2": "現在動作してないにも関わらず、この機械は空気を使用しています",
+  	"compressedcreativity.tooltip.rotational_compressor.wrong_direction": "回転方向の条件:",
+  	"compressedcreativity.tooltip.rotational_compressor.wrong_direction_desc": "この機械はこの方向の回転では動作しません",
 
-	"pneumaticcraft.armor.upgrade.compressedcreativity.mechanical_visor": "メカニカルバイザー",
+  	"compressedcreativity.tooltip.compressed_air_engine.idle_1": "現在休止中：",
+  	"compressedcreativity.tooltip.compressed_air_engine.idle_2": "現在動作してないにも関わらず、この機械は空気を使用しています",
 
-	"pneumaticcraft.armor.upgrade.compressedcreativity.block_tracker_module_kinetic": "メカニカルブロック",
+  	"compressedcreativity.tooltip.processing_speed_multiplier": "処理速度の倍率:",
+  	"compressedcreativity.tooltip.installed_mesh": "搭載中メッシュ:",
+  	"compressedcreativity.tooltip.installed_mesh_none": "メッシュが搭載されていない",
 
-	"pneumaticcraft.gui.tab.info.item.armor.head.compressedcreativity.mechanical_visorUpgrade": "ยง0メカニカルバイザーは、エンジニアごーるぐを着用しているかのように、一部の機械の統計情報を確認できます。",
+  	"pneumaticcraft.armor.upgrade.compressedcreativity.mechanical_visor": "メカニカルバイザー",
 
-	"compressedcreativity.mechanical_visor.armor.gui.title": "メカニカルバイザー",
+  	"pneumaticcraft.armor.upgrade.compressedcreativity.block_tracker_module_kinetic": "メカニカルブロック",
 
-	"compressedcreativity.mechanical_visor.armor.gui.tooltip_mode": "ツールチップモード",
-	"compressedcreativity.mechanical_visor.armor.gui.tooltip_mode.classic": "クラシック",
-	"compressedcreativity.mechanical_visor.armor.gui.tooltip_mode.widget": "ウィジェット",
-	"compressedcreativity.mechanical_visor.armor.gui.tooltip_mode.both": "両方",
-	"compressedcreativity.mechanical_visor.armor.gui.tooltip_mode.none": "なし",
+  	"pneumaticcraft.gui.tab.info.item.armor.head.compressedcreativity.mechanical_visorUpgrade": "§0メカニカルバイザーは、エンジニアゴーグルを着用しているかのように、一部の機械の統計情報を確認できます。",
 
-	"compressedcreativity.mechanical_visor.armor.gui.block_tracker_mode": "ブロックトラッカーモード",
-	"compressedcreativity.mechanical_visor.armor.gui.block_tracker_mode.all": "すべての情報",
-	"compressedcreativity.mechanical_visor.armor.gui.block_tracker_mode.goggles": "ゴーグルのみ",
-	"compressedcreativity.mechanical_visor.armor.gui.block_tracker_mode.tooltip": "非ゴーグルのみ",
-	"compressedcreativity.mechanical_visor.armor.gui.block_tracker_mode.min": "プレースホルダー",
+  	"compressedcreativity.mechanical_visor.armor.gui.title": "メカニカルバイザー",
 
-	"compressedcreativity.mechanical_visor.armor.gui.block_tracker.min": "ゴーグル情報あり",
+  	"compressedcreativity.mechanical_visor.armor.gui.tooltip_mode": "ツールチップモード",
+  	"compressedcreativity.mechanical_visor.armor.gui.tooltip_mode.classic": "クラシック",
+  	"compressedcreativity.mechanical_visor.armor.gui.tooltip_mode.widget": "ウィジェット",
+  	"compressedcreativity.mechanical_visor.armor.gui.tooltip_mode.both": "両方",
+  	"compressedcreativity.mechanical_visor.armor.gui.tooltip_mode.none": "なし",
 
-	"compressedcreativity.gui.tooltip.expand": "Shiftキーを押して情報表示"
+  	"compressedcreativity.mechanical_visor.armor.gui.block_tracker_mode": "ブロックトラッカーモード",
+  	"compressedcreativity.mechanical_visor.armor.gui.block_tracker_mode.all": "すべての情報",
+  	"compressedcreativity.mechanical_visor.armor.gui.block_tracker_mode.goggles": "ゴーグルのみ",
+  	"compressedcreativity.mechanical_visor.armor.gui.block_tracker_mode.tooltip": "非ゴーグルのみ",
+  	"compressedcreativity.mechanical_visor.armor.gui.block_tracker_mode.min": "プレースホルダー",
+
+  	"compressedcreativity.mechanical_visor.armor.gui.block_tracker.min": "ゴーグル情報あり",
+
+  	"compressedcreativity.gui.tooltip.expand": "Shiftキーを押して情報表示",
+
+  	"compressedcreativity.recipe.washing.air_blower": "洗浄気流エアブロワー",
+  	"compressedcreativity.recipe.washing.industrial_air_blower": "洗浄気流工業用エアブロワー",
+  	"compressedcreativity.recipe.smoking.air_blower": "燻製気流エアブロワー",
+  	"compressedcreativity.recipe.smoking.industrial_air_blower": "燻製気流工業用エアブロワー",
+  	"compressedcreativity.recipe.haunting.air_blower": "憑霊気流エアブロワー",
+  	"compressedcreativity.recipe.haunting.industrial_air_blower": "憑霊気流工業用エアブロワー",
+  	"compressedcreativity.recipe.blasting.air_blower": "精錬気流エアブロワー",
+  	"compressedcreativity.recipe.blasting.industrial_air_blower": "精錬気流工業用エアブロワー"
 }

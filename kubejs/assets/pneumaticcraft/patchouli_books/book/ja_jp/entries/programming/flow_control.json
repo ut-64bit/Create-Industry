@@ -1,0 +1,25 @@
+{
+  "name": "フロー制御",
+  "icon": "pneumaticcraft:textures/progwidgets/jump_piece.png",
+  "category": "pneumaticcraft:programming",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)ドローン/$がデプロイされると、格納されているプログラムの実行が直ちに開始される。実行の流れは次のようになります。$(li)プログラムは$(italic)常に/$1つだけ存在する$(l:programming/start)スタート/$ウィジェットから始まります。$(li)フローは通常、現在のウィジェットの下に接続されているウィジェットの$(italic)下方に/$進みます。"
+    },
+    {
+      "type": "text",
+      "text": "$(li)ウィジェットは、$(italic)終了/$と判断するまで、与えられた処理を実行します。'終了'の定義は、ウィジェットによって異なり、個々のウィジェットのページで説明されています。$(li)現在のウィジェットの下に接続されているウィジェットがない場合、実行は$(l:programming/start)スタート/$ウィジェットに戻ります。$(p)これが基本です。しかし，次に述べるようないくつかの特殊なケースもあります．"
+    },
+    {
+      "type": "text",
+      "title": "フローコントロールウィジェット",
+      "text": "$(li)$(l:programming/label)Label/$ウィジェットは、プログラム中のジャンプ先となるポイントを指定します。$(li)$(l:programming/jump)ジャンプ/$ウィジェットは、一致する$(thing)ラベル/$ウィジェットに無条件で即座にジャンプします。$(li)$(l:programming/conditions)コンディション/$ウィジェットは、テストしているコンディションに基づいてジャンプをトリガします。$(li)$(l:programming/for_each_item)For Each Item/$ウィジェットや$(l:programming/for_each_coordinate)For Each Coordinate/$ウィジェットは、入力のリストに対して繰り返し$(thing)Label/$にジャンプします。"
+    },
+    {
+      "type": "text",
+      "text": "フローコントロールに影響を与える、さらにいくつかの特別なウィジェットが存在します。$(li)$(l:programming/standby)スタンバイ/$ウィジェットは、他のウィジェットが実際に何かをするまでドローンを「スリープ」させます。$(li)$(l:programming/suicide)Suicide/$ウィジェットは、$(thing)Drone/$をアイテムとしてドロップし、即座に実行を終了させます。"
+    }
+  ]
+}

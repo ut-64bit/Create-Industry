@@ -1,0 +1,60 @@
+{
+  "name": "チャージングステーション",
+  "icon": "pneumaticcraft:charging_station",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)チャージングステーション/$は、$(l:base_concepts/pressure)空気圧機器/$を充電（または放電）することができる機械です。$(item)チャージングステーション/$と空気圧機器の間の相互作用は、チューブ／機械間の相互作用と同じで、圧力の差は均等化されます。つまり、アイテムを完全に充電するためには、十分に加圧された$(item)チャージングステーション/$が必要なのです。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:charging_station",
+      "text": "ほとんどの充電済みアイテムの最大圧力は10barです。過充電で爆発することはなく、10気圧を超えると充電が停止するだけなので、爆発の心配はありません。$(p)$(thing)チャージパッド/$は、$(l:tools/camo_applicator)カモフラージュアプリケーター/$でカモフラージュすることができます。"
+    },
+    {
+      "type": "text",
+      "title": "チャージパッド",
+      "text": "$(l:base_concepts/upgrades#dispenser)ディスペンサーアップグレード/$を挿入することで、$(item)チャージングステーション/$を$(thing)チャージパッド/$にすることができます。これにより、加圧が（解除）されます。$(li)Charging Stationの上の地面に置かれているもの$(li)チャージングステーションの上に立っているプレーヤーが持っているアイテム$(li)チャージングステーションの真上にあるすべての種類の$(l:tools/drone)ドローン/$"
+    },
+    {
+      "type": "text",
+      "title": "アップグレードマネジメント",
+      "text": "$(item)チャージングステーション/$は、$(l:base_concepts/upgrades)アップグレード/$が可能なアイテムの管理システムとしても機能します。アップグレードを行うには、通常通りアイテムを$(item)チャージングステーション/$にセットし、アイテムスロットのすぐ上にある$(thing)上向き矢印/$ボタンをクリックします。アップグレードが可能なアイテムは、GUIサイドのタブに記録されます。"
+    },
+    {
+      "type": "relations",
+      "title": "Chargeable Items",
+      "entries": [
+        "pneumaticcraft:components/air_canister",
+        "pneumaticcraft:tools/pneumatic_wrench",
+        "pneumaticcraft:logistics/logistics_configurator",
+        "pneumaticcraft:tools/camo_applicator",
+        "pneumaticcraft:tools/vortex_cannon",
+        "pneumaticcraft:tools/minigun",
+        "pneumaticcraft:tools/manometer",
+        "pneumaticcraft:armor/pneumatic_helmet",
+        "pneumaticcraft:armor/pneumatic_chestplate",
+        "pneumaticcraft:armor/pneumatic_leggings",
+        "pneumaticcraft:armor/pneumatic_boots"
+      ]
+    },
+    {
+      "type": "relations",
+      "title": "Chargeable Items (cont.)",
+      "entries": [
+        "pneumaticcraft:tools/drone",
+        "pneumaticcraft:tools/collector_drone",
+        "pneumaticcraft:tools/guard_drone",
+        "pneumaticcraft:tools/harvesting_drone",
+        "pneumaticcraft:logistics/logistics_drone"
+      ]
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Charging Station",
+      "recipe": "pneumaticcraft:charging_station"
+    }
+  ]
+}

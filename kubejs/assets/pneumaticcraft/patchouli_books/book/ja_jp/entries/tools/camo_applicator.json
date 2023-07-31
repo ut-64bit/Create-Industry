@@ -1,0 +1,21 @@
+{
+  "name": "カモフラージュアプリケーター",
+  "icon": "pneumaticcraft:camo_applicator",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)カモフラージュアプリケーター/$は、特定の$(pncr)ブロックをカモフラージュするために使用することができます。$(li)$(l:tubes/pressure_tubes)圧力管/$$(li)$(l:machines/pneumatic_door)空気圧ドアベース/$$(li)$(l:machines/elevators)エレベーターベース＆呼び出し装置/$$(li)$(l:machines/charging_station)チャージングステーション/$$(li)$(l:machines/heat_pipe)ヒートパイプ/$$(p)ソリッドブロックを$(thing)右クリック/$して、その外観をApplicatorツールにコピーするか、$(thing)sneak+右クリック/$でコピーしたブロックをクリアします。"
+    },
+    {
+      "type": "text",
+      "text": "次に、カモフラージュ可能なブロック（上記参照）を$(thing)右クリック/$して、カモフラージュを適用または削除します。$(p)カモフラージュとして適用するには、インベントリに実際のブロックが必要で、これは使用されます（ただし、カモフラージュを解除すると元に戻ります）。$(p)また、カモフラージュされたブロックをピックなどの道具で壊すと、カモフラージュが解除されます。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Camouflage Applicator",
+      "recipe": "pneumaticcraft:camo_applicator"
+    }
+  ]
+}

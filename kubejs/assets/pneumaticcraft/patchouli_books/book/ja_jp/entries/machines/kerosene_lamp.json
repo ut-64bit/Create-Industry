@@ -1,0 +1,25 @@
+{
+  "name": "ケロリーンランプ",
+  "icon": "pneumaticcraft:kerosene_lamp",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:refinery",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)ケロシンランプ/$は、$(l:manufacturing/refinery)ケロシン/$を燃料とする強力な光源である。これは、$(thing)ThaumcraftのArcane Lamp/$のような長距離光源に類似している。$(p)$(italic)技術的には、このランプは燃焼可能なあらゆる燃料で作動しますが、ケロシンはこのランプでは他の燃料よりも効率的で、たとえLPGであっても作動します。/$"
+    },
+    {
+      "type": "text",
+      "text": "$(item)Kerosene Lamp/$の初期設定範囲は 10 ブロックです。しかし、GUIで最大30ブロックまで調整することができます。範囲が広ければ広いほど、ランプが使用する燃料は2乗になることに注意してください。つまり、レンジを2倍にすると、燃料の使用量は4倍になります。$(p)ただし、ランプが使用する燃料は少量です。1000mBのケロシンを使い、デフォルトの10ブロックの範囲で、ランプは実質約$(ttcolor)$(t:The Lamp's efficiency can be altered in mod config: see 'D:keroseneLampFuelEfficiency')40分間/$作動することができます。"
+    },
+    {
+      "type": "text",
+      "text": "$(item)Kerosene Lamp/$は他の$(pncr)ブロックと同様に$(thing)レッドストーン/$で制御することができます。通常のオン/オフモードとは別に、$(bold)Interpolate Signal/$モードもあります。これは(その名の通り)信号の強さに基づいてランプの範囲を補間します。$(p)例えば、デフォルトの最大範囲を10ブロックと仮定すると、$(#f00)レッドストーン信号/$が8（15ブロック中）適用されたとき、ランプの範囲は5になります。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Kerosene Lamp",
+      "recipe": "pneumaticcraft:kerosene_lamp"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "ディスプレイシェルフ",
+  "icon": "pneumaticcraft:display_shelf",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Display Shelf/$は、$(l:machines/display_table)Display Table/$と同じように機能しますが、高さが半分になります。また、下にあるブロックの上面が固形でない場合は、脚がレンダリングされません。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Display Shelf",
+      "recipe": "pneumaticcraft:display_shelf"
+    }
+  ]
+}

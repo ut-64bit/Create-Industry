@@ -1,0 +1,43 @@
+{
+  "name": "マイクロミサイル",
+  "icon": "pneumaticcraft:micromissiles",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:printed_circuit_board",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)マイクロミサイル/$は、爆発物のペイロードとスマートモブターゲットを備えた小型の手打ちミサイルです。$(item)マイクロミサイル/$を発射するには、ミサイルポッドを$(thing)右クリック/$します。各ポッドには、デフォルトで100発のミサイルが搭載されています。$(p)マイクロミサイルは、ミサイルを中心とした24ブロックの球形半径内にいるターゲットを探す。適切なターゲットが見つかると、ミサイルはそのターゲットに向きを変えます。"
+    },
+    {
+      "type": "entity",
+      "entity": "pneumaticcraft:micromissile",
+      "offset": "-0.3",
+      "text": "$(italic)小さくても致命的/$"
+    },
+    {
+      "type": "text",
+      "text": "$(item)マイクロミサイル/$は、ミサイルを発射したプレイヤーや、そのプレイヤーに所属するエンティティ（ペット、ドローン...）をターゲットにすることはありません。ただし、爆発による巻き添えには注意しましょう。$(p)$(item)マイクロミサイル/$は生物、マインカート、ボートを狙うことができますが、アイテムや絵画のような非生物を狙うことはできません。"
+    },
+    {
+      "type": "text",
+      "text": "$(item)マイクロミサイル/$が任意のエンティティやブロックに命中した場合、即座に爆発します。$(ttcolor)$(t:See 'B:damageTerrain' in mod config)デフォルトでは、爆発しても地形にはダメージを与えません。$(p)$(item)マイクロミサイル/$の寿命は限られており、$(ttcolor)$(t:See 'I:missileLifetime' in mod config)デフォルトでは300ティック(15秒)です。その後、ミサイルは燃料切れで空から落下しますが、地面に落ちるとまだ爆発します。"
+    },
+    {
+      "type": "text",
+      "text": "発射時に適切なエンティティを直接狙えば、近くに何があろうと、発射された$(item)マイクロミサイル/$は即座にそのエンティティにロックオンされる。$(p)ミサイルポッドを$(thing)スニーク＋右クリック/$すると、ミサイルのプロパティを設定できるGUIが表示される。$(li)三角形の選択により、最高速度、旋回速度、爆発力のバランスを調整することができる。"
+    },
+    {
+      "type": "text",
+      "text": "$(li)$(thing)Smartモード/$と$(thing)Dumbモード/$があり、$(thing)Smartモード/$では上記のようにミサイルがターゲットにロックオンされ、$(thing)Dumbモード/$ではミサイルは何かにぶつかるまでただ直線的に飛びますが、スピードとダメージ能力はそれなりにあります。$(li)$(l:base_concepts/entity_filter)Entity Filter/$欄に$(bold)エンティティフィルタ/$を入力すると、攻撃するエンティティを絞り込むことができます。"
+    },
+    {
+      "type": "text",
+      "text": "$(li)$(bold)Save as Default/$ボタンを押すと、現在の設定が保存され、新しく作成されたすべてのミサイルポッドに使用されます。注意: 設定はサーバーサイドで保存されます。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:micromissiles",
+      "text": "Creating Micromissiles"
+    }
+  ]
+}

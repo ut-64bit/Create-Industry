@@ -1,0 +1,16 @@
+{
+  "name": "ソーラーウェハー",
+  "icon": "pneumaticcraft:solar_wafer",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:assembly_controller",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)ソーラーウェハー/$は、$(l:components/solar_cell)ソーラーセル/$を構成する中間部材です。"
+    },
+    {
+      "type": "pneumaticcraft:pressure_chamber",
+      "recipe": "pneumaticcraft:pressure_chamber/solar_wafer"
+    }
+  ]
+}

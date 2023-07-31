@@ -1,0 +1,24 @@
+{
+  "name": "各アイテムウィジェットについて",
+  "icon": "pneumaticcraft:textures/progwidgets/for_each_item.png",
+  "category": "pneumaticcraft:widget_flow",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "このアドバンスドウィジェットは、接続された$(l:programming/item_filter)アイテムフィルタ/$ごとにサブルーチンを実行します。各フィルターに対して、指定された変数をそのフィルターに設定し、接続された$(l:programming/text)テキスト/$ウィジェットにマッチする$(l:programming/label)ラベル/$にジャンプします。このルーチンの実行が終わると（通常なら$(l:programming/start)Start/$にジャンプして戻るところ、プログラムの終わりに到達すると）、このウィジェットに戻り、次の$(thing)Item Filter/$に対して同じことを実行します。"
+    },
+    {
+      "type": "text",
+      "title": "ブレイキング",
+      "text": "$(thing)For Each Item/$で使用するアイテム変数を空のフィルタに設定することで、ループから抜け出すことができます（これを行うには、$(l:programming/item_assign)アイテム割り当て/$ウィジェットを使用します）。次回、プログラムが$(thing)For Each Item/$にジャンプして戻ってきたとき、このことに気づいて、それ以上のフィルタのトラバースをキャンセルすることができます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/for_each_item.png"
+      ],
+      "text": "$(italic)For Each Item Widget/$"
+    }
+  ]
+}

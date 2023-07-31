@@ -1,0 +1,26 @@
+{
+  "name": "タグワークベンチ",
+  "icon": "pneumaticcraft:tag_workbench",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:logistics_frame",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)タグワークベンチ/$は、$(l:https://minecraft.gamepedia.com/Tag)アイテムタグ/$でアイテムをフィルタリングするための$(item)タグフィルタ/$を作成するために使用します。例：フィルタリングの際に全てのログを同じアイテムとして扱う。タグフィルターは、$(l:logistics/frames)ロジスティックフレーム/$フィルターや、ドローンで使われる$(l:programming/item_filter)アイテムフィルター/$プログラミングウィジェットに設置でき、タグフィルターのリストにあるアイテムタグを持つアイテムにマッチします。"
+    },
+    {
+      "type": "text",
+      "title": "使用方法",
+      "text": "ワークベンチを右クリックして、GUIを開きます。$(li)左端のスロットに任意のアイテムを挿入します。アイテムにタグがある場合は、左側のリストでアイテムのすぐ下に表示されます。$(li)タグをダブルクリック（または「>」ボタンをクリック）して選択すると、右側のリストに追加されます。$(li)中央のスロットに紙を追加します。"
+    },
+    {
+      "type": "text",
+      "text": "$(li)Book & Quillボタンをクリックすると、選択したタグが書き込まれます。紙が使用され、右側のスロットに$(item)タグフィルター/$が作成されます。$(p)この用紙スロットは、以前に書き込まれたタグフィルターも受け入れることができます。これは、既存のタグフィルターのタグを編集したい場合に便利です。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Tag Workbench",
+      "recipe": "pneumaticcraft:tag_workbench"
+    }
+  ]
+}

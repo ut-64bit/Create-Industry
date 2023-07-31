@@ -1,0 +1,20 @@
+{
+  "name": "植物油",
+  "icon": "pneumaticcraft:vegetable_oil_bucket",
+  "category": "pneumaticcraft:renewables",
+  "advancement": "pneumaticcraft:tp_plant",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)植物油/$は、様々な$(thing)種/$や$(thing)作物/$から$(l:manufacturing/thermopneumatic_processing_plant)熱空気圧式加工プラント/$で生産することができます。種子は、栽培された作物よりも優れた油の供給源となる傾向があります。植物油は、$(l:renewables/biodiesel)バイオディーゼル/$の製造に必要です。"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/vegetable_oil_from_seeds"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/vegetable_oil_from_crops"
+    }
+  ]
+}

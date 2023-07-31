@@ -1,0 +1,19 @@
+{
+  "name": "コメントウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/comment_piece.png",
+  "category": "pneumaticcraft:widget_other",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "このウィジェットは、プログラムに$(thing)コメント/$を追加するためのもので、機能的な効果はありません。$(l:programming/puzzle_pieces)パズルのピース/$を消費して使用することはできません。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/comment_piece.png"
+      ],
+      "text": "$(italic)Comment Widget/$"
+    }
+  ]
+}

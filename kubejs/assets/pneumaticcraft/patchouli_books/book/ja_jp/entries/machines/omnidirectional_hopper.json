@@ -1,0 +1,28 @@
+{
+  "name": "全方位型ホッパー",
+  "icon": "pneumaticcraft:omnidirectional_hopper",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)全方位ホッパー/$の動作は、従来の$(item)ホッパー/$とほぼ同じです。しかし、このホッパーは上だけでなく、$(italic)どの/$方向にも向きを変えることができます。その上、$(l:base_concepts/upgrades)アップグレード/$が可能で、これを使うことでホッパーをかなり速くすることができます。$(l:base_concepts/pressure)空気/$を使わないので、ゲーム序盤にとても便利なデバイスです。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:omnidirectional_hopper",
+      "text": "ホッパーを配置したとき、$(9)入力/$はあなたの方を向き、$(6)出力/$は配置されたブロックの方を向きます。$(p)$(l:tools/pneumatic_wrench)空気圧レンチ/$（他のレンチでも可）を使ってホッパーを$(thing)右クリック/$すると、入力の向きを変えることができます。ホッパーを$(thing)Sneak+右クリック/$すると、出力の向きを変えることができます。"
+    },
+    {
+      "type": "text",
+      "title": "ディスペンサーアップグレード",
+      "flag": "pneumaticcraft:omniHopperDispenser",
+      "text": "$(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$を$(item)Omnidirectional Hopper/$に挿入すると、$(6)出力/$側のワールドに自動的にアイテムが排出されます（そこにインベントリがない場合）。$(p)これは、より速く、より正確に、より優れた$(#f00)レッドストーン・コントロール/$という、大幅に改良された$(item)ドロッパー/$として使用することができます。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting an Omnidirectional Hopper",
+      "recipe": "pneumaticcraft:omnidirectional_hopper"
+    }
+  ]
+}

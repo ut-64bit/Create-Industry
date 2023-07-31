@@ -1,0 +1,30 @@
+{
+  "name": "ヒートシンク",
+  "icon": "pneumaticcraft:heat_sink",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)ヒートシンク/$は、$(l:base_concepts/heat)熱/$を逃がすためのブロックです。$(p)60℃より熱い$(item)ヒートシンク/$や-60℃より冷たいヒートシンクは、触ると痛いので注意しましょう。$(p)$(item)ヒートシンク/$は、直接接続されたブロックからしか熱を放出しません。$(item)ヒートシンク/$をたくさんつなげるには、$(l:machines/heat_pipe)ヒートパイプ/$で面を増やしてください。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/heat_sinks.png"
+      ],
+      "border": "true",
+      "text": "$(italic)複数のヒートシンクを持つ先進の$(l:compressors/advanced_liquid_compressor)液体圧縮機/$"
+    },
+    {
+      "type": "text",
+      "title": "アクティブクーリング",
+      "text": "$(item)ヒートシンク/$を$(l:tubes/air_grate_module#active_cooling)エアグレートモジュール/$の範囲内に設置すると、ヒートシンクの効果を高めることができます。モジュールを$(l:tubes/pressure_tubes)圧力管/$に取り付けると、モジュールの範囲が表示されます。エアグレートモジュールを複数個使用することで、冷却効果を重ねることができます。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Heat Sink",
+      "recipe": "pneumaticcraft:heat_sink"
+    }
+  ]
+}

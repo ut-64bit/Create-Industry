@@ -1,0 +1,17 @@
+{
+  "name": "チューブジャンクション",
+  "icon": "pneumaticcraft:tube_junction",
+  "category": "pneumaticcraft:tubes",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)チューブジャンクション/$は、2本の$(l:tubes/pressure_tubes)圧力管/$（$(l:base_concepts/pressure_tiers)圧力レベル/$は問わない）を接続することなく交差させることができる非常にシンプルな装置です。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Tube Junction",
+      "recipe": "pneumaticcraft:tube_junction"
+    }
+  ]
+}

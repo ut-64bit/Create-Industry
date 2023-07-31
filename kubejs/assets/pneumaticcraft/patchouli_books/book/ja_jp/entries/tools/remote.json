@@ -1,0 +1,63 @@
+{
+  "name": "リモート",
+  "icon": "pneumaticcraft:remote",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Remoteを使えば、$(l:programming/variables#global)グローバル変数/$操作で$(l:tools/drone)Drones/$や$(l:machines/universal_sensor)Universal Sensors/$を遠隔操作するGUIを作ることができます。$(item)ユニバーサルセンサー/$では、$(item)Remote/$を使ってワイヤレスレッドストーンを作成できることに注意してください!$(p)独自のGUIを作成するには、$(item)Remote/$を$(thing)スニーク+右クリック/$し、エディタウィンドウを表示します。"
+    },
+    {
+      "type": "text",
+      "text": "ウィンドウへの書き込みは、$(l:programming/programmer)プログラマ/$でのプログラミングと同様に、右側のパネルから左側のメインパネルにウィジェットをクリック＆ドラッグするだけです。$(p)ウィジェットをコピーするには、既存のウィジェットを$(thing)中クリック/$してドラッグします。ウィジェットのプロパティを編集するには、そのウィジェットを$(thing)右クリック/$します。例えばボタンの場合、以下のようなウィンドウが表示されます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/remote_button.png"
+      ],
+      "text": "このウィンドウでは、ボタンの外観と動作を設定することができます。"
+    },
+    {
+      "type": "text",
+      "text": "以下のプロパティは、$(italic)すべて/$のウィジェットに共通です。$(li)$(thing)Text/$ - ウィジェットに表示されるテキスト$(li)$(thing)Tooltip/$ - ウィジェットの上にカーソルを置くと表示されるツールチップ。$(li)$(thing)Enabling Variable/$ - ウィジェットを$(l:programming/coordinate_operator)変数/$にリンクして、表示するかどうかをコントロールすることができます。X/Y/Zフィールドに値を与えることで、リンクされた変数が指定した値と等しい場合にのみ、ウィジェットが表示されるようにすることができます。"
+    },
+    {
+      "type": "text",
+      "title": "ラベルウィジェット",
+      "anchor": "label",
+      "text": "このウィジェットは、単にテキストを表示するだけで、オプションのツールチップを付けて、情報提供の目的で使用します。ラベルは変数を$(italic)変更/$することはできませんが、構文 $(thing)${#globalvarname}/$, を使って変数を$(italic)表示/$することができるので、デバッグの際に便利です。$(p)ラベル・ウィジェットには、デフォルト・フィールド以外のフィールドはありません。"
+    },
+    {
+      "type": "text",
+      "title": "ボタンウィジェット",
+      "text": "ボタンウィジェットは、押されるとリンクされた変数の値を設定します。$(li)$(thing)Variable Name/$ - リンク先の$(l:programming/variables#global)グローバル変数/$。$(li)$(thing)Setting Value/$ - ボタンが押されたときに、リンクされた変数に割り当てるX/Y/Zの値。$(li)$(thing)Width/Height/$ - ボタンの寸法。"
+    },
+    {
+      "type": "text",
+      "title": "チェックボックスウィジェット",
+      "text": "チェックボックスウィジェットは、リンクされた変数のX値を、チェックされたときは1に、そうでないときは0に設定します。$(li)$(thing)Variable Name/$ - リンク先の$(l:programming/variables#global)グローバル変数/$。"
+    },
+    {
+      "type": "text",
+      "title": "ドロップダウンウィジェット",
+      "text": "ドロップダウンウィジェットは、リンクされた変数のX値を、選択された要素のインデックスに設定します。$(li)$(thing)Drop-down Elements/$ - テキスト・ラベルのカンマ区切りのリスト。$(li)$(thing)Variable Name/$ - リンクされた$(l:programming/variables#global)グローバル変数/$。$(li)$(thing)Sorted/$ - チェックされた場合、リスト内の要素はアルファベット順に並べられます。そうでなければ、要素はあなたが提供した順序で表示されます。"
+    },
+    {
+      "type": "text",
+      "title": "例",
+      "text": "Editor GUI の左側にある$(thing)Pastebin/$ボタンを使って、$(l:https://pastebin.com/4yxKG5Jc)このレイアウト/$をインポートします。$(p)これで3つのチェックボックスが追加され、グローバル変数$(thing)signal1、signal2、signal3/$が設定されました。$(p)次に、3つの$(l:machines/universal_sensor)ユニバーサルセンサー/$を配置し、圧力をかけます。各$(item)センサー/$に$(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$を配置します。各$(item)センサー/$からレッドストーンを走らせます（レッドストーンを分離するために、ブロックを1つずつ離して配置します）。"
+    },
+    {
+      "type": "text",
+      "title": "例(続き)",
+      "text": "各$(item)Sensor/$GUI:$(li)$(thing)ディスペンサー/$ボタンを選択$(li)$(thing)ワールド/$を選択$(li)$(thing)グローバル変数/$を選択します。$(li)$(thing)Variable Name（変数名）/$テキストフィールドに、それぞれ 'signal1', 'signal2' & 'signal3'を入力します。$(p)さて、$(item)Remote/$を$(thing)右クリック/$して、それぞれのチェックボックスを選択/解除してみてください。対応する$(item)センサー/$は、適切なレッドストーン信号を発します: ワイヤレスレッドストーン!"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Remote",
+      "recipe": "pneumaticcraft:remote"
+    }
+  ]
+}

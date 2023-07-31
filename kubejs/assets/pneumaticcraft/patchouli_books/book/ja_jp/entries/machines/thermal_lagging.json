@@ -1,0 +1,22 @@
+{
+  "name": "サーマルラギング",
+  "icon": "pneumaticcraft:thermal_lagging",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "ご存知のように、熱を利用する$(pncr)装置は、露出していると空気に$(l:base_concepts/heat)熱/$を奪われてしまいます。このような機械には、空気を通さない、熱を伝導しないブロックであれば、ほとんどカバーすることができますが、$(thing)サーマルラグ/$は、特に機械の断熱に適しています。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:thermal_lagging",
+      "text": "$(thing)Thermal Lagging/$は、あたかもラグが存在しないかのように、後ろのブロックに$(italic)クリックスルー/$できるという便利な特性を持っています。$(p)これは$(item)Pickaxe/$や$(item)レンチ/$を持っているか、$(thing)スニーキング/$をしていない限り適用され、ラギング自体をターゲットにして除去や他のインタラクションを行うことができる。"
+    },
+    {
+      "type": "crafting",
+      "text": "Creating Thermal Lagging",
+      "recipe": "pneumaticcraft:thermal_lagging"
+    }
+  ]
+}

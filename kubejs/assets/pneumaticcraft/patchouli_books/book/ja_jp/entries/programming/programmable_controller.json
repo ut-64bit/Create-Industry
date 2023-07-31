@@ -1,0 +1,40 @@
+{
+  "name": "プログラミングコントローラ",
+  "icon": "pneumaticcraft:programmable_controller",
+  "category": "pneumaticcraft:programming",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "プログラマブルコントローラは、$(l:tools/drone)ドローンが/$できることと非常によく似たことを行うことができます。$(l:programming/programmer)プログラマ/$でプログラムを書き、$(item)ドローン/$または$(l:components/network_components#network_api)ネットワークAPI/$に保存します。そして、これらのアイテムのいずれかを$(item)プログラマブルコントローラー/$に配置することができます。十分な$(l:base_concepts/pressure)圧力/$があれば、$(item)Programmable Controller/$は、$(item)Drone/$にプログラムしたときと同じようにプログラムを実行します。 "
+    },
+    {
+      "type": "text",
+      "text": "しかし、いくつかの違いがあります。$(li)$(item)プログラマブルコントローラ/$は、$(item)ドローン/$のミニチュア版である$(thing)ミニドローン/$を使用します。実体がないので経路探索は不要で、$(thing)ミニドローン/$は壁を通り抜けて移動することができます。これは、サーバーに優しく、一般的に信頼性が高いという利点があります。$(li)プログラムを実行する際、$(item)Programmable Controller/$は10mL/tickの割合で空気を使用します（一方、Dronesは1mL/tickしか使用しません）。"
+    },
+    {
+      "type": "text",
+      "text": "$(li)$(item)プログラマブルコントローラ/$では、以下のウィジェットを実行することはできません。Computer Piece、Entity Attack、Drone Condition。Entity、Entity Export、Entity Import、Teleport、Standby、Suicide。$(p)$(item)プログラマブルコントローラ/$は、一般に、大きな面積を掘削したり、大きな構造物を建設したりするような大規模な用途に最も適しています。"
+    },
+    {
+      "type": "text",
+      "title": "インターフェイスアイテム/フルイド",
+      "text": "$(thing)ミニドローン/$が収集するアイテムや液体は、$(item)プログラマブルコントローラ/$ブロックの側面からインターフェイスすることができます。$(p)デフォルトでは、'ドローン'は1つのインベントリスロットと16000mBのタンクを持っています。インベントリサイズは$(l:base_concepts/upgrades#inventory)インベントリアップグレード/$（最大35個）を追加することで増やすことができ、アップグレードごとにタンクサイズも1000mBずつ増加する。"
+    },
+    {
+      "type": "text",
+      "title": "インターフェイス(続き)",
+      "text": "デフォルトでは、$(item)プログラマブルコントローラ/$の上面と側面はアイテムとのインター フェースに使用でき、下面はプログラマブルアイテムの挿入や取り外しに使用で きますが、必要に応じて$(bold)Side Configuration/$ GUI タブで調整することができ ます。$(p)$(item)プログラマブルコントローラ/$のすべての面は、常に流体とのインターフェースに使用することができます。"
+    },
+    {
+      "type": "text",
+      "title": "充電アイテム",
+      "text": "プログラマブルコントローラは、ミニドローンの保持するアイテムを$(thing)充電/$することができます。つまり、ドローンのインベントリのスロット0にあるアイテムです。これには、$(l:tools/jackhammer)ジャックハンマー/$のような加圧可能なアイテムも、$(thing)Forge Energy/$を使用するアイテムも含まれます。プログラマブルコントローラ自身のバッファにある空気やFEがこのために使用されます。充電はデフォルトでは無効になっており、コントローラのGUI($(thing)Held Item Charging/$ サイドタブ)から有効にすることができます。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Programmable Controller",
+      "recipe": "pneumaticcraft:programmable_controller"
+    }
+  ]
+}

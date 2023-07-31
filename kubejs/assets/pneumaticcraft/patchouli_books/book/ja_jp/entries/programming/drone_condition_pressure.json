@@ -1,0 +1,19 @@
+{
+  "name": "ドローンコンディション: 圧力ウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/condition_drone_pressure_piece.png",
+  "category": "pneumaticcraft:widget_cond",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "これは$(l:programming/conditions)コンディション/$ウィジェットです。$(p)$(thing)Droneコンディション: Pressure/$ウィジェットでは、この$(l:tools/drone)Drone/$の$(l:base_concepts/pressure)気圧/$を確認することができます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/condition_drone_pressure_piece.png"
+      ],
+      "text": "$(italic)Drone Condition: Pressure Widget/$"
+    }
+  ]
+}

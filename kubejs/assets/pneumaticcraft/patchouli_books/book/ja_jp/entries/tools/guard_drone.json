@@ -1,0 +1,45 @@
+{
+  "name": "ガードドローン",
+  "icon": "pneumaticcraft:guard_drone",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:pressure_chamber",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Guard Drone/$はノンプログラミングの特殊な$(l:tools/drone)Drone/$で、インベントリブロックに対して配置される必要がある。アイテムを1つ取り込んで武器として使用し、範囲内にいるMobを攻撃する。"
+    },
+    {
+      "type": "spotlight",
+      "title": "自動充電",
+      "item": "pneumaticcraft:charging_station",
+      "text": "他の種類のドローンと同様、これらのドローンは作動するために$(l:base_concepts/pressure)圧力/$を必要とし、空気が少なくなると自動的に$(l:tools/drone#charging)ディスペンサーアップグレードのあるチャージングステーション/$を探します。"
+    },
+    {
+      "type": "text",
+      "title": "範囲",
+      "text": "$(thing)Guard Drone/$は展開位置から水平方向に16ブロック、上方向に8ブロック、下方向に5ブロック以内の敵対するMobをターゲットとする。$(p)垂直方向の範囲を小さくしているのは、地下深くの洞窟にいるMobを発見してテレポートしてしまい、空気を浪費してDroneに何が起こったかわからなくなるのを最小限に抑えるためである。"
+    },
+    {
+      "type": "spotlight",
+      "title": "武器",
+      "item": "minecraft:netherite_sword",
+      "text": "$(thing)Guard Drone/$はインベントリに何が入っていても気にしないので、有用な近接武器を入れておくように注意しよう。武器が壊れ、インベントリに代わりの武器がない場合、ドローンは丸腰で戦い続けることになるが、これは非常に非効率的である。"
+    },
+    {
+      "type": "spotlight",
+      "title": "レンジングコンバット",
+      "item": "pneumaticcraft:minigun_upgrade",
+      "text": "ドローンに$(l:base_concepts/upgrades#minigun)ミニガンアップグレード/$を装備することもできますが、その場合は代わりに$(l:tools/minigun_ammo)ミニガン弾/$をインベントリに追加してください。"
+    },
+    {
+      "type": "entity",
+      "entity": "pneumaticcraft:guard_drone",
+      "offset": -0.3
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Guard Drone",
+      "recipe": "pneumaticcraft:guard_drone"
+    }
+  ]
+}

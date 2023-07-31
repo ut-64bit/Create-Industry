@@ -1,0 +1,26 @@
+{
+  "name": "電動コンプレッサー",
+  "icon": "pneumaticcraft:electric_compressor",
+  "category": "pneumaticcraft:compressors",
+  "advancement": "pneumaticcraft:advanced_pressure_tube",
+  "flag": "pneumaticcraft:electricCompressorEnabled",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)電動コンプレッサー/$は$(thing)IndustrialCraft 2のEU/$から圧縮空気を生成することができます。デフォルトでは効率は40%ですが、$(ttcolor)$(t:See 'I:electricCompressorEfficiency')コンフィグで変更可能/$です。$(p)IC2 tier1マシンのように動作するため、32 EU/tを超えると爆発してしまいます。しかし、IC2 $(item)変圧器アップグレード/$を追加することで、通常のIC2マシンと同様に高電圧をかけられるようになります。"
+    },
+    {
+      "type": "text",
+      "text": "エネルギー出力（mL/tick）は$(p)  $(formula)入力レート / E * 400/$$(p)ここでの$(formula)E/$は効率です。$(p)例えば、デフォルトの効率40%で、入力が32EU/tickの場合、圧縮空気生産量は$(formula)32 / 40 * 400 = 320mL/tick/$に相当します。"
+    },
+    {
+      "type": "text",
+      "text": "また、効率に影響を与える要因として、機械の$(l:base_concepts/heat)熱/$がある。温度が上がると効率が落ちるので、機械を冷やす必要があります。空気が全く発生しない状態まで冷却する必要があります。"
+    },
+    {
+      "type": "crafting",
+      "text": "$(item)電動コンプレッサー/$の製作",
+      "recipe": "pneumaticcraft:electric_compressor"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "空圧式ドア",
+  "icon": "pneumaticcraft:pneumatic_door",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "この特殊なドアは、近くにプレイヤーがいる場合、十分な$(l:base_concepts/pressure)気圧/$があれば自動的に開く。基本的な探知範囲は2ブロックですが、$(l:base_concepts/upgrades#range)範囲アップグレード/$を挿入することで増やすことができます。$(p)$(thing)Pneumatic Door/$を作るには、$(thing)Pneumatic Door Base/$をドア本体の$(italic)上半分/$と水平になるように配置する必要があります。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/pneumatic_door.png"
+      ],
+      "text": "$(italic)ダブルニューマチックドア; 左側は$(l:tools/camo_applicator)カモフラージュ/$$(italic)、右側はカモフラージュされていない"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:security_station",
+      "text": "$(item)空圧式ドアベース/$が動作中の$(l:machines/security_station)セキュリティステーション/$の範囲内にある場合、$(thing)セキュリティステーション/$に信頼されたプレーヤーにのみドアを開きます。"
+    },
+    {
+      "type": "text",
+      "title": "動作モード",
+      "text": "$(thing)空気圧式ドア/$は、3つのモードのいずれかで動作し、ドアベースのGUIで選択できます。$(li)$(thing)Player Nearby/$: プレイヤーが範囲内にいるときにドアが開きます。$(li)$(thing)Nearby and Looking/$: プレイヤーが近くにいて、ドアを見ているときにドアが開きます。$(li)$(thing)Wooden Door/$: バニラの$(item)Wooden Door/$のような動作をします。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:pneumatic_door",
+      "recipe2": "pneumaticcraft:pneumatic_door_base"
+    }
+  ]
+}

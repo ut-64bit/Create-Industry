@@ -1,0 +1,27 @@
+{
+  "name": "真空モジュール",
+  "icon": "pneumaticcraft:vacuum_module",
+  "category": "pneumaticcraft:tubes",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)バキュームモジュール/$は、$(l:machines/vacuum_pump)バキュームポンプ/$と同じ仕事、つまり負圧を提供するものですが、もう少しコンパクトな形をしています。フルサイズのポンプが水平にしか設置できないのに対し、バキュームモジュールは垂直なチューブに設置することができます。$(p)コンパクトであることが利点ですが、速度や容量の面でアップグレードの可能性が制限されることが欠点です。"
+    },
+    {
+      "type": "text",
+      "title": "配置",
+      "text": "バキュームモジュールは$(thing)インライン/$モジュールです。真空側となるべきチューブの端に装着してください。チューブの太い/緑の端に最低 2 barの圧力を供給すると、モジュールが回転し、細い/赤い端を過ぎたチューブから空気が除去されます。$(p)$(#f00)レッドストーン信号/$を印加すると、モジュールは回転しなくなります。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:module_expansion_card",
+      "text": "$(l:tubes/module_expansion_card)モジュール拡張カード/$はモジュールの速度を上げるもので、バキュームポンプの$(l:base_concepts/upgrades#speed)スピードアップグレード/$を4つ追加するのとほぼ同じです。Speed Upgradeの追加と同様に、プラス側の空気使用量の効率低下が伴います。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Vacuum Module",
+      "recipe": "pneumaticcraft:vacuum_module"
+    }
+  ]
+}

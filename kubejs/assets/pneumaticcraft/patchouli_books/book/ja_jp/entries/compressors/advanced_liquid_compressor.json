@@ -1,0 +1,17 @@
+{
+  "name": "アドバンスト液化コンプレッサー",
+  "icon": "pneumaticcraft:advanced_liquid_compressor",
+  "category": "pneumaticcraft:compressors",
+  "advancement": "pneumaticcraft:advanced_pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)アドバンスト液化コンプレッサー/$は$(l:compressors/liquid_compressor)液化コンプレッサー/$の$(l:base_concepts/pressure_tiers)Tier 2/$バージョンで、最大安全圧力は20barです。50mL/tickの空気を生成し、$(l:base_concepts/upgrades#speed)スピードアップグレード/$が可能です。$(p)ただし、このジェネレータは$(l:base_concepts/heat)冷却/$する必要があり、温度が上がると効率が下がり、空気がまったく生成されなくなります。"
+    },
+    {
+      "type": "crafting",
+      "text": "$(item)アドバンスト液化コンプレッサー/$を作る",
+      "recipe": "pneumaticcraft:advanced_liquid_compressor"
+    }
+  ]
+}

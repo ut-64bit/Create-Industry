@@ -1,0 +1,19 @@
+{
+  "name": "エミット レッドストーンウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/emit_redstone_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "このウィジェットを使うと、$(l:tools/drone)ドローン/$に$(#f00)レッドストーン信号/$を発射させることができます。ウィジェットを$(thing)右クリック/$し、セットアップGUIで設定することで、発光する面を指定することができます。発信するレッドストーン信号のレベルは、数字（0〜15）が入った$(l:programming/text)テキスト/$ウィジェットを取り付けることで指定します。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/emit_redstone_piece.png"
+      ],
+      "text": "$(italic)Emit Redstone Widget/$"
+    }
+  ]
+}

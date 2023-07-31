@@ -1,0 +1,29 @@
+{
+  "name": "クラフティングウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/craft_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)Drone/$は、インベントリにあるアイテムを使ってアイテムをクラフトします。クラフトレシピを指定するには、Craftingウィジェットの右側にある$(l:programming/item_filter)Item Filters/$を、クラフトレシピのパターンに合わせて配置します。正確に9つの$(thing)Item Filters/$を使う必要はありません: レシピのパターンを作成できれば、動作します。"
+    },
+    {
+      "type": "text",
+      "text": "デフォルトでは、クラフトウィジェットはできるだけ多くのアイテムをクラフトしようとします。ウィジェットのGUIで$(thing)使用回数/$を設定して、これを制限することができます。$(p)$(item)ドローン/$に$(l:base_concepts/upgrades#dispenser)インベントリアップグレード/$をインストールして、より多くのインベントリを持たせることもできます。"
+    },
+    {
+      "type": "text",
+      "flag": "mod:jei",
+      "title": "JEIインテグレーション",
+      "text": "JEIを使用して、Craftingウィジェットのアイテムフィルタを迅速かつ簡単に設定することができます。 詳しくは$(l:programming/programmer#jei)こちらのページ/$をご覧ください。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/craft_piece.png"
+      ],
+      "text": "$(italic)Crafting Widget/$"
+    }
+  ]
+}

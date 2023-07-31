@@ -1,0 +1,20 @@
+{
+  "name": "コンピュータ制御ウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/computer_control_piece.png",
+  "category": "pneumaticcraft:widget_other",
+  "flag": "|mod:computercraft,mod:opencomputers",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Computer Control/$ウィジェットでは、$(thing)ComputerCraft/$や$(thing)OpenComputers/$のコンピュータから$(l:tools/drone)ドローン/$を制御することができます。この方法の詳細については、$(l:machines/drone_interface)ドローンインターフェース/$を参照してください。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/computer_control_piece.png"
+      ],
+      "text": "$(italic)Where is my mind/$"
+    }
+  ]
+}

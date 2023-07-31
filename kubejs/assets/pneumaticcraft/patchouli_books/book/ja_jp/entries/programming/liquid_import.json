@@ -1,0 +1,23 @@
+{
+  "name": "フルイドインポートウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/liquid_import_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)流体インポートウィジェット/$は、$(l:tools/drone)ドローン/$を指定された$(l:programming/area)エリア/$内の最も近いタンクまで移動させ、そのタンクから流体を取り出して、自分のタンクに入れることができます。$(p)また、インワールドの流体ブロックから流体を吸い上げることもでき、$(item)ドローン/$を携帯ポンプとして機能させることも可能です。"
+    },
+    {
+      "type": "text",
+      "text": "ウィジェットを$(thing)右クリック/$してセットアップGUIを開き、Droneがどの面から流体を抽出するか、また1回の操作でインポートする流体の最大量（mB単位）を指定することができます。$(p)Droneがインポートできるものを制限するために、$(l:programming/liquid_filter)Fluid Filter/$を$(ttcolor)$(t:右側で接続するとホワイトリスト、左側で接続するとブラックリストに登録されます。)接続/$することができます。$(p)このウィジェットは、$(item)Drone/$のタンクが満杯になったとき、またはタンクにこれ以上（該当する）液体が見つからなくなったときに実行されます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/liquid_import_piece.png"
+      ],
+      "text": "$(italic)Slurp/$"
+    }
+  ]
+}

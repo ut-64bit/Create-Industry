@@ -1,0 +1,30 @@
+{
+  "name": "レギュレータモジュール",
+  "icon": "pneumaticcraft:regulator_tube_module",
+  "category": "pneumaticcraft:tubes",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "レギュレーターチューブモジュールは、チューブを通過できる$(l:base_concepts/pressure)圧力/$を制限するために使用される$(l:tubes/tube_modules#inline)インライン/$モジュールです。デフォルトでは、このモジュールはレッドストーン信号がない状態で圧力を4.9バール（ベーシックとアドバンスの両方）まで調整し、信号が15に向かって上昇するにつれて0に向かって減少します。これは、レギュレータのすぐ横にあるレバーでレギュレータを閉じ、そこから空気が流れないようにすることを意味します。"
+    },
+    {
+      "type": "text",
+      "text": "レギュレーターの細い側がこの圧力に達すると、それ以上チューブに空気を通さなくなる。この原理は$(thing)変圧器/$として使用することができます。入力側（ワイド側）には高圧の空気が入っていますが、レギュレーターチューブが出力側の圧力を閾値の圧力に制限しています。$(p)これにより、低tierのチューブネットワークに高tierのネットワークから安全に供給することができます。"
+    },
+    {
+      "type": "text",
+      "text": "興味深いことに、$(thing)レギュレーターモジュール/$はレッドストーン信号に関係なく、反対方向（狭い側から広い側）への空気の流れを無制限にすることができます。$(p)$(thing)レギュレーター/$は狭い側の圧力を積極的に$(italic)下げることはなく/$、圧力が閾値より高くなる場合にのみ空気の流れを阻止することに注意してください。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:module_expansion_card",
+      "text": "$(l:tubes/module_expansion_card)モジュール拡張カード/$をレギュレータモジュールに適用すると、スレッショルドレベルをより詳細に制御できるGUIがアンロックされます。GUIで正確なスレッショルドを設定することも、（$(bold)Advanced Config/$チェックボックスで）レッドストーン信号に基づいて補間されたスレッショルドレベルを設定することも可能です。これは$(l:tubes/safety_module)Safetyモジュール/$と全く同じように機能します。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Regulator Module",
+      "recipe": "pneumaticcraft:regulator_tube_module"
+    }
+  ]
+}

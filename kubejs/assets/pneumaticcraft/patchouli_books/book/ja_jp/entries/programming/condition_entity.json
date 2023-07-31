@@ -1,0 +1,23 @@
+{
+  "name": "コンディション Entity Widget",
+  "icon": "pneumaticcraft:textures/progwidgets/condition_entity_piece.png",
+  "category": "pneumaticcraft:widget_cond",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "これは$(l:programming/conditions)Condition/$ウィジェットです。$(p)$(thing)Condition: Entity/$ウィジェットでは、接続された$(l:programming/area)Area/$ウィジェット内のエンティティをカウントすることができます。これらは、$(l:base_concepts/entity_filter)Entity Filter/$として使用されるオプションの$(l:programming/text)Text/$ウィジェットを接続することでフィルタリングすることができます。"
+    },
+    {
+      "type": "text",
+      "text": "このウィジェットに接続する$(l:programming/area)エリア/$ウィジェットのエリア・タイプは$(thing)Box/$でなければならないことに注意してください; これは、サポートされる唯一の形状です。サポートされている形状はこれだけですが、領域のホワイトリスト/ブラックリストを使用することで、異なる形状を作成することができます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/condition_entity_piece.png"
+      ],
+      "text": "$(italic)Condition: Entity Widget/$"
+    }
+  ]
+}

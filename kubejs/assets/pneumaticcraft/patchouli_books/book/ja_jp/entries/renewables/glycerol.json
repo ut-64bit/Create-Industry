@@ -1,0 +1,28 @@
+{
+  "name": "グリセリン",
+  "icon": "pneumaticcraft:glycerol",
+  "category": "pneumaticcraft:renewables",
+  "advancement": "pneumaticcraft:ethanol",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)グリセロール/$は$(l:renewables/biodiesel)バイオディーゼル/$製造の副産物であるが、それ自体も有用な物質であることがわかった。その用途については、次のページで詳しくご紹介します。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:bandage",
+      "text": "$(thing)包帯/$を使うと、ハートを3個分素早く回復させることができます。ただし、素早くといっても即効性はなく、包帯を貼るには右クリックを2秒間押し続ける必要があり、使用間隔には8秒のクールダウンがあります。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:speed_upgrade_from_glycerol",
+      "text": "$(thing)砂糖/$を使った場合の2倍の出力、何が気に入らないの？貴重な$(l:components/lubricant)潤滑油/$の節約にもなります。"
+    },
+    {
+      "type": "spotlight",
+      "item": "minecraft:furnace",
+      "title": "As a Fuel",
+      "text": "$(thing)グリセロール/$は燃料にもなり、$(thing)板材/$4枚分、$(thing)石炭/$半分に相当する。"
+    }
+  ]
+}

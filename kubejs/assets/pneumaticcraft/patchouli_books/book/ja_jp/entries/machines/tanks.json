@@ -1,0 +1,39 @@
+{
+  "name": "タンク",
+  "icon": "pneumaticcraft:small_tank",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "液体を貯蔵するタンクは4つあり、想像上の名称は$(item)小型タンク/$、$(item)中型タンク/$、$(item)大型タンク/$、$(item)巨大タンク/$です。$(l:machines/liquid_hopper)リキッドホッパー/$も液体の貯蔵に適していますが、これらのタンクはより密度の高い貯蔵と便利なスタッキング機能を提供し、自動的に液体を移送しません（ただし、$(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$を追加すると、液体を押し出すことができます）。"
+    },
+    {
+      "type": "text",
+      "title": "スタッキング",
+      "text": "4種類のタンクはすべて縦に$(thing)積み重ねる/$ことができ、マルチブロックのような形にすることができます。$(l:tools/pneumatic_wrench)レンチ/$でタンクを右クリックすると、上半分が上のタンクと、下半分が下のタンクと連結されます。$(p)タンクを積み重ねると、$(ttcolor)$(t:If the fluid has a density of < 0, it will move up rather than down)上のタンク/$にある液体は、スペースがあれば自動的に下のタンクに流れ込みます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/small_tanks.png"
+      ],
+      "border": "true",
+      "text": "小型タンクの3段重ね"
+    },
+    {
+      "type": "text",
+      "text": "これにはいくつかの制約があります。$(li)2つのタンクを組み合わせるには、両方のタンクに同じ液体が入っているか（または入っていないか）、どちらかのタンクが空でなければなりません。$(li)液体は上方には$(italic)移動しない/$ので、最良の結果を得るには、液体をスタックの一番上のタンクに送り込み、 一番下のタンクから送り出す必要があります。$(li)タンク GUI は右クリックされたタンクの液量のみを表示します。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:small_tank",
+      "recipe2": "pneumaticcraft:medium_tank"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:large_tank",
+      "recipe2": "pneumaticcraft:huge_tank"
+    }
+  ]
+}

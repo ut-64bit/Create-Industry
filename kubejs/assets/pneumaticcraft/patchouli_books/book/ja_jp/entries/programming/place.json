@@ -1,0 +1,29 @@
+{
+  "name": "プレースウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/place_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)ドローン/$は、インベントリにあるブロックをワールドに配置します。指定された$(l:programming/area)範囲/$に、自分に近い場所から順にブロックを配置していきます。$(p)ブロックを配置する順番を制御することができます。ウィジェットを$(thing)右クリック/$して、$(item)$(item)Drone/$がブロックをレイヤーごとに配置するかどうか、また、レイヤーごとに配置する場合は上から下へ、逆にレイヤーごとに配置する場合は上から下へ指定します。"
+    },
+    {
+      "type": "text",
+      "title": "プレースカウントの制限",
+      "text": "ウィジェットを$(thing)右クリック/$することで、配置アクションの数を指定した量に制限することができます。例えば1に設定すると、$(item)Drone/$はブロックを1つだけ配置し、その1つのブロックを配置した後にWidgetは終了したとみなされます。$(p)制限を設けない場合、これ以上ブロックを置けなくなったときのみ、ウィジェットは終了したとみなされます。"
+    },
+    {
+      "type": "text",
+      "title": "フィルタリング",
+      "text": "最後に、$(l:programming/item_filter)アイテムフィルタ/$ウィジェットを接続することで、$(item)ドローン/$のインベントリから配置可能なブロックを指定することができます。$(italic)右/$側で接続するとホワイトリストに、$(italic)左/$側で接続するとブラックリストに登録されます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/place_piece.png"
+      ],
+      "text": "$(italic)Place Widget/$"
+    }
+  ]
+}

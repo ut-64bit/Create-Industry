@@ -1,0 +1,23 @@
+{
+  "name": "アイテムフィルターウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/item_filter_piece.png",
+  "category": "pneumaticcraft:widget_other",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)アイテムフィルター/$は、他のウィジェットの$(thing)パラメータ/$としてのみ使用されるウィジェットです。ブロックやアイテムのピックアップ、配置、採掘などを指定するために使用します。$(p)まず、ウィジェットを$(thing)右クリック/$します。それから、$(thing)Search Item.../$をクリックしてゲーム内のアイテムを検索するか、$(thing)Search Inventory.../$をクリックしてインベントリからアイテムを選択することができます。"
+    },
+    {
+      "type": "text",
+      "text": "このオプションがどのように機能するかは、GUIのチェックボックスのツールチップに表示されます。$(p)通常、このウィジェットを親の$(italic)右/$側に配置するとホワイトリストとして機能し、$(italic)左/$側に配置するとブラックリストとして機能します。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/item_filter_piece.png"
+      ],
+      "text": "$(italic)Item Filter Widget/$"
+    }
+  ]
+}

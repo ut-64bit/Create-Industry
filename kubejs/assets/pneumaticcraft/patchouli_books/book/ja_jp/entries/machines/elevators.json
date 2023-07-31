@@ -1,0 +1,58 @@
+{
+  "name": "エレベータ",
+  "icon": "pneumaticcraft:elevator_base",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)エレベーター/$は、アイテム、モブ、動物、プレイヤーなど、あらゆる存在を垂直方向に移動させることができる機械です。$(p)エレベーターの底には、$(item)エレベーターベース/$を配置する必要があります。ベースは複数個重ねることができます。$(p)その上に、エレベーターの支えとなる$(item)エレベーターフレーム/$を配置します。"
+    },
+    {
+      "type": "text",
+      "text": "$(thing)エレベーター/$の高さは、$(item)エレベーターベース/$と$(item)エレベーターフレーム/$の数で決まります。$(thing)エレベーター/$の最大高さは、次のうち低い方の値です。$(li)1 x 垂直に積み重ねられた$(item)エレベーターフレーム/$の数。または、$(li)$(ttcolor)$(t:You can change this multiplier in mod config - see 'I:elevatorBaseBlocksPerBase')6 x/$ 垂直に積み重ねた$(item)エレベーターベース/$の数 のいずれか低い方です。"
+    },
+    {
+      "type": "text",
+      "text": "$(thing)エレベーター/$は、次の2つのモードのいずれかで動作します。$(li)$(bold)レッドストーン/$: 任意の$(item)エレベーターベース/$に適用される$(#f00)レッドストーン信号/$が、信号の強さに比例してエレベーターの高さを制御します（信号なし = 0% 伸長、信号フル = 100% 伸長）。$(li)$(bold)エレベーターコーラー/$: $(l:machines/elevators#caller)Elevator Caller/$は、エレベータをより高度に制御することができます。"
+    },
+    {
+      "type": "text",
+      "title": "マルチブロックエレベーター",
+      "text": "$(item)Elevator Base/$を水平に隣接させることで、より大きな$(thing)Elevator/$を作成することができます。接続されたすべての$(thing)エレベーター/$の一番上の$(item)エレベーターベース/$が同じ高さになると、$(thing)エレベーター/$はフロア（$(l:machines/elevators#caller)エレベーターコーラー/$で定義）とレッドストーン入力を共有し、1つのマルチブロックとして機能するようになります。"
+    },
+    {
+      "type": "text",
+      "title": "セービングエアー",
+      "text": "$(item)エレベーターベース/$は最大4つの$(l:base_concepts/upgrades#charging)チャージアップグレード/$を受け入れることができ、エレベーターが下降する際に使用した空気を再生することができます（通常、下降は空気を消費しませんが、空気の再生も行いません）。$(p)アップグレードを4つ装着した場合、上昇時の60%のコストで空気を回収できますが、下降時は40%遅くなります。"
+    },
+    {
+      "type": "text",
+      "anchor": "caller",
+      "title": "エレベーターコーラー",
+      "text": "$(item)エレベータフレーム/$に隣接する$(item)エレベータコーラ/$は、$(thing)エレベータ/$の高さを制御するために使用されます。$(item)エレベータフレーム/$を置くと、他の$(item)エレベータコーラ/$で定義された$(thing)階数/$が計算されます。$(p)$(thing)フロア/$の名前は、$(item)Elevator Base/$ GUIで設定することができます。フロア名は、各$(item)エレベータコーラー/$にボタンとして表示されます。クリックすると、その階の$(thing)エレベータ/$を呼び出すことができます。"
+    },
+    {
+      "type": "text",
+      "title": "エレベーターコーラー（続き）",
+      "text": "また、$(item)Elevator Caller/$は、Elevatorがその階にいると$(#f00)レッドストーン信号/$を発し、Callerに$(#f00)レッドストーンパルス/$を与えると$(thing)Elevator/$をその階に呼び出すことができます。$(p)最後に、$(item)エレベータコーラー/$は、$(l:tools/camo_applicator)カモフラージュアプリケータツール/$で他のブロックと同じようにカモフラージュすることができます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/elevator.png"
+      ],
+      "border": "true",
+      "text": "$(italic)3×3のエレベーターで、エレベーターコーラー2つ見えるもの/$"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:elevator_base_1",
+      "recipe2": "pneumaticcraft:elevator_frame"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:elevator_caller"
+    }
+  ]
+}

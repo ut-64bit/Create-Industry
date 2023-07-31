@@ -1,0 +1,22 @@
+{
+  "name": "エアーキャノン",
+  "icon": "pneumaticcraft:air_cannon",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)エアキャノン/$は、空中を移動して、物を運ぶことができる装置です。$(l:base_concepts/pressure)圧縮空気/$を推進力として使用します。$(p)また、$(item)Air Cannon/$の照準を合わせるために$(l:tools/gps_tool)GPSツール/$が必要です（ただし、GPSツールは一度取り外せば再利用可能です）。$(p)$(#f00)レッドストーンのパルス/$が発射のトリガーになります。"
+    },
+    {
+      "type": "text",
+      "title": "アップグレード",
+      "text": "$(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$をインストールすると、$(item)Air Cannon/$は特定のアイテムに対してバニラの$(item)Dispenser/$のように動作するようになります。例：TNTやFire Chargesなど。$(p)$(l:base_concepts/upgrades#entity_tracker)エンティティトラッカーアップグレード/$をインストールすると、$(item)Air Cannon/$はインベントリからアイテムを発射せず、トリガー時に最も近いエンティティ（あなたを含む！）を発射するようになります。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting an Air Cannon",
+      "recipe": "pneumaticcraft:air_cannon"
+    }
+  ]
+}

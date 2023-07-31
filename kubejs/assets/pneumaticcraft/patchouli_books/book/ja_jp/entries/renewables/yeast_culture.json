@@ -1,0 +1,43 @@
+{
+  "name": "酵母の培養",
+  "icon": "pneumaticcraft:yeast_culture_bucket",
+  "category": "pneumaticcraft:renewables",
+  "advancement": "pneumaticcraft:tp_plant",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)酵母/$は$(l:renewables/ethanol)エタノール/$や$(l:renewables/sourdough)サワードウ/$の製造に必要であり、いくつかの方法で製造することができる。"
+    },
+    {
+      "type": "spotlight",
+      "item": "minecraft:red_mushroom",
+      "title": "Method 1",
+      "text": "最初はこの方法しかないでしょう。$(l:manufacturing/thermopneumatic_processing_plant)Thermopneumatic Processing Plant/$に$(thing)水/$を入れ、キノコを入れる。この方法は少し時間がかかりますが（そして十分なキノコの供給が必要です）、簡単に最初のYeast Cultureのストックを作ることができます。"
+    },
+    {
+      "type": "text",
+      "title": "Method 1 (cont.)",
+      "text": "この工程は温度に敏感です。Thermopneumatic Processing Plantの温度を30℃から60℃の間に保つ必要があります。この作業は暖かいバイオームでは非常に簡単ですが、涼しい地域では少し手間がかかるかもしれません。注意点としては、深く掘るほど周囲の温度が上がる傾向があるので、Yレベルを下げて処理を行う場合は、温帯バイオームが適している場合があります。"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/yeast_culture"
+    },
+    {
+      "type": "text",
+      "flag": "!pneumaticcraft:inWorldYeastCrafting",
+      "title": "Important Note",
+      "text": "$(italic)このインスタンスの設定では、以下のページで説明されているインワールドでのYeast Craftingは無効化されています/$。"
+    },
+    {
+      "type": "text",
+      "title": "Method 2",
+      "text": "$(thing)Yeast Culture/$は生物であるため、自己複製が可能です。これを行うには、インワールドのプールにバケツ一杯の培養液を注ぎ、その中に$(thing)Sugar/$を投げ入れます。$(p)次に、培養液に隣接するブロックスペースにバケツ1杯の$(thing)水/$を注ぐと、1〜2秒後に水が培養液に変換されるのがわかるでしょう。"
+    },
+    {
+      "type": "text",
+      "title": "Method 2 (cont.)",
+      "text": "重要なのは、砂糖が加えられたときではなく、水が置かれたときに培養液が広がるということです。$(p)この方法は、ゲーム序盤でも少し考えて設計すれば自動化できます（ヒント：$(l:base_concepts/upgrades#dispenser)ディスペンサーアップグレード/$の$(l:machines/omnidirectional_hopper)全方位型ホッパー/$と$(l:machines/liquid_hopper)リキッドホッパー/$が非常に役に立つかもしれません）。"
+    }
+  ]
+}

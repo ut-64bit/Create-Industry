@@ -1,0 +1,37 @@
+{
+  "name": "ロジスティクスモジュール",
+  "icon": "pneumaticcraft:logistics_module",
+  "category": "pneumaticcraft:tubes",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "この強力なモジュールは、インベントリを$(l:logistics/overview)ロジスティック・システム/$に接続するために使用され、効果的に圧力チューブを介して制御されたアイテムや流体の転送を可能にします。$(p)このモジュールが指すインベントリや液体タンクには、$(l:logistics/frames)ロジスティクスフレーム/$が装着されている必要があります。$(p)ロジスティクスモジュールは、$(l:tubes/module_expansion_card)モジュール拡張カード/$を受け付けません。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/logistics_module.png"
+      ],
+      "border": "true",
+      "text": "$(l:logistics/frames#passive_provider)パッシブプロバイダー/$と$(l:logistics/frames#requester)レクエスターフレーム/$でチェストをつなぐ2個のロジスティックモジュール。"
+    },
+    {
+      "type": "text",
+      "text": "ロジスティクスモジュールのネットワークは、すべてのモジュールが$(l:tubes/pressure_tubes)圧力チューブ/$で互いに接続されることで定義されます。空気を使用する機械はネットワークの一部$(italic)ではない/$ことに注意してください。$(p)モジュールの GUI、または$(item)染料/$で右クリックでチャンネルを選択することができます。同じ色のロジスティック・モジュールだけが互いに通信し、各ネットワークに16の$(thing)チャンネル/$を効果的に与えることができます。"
+    },
+    {
+      "type": "text",
+      "text": "ロジスティクスモジュールには$(l:base_concepts/pressure)圧力/$が必要です。モジュールを作動させるためには3気圧が必要です。      使用する空気は、距離と輸送量と定数の掛け算です。つまり、満杯の荷物を運ぶにはより多くの空気が必要であり、長距離を運ぶにはより多くの空気が必要です。ロジスティクスモジュールの$(italic)受け取り側/$では、そのモジュールに向かって空気が流れるため、空気が使用される。"
+    },
+    {
+      "type": "text",
+      "text": "状態を示すインジケーターランプを装備しています。$(p)$(li)$(#f00)赤色/$: 圧力が十分でないため、少なくとも3 barを適用してください。$(li)$(#f80)オレンジ色/$: 3 bar以上ですが、この距離の物品/液体を輸送するには圧力が足りません。$(li)$(#0f0)緑色/$: 十分な圧力、スタンバイ状態。$(li)$(#00f)青色 (パルス)/$: アイテム/ 液体を輸送中です。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Logistics Module",
+      "recipe": "pneumaticcraft:logistics_module"
+    }
+  ]
+}

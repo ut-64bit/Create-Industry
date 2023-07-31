@@ -1,0 +1,29 @@
+{
+  "name": "サーモニューマチックプラント",
+  "icon": "pneumaticcraft:thermopneumatic_processing_plant",
+  "category": "pneumaticcraft:manufacturing",
+  "advancement": "pneumaticcraft:refinery",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)サーモニューマチックプロセスプラント/$は、$(l:base_concepts/pressure)圧力/$や$(l:base_concepts/heat)熱/$を利用して材料を加工する装置です。いくつかの用途がある。$(li)100mBの$(thing)LPG/$と1個の$(item)石炭/$で1000mBの$(l:components/plastic)プラスチック/$ができる。これは熱を必要としますが、圧力はかかりません。$(li)1000mBの$(thing)ディーゼル/$と1個の$(item)レッドストーンダスト/$で1000mBの$(l:components/lubricant)潤滑油/$を作ります。 これも熱を必要としますが、圧力はかかりません。"
+    },
+    {
+      "type": "text",
+      "text": "$(li)$(item)サーモニューマチック・プロセッシング・プラント/$は、$(l:manufacturing/refinery)リファイナリー/$で生産された重い燃料を、80%の還元率で軽い燃料に分解することができます。$(li)ディーゼル→灯油$(li)灯油 -> ガソリン$(li)ガソリン→LPG$(p)このためには、熱と圧力の両方が必要です。"
+    },
+    {
+      "type": "link",
+      "flag": "mod:crafttweaker",
+      "title": "CraftTweaker",
+      "text": "$(thing)サーモニューマチック加工工場/$は$(l:https://minecraft.curseforge.com/projects/crafttweaker)CraftTweaker/$に対応しており、レシピの追加や削除が可能です。詳しくは以下のリンクをご覧ください。",
+      "url": "https://docs.blamejared.com/1.16/en/mods/PneumaticCraft-Repressurized/ThermoPlant",
+      "link_text": "CraftTweaker Docs"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Thermopneumatic Processing Plant",
+      "recipe": "pneumaticcraft:thermopneumatic_processing_plant"
+    }
+  ]
+}

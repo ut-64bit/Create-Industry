@@ -1,0 +1,17 @@
+{
+  "name": "クロップサポート",
+  "icon": "pneumaticcraft:crop_support",
+  "category": "pneumaticcraft:semiblocks",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)作物/$のある農地に置くと、その作物の生育速度を向上させることができます。$(item)Crop Support/$によって生育速度が向上すると、$(thing)緑のパーティクル/$が放出されます。$(p)$(link)Crop Support/$を取り除くには、その下のブロックを壊すか、$(l:tools/logistics_configurator)Logistics Configurator/$や他の$(item)Crop Support/$のあるブロックを$(thing)スニーク右クリック/$してください。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Crop Support",
+      "recipe": "pneumaticcraft:crop_support"
+    }
+  ]
+}

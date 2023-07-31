@@ -1,0 +1,42 @@
+{
+  "name": "ドローン",
+  "icon": "pneumaticcraft:drone",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:printed_circuit_board",
+  "pages": [
+    {
+      "type": "text",
+      "text": "ドローンは、プログラム可能な空飛ぶロボットで、様々な自動化に利用することができます。ドローンが何かを行うにはプログラミングが必要で、これには$(l:programming/programmer)プログラマー/$と$(l:programming/puzzle_pieces)パズルのピース/$が必要です。$(p)プログラムされ、$(l:base_concepts/pressure)加圧/$されたドローンを置くと、プログラムされたタスクを実行します。"
+    },
+    {
+      "type": "entity",
+      "entity": "pneumaticcraft:drone",
+      "offset": -0.3
+    },
+    {
+      "type": "text",
+      "anchor": "charging",
+      "title": "自動充電",
+      "text": "ドローンは賢いです。空気が少なくなると、メインのプログラムを停止して、$(ttcolor)$(t:See 'max_drone_charging_station_search_range' in mod config)80ブロック/$より近くにある、$(l:base_concepts/upgrades#dispenser)ディスペンサーアップグレード/$と少なくとも1 barの圧力を持つ$(l:machines/charging_station)チャージングステーション/$を探します。$(p)見つかったら、$(item)ドローン/$はこの$(item)充電ステーション/$に行き、ステーションが空気を供給できなくなるまで充電を続けます。その後、$(item)ドローン/$はメインプログラムを再開します。"
+    },
+    {
+      "type": "text",
+      "title": "オートチャージ（続き）",
+      "text": "マルチプレイヤーサーバーでは、自分の充電ステーションではドローンしか充電できないようにしたいかもしれません。$(item)充電ステーション/$を$(l:machines/security_station)セキュリティステーション/$で覆うことで、充電ステーションをプライベートにすることができます。$(p)この場合、$(item)セキュリティステーション/$にホワイトリストされているプレイヤーによって配置された$(item)ドローン/$のみが充電できるようになります。"
+    },
+    {
+      "type": "text",
+      "text": "$(item)ドローン/$の空気がなくなると、プロペラが停止し、そのまま地面に落下します。注意：$(item)ドローン/$は落下ダメージを受ける可能性があります 破壊されたドローンは、アイテム形態で自身をドロップします。$(p)$(item)染料/$のかけらを使って$(item)ドローンを/$クラフトすることで、ドローンを染めることができます。また、インワールドで$(item)ドローン/$を$(thing)右クリック/$し、$(item)染料/$のかけらを使えば、ドローンを染めることができます。この色付けはあくまで外観上のものですが、ドローンを一目で見分けるのに役立ちます。"
+    },
+    {
+      "type": "text",
+      "title": "デバッギング",
+      "text": "ふむ、なぜ$(item)ドローン/$はあのような行動をとるのだろう？なぜ何もしないんだろう？$(l:base_concepts/upgrades#dispenser)Dispenser/$と$(l:base_concepts/upgrades#entity_tracker)Entity Tracker Upgrades/$をインストールした$(l:armor/pneumatic_helmet)Pneumatic Helmet/$を使って、プログラムをデバッグすることができます。$(item)Drone/$をターゲットにし、$(thing)Entity Tracker/$をアクティブにした状態で、$(thing)$(k:pneumaticcraft.helmet.debugging.drone)/$キーを押します。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Drone",
+      "recipe": "pneumaticcraft:drone"
+    }
+  ]
+}

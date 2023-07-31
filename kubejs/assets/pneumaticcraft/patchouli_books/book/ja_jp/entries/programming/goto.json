@@ -1,0 +1,19 @@
+{
+  "name": "位置情報ウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/goto_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Go to Location/$は非常にわかりやすく、$(l:tools/drone)Drone/$は指定された$(l:programming/area)Area/$内の最も近い到達可能な場所に移動します。$(p)このウィジェットは、$(ttcolor)$(t:ウィジェットがすぐに'完了'するように設定することができます。右クリックで設定GUI)Droneがエリアに到達したとき/$、またはこのエリアが到達可能でないときに実行されます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/goto_piece.png"
+      ],
+      "text": "$(italic)Go To Location Widget/$"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ドローンのコンディション: フルードウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/condition_drone_liquid_piece.png",
+  "category": "pneumaticcraft:widget_cond",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "これは$(l:programming/conditions)コンディション/$ウィジェットです。$(p)$(thing)Droneコンディション: Fluid/$ウィジェットでは、この$(l:tools/drone)Drone/$のタンクに一定量の液体があるかどうかを確認することができます。接続された$(l:programming/liquid_filter)流体フィルタ/$によって許可された流体のみをカウントします（または、フィルタなしで任意の流体をカウントします）。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/condition_drone_liquid_piece.png"
+      ],
+      "text": "$(italic)Drone Condition: Fluid Widget/$"
+    }
+  ]
+}

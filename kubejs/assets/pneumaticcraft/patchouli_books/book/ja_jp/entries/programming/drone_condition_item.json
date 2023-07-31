@@ -1,0 +1,19 @@
+{
+  "name": "ドローンコンディション: アイテムウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/condition_drone_inventory_piece.png",
+  "category": "pneumaticcraft:widget_cond",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Droneコンディション: アイテム/$ウィジェットは、この$(l:tools/drone)Drone/$のインベントリにある特定のアイテムをチェックすることができます。一致するアイテム（接続された$(l:programming/item_filter)アイテムフィルタ/$によって指定、またはフィルタなしですべてのアイテムをカウントする）をすべてカウントアップします。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/condition_drone_inventory_piece.png"
+      ],
+      "text": "$(italic)Drone Condition: Item Widget/$"
+    }
+  ]
+}

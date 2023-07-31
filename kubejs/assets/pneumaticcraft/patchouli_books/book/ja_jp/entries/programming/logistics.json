@@ -1,0 +1,19 @@
+{
+  "name": "ロジスティクスウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/logistics_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "このウィジェットは$(l:tools/drone)Drone/$を$(l:logistics/logistics_drone)Logistics Drone/$のように動作させますが、Logistics Droneの基本機能よりさらに柔軟性を持たせることが可能です。$(li)他のウィジェットと一緒に使用することができます。例えば、$(l:programming/standby)スタンバイ/$ウィジェットでより効率的に空気を使用することができます。$(li)カスタム$(l:programming/area)エリア/$を定義できる（標準のLogistics Droneは、ドローンを中心とした33x33x33のエリアがあり、これは変更できない）"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/logistics_piece.png"
+      ],
+      "text": "$(italic)Logistics Widget/$"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "強化チェスト",
+  "icon": "pneumaticcraft:reinforced_chest",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)強化チェスト/$は、黒曜石レベルの爆風耐性を持ち、壊れてもインベントリを保持する36スロットのチェストです。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Reinforced Chest",
+      "recipe": "pneumaticcraft:reinforced_chest"
+    }
+  ]
+}

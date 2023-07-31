@@ -1,0 +1,53 @@
+
+{
+  "name": "精製機",
+  "icon": "pneumaticcraft:refinery",
+  "category": "pneumaticcraft:manufacturing",
+  "advancement": "pneumaticcraft:oil_bucket",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)精製装置/$は、熱を利用して$(l:base_concepts/oil)石油/$をさまざまな燃料に精製するマルチブロックの機械です。100℃から動き出す。温度が高ければ高いほど、精製速度が速くなる。生産できる燃料は、軽いものから重いものへと分類される。$(li)$(thing)LPG(液化石油ガス)/$$(li)$(thing)ガソリン/$$(li)$(thing)灯油/$$(li)$(thing)ディーゼル/$"
+    },
+    {
+      "type": "text",
+      "text": "$(thing)Refinery/$は、マルチブロック構造になっています。 $(item)Refinery Controller/$を置き、その上か横に$(item)Refinery Output/$を2～4個積みます。$(p)マルチブロックの大きさが異なると、得られる成果も異なります。10mBのオイルを入力とした場合。$(p)$(bold)出力 2/$$(li)$(thing)LPG/$ (2mB)$(li)$(thing)ディーゼル/$ (4mB)$(br)$(bold)出力 3/$$(li)$(thing)LPG/$ (2mB)$(li)$(thing)灯油/$(3mB)$(li)$(thing)ディーゼル/$ (2mB)"
+    },
+    {
+      "type": "text",
+      "text": "$(bold)出力 4/$$(li)$(thing)LPG/$ (2mB)$(li)$(thing)ガソリン/$ (3mB)$(li)$(thing)灯油/$ (3mB)$(li)$(thing)ディーゼル/$(2mB)$(p)最も軽い燃料は常に一番上の$(item)Refinery Output/$に、最も重い燃料は一番下のRefinery Outputに置かれます。既存のスタックに$(item)Refinery Outputs/$を追加した場合、マルチブロックは自動的に既存の出力液体を正しいブロックに並べ替え、システムの稼働を維持するために最善を尽くします。"
+    },
+    {
+      "type": "text",
+      "text": "生産された液体はすべて$(l:compressors/liquid_compressor)液体圧縮機/$の燃料として使用することができます（軽い燃料の方が品質が良い）。$(p)しかし、それ以外にも非常に重要な使い道が2つある。$(li)$(thing)LPG/$は、$(l:components/plastic)液体プラスチック/$の原料として使用されます。$(li)$(thing)ディーゼル/$は$(l:base_concepts/upgrades#speed)スピードアップグレード/$のための$(l:components/lubricant)潤滑油/$に使われる。$(p)この2つの用途に$(l:manufacturing/thermopneumatic_processing_plant)サーモニューマチック・プロセッシング・プラント/$が使用されています。"
+    },
+    {
+      "type": "text",
+      "title": "Comparator Support",
+      "text": "$(item)リファイナリー/$に$(item)コンパレータ/$を取り付けると、付属のコンパレーターは、$(item)精製所/$に仕事があるときは信号強度15を、ないときは0を出力します。精製する$(thing)オイル/$があり、精製された製品を入れるタンクのスペースがある場合、仕事があることになります。$(p)これを利用して、例えば$(l:machines/vortex_tube)ボルテックス・チューブ/$への空気供給を自動停止して、空気を節約することができます。"
+    },
+    {
+      "type": "text",
+      "title": "Setup Tips",
+      "text": "$(item)精製所/$は多くの面が外気にさらされているマルチブロックであるため、断熱が十分でない場合、$(l:base_concepts/heat)熱/$の損失が非常に速くなります。したがって、効率を最大化するために、マルチブロックの使用しない面をすべて覆うことを強く推奨します。$(item)ハーフブロック/$や$(item)トラップドア/$のような半固体ブロックも含め、熱伝導性のないブロックなら何でも使用可能ですが、$(l:machines/thermal_lagging)サーマルラギング/$を特に推奨します。"
+    },
+    {
+      "type": "text",
+      "text": "$(l:machines/vortex_tube)ボルテックスチューブ/$で$(item)Refinery/$を加熱したり、$(item)Refinery/$のブロックの横に高温の液体（Lava...）やブロック（Magma...）を配置することができます。ただし、このような液体やブロックは使い切ってしまう（熱を奪ってしまう）ので、これらの資源の生産と配置を自動化する方法を見つけるとよいでしょう。"
+    },
+    {
+      "type": "link",
+      "flag": "mod:crafttweaker",
+      "title": "CraftTweaker",
+      "text": "$(item)Refinery/$は$(l:https://minecraft.curseforge.com/projects/crafttweaker)CraftTweaker/$をサポートしています。レシピの追加や削除が可能です。詳しくは以下のリンクをご覧ください。",
+      "url": "https://docs.blamejared.com/1.16/en/mods/PneumaticCraft-Repressurized/Refinery",
+      "link_text": "CraftTweaker Docs"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Refinery",
+      "recipe": "pneumaticcraft:refinery",
+      "recipe2": "pneumaticcraft:refinery_output"
+    }
+  ]
+}

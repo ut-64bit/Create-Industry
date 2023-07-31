@@ -1,0 +1,12 @@
+{
+  "name": "タグフィルター",
+  "icon": "pneumaticcraft:tag_filter",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:machines/tag_workbench)タグワークベンチ/$をご覧ください。"
+    }
+  ]
+}

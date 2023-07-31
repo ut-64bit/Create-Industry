@@ -1,0 +1,45 @@
+{
+  "name": "メッシュ",
+  "icon": "compressedcreativity:mesh_splashing",
+  "category": "pneumaticcraft:compressed_creativity",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "工業用エアーブロワーの挙動を変えるために、さまざまな種類の$(item)メッシュ$()を使用することができます。"
+    },
+    {
+      "type": "crafting",
+      "title": "メッシュフレーム",
+      "recipe": "compressedcreativity:crafting/mesh_empty",
+      "text": "$(item)メッシュフレーム$()は、他のメッシュのベースとなります"
+    },
+    {
+      "type": "crafting",
+      "title": "綿密なメッシュ",
+      "recipe": "compressedcreativity:crafting/mesh_dense",
+      "text": "$(item)綿密なメッシュ$()は熱交換を促進します。その結果、熱の排出が早くなりますが、精錬加工には低温（100℃）が必要です。"
+    },
+    {
+      "type": "crafting",
+      "title": "憑りつかれたメッシュ",
+      "recipe": "compressedcreativity:crafting/mesh_haunted",
+      "text": "熱風が$(item)憑りつかれたメッシュ$()を通過すると、憑霊レシピの処理が開始されます。"
+    },
+    {
+      "type": "crafting",
+      "title": "編み込んだメッシュ",
+      "recipe": "compressedcreativity:crafting/mesh_woven",
+      "text": "$(item)編み込んだメッシュ$()は単体ではあまり機能しませんが、水を含ませる事で$(item)水浸しのメッシュ$()になります"
+    },
+    {
+      "type": "spotlight",
+      "title": "水浸しのメッシュ",
+      "item": "compressedcreativity:mesh_splashing",
+      "text": "$(item)水浸しのメッシュ$()が気流を水しぶきに変える！？安定した温度でご使用ください..."
+    }
+  ],
+  "extra_recipe_mappings": {
+    "compressedcreativity:mesh_splashing": 5
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "スマートチェストアップグレードキット",
+  "icon": "pneumaticcraft:smart_chest_kit",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:printed_circuit_board",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)スマートチェストアップグレードキット/$は、木のチェストや$(l:machines/reinforced_chest)強化チェスト/$を、チェストのアイテムはそのままに、その場で$(l:machines/smart_chest)スマートチェスト/$にアップグレードできる便利なキットです。アップグレードキットを有効なチェストに当てて、$(thing)スニーク右クリック/$でアップグレードできます。"
+    },
+    {
+      "type": "text",
+      "text": "$(p)注意:$(item)強化チェスト/$に使用した場合、アイテムドロップとして強化チェストが戻ってきます。$(item)木のチェスト/$に使用した場合、そのチェストをアイテムドロップとして取り戻します。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Smart Chest Upgrade Kit.$(p)なお、スマートチェストは完全に空で未設定である必要があります。",
+      "recipe": "pneumaticcraft:smart_chest_kit"
+    }
+  ]
+}

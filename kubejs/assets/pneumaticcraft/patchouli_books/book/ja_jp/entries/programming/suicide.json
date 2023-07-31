@@ -1,0 +1,19 @@
+{
+  "name": "スーサイドウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/suicide_piece.png",
+  "category": "pneumaticcraft:widget_flow",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)Drone/$は直ちにアイテム形態に変化し、アイテム実体として地上に落下します。もちろん、プログラムの実行は即座に終了します。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/suicide_piece.png"
+      ],
+      "text": "$(italic)That's all, folks/$"
+    }
+  ]
+}

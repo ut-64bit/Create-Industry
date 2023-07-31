@@ -1,0 +1,25 @@
+{
+  "name": "ロジスティクスコア",
+  "icon": "pneumaticcraft:logistics_core",
+  "category": "pneumaticcraft:logistics",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:logistics/overview)ロジスティクス/$-に関連するすべてのアイテムやデバイスのベースとなるクラフト部品です。"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "pneumaticcraft:logistics/frames",
+        "pneumaticcraft:logistics/logistics_drone",
+        "pneumaticcraft:tubes/logistics_module"
+      ]
+    },
+    {
+      "type": "crafting",
+      "text": "ロジスティクスコアの作成",
+      "recipe": "pneumaticcraft:logistics_core"
+    }
+  ]
+}

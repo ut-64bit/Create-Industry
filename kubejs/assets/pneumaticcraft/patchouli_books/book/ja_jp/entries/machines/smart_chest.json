@@ -1,0 +1,32 @@
+{
+  "name": "スマートチェスト",
+  "icon": "pneumaticcraft:smart_chest",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:printed_circuit_board",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)スマートチェスト/$は72スロットのチェストで、弟分の$(l:machines/reinforced_chest)強化チェスト/$と同様に黒曜石レベルの爆発耐性を持ち、壊れても在庫を保持する。しかし、それ以外にも非常に強力な機能を備えている......"
+    },
+    {
+      "type": "text",
+      "title": "スロットフィルタリング",
+      "text": "$(li)アイテムが入っているスロットを$(thing)Alt+左クリック/$すると、Smart Chestはそのアイテムだけを受け入れるようにフィルタリングを開始します。$(li)フィルタリングされたスロットを$(thing)Alt+左クリック/$すると、フィルタリングを解除することができます。$(li)空のスロットを$(thing)Alt+左クリック/$すると、そのスロットとそれ以降のすべてのスロットが閉じられ、インベントリサイズが効果的に縮小されます。$(li)$(thing)Alt+左クリック/$で最初に閉じたスロットをクリックすると、閉じたスロットがすべて再び開かれます。"
+    },
+    {
+      "type": "text",
+      "title": "プッシュ型アイテム",
+      "text": "スマートチェストの各面は、アイテムをプッシュする、アイテムをプルする、または何もしない（デフォルト）を個別に設定することができます。面を設定するには、$(thing)Side Configuration/$GUIタブを開いてください。$(p)アイテムをプッシュするように設定された面は、スマートチェストからその面の隣接するインベントリにアイテムを送信しようとします。$(item)Dispenser Upgrade/$をインストールすると、隣接するインベントリがない場合、チェストはアイテムをワールドに射出します。"
+    },
+    {
+      "type": "text",
+      "title": "プルアイテム",
+      "text": "アイテムを引き出すように設定された面は、その面上の隣接するインベントリからアイテムを引き出そうとします。$(p)$(l:base_concepts/upgrades#magnet)Magnet Upgrade/$をインストールすると、チェストが地面にある近くのアイテムを吸着することができます。これはアイテムを引っ張るように設定された面に対してのみ機能します。デフォルトのピックアップエリアは、引っ張る面に隣接する3x3x3の立方体ですが、$(l:base_concepts/upgrades#range)レンジアップグレード/$で増やすことが可能です。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Smart Chest",
+      "recipe": "pneumaticcraft:smart_chest"
+    }
+  ]
+}

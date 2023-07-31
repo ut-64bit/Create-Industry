@@ -1,0 +1,38 @@
+{
+  "name": "真空ポンプ",
+  "icon": "pneumaticcraft:vacuum_pump",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:pressure_chamber",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)真空ポンプ/$は、真空を作り出すために使用される機械です。このために、機械は$(l:base_concepts/pressure)加圧された空気/$を消費します。$(p)$(item)真空ポンプ/$は、最低使用圧力に達した時点で、$(#0c0)'+'側/$に正圧をかけると排気を開始し、$(#c00)'-'側/$の圧力が最小の -1.0 bar (真空) まで低下します。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/vacuum_pump.png"
+      ]
+    },
+    {
+      "type": "text",
+      "title": "応用例",
+      "text": "負圧(真空)には以下のような使い方があります。$(li)Disenchanting：複数の$(item)エンチャントが施されたアイテム/$や$(item)Enchanted Book/$とバニラの$(item)Book/$を$(l:manufacturing/pressure_chamber)Pressure Chamber/$に置き、十分な負圧を与える。ランダムなエンチャントがアイテムからブックに移される。$(li)$(l:tubes/air_grate_module)Air Grate Module/$は負圧を与えると、それ自体にエンチャントを引き寄せます。"
+    },
+    {
+      "type": "text",
+      "title": "応用例 (続き)",
+      "text": "$(li)$(l:spawning/pressurized_spawner)加圧スポーナー/$の製造・使用に必要な装置である$(l:spawning/vacuum_trap)バキュームトラップ/$と$(l:spawning/spawner_extractor)スポーナーエキストラクター/$は、いずれも負圧が必要です。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Vacuum Pump",
+      "recipe": "pneumaticcraft:vacuum_pump"
+    },
+    {
+      "type": "pneumaticcraft:pressure_chamber",
+      "header": "Vacuum Disenchanting",
+      "recipe": "pneumaticcraft:pressure_chamber/pressure_chamber_disenchanting"
+    }
+  ]
+}

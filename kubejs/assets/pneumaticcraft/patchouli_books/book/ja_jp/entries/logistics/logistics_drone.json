@@ -1,0 +1,32 @@
+{
+  "name": "ロジスティクスドローン",
+  "icon": "pneumaticcraft:logistics_drone",
+  "category": "pneumaticcraft:logistics",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)ロジスティクスドローン/$は、特殊なタイプの$(l:tools/drone)ドローン/$である。プログラマブルではなく、$(italic)ロジスティクスのタスクのみ/$を実行するように制限されているため、下位層の$(thing)ドローン/$である。"
+    },
+    {
+      "type": "spotlight",
+      "title": "Automatic Charging",
+      "item": "pneumaticcraft:charging_station",
+      "text": "他の種類のドローンと同様、これらのドローンは作動するために$(l:base_concepts/pressure)圧力/$を必要とし、空気が少なくなると自動的に$(l:tools/drone#charging)ディスペンサーアップグレードのあるチャージングステーション/$を探します。"
+    },
+    {
+      "type": "entity",
+      "entity": "pneumaticcraft:logistics_drone",
+      "offset": -0.3
+    },
+    {
+      "type": "text",
+      "text": "一度配備された$(item)ロジスティクスドローン/$は、配備されたブロックを中心とした33x33x33立方体の$(l:logistics/frames)ロジスティクスフレーム/$を持つインベントリ/タンクであれば動作するようになる。$(p)これらのドローンは頻繁にアイテムを移動させる必要があるため、移動速度と運搬能力については$(l:base_concepts/upgrades#speed)スピード/$と$(l:base_concepts/upgrades#inventory)インベントリ/$のアップグレードが推奨される。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:logistics_drone",
+      "text": "ロジスティクスドローンの作成"
+    }
+  ]
+}

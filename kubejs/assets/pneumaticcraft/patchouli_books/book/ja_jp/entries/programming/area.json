@@ -1,0 +1,31 @@
+{
+  "name": "エリアウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/area_piece.png",
+  "category": "pneumaticcraft:widget_other",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)エリア/$ウィジェットは、他のウィジェットのパラメータとしてのみ使用され、どのエリア（単一のブロックでもよい）に適用すべきかを指示するために使用されます。このウィジェットを使用するには、$(l:tools/gps_tool)GPSツール/$および/または$(l:tools/gps_area_tool)GPSエリア・ツール/$が必要です。$(p)エリア・ウィジェットをセットアップする一般的な方法は、3つあります。"
+    },
+    {
+      "type": "text",
+      "text": "1. $(l:programming/programmer)Programmer/$ GUI で Area ウィジェットを$(thing)右クリック/$して設定 GUI を開き、そこで設定します。2つの$(thing)GPS/$ボタンでエリアの範囲を設定し（クリックすると別のGUIが開き、インベントリから$(l:tools/gps_tool)GPSツール/$を選択できます）、下のラジオボタンで$(thing)エリアタイプ/$と関連パラメータを選択できます。"
+    },
+    {
+      "type": "text",
+      "text": "2. インワールドで$(l:tools/gps_tool)GPSツール/$または$(l:tools/gps_area_tool)GPSエリアツール/$をセットアップします。$(l:programming/programmer)Programmer/$ GUIでは、以下のことが可能です。$(li)既存の$(thing)Area/$ウィジェット上で$(item)GPS（Area）Tool/$を$(thing)左クリック/$すると、ツールの設定がウィジェットにコピーされる$(li)空のプログラミング・エリア上で$(item)GPSツール/$を$(thing)左クリック/$すると、新しい$(l:programming/coordinate)座標/$ウィジェットが作成されます。$(li)空のプログラミング領域上で$(item)GPSツール/$を$(thing)Shift+左クリック/$し、新しい$(thing)Area/$ウィジェットを作成します。$(li)空のプログラミング領域で$(item)GPS Area Tool/$を$(thing)左クリック/$して、新しい$(thing)Area/$ウィジェットを作成します。"
+    },
+    {
+      "type": "text",
+      "text": "3. 上級者向けオプション：$(l:programming/coordinate_operator)座標オペレータ・ウィジェット/$で作成された$(thing)変数/$を使用することができます。変数が利用できるようにするには、$(l:programming/programmer)プログラマ/$が$(thing)アドバンスト/$モードである必要があります。GPSボタンの横に、ドロップダウン式の選択フィールドが表示されるようになりました。そこで既知の変数名を選択すると、このエリアの対応するコーナーでその変数の位置が使用されます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/area_piece.png"
+      ],
+      "text": "$(italic)Area Widget/$"
+    }
+  ]
+}

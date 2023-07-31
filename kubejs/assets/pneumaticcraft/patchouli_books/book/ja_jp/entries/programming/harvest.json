@@ -1,0 +1,29 @@
+{
+  "name": "ハーベストウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/harvest_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Droneは、指定された$(l:programming/area)エリア/$内で完全に成長した作物や樹木を収穫します。作物ブロックから落ちたアイテムは$(italic)拾えません/$。別の$(l:programming/pickup_item)Pick Up Item/$ウィジェットを追加するか、別の$(item)Drone/$など、アイテムを収集する別の手段を使用します。$(p)オプションの$(l:programming/item_filter)アイテムフィルター/$を接続することで、収穫される作物を制限することができます（フィルターには作物の種を使用します）。"
+    },
+    {
+      "type": "text",
+      "title": "ツール",
+      "text": "$(item)Drone/$に$(item)Hoe/$を$(l:programming/inventory_import)輸入/$させることができます。鍬を装備すると、作物は自動的に植え替えられます(これは鍬の耐久性を使用します)。$(p)ウィジェット設定GUIで$(item)Requires Hoe/$チェックボックスをチェックすることで、$(item)Drone/$がHoeを持っているとき$(italic)だけ/$収穫するように強制できます; Hoeが壊れたとき、Droneは収穫を続ける前に別のものを手に入れることができます。"
+    },
+    {
+      "type": "text",
+      "title": "収穫制限ブロック",
+      "text": "Harvestウィジェットを$(thing)右クリック/$することで、$(thing)Harvest/$アクションの量を指定した量に制限することができます。$(p)例えば1に設定すると、$(item)Drone/$はウィジェットが実行されるたびに1ブロックだけ収穫し、その1ブロックを収穫した後に次のウィジェットに移動します。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/harvest_piece.png"
+      ],
+      "text": "$(italic)Get off my land/$"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "コンディション: プレッシャーウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/condition_pressure_piece.png",
+  "category": "pneumaticcraft:widget_cond",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "これは$(l:programming/conditions)Condition/$ウィジェットです。$(p)$(thing)コンディション: Pressure/$ウィジェットでは、接続された$(l:programming/area)Area/$ウィジェット内の空気圧ブロックの$(l:base_concepts/pressure)圧力/$が、設定された圧力閾値と一致するかどうかを（リモートで）確認することができます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/condition_pressure_piece.png"
+      ],
+      "text": "$(italic)Condition: Pressure Widget/$"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "圧力管",
+  "icon": "pneumaticcraft:pressure_tube",
+  "category": "pneumaticcraft:tubes",
+  "advancement": "pneumaticcraft:root",
+  "priority": "true",
+  "pages": [
+    {
+      "type": "text",
+      "text": "プレッシャーチューブは、コンプレッサーと機械の間で圧縮空気を輸送するための、$(pncr)における主要な装置です。$(p)接続されていないチューブは空気が漏れます! しかし、チューブの側面は、$(l:tools/pneumatic_wrench)Pneumatic Wrench/$を使って右クリックで開閉できます。他のMODのレンチも使えるかもしれません。"
+    },
+    {
+      "type": "image",
+      "title": "チューブ!",
+      "text": "$(italic)$(l:compressors/air_compressor)エアコンプレッサー/$$(italic)と$(l:machines/air_cannon)エアキャノン/$$(italic)を接続する2本の圧力管と$(l:tubes/pressure_gauge_module)圧力計/$",
+      "images": [
+        "pneumaticcraft:textures/patchouli/pressure_tubes.png"
+      ],
+      "border": "true"
+    },
+    {
+      "type": "text",
+      "text": "圧力管には、様々な機能を付加することができる$(l:tubes/tube_modules)チューブモジュール/$を取り付けることができます。詳しくは、各モジュールのページをご覧ください。$(p)$(l:tools/camo_applicator)カモフラージュアプリケーター/$で、圧力管を隠すことができます。"
+    },
+    {
+      "type": "text",
+      "text": "チューブには3つの$(l:base_concepts/pressure_tiers)tier/$があります。$(br)$(li)Tier 1 チューブは5barまでの圧力に対応し、1000mLの空気容量があります。$(li)Tier 1.5（Reinforced）チューブは、10気圧まで対応し、容量も1000mLです。$(li)Tier 2（Advanced）チューブは、最大20barの圧力に対応し、4000mLの空気容量を持つ。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Pressure Tube",
+      "recipe": "pneumaticcraft:pressure_tube"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/reinforced_pressure_tube"
+    },
+    {
+      "anchor": "advanced",
+      "type": "pneumaticcraft:assembly_system",
+      "recipe": "pneumaticcraft:assembly/advanced_pressure_tube"
+    }
+  ]
+}

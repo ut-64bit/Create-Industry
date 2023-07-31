@@ -1,0 +1,37 @@
+{
+  "name": "コレクタードローン",
+  "icon": "pneumaticcraft:collector_drone",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:pressure_chamber",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)コレクタードローン/$はノンプログラミングの特殊なドローンで、インベントリーブロック（チェストなど）の上や横に配置される。近くのアイテムを回収して、インベントリに入れる。"
+    },
+    {
+      "type": "spotlight",
+      "title": "自動充電",
+      "item": "pneumaticcraft:charging_station",
+      "text": "他の種類のドローンと同様、これらのドローンは作動するために$(l:base_concepts/pressure)圧力/$を必要とし、空気が少なくなると自動的に$(l:tools/drone#charging)ディスペンサー・アップグレードのあるチャージング・ステーション/$を探します。"
+    },
+    {
+      "type": "text",
+      "title": "Item Filtering",
+      "text": "$(thing)コレクタードローン/$には、基本的なアイテムフィルタリング機能があります。インベントリーブロックに$(italic)対して/$配置された場合、そのインベントリーに既にあるアイテムに対してフィルタリングを行う。インベントリの$(italic)隣/$の地面に配置された場合（または空のインベントリブロックに配置された場合）、アイテムはフィルタリング$(italic)されない/$。$(p)ドローンのフィルタを変更したい場合は、ドローンをレンチして再展開する必要があります。"
+    },
+    {
+      "type": "text",
+      "text": "$(thing)コレクタードローン/$のデフォルトの射程は、配置したブロックを中心とした17x17x17の立方体である。この範囲は、最大16個の$(l:base_concepts/upgrades#range)レンジアップグレード/$を追加することで拡大することができる。"
+    },
+    {
+      "type": "entity",
+      "entity": "pneumaticcraft:collector_drone",
+      "offset": -0.3
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Collector Drone",
+      "recipe": "pneumaticcraft:collector_drone"
+    }
+  ]
+}

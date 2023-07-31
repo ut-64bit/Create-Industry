@@ -1,0 +1,24 @@
+{
+  "name": "各座標ウィジェットについて",
+  "icon": "pneumaticcraft:textures/progwidgets/for_each_coordinate.png",
+  "category": "pneumaticcraft:widget_flow",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "この高度なウィジェットは、指定された$(l:programming/area)領域/$内のすべての座標をループします。各座標ごとに、$(ttcolor)$(t:ウィジェットを右クリックして、変数を設定する)指定された変数/$にその座標をセットし、接続された$(l:programming/text)テキスト/$ウィジェットにマッチする$(l:programming/label)ラベル/$にジャンプします。このルーチンの実行が終わると（通常は$(l:programming/start)Start/$にジャンプして戻るところ、プログラムの終わりに達すると）、このウィジェットに戻り、次の座標について繰り返します。"
+    },
+    {
+      "type": "text",
+      "title": "ブレイキング",
+      "text": "$(thing)For Each Coordinate/$で使われている座標変数を、現在のワールドのビルド高さの外にあるブロックポに設定することで、ループから抜け出すことができます。次回、プログラムが$(thing)For Each Coordinate/$にジャンプして戻ったとき、このことに気づき、それ以上の座標の走査をキャンセルします。$(p)$(italic)MC 1.18+では、新しいワールドの高さの機能により、この動作が変更されました。(0,0,0)は無効とみなされ、常に怪しかったのですが（void worlds）、今はさらに怪しくなっています。/$"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/for_each_coordinate.png"
+      ],
+      "text": "$(italic)For Each Coordinate Widget/$"
+    }
+  ]
+}

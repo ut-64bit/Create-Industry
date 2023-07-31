@@ -1,0 +1,17 @@
+{
+  "name": "フラックスコンプレッサー",
+  "icon": "pneumaticcraft:flux_compressor",
+  "category": "pneumaticcraft:compressors",
+  "advancement": "pneumaticcraft:advanced_pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)フラックスコンプレッサー/$は$(thing)Forge Energy/$（$(thing)Redstone Flux/$や他の様々なMODのエネルギーシステムと互換性がある）を$(l:base_concepts/pressure)圧縮空気/$に変換する。基本的に40FE/tickを消費するが、$(l:base_concepts/upgrades#speed)スピードアップグレード/$でアップグレードすることができる。$(p)フラックスコンプレッサーは100,000FEの容量を持ち、使用する割合の2倍のFEを受け入れることができる。"
+    },
+    {
+      "type": "crafting",
+      "text": "$(item)フラックスコンプレッサーの製作/$$(p)この発電機は、温度が上がると効率が下がり、空気が全く発生しなくなるため、$(l:base_concepts/heat)冷却/$する必要があります。",
+      "recipe": "pneumaticcraft:flux_compressor"
+    }
+  ]
+}

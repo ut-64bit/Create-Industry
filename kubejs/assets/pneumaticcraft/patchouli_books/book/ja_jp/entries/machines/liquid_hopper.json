@@ -1,0 +1,28 @@
+{
+  "name": "リキッドホッパー",
+  "icon": "pneumaticcraft:liquid_hopper",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)リキッドホッパー/$は、液体を移送するために使用する装置です。$(l:machines/omnidirectional_hopper)全方位ホッパー/$と同様に、入力と出力はどの方向にも向けることができ、配置と回転のルールも同じです。$(l:base_concepts/upgrades#speed)スピードアップグレード/$を追加することで、移送速度を上げることができます。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:liquid_hopper",
+      "text": "また、$(item)リキッドホッパー/$は、$(9)入力/$側の前にある地上のアイテムから液体を排出し、$(6)出力/$側の前にあるアイテムに液体を挿入しようとします。例えば、水バケツ、溶岩バケツ、改造した液体容器などです。"
+    },
+    {
+      "type": "text",
+      "title": "ディスペンサーアップグレード",
+      "flag": "pneumaticcraft:liquidHopperDispenser",
+      "text": "$(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$を$(item)Liquid Hopper/$に挿入すると、$(9)入力/$側で任意の液体ブロック（1000mB）を吸引し、$(6)出力/$側で任意の保存液体を1000mB吐出することができます。これは、例えば水ポンプとして使用することができます。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Liquid Hopper",
+      "recipe": "pneumaticcraft:liquid_hopper"
+    }
+  ]
+}

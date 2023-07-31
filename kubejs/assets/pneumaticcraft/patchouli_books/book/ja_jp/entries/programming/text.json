@@ -1,0 +1,44 @@
+{
+  "name": "テキストウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/text_piece.png",
+  "category": "pneumaticcraft:widget_other",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Text/$ウィジェットは、他のウィジェットのパラメータとしてのみ使用されます。テキスト・データを必要とするウィジェットにテキスト・データを提供するために使用されます。$(p)次のページでは、このウィジェットを使用するウィジェットをリストアップします。"
+    },
+    {
+      "type": "relations",
+      "anchor": "entity_filter",
+      "title": "エンティティフィルタとして",
+      "entries": [
+        "pneumaticcraft:programming/entity_attack",
+        "pneumaticcraft:programming/entity_right_click",
+        "pneumaticcraft:programming/entity_import",
+        "pneumaticcraft:programming/entity_export",
+        "pneumaticcraft:programming/drone_condition_entity"
+      ],
+      "text": "これらのウィジェットの$(italic)左/$側に$(thing)テキスト/$ウィジェットを配置することで、ブラックリストのフィルターを作成することができます。"
+    },
+    {
+      "type": "relations",
+      "title": "その他のウィジェット用",
+      "entries": [
+        "pneumaticcraft:programming/edit_sign",
+        "pneumaticcraft:programming/rename",
+        "pneumaticcraft:programming/jump",
+        "pneumaticcraft:programming/label",
+        "pneumaticcraft:programming/wait",
+        "pneumaticcraft:programming/conditions"
+      ]
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/text_piece.png"
+      ],
+      "text": "$(italic)Text Widget/$"
+    }
+  ]
+}

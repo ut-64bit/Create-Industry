@@ -1,0 +1,25 @@
+{
+  "name": "転送ガジェット",
+  "icon": "pneumaticcraft:transfer_gadget",
+  "category": "pneumaticcraft:semiblocks",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)転送ガジェット/$は、かなり基本的なアイテム／流体転送アイテムです。2つのインベントリやタンクの $(italic)間に配置/$することで、それらの間を転送することができます。配置方法としては、まず1つのインベントリを下に置き、そのブロックの$(item)Transfer Gadget/$のある側を右クリックし、2つ目のインベントリを置くというのがベストです。"
+    },
+    {
+      "type": "text",
+      "text": "トランスファーガジェットは、2色のうちどちらかの色になります。$(li)$(6)オレンジ/$：出力モード$(li)$(9)青/$ - 入力モード$(p)$(6)出力モード/$のガジェットは、配置されたインベントリ/タンクから取り出し、隣のブロックに挿入し、$(9)入力モード/$のガジェットは、その逆を行います。リソースは2秒に1個、100mBの液体が転送されます。"
+    },
+    {
+      "type": "text",
+      "text": "手ぶらで$(item)転送ガジェット/$を$(thing)右クリック/$、または$(l:tools/logistics_configurator)ロジスティクスコンフィギュレータ/$で入力/出力モードを切り替える。$(thing)スニーク+右クリック/$(または左クリック-ヒット)で$(item)Transfer Gadget/$を取り外すことができる。$(p)速度が遅く、レシピも安いので、スペースが限られているようなゲーム序盤のアイテム/流体転送に最適。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Transfer Gadget",
+      "recipe": "pneumaticcraft:transfer_gadget"
+    }
+  ]
+}

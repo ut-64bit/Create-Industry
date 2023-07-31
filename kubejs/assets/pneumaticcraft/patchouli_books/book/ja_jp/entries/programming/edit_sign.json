@@ -1,0 +1,24 @@
+{
+  "name": "エディットサインウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/edit_sign_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "接続された$(l:programming/area)領域/$内のすべての$(item)標識/$や$(l:machines/aphorism_tile)格言のタイル/$を、接続された$(l:programming/text)テキスト/$ウィジェットで指定されたテキストに編集します。$(p)接続された$(thing)テキスト/$ウィジェットはそれぞれ1行を表し、複数の$(thing)テキスト/$ウィジェットを接続することで、複数行のメッセージを設定することができます。"
+    },
+    {
+      "type": "text",
+      "title": "変数",
+      "text": "また、本文中に$(thing)${<var_name>}/$を入れることで、$(l:programming/variables)変数/$の値を挿入することもできます。例;$(p)  $(formula)Counter: ${counter}/$$(p)$(thing)カウンター/$変数がx=1,y=2,z=3に設定されている場合、$(thing)Counter: 1, 2, 3/$と展開されます。$(l:programming/variables#special)特殊変数/$や$(l:programming/variables#global)グローバル変数/$もここで使用することができます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/edit_sign_piece.png"
+      ],
+      "text": "$(italic)Edit Sign Widget/$"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "スタンバイウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/standby_piece.png",
+  "category": "pneumaticcraft:widget_flow",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "このウィジェットを実行すると、$(l:tools/drone)Drone/$はプロペラを停止し、空から落下します。Droneはスタンバイモードでは$(l:base_concepts/pressure)空気/$を使わないので、このウィジェットは空気を節約するために使用することができます。$(p)しかし、$(thing)Drone/$は他のウィジェットを実行し続け、実際の作業をさせるウィジェットを実行すると、Droneは再びプロペラをオンにします。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/standby_piece.png"
+      ],
+      "text": "$(italic)Sleeping Beauty/$"
+    }
+  ]
+}

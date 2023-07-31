@@ -1,0 +1,27 @@
+{
+  "name": "コンディション: アイテムフィルターウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/condition_item.png",
+  "category": "pneumaticcraft:widget_cond",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "これは$(l:programming/conditions)Condition/$ウィジェットです。$(p)$(thing)コンディション: Item Filter/$ウィジェットでは、$(l:programming/item_filter)Item Filter/$を比較することができます。これは主に、Item Filterを$(l:programming/variables)変数/$で使用している場合に便利です。$(p)このウィジェットは、一番上の行、右側に接続された1つの$(l:programming/item_filter)アイテムフィルタ/$ウィジェット内のアイテムを調べ、そのアイテムが2番目の行の$(thing)アイテムフィルタ（複数可）/$で指定されたフィルタと一致するかどうかをチェックします。"
+    },
+    {
+      "type": "text",
+      "text": "通常通り、右側でホワイトリスト（このアイテムはこのフィルターにマッチするはずだという意味）、左側でブラックリスト（このアイテムはこのフィルターに$(italic)マッチしない/$はずだという意味）にする。マッチした場合、条件は$(thing)true/$と評価されます。そうでなければ、その条件は$(thing)false/$と評価される。"
+    },
+    {
+      "type": "text",
+      "text": "チェックする項目を複数追加することができます。2行目の$(l:programming/item_filter)アイテムフィルタ/$を右側に複数つなげることで、すべてのアイテムがフィルタに一致する場合のみ、条件が$(thing)true/$と評価されます。左側に配置された$(l:programming/item_filter)Item Filters/$は、Filterと$(italic)一致しない/$と条件が$(thing)true/$と評価されない。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/condition_item.png"
+      ],
+      "text": "$(italic)Condition: Item Filter Widget/$"
+    }
+  ]
+}

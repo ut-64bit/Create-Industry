@@ -1,0 +1,19 @@
+{
+  "name": "コンディション: Fluid Widget",
+  "icon": "pneumaticcraft:textures/progwidgets/condition_liquid_inventory_piece.png",
+  "category": "pneumaticcraft:widget_cond",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "これは$(l:programming/conditions)Condition/$ウィジェットです。$(p)$(thing)コンディション: Fluid/$ウィジェットでは、接続された$(l:programming/area)Area/$ウィジェット内のタンクまたは液体ブロックを（リモートで）チェックし、一定量の液体を確認することができます。接続された$(l:programming/liquid_filter)流体フィルタ/$ウィジェットで許可された流体のみをカウントします（すべての流体を許可する場合はフィルタを省略します）。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/condition_liquid_inventory_piece.png"
+      ],
+      "text": "$(italic)Condition: Fluid Widget/$"
+    }
+  ]
+}

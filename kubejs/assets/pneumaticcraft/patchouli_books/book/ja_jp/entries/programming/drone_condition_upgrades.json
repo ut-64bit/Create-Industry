@@ -1,0 +1,19 @@
+{
+  "name": "ドローンコンディション: アップグレードウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/condition_drone_upgrades_piece.png",
+  "category": "pneumaticcraft:widget_cond",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Droneコンディション: アップグレード/$ウィジェットでは、この$(l:tools/drone)Drone/$にインストールされたアップグレードの数を確認することができます。チェックするアップグレードアイテムに設定された、1つまたは複数の$(l:programming/item_filter)アイテムフィルタ/$ウィジェットを使用して、チェックするアップグレードを指定します。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/condition_drone_upgrades_piece.png"
+      ],
+      "text": "$(italic)Drone Condition: Upgrades Widget/$"
+    }
+  ]
+}

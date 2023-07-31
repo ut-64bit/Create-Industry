@@ -1,0 +1,17 @@
+{
+  "name": "強化チェストアップグレードキット",
+  "icon": "pneumaticcraft:reinforced_chest_kit",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)強化チェストアップグレードキット/$は、木のチェストをアイテムはそのままに$(l:machines/reinforced_chest)強化チェスト/$にアップグレードすることができる便利なキットです。アップグレードキットを任意の木のチェストに当てて、$(thing)スニーク右クリック/$するだけでアップグレードできます。$(p)注意：アップグレードキットを使用した$(item)木のチェスト/$は、アイテムドロップとして戻ってきます。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Reinforced Chest Upgrade Kit.$(p)注意：強化チェストは完全に空の状態でなければならない。",
+      "recipe": "pneumaticcraft:reinforced_chest_kit"
+    }
+  ]
+}

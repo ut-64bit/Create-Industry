@@ -1,0 +1,23 @@
+{
+  "name": "コンディション: ブロックウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/condition_block_piece.png",
+  "category": "pneumaticcraft:widget_cond",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "これは$(l:programming/conditions)Condition/$ウィジェットです。$(p)$(thing)コンディション: ブロック/$ ウィジェットでは、特定のブロックについて$(l:programming/area)エリア/$をチェックすることができます。これを使えば、例えば、あるエリアに成長した作物が含まれているかどうかをチェックできます。$(l:programming/item_filter)Item Filter/$を装着することで、どのブロックが有効かをフィルタリングすることができます。"
+    },
+    {
+      "type": "text",
+      "text": "ドローンはブロックがシルクタッチ可能かどうかをチェックし、可能な場合はアイテムフィルターがシルクタッチされたブロックと一致するかどうかをチェックします。シルクタッチできない場合は、そのブロックのドロップをフィルターに使用します。$(p)例えば、フィルターを「小麦」に設定すれば、作物が小麦を落とすようになる（＝成長しきった）と同時にフィルターにマッチするようになります。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/condition_block_piece.png"
+      ],
+      "text": "$(italic)Condition: Block Widget/$"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "アイテムアサインメントウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/item_assign_piece.png",
+  "category": "pneumaticcraft:widget_other",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)アイテムアサイン/$ウィジェットは、アイテムを$(l:programming/variables)変数/$に格納することができる高度なウィジェットです。変数には座標と項目がありますが、ここでは後者について説明します。$(p)座標変数に関する情報および変数に関する一般的な説明は、$(l:programming/coordinate_operator)座標演算子/$ウィジェットを参照してください。"
+    },
+    {
+      "type": "text",
+      "text": "指定した$(thing)変数/$にアイテムを格納するには、$(thing)アイテム割り当て/$ウィジェットの$(italic)右/$側に、目的のアイテムが入った$(l:programming/item_filter)アイテムフィルタ/$ウィジェットを配置します。このアイテムは、$(thing)アイテム割り当て/$ウィジェットを$(thing)右クリック/$して指定した変数に割り当てられます。フィルタから転送されるのは実際のアイテムだけで、フィルタ設定は転送されません。$(p)$(thing)アイテムフィルタ/$ウィジェットを省略した場合、ドローンが保持するアイテムが代わりに変数に割り当てられます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/item_assign_piece.png"
+      ],
+      "text": "$(italic)Item Assignment Widget/$"
+    }
+  ]
+}

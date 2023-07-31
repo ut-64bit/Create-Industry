@@ -1,0 +1,26 @@
+{
+  "name": "セーフティモジュール",
+  "icon": "pneumaticcraft:safety_tube_module",
+  "category": "pneumaticcraft:tubes",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "チューブ内の$(l:base_concepts/pressure)圧力/$を一定値に制限し、$(thing)爆発/$を防止するためのチューブモジュールです。余分な圧力は大気中に放出され、$(thing)エネルギーロス/$となります。そのため、このモジュールはレッドストーンを放出してコンプレッサーを停止させることができる$(l:tubes/pressure_gauge_module)圧力計モジュール/$と一緒に使うのがベストです。"
+    },
+    {
+      "type": "text",
+      "text": "$(item)セーフティモジュール/$のデフォルトの閾値は、チューブの危険レベルより0.1bar低い値です。$(li)ベーシック$(item)プレッシャーチューブ/$は 4.9 bar$(li)$(item)アドバンスドプレッシャーチューブ/$は 19.9 bar$(p)これは、閾値の設定にレッドストーン信号が必要だった1.12.2以降に変更されていることに注意してください。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:module_expansion_card",
+      "text": "$(l:tubes/module_expansion_card)モジュール拡張カード/$をセーフティモジュールに適用すると、モジュールにGUI(右クリック)が追加され、スレッショルドレベルをより詳細に制御できるようになります。GUIで正確なスレッショルドを設定するか、$(bold)Advanced Config/$チェックボックスで信号に基づいて補間されたスレッショルドレベルを設定することができます。これは$(l:tubes/pressure_gauge_module#img)圧力計/$のGUIに非常によく似た機能ですが、逆です。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Safety Module",
+      "recipe": "pneumaticcraft:safety_tube_module"
+    }
+  ]
+}

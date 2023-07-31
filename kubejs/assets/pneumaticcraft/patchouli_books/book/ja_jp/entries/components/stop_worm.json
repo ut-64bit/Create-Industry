@@ -1,0 +1,17 @@
+{
+  "name": "STOP! ワーム",
+  "icon": "pneumaticcraft:stop_worm",
+  "category": "pneumaticcraft:components",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:machines/security_station)セキュリティステーション/$をハックする際にのみ使用される特殊な部品です。クラフトはできず、ダンジョンの戦利品か、（まれに）村人との取引でしか手に入りません。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:stop_worm",
+      "text": "ハッキング中に$(thing)STOP! ワーム/$でハッキングをすると、ステーションの$(l:components/network_components#diagnostic)診断サブルーチン/$が一時的に停止し、トレースできなくなります。"
+    }
+  ]
+}

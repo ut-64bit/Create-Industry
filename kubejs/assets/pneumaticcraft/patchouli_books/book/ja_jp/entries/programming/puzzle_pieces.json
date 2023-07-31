@@ -1,0 +1,20 @@
+{
+  "name": "パズルピース",
+  "icon": "pneumaticcraft:textures/progwidgets/start_piece.png",
+  "category": "pneumaticcraft:programming",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)プログラミングパズル/$（$(thing)パズルピース/$）は、$(l:programming/programmer)プログラマー/$で$(l:tools/drone)ドローン/$をプログラムするために使用される物理的なアイテムです。パズルのピースは、$(item)ドローン/$がプログラムされる際に消費されますが、より小さい（または空の）プログラムでドローンを上書きすることで回収することができます。$(p)$(item)プログラマー/$GUIの$(thing)パズルピース/$の仮想的な表現は、$(thing)プログラミング/$ウィジェットと呼ばれます。"
+    },
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)ドローン/$にプログラムを書き込むには、インベントリに$(thing)パズルピース/$があるか、$(item)プログラマー/$に隣接するインベントリに置く必要があります（左右どちらか）。$(p)クリエイティブモードであれば、ピースは必要なく、自由にプログラムを作成できます。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:programming_puzzle"
+    }
+  ]
+}

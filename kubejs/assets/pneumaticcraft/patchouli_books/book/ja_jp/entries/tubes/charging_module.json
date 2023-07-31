@@ -1,0 +1,22 @@
+{
+  "name": "充電モジュール",
+  "icon": "pneumaticcraft:charging_module",
+  "category": "pneumaticcraft:tubes",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "このチューブモジュールは、それが面するインベントリ内の加圧可能なアイテムを充電(または放電)することを可能にします。例えば、空気圧の道具を入れたチェストや、長距離の空気輸送用の$(l:components/air_canister)エアキャニスター/$などです（おそらくエンダーインベントリシステムのようなものを介して）。$(p)また、このモジュールを$(l:machines/aerial_interface)Aerial Interface/$に向けると、プレイヤー自身のインベントリにあるアイテムを充電することができます。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:module_expansion_card",
+      "text": "充電モジュールに$(l:tubes/module_expansion_card)モジュール拡張カード/$を適用すると、モジュールの充電速度が10mL/tick（1項目あたり）から100mL/tick（1項目あたり）に向上します"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Charging Module",
+      "recipe": "pneumaticcraft:charging_module"
+    }
+  ]
+}

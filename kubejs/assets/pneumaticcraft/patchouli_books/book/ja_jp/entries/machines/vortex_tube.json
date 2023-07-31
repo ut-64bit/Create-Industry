@@ -1,0 +1,22 @@
+{
+  "name": "ボルテックスチューブ",
+  "icon": "pneumaticcraft:vortex_tube",
+  "category": "pneumaticcraft:machines",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)ボルテックス・チューブ/$は、$(l:https://en.wikipedia.org/wiki/vortex_tube)現実の物理学/$に基づいた装置です。流れる空気を$(l:base_concepts/heat)高温と低温/$に分け、チューブの片側を温め、反対側を冷やします。高温側と低温側には熱的なつながりがあるので、熱を利用したい場合は低温側を、低温を利用したい場合はその逆を行うのが効率的であることに注意してください。これは、$(l:machines/heat_sink)ヒートシンク/$を使えば可能です。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:vortex_tube",
+      "text": "$(thing)ボルテックスチューブ/$を置いたり、回転させたりすると、ホットエンドが手前に向かいます。それぞれの端には、赤または青の細い帯があり、どちらか一方を示すことに注意してください。$(p)$(thing)ボルテックス・チューブ/$を作動させるためには、加圧された空気が必要です。圧力が高いほど温度差は大きくなりますが、空気の使用量も多くなります。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Vortex Tube",
+      "recipe": "pneumaticcraft:vortex_tube"
+    }
+  ]
+}

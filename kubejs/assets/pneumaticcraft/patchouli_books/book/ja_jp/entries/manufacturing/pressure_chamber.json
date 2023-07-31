@@ -1,0 +1,69 @@
+
+{
+  "name": "圧力チャンバー",
+  "icon": "pneumaticcraft:pressure_chamber_wall",
+  "category": "pneumaticcraft:manufacturing",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)プレッシャーチェンバー/$は、様々な材料を他の材料に圧縮するために使用されるマルチブロック構造です。その大きな空気貯蔵能力により、有用な\"バッテリー\"としても機能します。$(p)マルチブロックの構造については、以下のルールが適用されます。$(li)マルチブロック全体は、3x3x3、4x4x4、または5x5x5の中空構造でなければなりません。"
+    },
+    {
+      "type": "text",
+      "text": "$(li)$(thing)エッジ/$と$(thing)コーナー/$は、$(item)圧力チャンバーウォール/$または$(item)圧力チャンバーガラス/$のいずれかでなければなりません。$(li)$(thing)面/$は、$(item)圧力容器壁/$、$(item)圧力容器ガラス/$、$(item)圧力容器バルブ/$、$(l:manufacturing/pressure_chamber#interface)圧力容器インターフェース/$のいずれかでなければなりません。$(li)$(item)圧力チェンバーバルブ/$は最低1つ必要です。$(li)少なくとも2つの$(item)Pressure Chamber Interfaces/$を推奨します（1つは内側、もう1つは外側を向いている必要があります）。"
+    },
+    {
+      "type": "multiblock",
+      "name": "Pressure Chamber",
+      "multiblock_id": "pneumaticcraft:pressure_chamber_3",
+      "text": "1つの$(item)バルブ/$と2つの$(item)インターフェース/$を持つ、3x3x3の圧力室の一例"
+    },
+    {
+      "type": "multiblock",
+      "name": "Pressure Chamber",
+      "multiblock_id": "pneumaticcraft:pressure_chamber_4",
+      "text": "2つの$(item)バルブ/$と2つの$(item)インターフェイス/$を持つ4x4x4の圧力室の一例"
+    },
+    {
+      "type": "multiblock",
+      "name": "Pressure Chamber",
+      "multiblock_id": "pneumaticcraft:pressure_chamber_5",
+      "text": "4つの$(item)バルブ/$と4つの$(item)インターフェイス/$を持つ5x5x5の圧力室の一例"
+    },
+    {
+      "type": "spotlight",
+      "anchor": "interface",
+      "item": "pneumaticcraft:pressure_chamber_interface",
+      "text": "$(item)圧力チャンバーインターフェース/$は、$(thing)圧力チャンバー/$へのアイテムの挿入と抽出を自動化するために使用されます。アイテムは$(item)ホッパー/$や他のMOD配管システムを通して配管する$(italic)必要/$があります。少なくとも2つのインターフェイスを用意する必要があります。1つは 'I' が外側を向いているもの（$(thing)入力インターフェイス/$）、もう1つは 'O' が外側を向いているもの（$(thing)出力インターフェイス/$）です。"
+    },
+    {
+      "type": "text",
+      "text": "入力モードのインターフェイスは、圧力チャンバーレシピの材料となるアイテムのみを受け入れます。出力モードのインターフェースは、（デフォルトでは）クラフトされたアイテムのみをエクスポートしますが、必要であれば、GUIに$(italic)すべて/$のアイテムのエクスポートを許可するボタンがあります。.$(p)$(italic)この動作は1.12.2以降に変更され、より使いやすくなっています/$。"
+    },
+    {
+      "type": "text",
+      "text": "出力モード $(item)インターフェイス/$は隣接するインベントリに自動で排出されます。他のMODのパイプがインベントリに見えるかどうかで、インベントリに含まれるかどうかが決まります。$(p)転送されるアイテム1つにつき1000mLの$(l:base_concepts/pressure)空気/$が消費される。つまり、フルスタックを転送するには64000mL（3x3x3の基本チャンバーで4気圧）の空気が必要です。もし$(item)Interface/$が'stuck'するようであれば、それは単に圧力が上がるのを待っているのです。"
+    },
+    {
+      "type": "text",
+      "text": "$(bold)Tips/$$(li)$(item)Iron/$を圧縮する場合、$(item)Block of Iron/$を圧縮すると、チャンバーへのアイテムの出し入れに1/9の空気しか使用しないため、圧縮することができます。$(li)大きなチャンバーを素早く加圧する必要がある場合は、バルブを追加すると便利です（必要な空気を生成するのに十分なコンプレッサーがあることが前提です）。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:pressure_chamber_wall",
+      "recipe2": "pneumaticcraft:pressure_chamber_glass"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:pressure_chamber_interface",
+      "recipe2": "pneumaticcraft:pressure_chamber_valve_x1"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:pressure_chamber_valve_x4",
+      "recipe2": "pneumaticcraft:pressure_chamber_valve"
+    }
+  ]
+}
+

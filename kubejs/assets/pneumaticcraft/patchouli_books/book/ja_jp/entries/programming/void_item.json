@@ -1,0 +1,19 @@
+{
+  "name": "ボイドアイテムウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/void_item_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "これはドローンのインベントリ内のアイテムを即座に、そして永久に破壊します。これは$(l:programming/item_filter)アイテムフィルター/$と一緒に使用することを強くお勧めします。フィルターがあれば、フィルターで許可されたアイテムだけが無効になります。$(p)ウィジェットは、$(item)ドローン/$のインベントリに該当するアイテムが1つも残っていないときに実行されます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/void_item_piece.png"
+      ],
+      "text": "$(italic)Didn't want it anyway/$"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "エッチング槽",
+  "icon": "pneumaticcraft:etching_tank",
+  "category": "pneumaticcraft:manufacturing",
+  "advancement": "pneumaticcraft:etchacid_bucket",
+  "pages": [
+    {
+    "type": "text",
+    "text": "まず、$(thing)エッチング槽/$に$(l:manufacturing/etching_acid)エッチング液/$を入れます。その後、$(l:manufacturing/uv_light_box)UVライトボックス/$で部分的または全体的に露光した$(thing)Empty PCB/$を25枚まで挿入します。$(p)Etching Acid を注ぎ、PCB をプールに投入することも可能ですが、Etching Tank を使用する方がより安全で早い方法です。"
+    },
+    {
+      "type": "text",
+      "title": "Automation",
+      "text": "$(thing)Empty PCB/$はどの面でもパイプで入れることができます。エッチングに成功した$(thing)Unassembled PCB/$は右上の出力スロットに、$(thing)失敗したPCB/$は右下のスロットに移動されます。自動抽出の場合、Unassembled PCBはマシンの側面から、Failed PCBは上部または下部から抽出します。Failed PCBを$(thing)Blast Furnace/$に配管して、未露出のEmpty PCBを回収し、プロセスを再開すれば、自動化できます。"
+    },
+    {
+      "type": "text",
+      "title": "Heating",
+      "text": "$(l:base_concepts/heat)熱/$を加えない場合、エッチング槽はPCBを完全にエッチングするのに150秒かかります（もちろん、最大25枚まで並行してエッチングすることが可能です）。また、エッチング槽に熱を加えると、さらに処理時間を短縮することができ、最短で30秒まで短縮することができます。ただし、加熱するとエッチング中に少量のエッチング液が消費されますのでご注意ください。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Etching Tank",
+      "recipe": "pneumaticcraft:etching_tank"
+    }
+  ]
+}

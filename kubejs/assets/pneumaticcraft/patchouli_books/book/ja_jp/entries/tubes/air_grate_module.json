@@ -1,0 +1,36 @@
+{
+  "name": "エアグレートモジュール",
+  "icon": "pneumaticcraft:air_grate_module",
+  "category": "pneumaticcraft:tubes",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "このモジュールは、エンティティを引き寄せたり、反発させたりするために使用されます。$(l:base_concepts/pressure)正圧/$の場合、チューブはエンティティを吹き飛ばし、$(thing)負圧/$の場合、エンティティをチューブの方へ吸い寄せます。負圧は$(l:machines/vacuum_pump)バキュームポンプ/$で実現される。アイテムが十分に近づくと、それらは自動的に隣接するインベントリに挿入されます（Furnacesのような）。"
+    },
+    {
+      "type": "text",
+      "text": "モジュールのレンジは、以下の式で表すことができます。$(p)正圧の場合:$(p)  $(#272)レンジ = 4 x 圧力 (bar)/$$(p)負圧の場合:$(p)  $(#272)範囲 = -16 x 圧力 (bar)/$$(p)例:2気圧の場合、4x2=8ブロックの範囲で反発する。0.5barでは、-16x-0.5=8個のブロックを引き寄せます。"
+    },
+    {
+      "type": "text",
+      "text": "Air Grateは、それが向いている方向の、立方体の領域にあるエンティティにのみ影響を与えます。また、モジュールはエンティティへの視線を持っている必要があります。$(p)モジュールを右クリックすると、数秒間、影響を受ける範囲を表示させることができます。"
+    },
+    {
+      "type": "text",
+      "title": "ヒートシンクの冷却",
+      "anchor": "active_cooling",
+      "text": "エアグレートモジュールは、$(l:machines/heat_sink)ヒートシンク/$を積極的に冷却するために使用することもできます。ヒートシンクが冷却される範囲は、エアグレートの前にある3x3x3の立方体です。この範囲は、モジュールを下に置いたときに可視化されます。$(p)Air Grateは、3ブロック以上の範囲（つまり、0.75bar）にあるときのみ、ヒートシンクを冷却することができます。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:module_expansion_card",
+      "text": "$(l:tubes/module_expansion_card)モジュール拡張カード/$を適用すると、そのモジュールの影響を受けるエンティティを制御できるようになります。$(p)例えば、特定のプレイヤーだけ、クリーパーだけ、アイテムだけが影響を受けるように設定することができます。これは、アップグレードされたモジュールを右クリックしてGUIを開き、$(l:base_concepts/entity_filter)エンティティフィルタ/$を定義することで可能です。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Air Grate Module",
+      "recipe": "pneumaticcraft:air_grate_module"
+    }
+  ]
+}

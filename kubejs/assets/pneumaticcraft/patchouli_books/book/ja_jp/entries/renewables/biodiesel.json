@@ -1,0 +1,17 @@
+{
+  "name": "バイオディーゼル",
+  "icon": "pneumaticcraft:biodiesel_bucket",
+  "category": "pneumaticcraft:renewables",
+  "advancement": "pneumaticcraft:ethanol",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)バイオディーゼル/$は、$(l:renewables/ethanol)エタノール/$と$(l:renewables/vegetable_oil)植物油/$の$(l:manufacturing/fluid_mixer)混合機/$で製造することができる。バイオディーゼルは$(thing)ディーゼル燃料/$と同等の性能を持ち、再生可能エネルギーとして生産されるのが特徴です。$(p)また、バイオディーゼルは、$(thing)熱空気圧処理装置/$で$(l:components/plastic)プラスチック/$や$(l:components/lubricant)潤滑油/$の原料として使用することもできます。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:biodiesel_bucket",
+      "text": "食べ物から燃料？何が気に入らないの？"
+    }
+  ]
+}

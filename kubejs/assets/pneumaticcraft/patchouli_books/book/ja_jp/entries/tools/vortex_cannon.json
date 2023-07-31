@@ -1,0 +1,22 @@
+{
+  "name": "ボルテックスキャノン",
+  "icon": "pneumaticcraft:vortex_cannon",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)ボルテックスキャノン/$は、摩擦が少なく、ほぼ安定した状態で回転する空気 $(thing)ボルテックス/$を噴射する武器です。$(p)敵を撃退したり、動物を突き飛ばしたり、草木を根こそぎ倒したり、実体を切り刻んだりと、好きな対象に向けて噴射することができます。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:vortex_cannon",
+      "text": "$(item)ボルテックスキャノン/$は加圧が高いほどターゲットに与える影響が大きくなり、射程も長くなる。$(p)なお、発射されたボルテックスに自分を巻き込むことも可能で、高速移動の際には非常に有効だ。ただし、落下ダメージの軽減はできないので注意しよう。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Vortex Cannon",
+      "recipe": "pneumaticcraft:vortex_cannon"
+    }
+  ]
+}

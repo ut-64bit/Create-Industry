@@ -1,0 +1,19 @@
+{
+  "name": "ドローンの条件: エンティティウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/condition_drone_entity_piece.png",
+  "category": "pneumaticcraft:widget_cond",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "これは$(l:programming/conditions)コンディション/$ウィジェットです。$(p)$(thing)Droneコンディションです: Entityウィジェット/$は、この$(l:tools/drone)Drone/$が現在運んでいるエンティティをチェックすることができます。オプションの$(l:programming/text)Text/$ウィジェットに$(l:base_concepts/entity_filter)Entity Filter/$を追加して、チェックするエンティティをフィルタリングすることができます。$(thing)Text/$ウィジェットがない場合、$(italic)いずれかの/$エンティティが運ばれていれば、条件はtrueになります。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/condition_drone_entity_piece.png"
+      ],
+      "text": "$(italic)Drone Condition: Entity Widget/$"
+    }
+  ]
+}

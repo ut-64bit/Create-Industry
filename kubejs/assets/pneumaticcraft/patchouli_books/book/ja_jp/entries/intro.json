@@ -2,32 +2,59 @@
   "name": "クリエイティビティを付加する",
   "icon": "create:cogwheel",
   "category": "pneumaticcraft:compressed_creativity",
-  "advancement": "create:its_alive",
+  "advancement": "create:andesite_alloy",
   "priority": "true",
   "pages": [
     {
-      "type": "patchouli:text",
+      "type": "text",
       "text": "$(o)\"空気圧の機械ってカッコイイな！もっとカッコよく出来たら…\"$()と思ったことはありませんか？PneumaticCraftとCreateのセットアップを統合して作成することができます！"
     },
     {
-      "type": "patchouli:spotlight",
+      "type": "spotlight",
       "item": "compressedcreativity:rotational_compressor",
       "text": "$(l:pneumaticcraft:rotational_compressor)回転式コンプレッサー$()は、Createの回転動力を利用して、圧力を生成するコンプレッサーです。"
     },
+	{
+      "type": "spotlight",
+      "item": "create:copper_backtank",
+      "text": "$(l:pneumaticcraft:copper_backtank)銅のバックタンク$()は、アイテムとブロックの両方で空気圧の機能を持つようになり、機能性が向上しました。."
+    },
     {
-      "type": "patchouli:spotlight",
+      "type": "spotlight",
+      "item": "pneumaticcraft:charging_upgrade",
+      "text": "$(l:base_concepts/upgrades#charging)チャージングアップグレード$()に機能追加。$(item)マジックハンド$()や$(item)ポテトキャノン$()などのクリエイトツールに空気を供給することができるようになりました。"
+    },
+    {
+      "type": "spotlight",
       "item": "compressedcreativity:air_blower",
       "text": "$(l:pneumaticcraft:air_blower)エアブロワー$()は、加圧空気を使用して$(item)ケース入りファン$()と同様に、気流を生成する機械です。."
     },
+	{
+      "type": "spotlight",
+      "item": "compressedcreativity:industrial_air_blower",
+      "text": "$(l:pneumaticcraft:industrial_air_blower)工業用エアーブロワー$()は、$(item)エアーブロワー$()に処理速度の向上や、様々な$(l:pneumaticcraft:industrial_air_blower_meshes)メッシュ$()を用いた処理タイプの変更などの機能を追加したバージョンです。"
+    },
     {
-      "type": "patchouli:spotlight",
+      "type": "spotlight",
+      "title": "Meshes",
+      "item": "compressedcreativity:mesh_splashing",
+      "text": "$(l:pneumaticcraft:industrial_air_blower_meshes)メッシュ$()は、工業用エアーブロワーに付加的な機能を提供します。"
+    },
+    {
+      "type": "spotlight",
 	  "item": "compressedcreativity:compressed_air_engine",
       "text": "$(l:pneumaticcraft:compressed_air_engine)圧縮空気エンジン$()は、加圧された空気を利用した動力エンジンです。動いていなくても空気を使うので、十分な圧力があることを確認しましょう！"
     },
     {
-      "type": "patchouli:spotlight",
+      "type": "spotlight",
       "item": "compressedcreativity:mechanical_visor_upgrade",
       "text": "$(l:armor/pneumatic_helmet)空気圧式ヘルメット$()に$(l:pneumaticcraft:mechanical_visor_upgrade)メカニカルバイザーアップグレード$()をインストールすると、エンジニアのゴーグルの機能が得られます。"
+    },
+    {
+      "type": "spotlight",
+      "title": "プラスチックブラケット",
+      "item": "compressedcreativity:orange_plastic_bracket",
+      "text": "$(l:pneumaticcraft:brackets)プラスチックブラケット$()は、シャフト、パイプ、歯車、圧力管などを支えるカラフルなブラケットです！"
     }
   ]
 }

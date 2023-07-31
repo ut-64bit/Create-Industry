@@ -1,0 +1,27 @@
+{
+  "name": "メモリースティック",
+  "icon": "pneumaticcraft:memory_stick",
+  "category": "pneumaticcraft:tools",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)メモリースティック/$は、プレイヤーの経験値を抽出・保存・復元するのに便利な携帯端末です。$(li)$(thing)右クリック/$: 自分の経験値を1レベル分メモリースティックに移動させる。$(li)$(thing)スニーク＋右クリック/$: メモリースティックから自分へ経験値を1レベル移動$(li)$(thing)左クリック/$: XP自動吸収の切り替え。集めたXPオーブは自動的にスティックに吸収されます。"
+    },
+    {
+      "type": "text",
+      "text": "メモリースティックに保存された経験値は、$(l:base_concepts/memory_essence)メモリーエッセンス/$液として抽出することもできます。これを行うには、$(l:machines/tanks)Fluid Tank/$を$(thing)右クリック/$し、XPをタンクへ、またはタンクから転送します（他のMODのFluid Tankでも問題ありません）。空のタンクを右クリックすると、メモリースティックからタンクにメモリーエッセンスを転送しようとし、メモリーエッセンスがあるタンクを右クリックすると、タンクからスティックに転送しようとします。"
+    },
+    {
+      "type": "text",
+      "title": "Curios",
+      "flag": "mod:curios",
+      "text": "$(thing)Curios mod/$をインストールすると、インベントリのスペースを節約するために、メモリースティックを任意のCuriosスロットに格納することができます。特にXP自動吸収をONにしている場合に有効です。"
+    },
+    {
+      "type": "crafting",
+      "text": "Crafting a Memory Stick",
+      "recipe": "pneumaticcraft:memory_stick"
+    }
+  ]
+}

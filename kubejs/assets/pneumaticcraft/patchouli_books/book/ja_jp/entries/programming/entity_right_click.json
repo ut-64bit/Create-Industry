@@ -1,0 +1,19 @@
+{
+  "name": "右クリックエントリウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/entity_right_click_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)ドローン/$は、指定された$(l:programming/area)エリア/$内のすべてのエンティティに対して、最初のインベントリスロットにあるアイテムを1回だけ$(thing)右クリック/$します。これは、羊の毛を刈る、牛の乳を搾る、動物を繁殖させるなど、さまざまな用途に使用できます!$(p)このウィジェットに接続された$(l:programming/area)エリア/$ウィジェットは、エリアタイプが$(thing)ボックス/$でなければならないことに注意してください。これは、サポートされている唯一の形状です。エリアのホワイトリスト/ブラックリストを使用することで、異なる形状を作成することができます。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/entity_right_click_piece.png"
+      ],
+      "text": "$(italic)Poke/$"
+    }
+  ]
+}

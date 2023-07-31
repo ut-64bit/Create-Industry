@@ -1,0 +1,22 @@
+{
+  "name": "ロジスティクスコンフィギュレーター",
+  "icon": "pneumaticcraft:logistics_configurator",
+  "category": "pneumaticcraft:logistics",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)ロジスティックコンフィギュレータ/$の主な目的は、$(l:logistics/overview)ロジスティックシステム/$の設定を支援することです。$(p)$(l:logistics/frames)ロジスティックフレーム/$上で$(thing)右クリック/$することで、様々なフィルターを設定することができます。$(p)$(thing)スニーク右クリック/$すると、そのフレームが装着されているインベントリから削除されます。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:logistics_configurator",
+      "text": "$(item)ロジスティクスコンフィギュレーター/$は、$(l:semiblocks/transfer_gadget)トランスファーガジェット/$や$(l:semiblocks/crop_support)クロップサポート/$など、装着可能な他のガジェットを削除（$(thing)スニーク右クリック/$）するためにも使用することができます。"
+    },
+    {
+      "type": "crafting",
+      "text": "ロジスティクスコンフィギュレーターを作る",
+      "recipe": "pneumaticcraft:logistics_configurator"
+    }
+  ]
+}

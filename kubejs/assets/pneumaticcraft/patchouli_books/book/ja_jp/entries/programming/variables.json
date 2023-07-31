@@ -1,0 +1,79 @@
+{
+  "name": "変数",
+  "icon": "minecraft:paper",
+  "category": "pneumaticcraft:programming",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)変数/$によって、ドローンプログラムはブロックの位置（別名：座標）を保存・操作し、高度なドローン機能を提供することができます。$(p)ドローンプログラム内から変数を作成または操作するには、$(l:programming/coordinate_operator)Coordinate Operator/$と$(l:programming/coordinate)Coordinate/$ウィジェットを使用し、変数に対するテストを実行するには、$(l:programming/condition_coordinate)Condition: Coordinate/$ウィジェットを使用します。"
+    },
+    {
+      "type": "text",
+      "text": "$(l:programming/area)エリア/$ウィジェットでは、GPS座標の代わりに$(thing)変数/$名を使用することができます。$(p)この$(thing)変数/$はワールドのリロード中も保持されるので、例えば、ドローンの掘削位置を$(thing)変数/$で追跡するエンドレス採掘プログラムの作成に使用することができます。$(p)古いチュートリアルですが、$(l:https://www.youtube.com/watch?v=FIjEdD_Yj9Y)MineMaartenによるこのYouTubeビデオ/$をご覧ください。"
+    },
+    {
+      "type": "text",
+      "text": "$(thing)変数/$は座標（X/Y/Zのトリプル）を格納するだけですが、よく考えてみると、$(thing)整数/$や$(thing)ブーリアン/$も扱うことができることに気がつきます。整数の場合は軸を1つだけ使い、論理値の場合は '0' = false, それ以外は = true のように定義すればよいのです。楽しんでください!"
+    },
+    {
+      "type": "text",
+      "title": "アイテム変数",
+      "text": "前のページで、変数には座標しか格納できないと書きました。しかし、それは小さな嘘で、$(thing)アイテム変数/$というものもあり、これは（ご想像のとおり）アイテムの値を格納するものです。これは、$(l:programming/item_assign)Item Assign/$ウィジェットや$(l:programming/for_each_item)For Each Item/$ウィジェットで作成され、$(l:programming/item_filter)Item Filter/$ウィジェットで使用されます。"
+    },
+    {
+      "type": "text",
+      "title": "変数の種類",
+      "text": "変数には3つのタイプがあります。$(li)$(thing)ローカル変数/$: これはドローンごとに保存され、単に'varname'として参照される。$(li)$(thing)グローバル変数/$: これはすべてのドローンに対してグローバルであり、データを共有するために使用することができる。これらは'#varname'または'%varname'として参照される（次のページを参照）。$(li)$(thing)特殊変数/$は、ドローンに関するいくつかのメタデータを取得するために使用することができ、'$varname'として参照される。"
+    },
+    {
+      "type": "text",
+      "anchor": "global",
+      "title": "グローバル変数",
+      "text": "通常の変数は、$(l:tools/drone)Drone/$ごとにユニークで、共有することはできません。しかし、$(thing)グローバル変数/$は$(italic)共有する/$ことができます。これにより、ドローン同士の通信が可能になります。$(p)また、 $(l:tools/gps_tool)GPSツール/$は変数にリンクして変更でき、$(l:machines/universal_sensor)ユニバーサルセンサー/$は変数に基づいて$(#f00)レッドストーン信号/$を発信でき、$(l:tools/remote)リモート/$は変数を表示・変更できます。"
+    },
+    {
+      "type": "text",
+      "title": "グローバル変数（続き）",
+      "text": "$(ttcolor)$(t:PNC:R 3.0.0, MC 1.18.1 で Player-global 変数が追加されました)グローバル変数/$には、(thing)プレイヤーグローバル/$と$(thing)サーバーグローバル/$の2種類があります。$(li)プレイヤーグローバル変数には'#'というプレフィックスが付く。これらはプレイヤーのドローン間で共有されるが、各プレイヤーには非公開である。$(li)サーバーグローバル変数には'%'というプレフィックスが付く。これらの変数はサーバー上の$(italic)全プレイヤー/$で共有されます。$(p)注意：以前のバージョンのMODでは、接頭辞が'#'のサーバーグローバルのみが存在しました。"
+    },
+    {
+      "type": "text",
+      "title": "変数コマンド",
+      "text": "グローバルバリアルを操作するコマンドはいくつか存在します(どのプレイヤーでも使用可能)。$(li)/pncr global_var set <varname> <x> <y> <z>$(li)/pncr global_var set <varname> <item-registry-id>$(li)/pncr global_var get <varname>$(li)/pncr global_var list$(li)/pncr global_var delete <varname>"
+    },
+    {
+      "type": "text",
+      "anchor": "special",
+      "title": "特殊変数",
+      "text": "以下の特殊変数が認識される。$(li)$(thing)$owner_pos/$: $(l:tools/drone)ドローン/$を所有するプレイヤーの（頭の）ブロックポス、または所有者がオフラインの場合は (0,0,0) です。$(li)$(thing)$drone_pos/$: ドローン自身のブロックポス。$(li)$(thing)$player_pos=<name>/$: プレイヤー '<name>' の (先頭) ブロックポス (大文字小文字を区別しない)、または無効またはオフラインのプレイヤー名の場合は (0,0,0) です。"
+    },
+    {
+      "type": "text",
+      "anchor": "special",
+      "title": "特殊変数(続き)",
+      "text": "$(li)$(thing)$owner_look/$: 各軸における所有プレイヤーの向きを表すベクトル; 各値は -1, 0, 1 のいずれかとなります。$(li)$(thing)$controller_pos/$: 制御する$(l:programming/programmable_controller)Programmable Controller/$ブロックのブロックpos、またはドローンがProgrammable Controllerではなく、実際のドローンである場合は (0,0,0) 。"
+    },
+    {
+      "type": "text",
+      "anchor": "special",
+      "title": "特殊変数(続き)",
+      "text": "また、いくつかの古い変数も存在しますが、互換性のために使用可能なままです (ただし、前のページの変数を使用することが推奨されます)。$(li)$(thing)$owner/$: $(thing)$owner_pos/$のエイリアスです。$(li)$(thing)$drone/$: 歴史的な理由により、ドローンの$(italic)上の/$ブロックポスを取得します。$(li)$(thing)$player=<name>/$: $(thing)$player_pos/$のエイリアスです。"
+    },
+    {
+      "type": "text",
+      "title": "デバッギング",
+      "text": "デバッグのために、変数の値を表示することが便利な場合があります。変数の値を表示するには、いくつかの方法があります。$(li)$(l:programming/rename)名前の変更/$ウィジェットで、変数をドローンのネームプレートとして表示する$(li)$(l:programming/edit_sign)Edit Sign/$ウィジェットでテキストを書き込む。$(li)$(l:tools/remote)Remote/$で$(l:tools/remote#label)ラベル/$を使用する。"
+    },
+    {
+      "type": "text",
+      "title": "デバッグ(続き)",
+      "text": "上記の方法で表示されるテキストに変数を挿入するには、$(thing)${varname}/$という構文を使用します。$(p)ドローンの位置を補間する場合は$(thing)${$drone_pos}/$を、グローバル変数を補間する場合は$(thing)${#globalvarname}/$または$(thing)${%globalvarname}/$を使用するように、特殊変数とグローバル変数の接頭辞はここでも適用されることに注意してください。"
+    },
+    {
+      "type": "text",
+      "title": "デバッグ(続き)",
+      "text": "変数名のサフィックスをそれぞれ $(thing).x/$, $(thing).y/$, $(thing).z/$にすれば、座標の X, Y, Z 成分のみを表示することもできます。例：ドローンのオーナーのY座標を表示するには、$(thing)${$owner_pos.y}/$を使用します。$(p)変数が $(thing)アイテム変数/$の場合、サフィックスの$(thing).id/$は表示名（デフォルト）ではなく、アイテムのレジストリIDを取得します。これは特に$(l:machines/aphorism_tile#items)Aphorism Tile/$にアイテムを表示するときに便利です。"
+    }
+  ]
+}

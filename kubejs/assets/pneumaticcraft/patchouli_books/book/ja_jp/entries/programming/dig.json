@@ -1,0 +1,34 @@
+{
+  "name": "ディグウィジェット",
+  "icon": "pneumaticcraft:textures/progwidgets/dig_piece.png",
+  "category": "pneumaticcraft:widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)ドローン/$は、指定された$(l:programming/area)エリア/$内のブロックを掘る／採掘します。ブロックから落下したアイテムは、$(item)Drone/$に拾われません。ブロックが掘られる順番は、$(l:programming/place)Place/$ウィジェットに似ています。また、$(thing)Place/$ウィジェットと同様に、エリアをレイヤーごとに（上から下、または下から上）掘るかどうかをコントロールすることができます。"
+    },
+    {
+      "type": "text",
+      "title": "ツールの使用",
+      "text": "$(item)Drone/$にツルハシ/シャベル/などを$(l:programming/inventory_import)インポート/$させることができます。をインポートして、その道具を使わせることができます。$(item)Drone/$が複数のツールを持ち歩いている場合、掘られるブロックに最も適したツールが自動的に使用されます。$(p)$(thing)Requires digging tool/$チェックボックスをオンにすることで、Droneが道具なしで掘ろうとするのを防ぐことができます（これは本当に遅いです）。"
+    },
+    {
+      "type": "text",
+      "title": "ディグカウントを制限する",
+      "text": "GUIの$(thing)Limit block interactions/$チェックボックスをチェックし、制限を設定することで、掘るアクションの量を指定した数に制限することができます。例えば、1に設定すると、$(item)Drone/$はプログラム内の次のウィジェットに移動する前に、（エリア内にいくつのブロックがあるかに関係なく）1つのブロックだけを掘るようになります。これは、数ブロックだけ掘って、道具の耐久性をチェックし、壊れる前に修理するのに使うことができます。"
+    },
+    {
+      "type": "text",
+      "title": "フィルタリングブロック",
+      "text": "最後に、$(l:programming/item_filter)アイテムフィルター/$を使って、採掘できるブロックを指定することができます。$(p)作物のようなブロックで使用する場合、作物を壊したときに得られるアイテムでフィルタリングします（$(item)小麦/$の作物なら$(item)Seeds/$）。ただし、Silk Touchを使用してもアイテムを$(italic)落とさない/$ブロックは例外で、フィルター設定GUIに特定の$(thing)Match by block/$オプションが存在します。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/dig_piece.png"
+      ],
+      "text": "$(italic)Hi ho/$"
+    }
+  ]
+}
