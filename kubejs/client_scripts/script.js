@@ -45,7 +45,6 @@ onEvent(`jei.hide.items`, event => {
 	}
 	hideTool(`wooden`)
 	hideTool(`stone`)
-	//hideTool(`immersiveengineering:steel`)
 
 	// tconstruct
 	const hideCastTypes = [`plate`, `wire`]
