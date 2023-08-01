@@ -84,13 +84,3 @@ onEvent('recipes', event => {
 	// compat
 	event.remove({ id: /tconstruct:compat\/.+/ })
 })
-
-onEvent('item.tags', event => {
-})
-
-onEvent("lootjs", event => {
-})
-
-onEvent('entity.loot_tables', event => {
-
-})

@@ -33,6 +33,3 @@ onEvent('item.registry', event => {
 
 	event.create('blaze_core')
 })
-
-onEvent('item.modification', event => {
-})

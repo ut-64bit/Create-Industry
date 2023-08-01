@@ -166,9 +166,6 @@ if (Item.exists('toms_storage:ts.storage_terminal')) {
 		}).id('kubejs:toms_storage/crafting/trim')
 	})
 
-	onEvent("lootjs", event => {
-	})
-
 	onEvent('server.datapack.first', event => {
 		event.addJson('create:advancements/crafting_terminal', {
 			"parent": "create:storage_terminal",

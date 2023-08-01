@@ -122,7 +122,3 @@ onEvent('recipes', event => {
     }).id('kubejs:crafting/wirecoil_redstone')
     // #endregion
 })
-
-onEvent("lootjs", event => {
-
-})

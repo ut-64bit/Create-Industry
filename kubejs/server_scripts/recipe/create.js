@@ -133,6 +133,3 @@ onEvent('recipes', event => {
 		p: '#forge:rods/iron'
 	}).id('create:crafting/kinetics/whisk')
 })
-
-onEvent('item.tags', event => {
-})
