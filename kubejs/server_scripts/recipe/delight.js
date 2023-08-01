@@ -1,6 +1,8 @@
 // priority: 1
 
 onEvent('recipes', event => {
+	const { create, immersiveengineering } = event.recipes;
+
 	// 一部を除いたナイフのレシピを削除
 	event.remove({ id: 'delightful:knives/silver_knife' })
 	event.remove({ id: 'delightful:knives/copper_knife' })
@@ -55,7 +57,7 @@ onEvent('recipes', event => {
 		H: Item.of('tconstruct:small_blade', '{Material:"tconstruct:copper"}'),
 		S: '#forge:rods/wooden'
 	}).id('kubejs:crafting/copper_knife')
-	event.recipes.create.filling(Item.of('farmersdelight:diamond_knife'), ['#farmersdelight:tools/knives', Fluid.of(TC('molten_diamond'), 100)])
+	create.filling(Item.of('farmersdelight:diamond_knife'), ['#farmersdelight:tools/knives', Fluid.of(TC('molten_diamond'), 100)])
 		.id('kubejs:filling/diamond_knife')
 	// #endregion
 

@@ -4,7 +4,8 @@
 
 onEvent('recipes', event => {
 	// #region func
-	const { sequencedAssembly, deploying, filling, mechanicalCrafting, compacting, mixing, emptying, haunting, pressing } = event.recipes.create;
+	const { create, immersiveengineering } = event.recipes;
+
 	let item_application = (output, inputBlock, inputItem) => {
 		event.custom({
 			type: 'create:item_application',
@@ -29,28 +30,28 @@ onEvent('recipes', event => {
 	item_application('tconstruct:crafting_station', 'minecraft:crafting_table', 'tconstruct:pattern')
 
 	// 燃え盛る血液のレシピを追加
-	mixing(Fluid.of('tconstruct:blazing_blood', 200), 'kubejs:blaze_core')
+	create.mixing(Fluid.of('tconstruct:blazing_blood', 200), 'kubejs:blaze_core')
 		.superheated()
 		.id('kubejs:tconstruct/mixing/blazing_blood_from_blaze_core')
 
 	// グラウトのレシピを変更
 	event.remove({ id: 'tconstruct:smeltery/seared/grout_multiple' })
 	event.remove({ id: 'tconstruct:smeltery/seared/grout' })
-	mixing(
+	create.mixing(
 		['2x tconstruct:grout', Item.of('tconstruct:grout').withChance(0.5)],
 		['clay_ball', '#sand', 'gravel']
 	).id('kubejs:tconstruct/mixing/grout')
 
 	// ネザーグラウトのレシピを変更
 	event.remove({ id: 'tconstruct:smeltery/scorched/nether_grout' })
-	mixing(
+	create.mixing(
 		['2x tconstruct:nether_grout', Item.of('tconstruct:nether_grout').withChance(0.5)],
 		['magma_cream', '#minecraft:soul_fire_base_blocks', 'gravel']
 	).heated().id('kubejs:tconstruct/mixing/nether_grout')
 
 	// smeltery_controller
 	event.remove({ id: 'tconstruct:smeltery/casting/seared/smeltery_controller' })
-	mechanicalCrafting('tconstruct:smeltery_controller',
+	create.mechanicalCrafting('tconstruct:smeltery_controller',
 		[
 			'bsb',
 			'sBs',
@@ -65,7 +66,7 @@ onEvent('recipes', event => {
 	// foundry_controller
 	/*
 	event.remove({ id: 'tconstruct:smeltery/casting/scorched/foundry_controller' })
-	mechanicalCrafting('tconstruct:foundry_controller',
+	create.mechanicalCrafting('tconstruct:foundry_controller',
 		[
 			'bbbbb',
 			'bsssb',

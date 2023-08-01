@@ -9,7 +9,8 @@ let inter
 
 onEvent('recipes', event => {
     // #region func
-    const { sequencedAssembly, deploying, filling, mechanicalCrafting, compacting, mixing, emptying, haunting, pressing } = event.recipes.create;
+    const { create, immersiveengineering } = event.recipes;
+
     let item_application = (output, inputBlock, inputItem) => {
         event.custom({
             type: 'create:item_application',
@@ -33,12 +34,12 @@ onEvent('recipes', event => {
     // electron_tube
     event.remove({ id: 'immersiveengineering:blueprint/electron_tube' })
     inter = 'immersiveengineering:incomplete_electron_tube'
-    sequencedAssembly('immersiveengineering:electron_tube', '#forge:plates/nickel', [
-        deploying(inter, [inter, '#forge:wires/copper']),
-        deploying(inter, [inter, '#forge:wires/copper']),
-        deploying(inter, [inter, 'redstone']),
-        filling(inter, [inter, Fluid.of('tconstruct:molten_glass', 250)])
-    ]).transitionalItem(inter).loops(1)
+    create.sequencedAssembly('immersiveengineering:electron_tube', '#forge:plates/nickel', [
+        create.deploying(inter, [inter, '#forge:wires/copper']),
+        create.deploying(inter, [inter, '#forge:wires/copper']),
+        create.deploying(inter, [inter, 'redstone']),
+        create.filling(inter, [inter, Fluid.of('tconstruct:molten_glass', 250)])
+    ]).transitionalItem(inter).loops(1).id('kubejs:sequenced_assembly/electron_tube')
 
     // dynamo
     event.remove({ id: 'immersiveengineering:crafting/dynamo' })
@@ -54,7 +55,7 @@ onEvent('recipes', event => {
     }).id('kubejs:crafting/dynamo')
 
     // blastbrick_reinforced
-    mechanicalCrafting(Item.of(IE('blastbrick_reinforced'), 3), [
+    create.mechanicalCrafting(Item.of(IE('blastbrick_reinforced'), 3), [
         ' ppp ',
         'pcscp',
         'psbsp',
@@ -94,14 +95,14 @@ onEvent('recipes', event => {
         a: '#forge:wires/aluminum',
         S: 'createaddition:spool'
     }).id('kubejs:crafting/wirecoil_steel'),
-    event.shaped('immersiveengineering:wirecoil_structure_rope', [
-        ' w ',
-        'wsw',
-        ' w '
-    ], {
-        w: 'farmersdelight:rope',
-        s: 'createaddition:spool'
-    }).id('kubejs:crafting/wirecoil_structure_rope')
+        event.shaped('immersiveengineering:wirecoil_structure_rope', [
+            ' w ',
+            'wsw',
+            ' w '
+        ], {
+            w: 'farmersdelight:rope',
+            s: 'createaddition:spool'
+        }).id('kubejs:crafting/wirecoil_structure_rope')
     event.shaped('immersiveengineering:wirecoil_structure_steel', [
         ' w ',
         'wsw',

@@ -4,7 +4,7 @@
 
 onEvent('recipes', event => {
 	// #region func
-	const { sequencedAssembly, deploying, filling, mechanicalCrafting, compacting, mixing, emptying, haunting, pressing } = event.recipes.create;
+	const { create, immersiveengineering } = event.recipes;
 	let item_application = (output, inputBlock, inputItem) => {
 		event.custom({
 			type: 'create:item_application',
@@ -21,7 +21,7 @@ onEvent('recipes', event => {
 
 	// ダイヤの粉
 	event.remove({ id: 'createaddition:crushing/diamond' })
-	event.recipes.immersiveengineering.crusher('createaddition:diamond_grit', 'diamond')
+	immersiveengineering.crusher('createaddition:diamond_grit', 'diamond')
 		.id('kubejs:crusher/diamond_dust')
 
 	// heavy_plate
@@ -29,24 +29,24 @@ onEvent('recipes', event => {
 
 	// steam_engine
 	inter = 'create:incomplete_steam_engine'
-	sequencedAssembly('create:steam_engine', '#forge:plates/copper', [
-		deploying(inter, [inter, 'create:propeller']),
-		deploying(inter, [inter, 'create:cogwheel']),
-		deploying(inter, [inter, '#forge:nuggets/copper'])
+	create.sequencedAssembly('create:steam_engine', '#forge:plates/copper', [
+		create.deploying(inter, [inter, 'create:propeller']),
+		create.deploying(inter, [inter, 'create:cogwheel']),
+		create.deploying(inter, [inter, '#forge:nuggets/copper'])
 	]).transitionalItem(inter).loops(3).id('kubejs:sequenced_assembly/steam_engine')
 
 	// electric_engine
 	inter = 'create:incomplete_electric_engine'
-	sequencedAssembly('create:electric_engine', '#forge:plates/brass', [
-		deploying(inter, [inter, '#forge:nuggets/steel']),
-		deploying(inter, [inter, 'createaddition:copper_spool']),
-		deploying(inter, [inter, 'create:shaft']),
-		deploying(inter, [inter, '#forge:nuggets/brass'])
+	create.sequencedAssembly('create:electric_engine', '#forge:plates/brass', [
+		create.deploying(inter, [inter, '#forge:nuggets/steel']),
+		create.deploying(inter, [inter, 'createaddition:copper_spool']),
+		create.deploying(inter, [inter, 'create:shaft']),
+		create.deploying(inter, [inter, '#forge:nuggets/brass'])
 	]).transitionalItem(inter).loops(3).id('kubejs:sequenced_assembly/electric_engine')
 
 	// electric_motor
 	event.remove({ id: 'createaddition:mechanical_crafting/electric_motor' })
-	mechanicalCrafting('createaddition:electric_motor', [
+	create.mechanicalCrafting('createaddition:electric_motor', [
 		'  A  ',
 		' BEB ',
 		'BSRSB',
@@ -62,7 +62,7 @@ onEvent('recipes', event => {
 
 	// alternator
 	event.remove({ id: 'createaddition:mechanical_crafting/alternator' })
-	mechanicalCrafting('createaddition:alternator', [
+	create.mechanicalCrafting('createaddition:alternator', [
 		'  A  ',
 		' IEI ',
 		'ISRSI',
@@ -94,15 +94,15 @@ onEvent('recipes', event => {
 	{
 		let melt = (output, item, gem) => {
 			if (gem) {
-				compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 100))
+				create.compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 100))
 					.id(`kubejs:compacting/${output}_from_molten_${item}`)
-				mixing(Fluid.of(TC(`molten_${item}`), 100), `#forge:gems/${item}`)
+				create.mixing(Fluid.of(TC(`molten_${item}`), 100), `#forge:gems/${item}`)
 					.superheated()
 					.id(`kubejs:mixing/molten_${item}`)
 			} else {
-				compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 90))
+				create.compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 90))
 					.id(`kubejs:compacting/${output}_from_molten_${item}`)
-				mixing(Fluid.of(TC(`molten_${item}`), 90), `#forge:ingots/${item}`)
+				create.mixing(Fluid.of(TC(`molten_${item}`), 90), `#forge:ingots/${item}`)
 					.heated()
 					.id(`kubejs:mixing/molten_${item}`)
 			}
@@ -117,9 +117,9 @@ onEvent('recipes', event => {
 	}
 
 	// 雑多なレシピを追加
-	emptying(['obsidian', Fluid.of('lava', 250)], 'magma_block')
+	create.emptying(['obsidian', Fluid.of('lava', 250)], 'magma_block')
 		.id('kubejs:emptying/magma_block')
-	haunting('netherrack', 'clay')
+	create.haunting('netherrack', 'clay')
 		.id('kubejs:haunting/netherrack')
 
 	// 置き換え
