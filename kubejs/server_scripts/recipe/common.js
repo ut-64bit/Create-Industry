@@ -9,7 +9,9 @@ settings.logErroringRecipes = true
 const TC = (id) => `tconstruct:${id}`
 const IE = (id) => `immersiveengineering:${id}`
 
-// #region const
+/**
+ * @type {Special.Item[]}
+ */
 const deleteItems = [
 	'oldguns:iron_with_coal',
 	'toms_storage:ts.adv_wireless_terminal',
@@ -32,11 +34,16 @@ const deleteItems = [
 const MetalMaterials = ['aluminum', 'amethyst_bronze', 'brass', 'bronze', 'cobalt', 'constantan', 'copper', 'electrum', 'emerald', 'enderium', 'gold', 'hepatizon', 'inlet', 'iron', 'knightslime', 'lead', 'lumium', 'manyullyn', 'molten_debris', 'netherite', 'nickel', 'osmium', 'pewter', 'pig_iron', 'platinum', 'queens_slime', 'refined_glowstone', 'refined_obsidian', 'rose_gold', 'signalum', 'silver', 'slimesteel', 'soulsteel', 'steel', 'tin', 'tungsten', 'uranium', 'zinc']
 const colors = ['black', 'blue', 'brown', 'cyan', 'gray', 'green', 'light_blue', 'light_gray', 'lime', 'magenta', 'orange', 'pink', 'purple', 'red', 'white', 'yellow']
 const woods = ['oak', 'dark_oak', 'spruce', 'birch', 'jungle', 'acacia', 'crimson', 'warped']
-// #endregion
 
 onEvent('recipes', event => {
 	// #region func
 	const { create, immersiveengineering } = event.recipes;
+
+	/**
+	 * @param {Internal.ItemStack_} output
+	 * @param {Internal.Ingredient_} inputBlock
+	 * @param {Internal.Ingredient_} inputItem
+	 */
 	let item_application = (output, inputBlock, inputItem) => {
 		event.custom({
 			type: 'create:item_application',
