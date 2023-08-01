@@ -211,7 +211,7 @@ onEvent('recipes', event => {
 	// oldguns
 	// 銃器用鋼鉄のレシピを変更
 	event.remove({ output: 'oldguns:steel_ingot' })
-	let inter = 'oldguns:unprocessed_steel_ingot'
+	let inter = 'kjs.oldguns:unprocessed_steel_ingot'
 	create.sequencedAssembly('oldguns:steel_ingot', '#forge:ingots/steel', [
 		create.filling(inter, [inter, Fluid.of('lava', 500)]),
 		create.pressing(inter, inter),

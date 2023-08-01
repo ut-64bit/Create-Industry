@@ -28,16 +28,16 @@ onEvent('recipes', event => {
 	event.replaceInput({ id: 'createindustry:sequenced_assembly/heavy_plate' }, '#forge:ingots/steel', '#forge:plates/steel')
 
 	// steam_engine
-	inter = 'create:incomplete_steam_engine'
-	create.sequencedAssembly('create:steam_engine', '#forge:plates/copper', [
+	inter = 'kjs.create:incomplete_steam_engine'
+	create.sequencedAssembly('kjs.create:steam_engine', '#forge:plates/copper', [
 		create.deploying(inter, [inter, 'create:propeller']),
 		create.deploying(inter, [inter, 'create:cogwheel']),
 		create.deploying(inter, [inter, '#forge:nuggets/copper'])
 	]).transitionalItem(inter).loops(3).id('kubejs:sequenced_assembly/steam_engine')
 
 	// electric_engine
-	inter = 'create:incomplete_electric_engine'
-	create.sequencedAssembly('create:electric_engine', '#forge:plates/brass', [
+	inter = 'kjs.create:incomplete_electric_engine'
+	create.sequencedAssembly('kjs.create:electric_engine', '#forge:plates/brass', [
 		create.deploying(inter, [inter, '#forge:nuggets/steel']),
 		create.deploying(inter, [inter, 'createaddition:copper_spool']),
 		create.deploying(inter, [inter, 'create:shaft']),
@@ -54,7 +54,7 @@ onEvent('recipes', event => {
 	], {
 		A: 'create:andesite_alloy',
 		B: '#forge:plates/brass',
-		E: 'create:electric_engine',
+		E: 'kjs.create:electric_engine',
 		S: 'createaddition:copper_spool',
 		R: '#forge:rods/iron',
 		C: 'createaddition:capacitor'
@@ -70,7 +70,7 @@ onEvent('recipes', event => {
 	], {
 		A: 'create:andesite_alloy',
 		I: '#forge:plates/iron',
-		E: 'create:electric_engine',
+		E: 'kjs.create:electric_engine',
 		S: 'createaddition:copper_spool',
 		R: '#forge:rods/iron',
 		C: 'createaddition:capacitor'

@@ -33,7 +33,7 @@ onEvent('recipes', event => {
 
     // electron_tube
     event.remove({ id: 'immersiveengineering:blueprint/electron_tube' })
-    inter = 'immersiveengineering:incomplete_electron_tube'
+    inter = 'kjs.immersiveengineering:incomplete_electron_tube'
     create.sequencedAssembly('immersiveengineering:electron_tube', '#forge:plates/nickel', [
         create.deploying(inter, [inter, '#forge:wires/copper']),
         create.deploying(inter, [inter, '#forge:wires/copper']),
@@ -49,7 +49,7 @@ onEvent('recipes', event => {
         'sss'
     ], {
         s: '#forge:ingots/steel',
-        e: 'create:electric_engine',
+        e: 'kjs.create:electric_engine',
         r: '#forge:dusts/redstone',
         l: IE('coil_lv'),
     }).id('kubejs:crafting/dynamo')

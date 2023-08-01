@@ -20,7 +20,7 @@ if (Item.exists('armor_trims:netherite_upgrade_smithing_template')) {
 
 		// func
 		let trim = (base, trim) => {
-			let inter = `armor_trims:incomplete_${trim}_armor_trim_smithing_template`
+			let inter = `kjs.armor_trims:incomplete_${trim}_armor_trim_smithing_template`
 			create.sequencedAssembly(`armor_trims:${trim}_armor_trim_smithing_template`, `${base}`, [
 				create.deploying(inter, [inter, `armor_trims:${trim}_armor_trim_smithing_template`]).keepHeldItem(),
 				create.pressing(inter, inter),
@@ -31,7 +31,7 @@ if (Item.exists('armor_trims:netherite_upgrade_smithing_template')) {
 		}
 
 		// netherite_upgrade
-		let trans = 'armor_trims:incomplete_netherite_upgrade_smithing_template'
+		let trans = 'kjs.armor_trims:incomplete_netherite_upgrade_smithing_template'
 		create.sequencedAssembly('armor_trims:netherite_upgrade_smithing_template', 'netherrack', [
 			create.deploying(trans, [trans, 'armor_trims:netherite_upgrade_smithing_template']).keepHeldItem(),
 			create.pressing(trans, trans),
