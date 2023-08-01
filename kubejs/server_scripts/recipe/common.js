@@ -213,10 +213,9 @@ onEvent('recipes', event => {
 	event.remove({ output: 'oldguns:steel_ingot' })
 	let inter = 'kjs.oldguns:unprocessed_steel_ingot'
 	create.sequencedAssembly('oldguns:steel_ingot', '#forge:ingots/steel', [
-		create.filling(inter, [inter, Fluid.of('lava', 500)]),
+		create.filling(inter, [inter, Fluid.of('lava', 200)]),
 		create.pressing(inter, inter),
 		create.pressing(inter, inter),
-		create.filling(inter, [inter, Fluid.of('water', 500)]),
 	]).transitionalItem(inter).loops(1).id('kubejs:sequenced_assembly/steel_ingot')
 
 	// misc
