@@ -7,7 +7,7 @@
 if (Item.exists('toms_storage:ts.storage_terminal')) {
 	onEvent('recipes', event => {
 		// #region func
-		const { create,immersiveengineering } = event.recipes;
+		const { create, immersiveengineering } = event.recipes;
 		let item_application = (output, inputBlock, inputItem) => {
 			event.custom({
 				type: 'create:item_application',
