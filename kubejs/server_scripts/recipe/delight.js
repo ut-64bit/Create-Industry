@@ -93,6 +93,9 @@ onEvent("recipes", event => {
 	}).id("farmersdelight:cooking_pot")
 })
 
-onEvent("item.entity_interation", event => {
-	Utils.server.tell( event.getTarget() )
+onEvent("item.entity_interact", event => {
+	if (event.target.type != "minecraft:cow" || event.item.id != "minecraft:glass_bottle") return
+	event.item.count--
+	event.player.giveInHand("farmersdelight:milk_bottle")
+	event.target.playSound("entity.cow.milk")
 })
