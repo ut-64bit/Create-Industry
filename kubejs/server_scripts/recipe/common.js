@@ -29,7 +29,7 @@ const deleteItems = [
 	TC('wire_cast'),
 	TC('wire_sand_cast'),
 	TC('wire_red_sand_cast'),
-	/createdeco:.*_slab_vert/
+	/createdeco:.*_slab_vert/,
 ]
 const MetalMaterials = ['aluminum', 'amethyst_bronze', 'brass', 'bronze', 'cobalt', 'constantan', 'copper', 'electrum', 'emerald', 'enderium', 'gold', 'hepatizon', 'inlet', 'iron', 'knightslime', 'lead', 'lumium', 'manyullyn', 'molten_debris', 'netherite', 'nickel', 'osmium', 'pewter', 'pig_iron', 'platinum', 'queens_slime', 'refined_glowstone', 'refined_obsidian', 'rose_gold', 'signalum', 'silver', 'slimesteel', 'soulsteel', 'steel', 'tin', 'tungsten', 'uranium', 'zinc']
 const colors = ['black', 'blue', 'brown', 'cyan', 'gray', 'green', 'light_blue', 'light_gray', 'lime', 'magenta', 'orange', 'pink', 'purple', 'red', 'white', 'yellow']
@@ -218,7 +218,7 @@ onEvent('recipes', event => {
 		create.pressing(inter, inter),
 	]).transitionalItem(inter).loops(1).id('kubejs:sequenced_assembly/steel_ingot')
 
-	// misc
+	// 重複
 	event.remove({ id: 'minecraft:glass_bottle' })
 
 	// 置き換え
@@ -238,6 +238,21 @@ onEvent('recipes', event => {
 onEvent('item.tags', event => {
 	event.add('forge:storage_blocks/steel', 'createindustry:steel_block')
 	event.add('forge:storage_blocks/cast_iron', 'createindustry:cast_iron_block')
+})
+
+onEvent('item.modification', event => {
+
+	/**
+	 * @type {Special.Item[]}
+	 */
+	const stack = [
+		"egg",
+	]
+	stack.forEach(stack_item => {
+		event.modify(stack_item, item => {
+			item.maxStackSize = 64
+		})
+	})
 })
 
 onEvent('lootjs', event => {
