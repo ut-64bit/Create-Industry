@@ -68,7 +68,7 @@ onEvent("recipes", event => {
 	let explosion_crafting = (output, input, lost) => {
 		event.custom({
 			type: "pneumaticcraft:explosion_crafting",
-			input: Item.of(input).toResultJson(),
+			input: Ingredient.of(input).toJson(),
 			results: [
 				Item.of(output).toResultJson()
 			],
@@ -248,6 +248,7 @@ onEvent("recipes", event => {
 	// 重複
 	event.remove({ id: "minecraft:glass_bottle" })
 	event.remove({ id: "createindustry:crafting/coal_coke_block" })
+	event.remove({ id: "createdeco:cast_iron_block" })
 
 	// ロープを置き換え
 	event.replaceInput({ input: "supplementaries:rope" }, "supplementaries:rope", "#supplementaries:ropes")
@@ -428,7 +429,11 @@ onEvent("recipes", event => {
 	// pneumatic
 	{
 		event.remove({ id: "pneumaticcraft:explosion_crafting/compressed_iron_ingot" })
-		explosion_crafting("pneumaticcraft:ingot_iron_compressed", "forge:ingots/cast_iron", 20)
+		explosion_crafting("pneumaticcraft:ingot_iron_compressed", "#forge:ingots/cast_iron", 20)
+		event.remove({ id: "pneumaticcraft:explosion_crafting/compressed_iron_block" })
+		explosion_crafting('pneumaticcraft:compressed_iron_block', "#forge:storage_blocks/cast_iron", 20)
+		event.remove({id:"pneumaticcraft:explosion_crafting/wheat_flour"})
+		event.replaceInput({input:"pneumaticcraft:wheat_flour"},"pneumaticcraft:wheat_flour","#forge:flour/wheat")
 	}
 
 	// immersive
@@ -903,6 +908,7 @@ onEvent("item.tags", event => {
 	event.add("forge:storage_blocks/cast_iron", "createindustry:cast_iron_block")
 	event.add('forge:coal_coke', "createindustry:coal_coke")
 	event.add('forge:storage_blocks/coal_coke', "createindustry:coal_coke_block")
+	event.add('forge:flour/wheat', 'pneumaticcraft:wheat_flour')
 
 	if (vs_eureka) {
 		event.add("vs_eureka:balloons", "vs_eureka:balloon")
