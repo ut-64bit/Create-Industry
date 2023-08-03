@@ -16,7 +16,7 @@ onEvent('jei.hide.items', event => {
 		/**
 		 * @type {Special.Item[]}
 		 */
-		const hideItem = [
+		let hideItem = [
 			'create:dough',
 			'createaddition:digital_adapter',
 			/createdeco:.*_slab_vert/,
@@ -38,7 +38,9 @@ onEvent('jei.hide.items', event => {
 			'@valkyrienskies',
 		]
 
-		hideItem.forEach(item => event.hide(item))
+		hideItem.forEach(item => {
+			event.hide(item)
+		})
 	}
 
 	{ // ツール
