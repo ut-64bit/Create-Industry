@@ -78,7 +78,7 @@ onEvent("recipes", event => {
 
 	// バニラ型のツールのレシピを変更
 	{
-		const removeTool = (material, removeInput) => {
+		let removeTool = (material, removeInput) => {
 			event.remove({ output: `${material}_pickaxe` })
 			event.remove({ output: `${material}_axe` })
 			event.remove({ output: `${material}_shovel` })
@@ -120,7 +120,7 @@ onEvent("recipes", event => {
 
 	// 防具のレシピを変更
 	{
-		const removeArmor = (material, removeInput) => {
+		let removeArmor = (material, removeInput) => {
 			event.remove({ output: `${material}_helmet` })
 			event.remove({ output: `${material}_chestplate` })
 			event.remove({ output: `${material}_leggings` })
@@ -132,7 +132,7 @@ onEvent("recipes", event => {
 				event.remove({ input: `${material}_boots` })
 			}
 		}
-		const addPlateArmor = (material, plate) => {
+		let addPlateArmor = (material, plate) => {
 			event.shaped(`${material}_helmet`,
 				[
 					"PPP",
