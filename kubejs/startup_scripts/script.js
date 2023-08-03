@@ -35,3 +35,18 @@ onEvent('item.registry', event => {
 		event.create('armor_trims:incomplete_wild_armor_trim_smithing_template', 'create:sequenced_assembly').texture("kubejs:item/incomplete_wild_armor_trim_smithing_template")
 	}
 })
+
+onEvent("item.modification", event => {
+	/**
+	 * @type {Special.Item[]}
+	 */
+	const stack = [
+		"egg",
+		"snowball",
+	]
+	stack.forEach(stack_item => {
+		event.modify(stack_item, item => {
+			item.maxStackSize = 64
+		})
+	})
+})
