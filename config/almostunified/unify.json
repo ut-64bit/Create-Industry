@@ -10,7 +10,8 @@
     "immersivepetroleum",
     "alloyed",
     "createindustry",
-    "createdeco"
+    "createdeco",
+    "pneumaticcraft"
   ],
   "stoneStrata": [
     "stone",
@@ -33,7 +34,8 @@
     "forge:wires/{material}",
     "forge:storage_blocks/{material}",
     "forge:storage_blocks/raw_{material}",
-    "forge:coal_coke"
+    "forge:coal_coke",
+    "forge:flour/wheat"
   ],
   "materials": [
     "aeternium",
