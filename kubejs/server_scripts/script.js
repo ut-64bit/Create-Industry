@@ -61,6 +61,21 @@ onEvent("recipes", event => {
 		})
 	}
 
+	/**
+	 * @param {Special.Item} output
+	 * @param {Special.Item} input
+	 */
+	let explosion_crafting = (output, input, lost) => {
+		event.custom({
+			"type": "pneumaticcraft:explosion_crafting",
+			input: Item.of(input).toResultJson(),
+			results: [
+				Item.of(output).toResultJson()
+			],
+			"loss_rate": lost
+		})
+	}
+
 	// let
 	/**
 	 * @type {Special.Item} inter
@@ -232,6 +247,7 @@ onEvent("recipes", event => {
 
 	// 重複
 	event.remove({ id: "minecraft:glass_bottle" })
+	event.remove({ id: "createindustry:crafting/coal_coke_block" })
 
 	// ロープを置き換え
 	event.replaceInput({ input: "supplementaries:rope" }, "supplementaries:rope", "#supplementaries:ropes")
@@ -409,6 +425,13 @@ onEvent("recipes", event => {
 		event.remove({ id: /tconstruct:compat\/.+/ })
 	}
 
+	// pneumatic
+	{
+		event.remove({ id: "pneumaticcraft:explosion_crafting/compressed_iron_ingot" })
+		explosion_crafting("pneumaticcraft:ingot_iron_compressed", "forge:ingots/cast_iron", 20)//.id("pneumaticcraft:explosion_crafting/compressed_iron_ingot")
+	}
+
+	// immersive
 	{
 		// #region tools
 		event.replaceInput({ output: IE("hammer") }, "#forge:ingots/iron", "#forge:ingots/steel")
@@ -875,8 +898,12 @@ onEvent("recipes", event => {
 })
 
 onEvent("item.tags", event => {
+	// 統合
 	event.add("forge:storage_blocks/steel", "createindustry:steel_block")
 	event.add("forge:storage_blocks/cast_iron", "createindustry:cast_iron_block")
+	event.add('forge:coal_coke', "createindustry:coal_coke")
+	event.add('forge:storage_blocks/coal_coke', "createindustry:coal_coke_block")
+
 	if (vs_eureka) {
 		event.add("vs_eureka:balloons", "vs_eureka:balloon")
 		colors.forEach(color => event.add("vs_eureka:balloons", `vs_eureka:${color}_balloon`))
@@ -897,6 +924,7 @@ onEvent("item.modification", event => {
 	 */
 	const stack = [
 		"egg",
+		"snowball",
 	]
 	stack.forEach(stack_item => {
 		event.modify(stack_item, item => {
