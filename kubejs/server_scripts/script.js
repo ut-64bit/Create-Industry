@@ -67,12 +67,12 @@ onEvent("recipes", event => {
 	 */
 	let explosion_crafting = (output, input, lost) => {
 		event.custom({
-			"type": "pneumaticcraft:explosion_crafting",
+			type: "pneumaticcraft:explosion_crafting",
 			input: Item.of(input).toResultJson(),
 			results: [
 				Item.of(output).toResultJson()
 			],
-			"loss_rate": lost
+			loss_rate: lost
 		})
 	}
 
@@ -428,7 +428,7 @@ onEvent("recipes", event => {
 	// pneumatic
 	{
 		event.remove({ id: "pneumaticcraft:explosion_crafting/compressed_iron_ingot" })
-		explosion_crafting("pneumaticcraft:ingot_iron_compressed", "forge:ingots/cast_iron", 20)//.id("pneumaticcraft:explosion_crafting/compressed_iron_ingot")
+		explosion_crafting("pneumaticcraft:ingot_iron_compressed", "forge:ingots/cast_iron", 20)
 	}
 
 	// immersive
@@ -463,7 +463,7 @@ onEvent("recipes", event => {
 		}).id("kubejs:crafting/dynamo")
 
 		// blastbrick_reinforced
-		create.mechanicalCrafting(Item.of(IE("blastbrick_reinforced"), 3), [
+		create.mechanicalCrafting(Item.of(IE("blastbrick_reinforced"), 9), [
 			" ppp ",
 			"pcscp",
 			"psbsp",
@@ -916,21 +916,6 @@ onEvent("item.entity_interact", event => {
 	event.item.count--
 	event.player.giveInHand("farmersdelight:milk_bottle")
 	event.target.playSound("entity.cow.milk")
-})
-
-onEvent("item.modification", event => {
-	/**
-	 * @type {Special.Item[]}
-	 */
-	const stack = [
-		"egg",
-		"snowball",
-	]
-	stack.forEach(stack_item => {
-		event.modify(stack_item, item => {
-			item.maxStackSize = 64
-		})
-	})
 })
 
 onEvent("lootjs", event => {
