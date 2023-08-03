@@ -13,6 +13,9 @@ onEvent('jei.remove.categories', event => {
 
 onEvent('jei.hide.items', event => {
 	{ // JEIからアイテムを削除
+		/**
+		 * @type {Special.Item[]}
+		 */
 		const hideItem = [
 			'create:dough',
 			'createaddition:digital_adapter',
@@ -32,7 +35,7 @@ onEvent('jei.hide.items', event => {
 
 			'oldguns:iron_with_coal',
 			'supplementaries:rope',
-			'@valkyrienskies'
+			'@valkyrienskies',
 		]
 
 		hideItem.forEach(item => event.hide(item))
