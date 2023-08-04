@@ -64,6 +64,7 @@ onEvent("recipes", event => {
 	/**
 	 * @param {Special.Item} output
 	 * @param {Special.Item} input
+	 * @param {number} lost - 0 ~ 100
 	 */
 	let explosion_crafting = (output, input, lost) => {
 		event.custom({
@@ -341,6 +342,10 @@ onEvent("recipes", event => {
 
 		// 液体⇄インゴット
 		{
+			/**
+			 * @param {Special.Item} output - output item
+			 * @param {boolean} gem - is gem
+			 */
 			let melt = (output, item, gem) => {
 				if (gem) {
 					create.compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 100))
@@ -932,6 +937,7 @@ onEvent("item.tags", event => {
 })
 
 onEvent("item.entity_interact", event => {
+	// 牛に瓶を使う事ができるように
 	if (event.target.type != "minecraft:cow" || event.item.id != "minecraft:glass_bottle") return
 	event.item.count--
 	event.player.giveInHand("farmersdelight:milk_bottle")
@@ -1045,7 +1051,11 @@ onEvent("server.datapack.first", event => {
 })
 
 onForgeEvent("net.minecraftforge.event.world.BlockEvent$CropGrowEvent$Pre", event => {
-	if (Math.random <= 0.2) {
+	/**
+	 * @type {number} - 0.0 ~ 1.0
+	 */
+	let grow_speed = 0.2;
+	if (Math.random <= grow_speed) {
 		Event$Result.ALLOW
 	} else {
 		Event$Result.DENY
