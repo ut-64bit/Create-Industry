@@ -1045,5 +1045,9 @@ onEvent("server.datapack.first", event => {
 })
 
 onForgeEvent("net.minecraftforge.event.world.BlockEvent$CropGrowEvent$Pre", event => {
-
+	if (Math.random <= 0.2) {
+		Event$Result.ALLOW
+	} else {
+		Event$Result.DENY
+	}
 })
