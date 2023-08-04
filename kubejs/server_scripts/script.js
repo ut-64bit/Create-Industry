@@ -245,7 +245,7 @@ onEvent("recipes", event => {
 		create.pressing(inter, inter),
 	]).transitionalItem(inter).loops(1).id("kubejs:sequenced_assembly/steel_ingot")
 
-	// 重複
+	// 重複したレシピを削除
 	event.remove({ id: "minecraft:glass_bottle" })
 	event.remove({ id: "createindustry:crafting/coal_coke_block" })
 	event.remove({ id: "createdeco:cast_iron_block" })
@@ -385,6 +385,18 @@ onEvent("recipes", event => {
 
 	// tconstruct
 	{
+		// cast_chest
+		event.shaped("tconstruct:cast_chest", [
+			" c ",
+			"bCb",
+			"bBb"
+		], {
+			"c": "tconstruct:casts/gold",
+			"b": "tconstruct:seared_brick",
+			"C": "#forge:chests/wooden",
+			"B": "tconstruct:seared_bricks"
+		}).id("tconstruct:tables/cast_chest")
+
 		// crafting_station
 		item_application("tconstruct:crafting_station", "minecraft:crafting_table", "tconstruct:pattern")
 
@@ -430,10 +442,12 @@ onEvent("recipes", event => {
 	{
 		event.remove({ id: "pneumaticcraft:explosion_crafting/compressed_iron_ingot" })
 		explosion_crafting("pneumaticcraft:ingot_iron_compressed", "#forge:ingots/cast_iron", 20)
+
 		event.remove({ id: "pneumaticcraft:explosion_crafting/compressed_iron_block" })
 		explosion_crafting('pneumaticcraft:compressed_iron_block', "#forge:storage_blocks/cast_iron", 20)
-		event.remove({id:"pneumaticcraft:explosion_crafting/wheat_flour"})
-		event.replaceInput({input:"pneumaticcraft:wheat_flour"},"pneumaticcraft:wheat_flour","#forge:flour/wheat")
+
+		event.remove({ id: "pneumaticcraft:explosion_crafting/wheat_flour" })
+		event.replaceInput({ input: "pneumaticcraft:wheat_flour" }, "pneumaticcraft:wheat_flour", "#forge:flour/wheat")
 	}
 
 	// immersive
@@ -932,9 +946,7 @@ onEvent("lootjs", event => {
 	})
 
 	// 草wから小麦が出ないように
-	event.addLootTableModifier("minecraft:blocks/grass")
-		.removeLoot("wheat_seeds")
-	event.addLootTableModifier("minecraft:blocks/tall_grass")
+	event.addLootTableModifier(/minecraft:blocks\/grass\/.*/)
 		.removeLoot("wheat_seeds")
 
 	// 鉱石を統合
@@ -1030,4 +1042,8 @@ onEvent("server.datapack.first", event => {
 			]
 		})
 	}
+})
+
+onForgeEvent("net.minecraftforge.event.world.BlockEvent$CropGrowEvent$Pre", event => {
+
 })
