@@ -3,7 +3,7 @@
 onEvent('jei.remove.categories', event => {
 	// JEIからカテゴリを削除
 	const hideCategory = [
-		'immersiveengineering:alloysmelter'
+		'immersiveengineering:alloysmelter',
 	]
 
 	hideCategory.forEach(categories => {
@@ -12,7 +12,8 @@ onEvent('jei.remove.categories', event => {
 })
 
 onEvent('jei.hide.items', event => {
-	{ // JEIからアイテムを削除
+	// JEIからアイテムを削除
+	{
 		/**
 		 * @type {Special.Item[]}
 		 */
@@ -43,7 +44,8 @@ onEvent('jei.hide.items', event => {
 		})
 	}
 
-	{ // ツール
+	// ツール
+	{
 		let hideTool = (material) => {
 			event.hide(`${material}_pickaxe`)
 			event.hide(`${material}_axe`)
@@ -55,7 +57,8 @@ onEvent('jei.hide.items', event => {
 		hideTool('stone')
 	}
 
-	{ // castレシピを削除
+	// castレシピを削除
+	{
 		const hideCastTypes = ['plate', 'wire']
 		hideCastTypes.forEach(type => {
 			event.hide(`tconstruct:${type}_red_sand_cast`)
