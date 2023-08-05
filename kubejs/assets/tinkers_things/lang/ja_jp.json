@@ -8,7 +8,7 @@
   "item.tinkers_things.shovel.description": "シャベルは基本的な掘削ツールです。モンスターをよりノックバックさせることができます。",
   
   "item.tinkers_things.halberd": "ハルバード",
-  "item.tinkers_things.halberd.description": "ハルバードは、遠くの敵に強力な打撃を与えるために設計された長い武器です。\\ﾔｰｯ!!",
+  "item.tinkers_things.halberd.description": "ハルバードは、遠くの敵に強力な打撃を与えるために設計された長い武器です。\nﾔｰｯ!!",
   "modifier.tinkers_things.range": "長柄",
   "modifier.tinkers_things.range.flavor": "すごく...長いです...",
   "modifier.tinkers_things.range.description": "ツールが非常に長いため、遠くのモンスターを攻撃することができます。",
