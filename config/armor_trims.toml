@@ -3,10 +3,11 @@
 	# For some reason, trim layers don't play nice with custom armor models (and I have given up trying to fix it now). You can choose what to do.
 	# NORMAL - Will attempt to render anyway. Usually trims will be invisible but sometimes yields wierd results (such as "mystery belts" for some boots).
 	# TINTED - Will tint armors the associated trim color.
-	# HIDDEN - Will hide trims on custom armor models entirely. Default option; anything not specified will default to this.
+	# HIDDEN - Will hide trims on custom armor models entirely. Default option; anything not specified will default to this. Currently not working for some reason, causing it to behave like TINTED.
 	"Custom Armor Model View" = "HIDDEN"
-	# Some textures have some dark bits that get factored into the final color. Enable this option to try to remove these dark colors in factorization.
-	"Brighten Trim Colors" = false
+	# Some textures have some dark bits that get factored into the final color. This option will not count any colors darker than this when determining color.
+	#Range: 0 ~ 255
+	"Trim Color Darkness Threshold" = 15
 
 ["Base Features"]
 	# Basically half the premise of the mod, turn this off if you don't want people trimming armor themselves (E.G. if you have another system on place).
