@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "parts": [
+    {
+      "path": "knives_construct:item/tool/tinkers_knife/handle",
+      "statType": "tconstruct:handle"
+    },
+    {
+      "path": "knives_construct:item/tool/tinkers_knife/broken_blade",
+      "statType": "tconstruct:head"
+    },
+    {
+      "path": "knives_construct:item/tool/tinkers_knife/blade",
+      "statType": "tconstruct:head"
+    }
+  ]
+}

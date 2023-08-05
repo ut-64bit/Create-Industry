@@ -1,0 +1,18 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default-tool",
+  "textures": {
+    "head":        "knives_construct:item/tool/tinkers_knife/blade",
+    "broken_head": "knives_construct:item/tool/tinkers_knife/broken_blade",
+    "handle":  "knives_construct:item/tool/tinkers_knife/handle"
+  },
+  "modifier_roots": [ "knives_construct:item/tool/tinkers_knife/modifiers/" ],
+  "parts": [
+    { "name": "head", "index": 0, "broken": "broken_head" },
+    { "name": "handle", "index": 1 }
+  ],
+  "overrides": [{
+    "predicate": { "tconstruct:charging": 2 },
+    "model": "tconstruct:item/blocking/dagger"
+  }]
+}

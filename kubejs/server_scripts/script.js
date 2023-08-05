@@ -928,6 +928,7 @@ onEvent("item.tags", event => {
 	event.add('forge:coal_coke', "createindustry:coal_coke")
 	event.add('forge:storage_blocks/coal_coke', "createindustry:coal_coke_block")
 	event.add('forge:flour/wheat', 'pneumaticcraft:wheat_flour')
+	event.add("farmersdelight:tools/knives", 'knives_construct:tinkers_knife')
 
 	if (vs_eureka) {
 		event.add("vs_eureka:balloons", "vs_eureka:balloon")
