@@ -396,7 +396,7 @@ onEvent("recipes", event => {
 			"bCb",
 			"bBb"
 		], {
-			"c": "tconstruct:casts/gold",
+			"c": "#tconstruct:casts/gold",
 			"b": "tconstruct:seared_brick",
 			"C": "#forge:chests/wooden",
 			"B": "tconstruct:seared_bricks"
@@ -879,7 +879,7 @@ onEvent("recipes", event => {
 	// armor_trims
 	if (armor_trims) {
 		// func
-		const trim = (base, trim) => {
+		let trim = (base, trim) => {
 			inter = `armor_trims:incomplete_${trim}_armor_trim_smithing_template`
 			create.sequencedAssembly(`armor_trims:${trim}_armor_trim_smithing_template`, `${base}`, [
 				create.deploying(inter, [inter, `armor_trims:${trim}_armor_trim_smithing_template`]).keepHeldItem(),
@@ -952,8 +952,10 @@ onEvent("lootjs", event => {
 	})
 
 	// 草wから小麦が出ないように
-	event.addLootTableModifier(/minecraft:blocks\/grass\/.*/)
+	event.addLootTableModifier("minecraft:blocks/grass")
 		.removeLoot("wheat_seeds")
+	event.addLootTableModifier("minecraft:blocks/tall_grass")
+	.removeLoot("wheat_seeds")
 
 	// 鉱石を統合
 	event.addBlockLootModifier("#forge:ores").modifyLoot("#forge:raw_materials", item => {
@@ -1050,14 +1052,14 @@ onEvent("server.datapack.first", event => {
 	}
 })
 
+/*
 onForgeEvent("net.minecraftforge.event.world.BlockEvent$CropGrowEvent$Pre", event => {
-	/**
-	 * @type {number} - 0.0 ~ 1.0
-	 */
+	console.log(event)
 	let grow_speed = 0.2;
-	if (Math.random <= grow_speed) {
-		Event$Result.ALLOW
+	if (Math.random() < grow_speed) {
+		event.setResult("alloy")
 	} else {
-		Event$Result.DENY
+		event.setResult("deny")
 	}
 })
+*/
