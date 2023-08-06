@@ -1,18 +1,8 @@
 {
-	"baseCfg": {
-		"enableVersionChecking": true,
-		"versionDataURL": [
-			"https://github.com/ut-64bit/Create-Industry/tree/main/version"
-		],
-		"updateURL": {
-			"en_us": "https://github.com/ut-64bit/Create-Industry"
-		},
-		"versionCheckerConnectTimeout": 5000,
-		"versionCheckerReadTimeout": 5000
-	},
-	"currentVersion": {
-		"versionCode": 1,
-		"versionFormat": "%versionName%",
-		"versionName": "0.2.6b"
-	}
+    "versionCode": 1,
+    "versionFormat": "%versionName%",
+    "versionName": "0.2.6b",
+    "updateURL": {
+        "en_us": "https://github.com/ut-64bit/Create-Industry"
+    }
 }
