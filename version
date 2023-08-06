@@ -7,11 +7,14 @@
     },
     "changelogs" : {
         "0.2.6b" : [
-            "create version"
+            "一部のテクスチャが壊れていた問題を修正",
+            "混合レシピから溶解した金属のレシピを削除",
+            "翻訳を追加",
+            "MODを更新"
         ]
     },
     "welcomeMessage" : {
-        "tag" : ["§aThis version is the latest!"]
+        "tag" : ["§aI can't think of a welcome message!!"]
     }
 
 }

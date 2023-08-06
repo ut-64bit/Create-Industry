@@ -24,7 +24,7 @@
 		   Note: This can be overridden by '
 		*/
 		"updateURL": {
-			"en_us": "https://github.com/ut-64bit/Create-Industry"
+			"en_us": "https://github.com/ut-64bit/Create-Industry/releases"
 		},
 		/* 
 		   How much time to connect to the URL before the connection closes with a timeout error.

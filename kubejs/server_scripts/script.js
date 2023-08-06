@@ -340,36 +340,6 @@ onEvent("recipes", event => {
 			event.remove({ id: "extendedgears:blasting/large_steel_cogwheel_from_iron" })
 		}
 
-		// 液体⇄インゴット
-		{
-			/**
-			 * @param {Special.Item} output - output item
-			 * @param {boolean} gem - is gem
-			 */
-			let melt = (output, item, gem) => {
-				if (gem) {
-					create.compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 100))
-						.id(`kubejs:compacting/${output}_from_molten_${item}`)
-					create.mixing(Fluid.of(TC(`molten_${item}`), 100), `#forge:gems/${item}`)
-						.superheated()
-						.id(`kubejs:mixing/molten_${item}`)
-				} else {
-					create.compacting(`${output}`, Fluid.of(TC(`molten_${item}`), 90))
-						.id(`kubejs:compacting/${output}_from_molten_${item}`)
-					create.mixing(Fluid.of(TC(`molten_${item}`), 90), `#forge:ingots/${item}`)
-						.heated()
-						.id(`kubejs:mixing/molten_${item}`)
-				}
-			}
-			melt("iron_ingot", "iron", false)
-			melt("gold_ingot", "gold", false)
-			melt("diamond", "diamond", true)
-			//melt("create:brass_ingot", "brass", false)
-			//melt("createindustry:steel_ingot", "steel", false)
-			//melt("alloyed:bronze_ingot", "bronze", false)
-			//melt("alloyed:steel_ingot", "steel", false)
-		}
-
 		// 雑多なレシピを追加
 		create.emptying(["obsidian", Fluid.of("lava", 250)], "magma_block")
 			.id("kubejs:emptying/magma_block")
