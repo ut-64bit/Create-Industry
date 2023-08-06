@@ -11,7 +11,7 @@
         ]
     },
     "welcomeMessage" : {
-        "tag" : ["awa1"]
+        "tag" : ["welcome"]
     }
 
 }

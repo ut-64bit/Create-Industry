@@ -14,7 +14,7 @@
 		   Comparison will be attempted when multiple URLs are used
 		*/
 		"versionDataURL": [
-			"https://github.com/ut-64bit/Create-Industry/tree/main/version"
+			"https://raw.githubusercontent.com/ut-64bit/Create-Industry/main/version"
 		],
 		/* 
 		   The url that is opened when the user clicks on update button, KEEP http:// or https://
