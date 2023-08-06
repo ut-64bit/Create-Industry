@@ -18,26 +18,13 @@ onEvent('jei.hide.items', event => {
 		 * @type {Special.Item[]}
 		 */
 		let hideItem = [
+			global.deleteItems,
 			'create:dough',
 			'createaddition:digital_adapter',
-			/createdeco:.*_slab_vert/,
-
-			'immersiveengineering:blastbrick',
-			'immersiveengineering:alloybrick',
-
-			'tconstruct:earth_slime_sling',
-			'tconstruct:ender_slime_sling',
-			'tconstruct:ichor_slime_sling',
-			'tconstruct:sky_slime_sling',
-
-			'tom_storage:ts.adv_wireless_terminal',
-			'tom_storage:ts.wireless_terminal',
-			'tom_storage:ts.inventory_hopper_basic',
-
-			'oldguns:iron_with_coal',
 			'supplementaries:rope',
 			'@valkyrienskies',
 		]
+		console.log(hideItem)
 
 		hideItem.forEach(item => {
 			event.hide(item)
@@ -45,27 +32,15 @@ onEvent('jei.hide.items', event => {
 	}
 
 	// ツール
-	{
-		let hideTool = (material) => {
-			event.hide(`${material}_pickaxe`)
-			event.hide(`${material}_axe`)
-			event.hide(`${material}_shovel`)
-			event.hide(`${material}_hoe`)
-			event.hide(`${material}_sword`)
-		}
-		hideTool('wooden')
-		hideTool('stone')
+	let hideTool = (material) => {
+		event.hide(`${material}_pickaxe`)
+		event.hide(`${material}_axe`)
+		event.hide(`${material}_shovel`)
+		event.hide(`${material}_hoe`)
+		event.hide(`${material}_sword`)
 	}
-
-	// castレシピを削除
-	{
-		const hideCastTypes = ['plate', 'wire']
-		hideCastTypes.forEach(type => {
-			event.hide(`tconstruct:${type}_red_sand_cast`)
-			event.hide(`tconstruct:${type}_sand_cast`)
-			event.hide(`tconstruct:${type}_cast`)
-		})
-	}
+	hideTool('wooden')
+	hideTool('stone')
 })
 
 onEvent('jei.add.items', event => {
