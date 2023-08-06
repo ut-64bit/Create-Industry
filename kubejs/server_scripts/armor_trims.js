@@ -1,30 +1,30 @@
 // priority: 1
 
 onEvent("recipes", event => {
-    if (armor_trims) return
+    if (!armor_trims) return
 
     let inter
 
     // func
     let trim = (base, trim) => {
         inter = `armor_trims:incomplete_${trim}_armor_trim_smithing_template`
-        create.sequencedAssembly(`armor_trims:${trim}_armor_trim_smithing_template`, `${base}`, [
-            create.deploying(inter, [inter, `armor_trims:${trim}_armor_trim_smithing_template`]).keepHeldItem(),
-            create.pressing(inter, inter),
-            create.filling(inter, [inter, Fluid.of("tconstruct:molten_diamond", 100)]),
-            create.filling(inter, [inter, Fluid.of("tconstruct:molten_diamond", 100)]),
-            create.pressing(inter, inter)
+        event.recipes.create.sequencedAssembly(`armor_trims:${trim}_armor_trim_smithing_template`, `${base}`, [
+            event.recipes.create.deploying(inter, [inter, `armor_trims:${trim}_armor_trim_smithing_template`]).keepHeldItem(),
+            event.recipes.create.pressing(inter, inter),
+            event.recipes.create.filling(inter, [inter, Fluid.of("tconstruct:molten_diamond", 100)]),
+            event.recipes.create.filling(inter, [inter, Fluid.of("tconstruct:molten_diamond", 100)]),
+            event.recipes.create.pressing(inter, inter)
         ]).transitionalItem(`${inter}`).loops(1)
     }
 
     // netherite_upgrade
     let trans = "armor_trims:incomplete_netherite_upgrade_smithing_template"
-    create.sequencedAssembly("armor_trims:netherite_upgrade_smithing_template", "netherrack", [
-        create.deploying(trans, [trans, "armor_trims:netherite_upgrade_smithing_template"]).keepHeldItem(),
-        create.pressing(trans, trans),
-        create.filling(trans, [trans, Fluid.of("tconstruct:molten_diamond", 100)]),
-        create.filling(trans, [trans, Fluid.of("tconstruct:molten_diamond", 100)]),
-        create.pressing(trans, trans)
+    event.recipes.create.sequencedAssembly("armor_trims:netherite_upgrade_smithing_template", "netherrack", [
+        event.recipes.create.deploying(trans, [trans, "armor_trims:netherite_upgrade_smithing_template"]).keepHeldItem(),
+        event.recipes.create.pressing(trans, trans),
+        event.recipes.create.filling(trans, [trans, Fluid.of("tconstruct:molten_diamond", 100)]),
+        event.recipes.create.filling(trans, [trans, Fluid.of("tconstruct:molten_diamond", 100)]),
+        event.recipes.create.pressing(trans, trans)
     ]).transitionalItem(trans).loops(1)
 
     // #region trims

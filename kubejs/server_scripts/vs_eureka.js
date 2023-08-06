@@ -1,7 +1,7 @@
 // priority: 1
 
 onEvent("recipes", event => {
-    if (vs_eureka) return
+    if (!vs_eureka) return
 
     // balloonのレシピを変更
     event.remove({ id: "vs_eureka:balloon_leather" })

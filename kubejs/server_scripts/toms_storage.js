@@ -1,7 +1,7 @@
 // priority: 1
 
 onEvent("recipes", event => {
-    if (toms_storage) return
+    if (!toms_storage) return
 
     // crafting_terminal
     event.remove({ id: "toms_storage:crafting_terminal" })
