@@ -84,7 +84,7 @@ onEvent("recipes", event => {
 	let inter
 
 	// アイテムを擬似的に削除
-	deleteItems.forEach(item => event.remove([{ output: `${item}` }, { input: `${item}` }]))
+	global.deleteItems.forEach(item => event.remove([{ output: `${item}` }, { input: `${item}` }]))
 
 	// 一部のキャストレシピを削除
 	MetalMaterials.forEach(material => {
@@ -287,7 +287,7 @@ onEvent("recipes", event => {
 		inter = "create_kubejs:incomplete_electric_engine"
 		create.sequencedAssembly("create_kubejs:electric_engine", "#forge:plates/brass", [
 			create.deploying(inter, [inter, "#forge:nuggets/steel"]),
-			create.deploying(inter, [inter, "createaddition:copper_spool"]),
+			create.deploying(inter, [inter, "immersiveengineering:wirecoil_copper"]),
 			create.deploying(inter, [inter, "create:shaft"]),
 			create.deploying(inter, [inter, "#forge:nuggets/brass"])
 		]).transitionalItem(inter).loops(3).id("kubejs:sequenced_assembly/electric_engine")
@@ -303,7 +303,7 @@ onEvent("recipes", event => {
 			"A": "create:andesite_alloy",
 			"B": "#forge:plates/brass",
 			"E": "create_kubejs:electric_engine",
-			"S": "createaddition:copper_spool",
+			"S": "immersiveengineering:wirecoil_copper",
 			"R": "#forge:rods/iron",
 			"C": "createaddition:capacitor"
 		}).id("kubejs:mechanical_crafting/electric_motor")
@@ -319,7 +319,7 @@ onEvent("recipes", event => {
 			"A": "create:andesite_alloy",
 			"I": "#forge:plates/iron",
 			"E": "create_kubejs:electric_engine",
-			"S": "createaddition:copper_spool",
+			"S": "immersiveengineering:wirecoil_copper",
 			"R": "#forge:rods/iron",
 			"C": "createaddition:capacitor"
 		}).id("kubejs:mechanical_crafting/alternator")
@@ -673,7 +673,7 @@ onEvent("item.entity_interact", event => {
 
 onEvent("lootjs", event => {
 	// 削除するアイテムのLootTableを削除
-	deleteItems.forEach(item => {
+	global.deleteItems.forEach(item => {
 		event.addLootTypeModifier(LootType.CHEST)
 			.removeLoot(`${item}`)
 	})

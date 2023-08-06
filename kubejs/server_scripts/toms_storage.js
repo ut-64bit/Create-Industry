@@ -3,6 +3,8 @@
 onEvent("recipes", event => {
     if (!toms_storage) return
 
+	const { create, immersiveengineering } = event.recipes;
+
     // crafting_terminal
     event.remove({ id: "toms_storage:crafting_terminal" })
     create.mechanicalCrafting("toms_storage:ts.crafting_terminal",
