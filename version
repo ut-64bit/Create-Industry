@@ -11,7 +11,7 @@
         ]
     },
     "welcomeMessage" : {
-        "tag" : ["This version is the latest!"]
+        "tag" : ["§aThis version is the latest!"]
     }
 
 }
