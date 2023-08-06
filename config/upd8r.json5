@@ -1,40 +1,42 @@
 {
-	/*
-	 * Base Config.
-	 * Please refer to "www.awa.com" for web config.
+	/* 
+	   Base Config.
+	   Please refer to "www.awa.com" for web config.
 	*/
 	"baseCfg": {
-		/*
-		 * If this is set to false, the mod will not provide information to the user if possible.
-		 * This is an option for modpack players.
-		 */
+		/* 
+		   If this is set to false, the mod will not provide information to the user if possible.
+		   This is an option for modpack players.
+		*/
 		"enableVersionChecking": true,
-		/*
-		 * Where the version data JSON will be fetched from, KEEP http:// or https://
-		 * Comparison will be attempted when multiple URLs are used
-		 */
-		"versionDataURL": [],
-		/*
-		 * The url that is opened when the user clicks on update button, KEEP http:// or https://
-		 * Comparison will be attempted when multiple URLs are used.
-		 * The updateURL in versionDataURL has higher priority than this configuration.
-		 * Format: "en_us": "www.awa.com"
-		 * Note: This can be overridden by '
-		 */
+		/* 
+		   Where the version data JSON will be fetched from, KEEP http:// or https://
+		   Comparison will be attempted when multiple URLs are used
+		*/
+		"versionDataURL": [
+			"https://github.com/ut-64bit/Create-Industry/tree/main/version"
+		],
+		/* 
+		   The url that is opened when the user clicks on update button, KEEP http:// or https://
+		   Comparison will be attempted when multiple URLs are used.
+		   The updateURL in versionDataURL has higher priority than this configuration.
+		   Format: "en_us": "www.awa.com"
+		   Note: This can be overridden by '
+		*/
 		"updateURL": {
-			"en_us":"https://github.com/ut-64bit/Create-Industry"
+			"en_us": "https://github.com/ut-64bit/Create-Industry"
 		},
-		/*
-		 * How much time to connect to the URL before the connection closes with a timeout error.
-		 * A timeout of zero is interpreted as an infinite timeout.
-		 * # This does not block the main thread.
-		 */
+		/* 
+		   How much time to connect to the URL before the connection closes with a timeout error.
+		   A timeout of zero is interpreted as an infinite timeout.
+		   # This does not block the main thread.
+		*/
 		"versionCheckerConnectTimeout": 5000,
-		/*
-		 * How much time to read before the connection closes with a timeout error.
-		 * A timeout of zero is interpreted as an infinite timeout.
-		 * # This does not block the main thread.
-		 */
+		/* 
+		   How much time to read before the connection closes with a timeout error.
+		   A timeout of zero is interpreted as an infinite timeout.
+		   # This does not block the main thread.
+		*/
 		"versionCheckerReadTimeout": 5000
 	},
 	"currentVersion": {
