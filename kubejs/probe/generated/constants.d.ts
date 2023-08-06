@@ -5,7 +5,7 @@ declare const RARITY_RARE: Rarity;
 declare const HOUR: 3600000;
 declare const SLOT_FEET: EquipmentSlot;
 declare const SLOT_HEAD: EquipmentSlot;
-declare const global: {"jeiRuntime": Internal.JeiRuntime};
+declare const global: {"jeiRuntime": Internal.JeiRuntime, "deleteItems": {1: null, 2: null, 3: null, 4: null, 5: null, 6: null, 7: null, 8: null, 9: null, 10: null, 11: null, 12: null, 13: null, 14: null, 15: null, 16: null, 0: null}};
 declare const MAIN_HAND: Hand;
 declare const SLOT_LEGS: EquipmentSlot;
 declare const AIR_BLOCK: Internal.AirBlock;
