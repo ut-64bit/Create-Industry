@@ -30,6 +30,11 @@ global.deleteItems = [
 	TC("wire_sand_cast"),
 	TC("wire_red_sand_cast"),
 	/createdeco:.*_slab_vert/,
+	/^(?!(tconstruct:|tinkers_things:)).*_pickaxe/,
+	/^(?!(tconstruct:|tinkers_things:)).*_axe/,
+	/^(?!(tconstruct:|tinkers_things:)).*_shovel/,
+	/^(?!(tconstruct:|tinkers_things:)).*_hoe/,
+	/^(?!(tconstruct:|tinkers_things:)).*_sword/,
 ]
 const MetalMaterials = ["aluminum", "amethyst_bronze", "brass", "bronze", "cobalt", "constantan", "copper", "electrum", "emerald", "enderium", "gold", "hepatizon", "inlet", "iron", "knightslime", "lead", "lumium", "manyullyn", "molten_debris", "netherite", "nickel", "osmium", "pewter", "pig_iron", "platinum", "queens_slime", "refined_glowstone", "refined_obsidian", "rose_gold", "signalum", "silver", "slimesteel", "soulsteel", "steel", "tin", "tungsten", "uranium", "zinc"]
 const colors = ["black", "blue", "brown", "cyan", "gray", "green", "light_blue", "light_gray", "lime", "magenta", "orange", "pink", "purple", "red", "white", "yellow"]
@@ -84,7 +89,7 @@ onEvent("recipes", event => {
 	let inter
 
 	// アイテムを擬似的に削除
-	global.deleteItems.forEach(item => event.remove([{ output: `${item}` }, { input: `${item}` }]))
+	global.deleteItems.forEach(item => event.remove({ output: `${item}` }))
 
 	// 一部のキャストレシピを削除
 	MetalMaterials.forEach(material => {
@@ -92,47 +97,13 @@ onEvent("recipes", event => {
 		event.remove({ type: TC("casting_table"), output: `#forge:wire/${material}` })
 	})
 
-	// バニラ型のツールのレシピを変更
-	{
-		let removeTool = (material, removeInput) => {
-			event.remove({ output: `${material}_pickaxe` })
-			event.remove({ output: `${material}_axe` })
-			event.remove({ output: `${material}_shovel` })
-			event.remove({ output: `${material}_hoe` })
-			event.remove({ output: `${material}_sword` })
-			if (removeInput) {
-				event.remove({ input: `${material}_pickaxe` })
-				event.remove({ input: `${material}_axe` })
-				event.remove({ input: `${material}_shovel` })
-				event.remove({ input: `${material}_hoe` })
-				event.remove({ input: `${material}_sword` })
-			}
-		}
-		removeTool("wooden", true)
-		removeTool("stone", true)
-		removeTool("iron", false)
-		removeTool("diamond", false)
-
-		// 鉄ツール
-		event.smithing("iron_pickaxe", "golden_pickaxe", "iron_ingot")
-		event.smithing("iron_axe", "golden_axe", "iron_ingot")
-		event.smithing("iron_shovel", "golden_shovel", "iron_ingot")
-		event.smithing("iron_hoe", "golden_hoe", "iron_ingot")
-		event.smithing("iron_sword", "golden_sword", "iron_ingot")
-
-		// ダイヤツール
-		event.smithing("diamond_pickaxe", "iron_pickaxe", "diamond")
-		event.smithing("diamond_axe", "iron_axe", "diamond")
-		event.smithing("diamond_shovel", "iron_shovel", "diamond")
-		event.smithing("diamond_hoe", "iron_hoe", "diamond")
-		event.smithing("diamond_sword", "iron_sword", "diamond")
-
-		create.filling("diamond_pickaxe", ["iron_pickaxe", Fluid.of(TC("molten_diamond"), 100)])
-		create.filling("diamond_axe", ["iron_axe", Fluid.of(TC("molten_diamond"), 100)])
-		create.filling("diamond_shovel", ["iron_shovel", Fluid.of(TC("molten_diamond"), 100)])
-		create.filling("diamond_hoe", ["iron_hoe", Fluid.of(TC("molten_diamond"), 100)])
-		create.filling("diamond_sword", ["iron_sword", Fluid.of(TC("molten_diamond"), 100)])
-	}
+	// 重複したレシピを削除
+	event.remove({ id: "minecraft:glass_bottle" })
+	event.remove({ id: "createindustry:crafting/coal_coke_block" })
+	event.remove({ id: "createdeco:cast_iron_ingot_from_cast_iron_block" })
+	event.remove({ id: "createdeco:cast_iron_block" })
+	event.remove({ id: "createindustry:mixing/cast_iron_ingot" })
+	event.remove({ id: "createindustry:crafting/coal_coke_from_block" })
 
 	// 防具のレシピを変更
 	{
@@ -237,6 +208,13 @@ onEvent("recipes", event => {
 		// #endregion
 	}
 
+	// ツールをレシピに含むものをTinkersのものに変更
+	event.replaceInput({ type: "minecraft:crafting_shaped", input: /.*_pickaxe/ }, /.*_pickaxe/, 'tconstruct:pickaxe')
+	event.replaceInput({ type: "minecraft:crafting_shaped", input: /.*_axe/ }, /.*_axe/, 'tconstruct:hand_axe')
+	event.replaceInput({ type: "minecraft:crafting_shaped", input: /.*_shovel/ }, /.*_shovel/, 'tinkers_things:shovel')
+	event.replaceInput({ type: "minecraft:crafting_shaped", input: /.*_hoe/ }, /.*_hoe/, 'tconstruct:kama')
+	event.replaceInput({ type: "minecraft:crafting_shaped", input: /.*_sword/ }, /.*_sword/, 'tconstruct:sword')
+
 	// 銃器用鋼鉄のレシピを変更
 	event.remove({ output: "oldguns:steel_ingot" })
 	inter = "oldguns:unprocessed_steel_ingot"
@@ -245,11 +223,6 @@ onEvent("recipes", event => {
 		create.pressing(inter, inter),
 		create.pressing(inter, inter),
 	]).transitionalItem(inter).loops(1).id("kubejs:sequenced_assembly/steel_ingot")
-
-	// 重複したレシピを削除
-	event.remove({ id: "minecraft:glass_bottle" })
-	event.remove({ id: "createindustry:crafting/coal_coke_block" })
-	event.remove({ id: "createdeco:cast_iron_block" })
 
 	// ロープを置き換え
 	event.replaceInput({ input: "supplementaries:rope" }, "supplementaries:rope", "#supplementaries:ropes")
@@ -356,6 +329,8 @@ onEvent("recipes", event => {
 			"#": "create:andesite_alloy",
 			"i": "#forge:rods/iron"
 		}).id("create:crafting/kinetics/whisk")
+
+		event.replaceInput({ input: "createindustry:heavy_plate" }, 'createindustry:heavy_plate', "#forge:plates/steel")
 	}
 
 	// tconstruct
@@ -469,121 +444,13 @@ onEvent("recipes", event => {
 			"s": "#forge:ingots/brick",
 			"b": "blaze_powder"
 		}).id("kubejs:mechanical_crafting/blastbrick_reinforced")
-
-		// #region wire_coil
-		event.remove({ id: /immersiveengineering:crafting\/wirecoil_.*/, input: "#balm:wooden_rods" })
-		event.shaped("immersiveengineering:wirecoil_copper", [
-			" w ",
-			"wsw",
-			" w "
-		], {
-			w: "#forge:wires/copper",
-			s: "createaddition:spool"
-		}).id("kubejs:crafting/wirecoil_copper")
-		event.shaped("immersiveengineering:wirecoil_electrum", [
-			" w ",
-			"wsw",
-			" w "
-		], {
-			w: "#forge:wires/electrum",
-			s: "createaddition:spool"
-		}).id("kubejs:crafting/wirecoil_electrum")
-		event.shaped("immersiveengineering:wirecoil_steel", [
-			" s ",
-			"aSa",
-			" s "
-		], {
-			s: "#forge:wires/steel",
-			a: "#forge:wires/aluminum",
-			S: "createaddition:spool"
-		}).id("kubejs:crafting/wirecoil_steel"),
-			event.shaped("immersiveengineering:wirecoil_structure_rope", [
-				" w ",
-				"wsw",
-				" w "
-			], {
-				w: "farmersdelight:rope",
-				s: "createaddition:spool"
-			}).id("kubejs:crafting/wirecoil_structure_rope")
-		event.shaped("immersiveengineering:wirecoil_structure_steel", [
-			" w ",
-			"wsw",
-			" w "
-		], {
-			w: "#forge:wires/steel",
-			s: "createaddition:spool"
-		}).id("kubejs:crafting/wirecoil_structure_steel")
-		event.shaped("immersiveengineering:wirecoil_redstone", [
-			" a ",
-			"rsr",
-			" a "
-		], {
-			a: "#forge:wires/aluminum",
-			r: "redstone",
-			s: "createaddition:spool"
-		}).id("kubejs:crafting/wirecoil_redstone")
-		// #endregion
 	}
 
 	// delight
 	{
-		// 一部を除いたナイフのレシピを削除
-		event.remove({ id: "delightful:knives/silver_knife" })
-		event.remove({ id: "delightful:knives/copper_knife" })
-		event.remove({ id: "farmersdelight:golden_knife" })
-		event.remove({ id: "farmersdelight:diamond_knife" })
-		event.remove({ id: "farmersdelight:iron_knife" })
-		event.remove({ id: "farmersdelight:flint_knife" })
-
-		// #region ナイフのレシピを変更
-		event.shaped(
-			Item.of("farmersdelight:iron_knife"),
-			[
-				" H",
-				"S "
-			], {
-			H: Item.of("tconstruct:small_blade", "{Material:\"tconstruct:iron\"}"),
-			S: "#forge:rods/wooden"
-		}).id("kubejs:crafting/iron_knife")
-		event.shaped(
-			Item.of("farmersdelight:golden_knife"),
-			[
-				" H",
-				"S "
-			], {
-			H: "gold_ingot",
-			S: "#forge:rods/wooden"
-		}).id("kubejs:crafting/golden_knife")
-		event.shaped(
-			Item.of("farmersdelight:flint_knife"),
-			[
-				" H",
-				"S "
-			], {
-			H: Item.of("tconstruct:small_blade", "{Material:\"tconstruct:flint\"}"),
-			S: "#forge:rods/wooden"
-		}).id("kubejs:crafting/flint_knife")
-		event.shaped(
-			Item.of("delightful:silver_knife"),
-			[
-				" H",
-				"S "
-			], {
-			H: Item.of("tconstruct:small_blade", "{Material:\"tconstruct:silver\"}"),
-			S: "#forge:rods/wooden"
-		}).id("kubejs:crafting/silver_knife")
-		event.shaped(
-			Item.of("delightful:copper_knife"),
-			[
-				" H",
-				"S "
-			], {
-			H: Item.of("tconstruct:small_blade", "{Material:\"tconstruct:copper\"}"),
-			S: "#forge:rods/wooden"
-		}).id("kubejs:crafting/copper_knife")
-		create.filling(Item.of("farmersdelight:diamond_knife"), ["#farmersdelight:tools/knives", Fluid.of(TC("molten_diamond"), 100)])
-			.id("kubejs:filling/diamond_knife")
-		// #endregion
+		// ナイフのレシピを削除
+		event.remove({ id: /delightful:knives\/.*_knife/ })
+		event.remove({ id: /farmersdelight:.*_knife/ })
 
 		// #region パン生地のレシピを追加
 		event.remove({ id: "create:smelting/bread" })
@@ -652,7 +519,7 @@ onEvent("lootjs", event => {
 	event.addLootTableModifier("minecraft:blocks/grass")
 		.removeLoot("wheat_seeds")
 	event.addLootTableModifier("minecraft:blocks/tall_grass")
-	.removeLoot("wheat_seeds")
+		.removeLoot("wheat_seeds")
 
 	// 鉱石を統合
 	event.addBlockLootModifier("#forge:ores").modifyLoot("#forge:raw_materials", item => {

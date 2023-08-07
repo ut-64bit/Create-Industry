@@ -23,6 +23,9 @@ onEvent('jei.hide.items', event => {
 			'createaddition:digital_adapter',
 			'supplementaries:rope',
 			'@valkyrienskies',
+			/delightful:knives\/.*_knife/,
+			/farmersdelight:.*_knife/,
+			"createindustry:heavy_plate",
 		]
 		console.log(hideItem)
 

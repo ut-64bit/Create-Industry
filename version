@@ -1,6 +1,6 @@
 {
-    "versionName": "0.2.6b",
-    "versionCode": 1,
+    "versionName": "0.2.7",
+    "versionCode": 2,
     "versionFormat": "%versionName%",
     "updateURL": {
         "en_us": "https://github.com/ut-64bit/Create-Industry"
@@ -10,6 +10,11 @@
             "一部のテクスチャが壊れていた問題を修正",
             "混合レシピから溶解した金属のレシピを削除",
             "翻訳を追加",
+            "MODを更新"
+        ],
+        "0.2.7" : [
+            "ほぼすべてのツールをTinkers仕様のものに変更",
+            "バグを修正",
             "MODを更新"
         ]
     },
