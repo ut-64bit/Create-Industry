@@ -4,18 +4,18 @@
 
 	[Settings."FPS Counter"]
 		"FPS Counter Distance" = 12
-		"Display FPS Counter (OFF, SIMPLE, ADVANCED)" = "SIMPLE"
+		"Display FPS Counter (OFF, SIMPLE, ADVANCED)" = "OFF"
 
 	[Settings.Misc]
 		"Render Fog" = true
 		#Allowed Values: WINDOWED, BORDERLESS, FULLSCREEN
 		"Use Borderless Fullscreen" = "FULLSCREEN"
 		"Cloud Height [Raw, Default 256]" = 256
-		"Chunk Fade In Quality (OFF, FAST, FANCY)" = "FANCY"
-		"Hide JEI Until Searching" = true
+		"Chunk Fade In Quality (OFF, FAST, FANCY)" = "OFF"
+		"Hide JEI Until Searching" = false
 
 	[Settings.Zoom]
-		"Cinematic Camera Mode (OFF, VANILLA, MULTIPLIED)" = "OFF"
+		"Cinematic Camera Mode (OFF, VANILLA, MULTIPLIED)" = "MULTIPLIED"
 		"Zoom Scrolling Enabled" = true
 		"Zoom Transition Mode (TOGGLE, HOLD, PERSISTENT)" = "HOLD"
 		"Zoom Transition Mode (OFF, LINEAR, SMOOTH)" = "SMOOTH"
