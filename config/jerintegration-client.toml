@@ -2,7 +2,7 @@
 #Jer Integration override options
 [jer-integration]
 	#Enable / Disable patch for Randomite Classic
-	randomite = true
+	randomite = false
 	#Enable / Disable patch for Create
 	create = true
 	#Enable / Disable patch for Immersive Engineering
@@ -10,9 +10,9 @@
 	#Enable / Disable patch for Tinkers' Construct
 	tconstruct = true
 	#Enable / Disable patch for Mekanism
-	mekanism = true
+	mekanism = false
 	#Enable / Disable patch for Mining Master
-	miningmaster = true
+	miningmaster = false
 	#Enable / Disable patch for Applied Energistics 2
-	ae2 = true
+	ae2 = false
 
