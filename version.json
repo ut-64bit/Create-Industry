@@ -1,6 +1,6 @@
 {
-    "versionName": "0.2.7b",
-    "versionCode": 3,
+    "versionName": "0.2.7c",
+    "versionCode": 4,
     "versionFormat": "%versionName%",
     "updateURL": {
         "en_us": "https://github.com/ut-64bit/Create-Industry"
@@ -19,6 +19,10 @@
         ],
         "0.2.7b" : [
             "軽量化MODを追加",
+            "バグを修正"
+        ],
+        "0.2.7c" : [
+            "MODをアップデート",
             "バグを修正"
         ]
     },

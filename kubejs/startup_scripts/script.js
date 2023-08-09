@@ -4,6 +4,7 @@ onEvent('item.registry', event => {
 	// misc
 	event.create('oldguns:unprocessed_steel_ingot', 'create:sequenced_assembly').texture("kubejs:item/unprocessed_steel_ingot")
 	event.create('blaze_core')
+	event.create('rainbow_dye').glow(true)
 
 	// create
 	event.create('create_kubejs:steam_engine').texture("kubejs:item/steam_engine")

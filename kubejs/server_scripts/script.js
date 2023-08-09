@@ -35,6 +35,9 @@ global.deleteItems = [
 	/^(?!(tconstruct:|tinkers_things:)).*_shovel/,
 	/^(?!(tconstruct:|tinkers_things:)).*_hoe/,
 	/^(?!(tconstruct:|tinkers_things:)).*_sword/,
+	'ffs:tank_computer',
+	'ffs:tit_egg',
+	'ffs:tit',
 ]
 const MetalMaterials = ["aluminum", "amethyst_bronze", "brass", "bronze", "cobalt", "constantan", "copper", "electrum", "emerald", "enderium", "gold", "hepatizon", "inlet", "iron", "knightslime", "lead", "lumium", "manyullyn", "molten_debris", "netherite", "nickel", "osmium", "pewter", "pig_iron", "platinum", "queens_slime", "refined_glowstone", "refined_obsidian", "rose_gold", "signalum", "silver", "slimesteel", "soulsteel", "steel", "tin", "tungsten", "uranium", "zinc"]
 const colors = ["black", "blue", "brown", "cyan", "gray", "green", "light_blue", "light_gray", "lime", "magenta", "orange", "pink", "purple", "red", "white", "yellow"]
@@ -209,11 +212,11 @@ onEvent("recipes", event => {
 	}
 
 	// ツールをレシピに含むものをTinkersのものに変更
-	event.replaceInput({ type: "minecraft:crafting_shaped", input: /.*_pickaxe/ }, /.*_pickaxe/, 'tconstruct:pickaxe')
-	event.replaceInput({ type: "minecraft:crafting_shaped", input: /.*_axe/ }, /.*_axe/, 'tconstruct:hand_axe')
-	event.replaceInput({ type: "minecraft:crafting_shaped", input: /.*_shovel/ }, /.*_shovel/, 'tinkers_things:shovel')
-	event.replaceInput({ type: "minecraft:crafting_shaped", input: /.*_hoe/ }, /.*_hoe/, 'tconstruct:kama')
-	event.replaceInput({ type: "minecraft:crafting_shaped", input: /.*_sword/ }, /.*_sword/, 'tconstruct:sword')
+	event.replaceInput({ type: "minecraft:crafting_shaped", input: /.*_pickaxe/ }, /.*_pickaxe/, "tconstruct:pickaxe")
+	event.replaceInput({ type: "minecraft:crafting_shaped", input: /.*_axe/ }, /.*_axe/, "tconstruct:hand_axe")
+	event.replaceInput({ type: "minecraft:crafting_shaped", input: /.*_shovel/ }, /.*_shovel/, "tinkers_things:shovel")
+	event.replaceInput({ type: "minecraft:crafting_shaped", input: /.*_hoe/ }, /.*_hoe/, "tconstruct:kama")
+	event.replaceInput({ type: "minecraft:crafting_shaped", input: /.*_sword/ }, /.*_sword/, "tconstruct:sword")
 
 	// 銃器用鋼鉄のレシピを変更
 	event.remove({ output: "oldguns:steel_ingot" })
@@ -239,6 +242,34 @@ onEvent("recipes", event => {
 	// ランタンに使う金をプレートに変更
 	event.replaceInput({ id: "supplementaries:crimson_lantern" }, "gold_ingot", "#forge:plates/gold")
 
+	// 鉄なのに色は鋳鉄のレシピを修正
+	{
+		let iron_to_cast = [
+			"minecraft:cauldron",
+			"supplementaries:candle_holders/candle_holder",
+			"supplementaries:pulley",
+			"supplementaries:cage",
+			"decoration_delight:trash_bin_recipe",
+			"supplementaries:faucet",
+			"supplementaries:spring_launcher",
+			"decoration_delight:sink_recipe",
+			"create:crafting/kinetics/metal_bracket",
+			"minecraft:anvil",
+			"farmersdelight:stove",
+			"create:crafting/kinetics/metal_bracket",
+			"create:crafting/kinetics/metal_girder",
+			"solapplepie:lunchbox"
+		]
+		colors.forEach(color => { iron_to_cast.push(`supplementaries:candle_holders/candle_holder_${color}`) })
+		iron_to_cast.forEach(itc => {
+			event.replaceInput({ id: itc }, "#forge:ingots/iron", "#forge:ingots/cast_iron")
+			event.replaceInput({ id: itc }, "#forge:plates/iron", "#forge:plates/cast_iron")
+			event.replaceInput({ id: itc }, "#forge:nuggets/iron", "#forge:nuggets/cast_iron")
+			event.replaceInput({ id: itc }, "#forge:storage_blocks/iron", "#forge:storage_blocks/cast_iron")
+			event.replaceInput({ id: itc }, "iron_bars", 'createdeco:cast_iron_bars')
+		})
+	}
+
 	// create
 	{
 		// ダイヤの粉
@@ -246,7 +277,7 @@ onEvent("recipes", event => {
 		immersiveengineering.crusher("createaddition:diamond_grit", "diamond").id("kubejs:crusher/diamond_dust")
 
 		// heavy_plateを削除
-		event.remove({ id: "createindustry:sequenced_assembly/heavy_plate" })
+		event.replaceInput({ id: "createindustry:sequenced_assembly/heavy_plate" }, "createindustry:heavy_plate", "#forge:plates/steel")
 
 		// steam_engine
 		inter = "create_kubejs:incomplete_steam_engine"
@@ -313,6 +344,11 @@ onEvent("recipes", event => {
 			event.remove({ id: "extendedgears:blasting/large_steel_cogwheel_from_iron" })
 		}
 
+		// thermite_powder
+		event.remove({ id: "createindustry:compacting/thermite_powder" })
+		create.mixing("2x createindustry:thermite_powder", ["#forge:dusts/aluminum", "#forge:dusts/iron"])
+			.id("kubejs:mixing/thermite_powder")
+
 		// 雑多なレシピを追加
 		create.emptying(["obsidian", Fluid.of("lava", 250)], "magma_block")
 			.id("kubejs:emptying/magma_block")
@@ -330,7 +366,7 @@ onEvent("recipes", event => {
 			"i": "#forge:rods/iron"
 		}).id("create:crafting/kinetics/whisk")
 
-		event.replaceInput({ input: "createindustry:heavy_plate" }, 'createindustry:heavy_plate', "#forge:plates/steel")
+		event.replaceInput({ input: "createindustry:heavy_plate" }, "createindustry:heavy_plate", "#forge:plates/steel")
 	}
 
 	// tconstruct
@@ -394,7 +430,7 @@ onEvent("recipes", event => {
 		explosion_crafting("pneumaticcraft:ingot_iron_compressed", "#forge:ingots/cast_iron", 20)
 
 		event.remove({ id: "pneumaticcraft:explosion_crafting/compressed_iron_block" })
-		explosion_crafting('pneumaticcraft:compressed_iron_block', "#forge:storage_blocks/cast_iron", 20)
+		explosion_crafting("pneumaticcraft:compressed_iron_block", "#forge:storage_blocks/cast_iron", 20)
 
 		event.remove({ id: "pneumaticcraft:explosion_crafting/wheat_flour" })
 		event.replaceInput({ input: "pneumaticcraft:wheat_flour" }, "pneumaticcraft:wheat_flour", "#forge:flour/wheat")
@@ -487,11 +523,15 @@ onEvent("recipes", event => {
 
 onEvent("item.tags", event => {
 	// 統合
+	event.add("forge:flour/wheat", "pneumaticcraft:wheat_flour")
 	event.add("forge:storage_blocks/steel", "createindustry:steel_block")
 	event.add("forge:storage_blocks/cast_iron", "createindustry:cast_iron_block")
-	event.add('forge:coal_coke', "createindustry:coal_coke")
-	event.add('forge:storage_blocks/coal_coke', "createindustry:coal_coke_block")
-	event.add('forge:flour/wheat', 'pneumaticcraft:wheat_flour')
+	event.add("forge:coal_coke", "createindustry:coal_coke")
+	event.add("forge:storage_blocks/coal_coke", "createindustry:coal_coke_block")
+	event.add("forge:dusts/saltpeter", "createindustry:saltpeter")
+	event.add("forge:dusts/sulfur", "createindustry:sulfur_powder")
+	event.add("forge:dusts/wood", "createindustry:sawdust")
+	event.add("forge:dusts/sulfur", "createindustry:sulfur_powder")
 
 	if (vs_eureka) {
 		event.add("vs_eureka:balloons", "vs_eureka:balloon")

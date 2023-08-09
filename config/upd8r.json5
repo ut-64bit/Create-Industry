@@ -40,8 +40,8 @@
 		"versionCheckerReadTimeout": 5000
 	},
 	"currentVersion": {
-		"versionCode": 3,
+		"versionCode": 4,
 		"versionFormat": "%versionName%",
-		"versionName": "0.2.7b"
+		"versionName": "0.2.7c"
 	}
 }
