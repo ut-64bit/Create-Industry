@@ -1,71 +1,71 @@
 {
   "itemGroup.tinkers_things.tinkers_things": "Tinkers' Things",
-  
+
   "item.tinkers_things.chisel": "Tinker's Chisel",
-  "item.tinkers_things.blowpipe": "Blowpipe",
-  
+  "item.tinkers_things.blowpipe": "吹き矢",
+
   "item.tinkers_things.shovel": "シャベル",
   "item.tinkers_things.shovel.description": "シャベルは基本的な掘削ツールです。モンスターをよりノックバックさせることができます。",
-  
+
   "item.tinkers_things.halberd": "ハルバード",
   "item.tinkers_things.halberd.description": "ハルバードは、遠くの敵に強力な打撃を与えるために設計された長い武器です。\nﾔｰｯ!!",
   "modifier.tinkers_things.range": "長柄",
   "modifier.tinkers_things.range.flavor": "すごく...長いです...",
   "modifier.tinkers_things.range.description": "ツールが非常に長いため、遠くのモンスターを攻撃することができます。",
-  
+
   "item.tinkers_things.shortbow": "ショートボウ",
   "item.tinkers_things.shortbow.description": "ショートボウは軽量な弓です。ロングボウほど強力でも正確でもないが、移動中の引きやすさでそれを補っています。",
-  
-  "item.tinkers_things.sack": "Silky Sack",
-  
+
+  "item.tinkers_things.sack": "シルキーサック",
+
   "pattern.tinkers_things.large_repair_kit": "大きなリペアキット",
   "item.tinkers_things.large_repair_kit": "大きなリペアキット",
   "item.tinkers_things.large_repair_kit_gold_cast": "大きなリペアキットの金型",
   "item.tinkers_things.large_repair_kit_sand_cast": "大きなリペアキットの砂型",
   "item.tinkers_things.large_repair_kit_red_sand_cast": "大きなリペアキットの赤い砂型",
-  
-  
-  "modifier.tinkers_things.fortified": "Fortified",
-  "modifier.tinkers_things.fortified.flavor": "Tough as Copper",
-  "modifier.tinkers_things.fortified.description": "Tool has boosted stats, mining level, and can be repaired with copper",
+
+
+  "modifier.tinkers_things.fortified": "頑丈",
+  "modifier.tinkers_things.fortified.flavor": "銅のように頑丈",
+  "modifier.tinkers_things.fortified.description": "ツールの性能と採掘レベルが向上し、銅で修理ができるようになります",
   "modifier.tinkers_things.enhanced.requirements": "Enhanced requires fortified to be applied first",
-  
-  
-  "modifier.tinkers_things.blinding": "Blinding",
-  "modifier.tinkers_things.blinding.flavor": "Right in the eye",
-  "modifier.tinkers_things.blinding.description": "Arrows cause the target to be temporarily blinded",
-  
-  "modifier.tinkers_things.tracing": "Tracing",
+
+
+  "modifier.tinkers_things.blinding": "盲目",
+  "modifier.tinkers_things.blinding.flavor": "目と目が逢う 瞬間...",
+  "modifier.tinkers_things.blinding.description": "矢は対象を一時的に盲目にします",
+
+  "modifier.tinkers_things.tracing": "追跡",
   "modifier.tinkers_things.tracing.flavor": "Totally not glowing",
-  "modifier.tinkers_things.tracing.description": "Target will glow for a few seconds, making them easier to track",
-  
-  "modifier.tinkers_things.venom": "Venom",
+  "modifier.tinkers_things.tracing.description": "対象は数秒間光り、追跡しやすくなります",
+
+  "modifier.tinkers_things.venom": "毒",
   "modifier.tinkers_things.venom.flavor": "Revenge of the spider",
-  "modifier.tinkers_things.venom.description": "Target will be poisoned, causing damage over time",
-  
-  "modifier.tinkers_things.weakness": "Weakness",
+  "modifier.tinkers_things.venom.description": "対象は毒状態になり、時間の経過とともにダメージを与えます",
+
+  "modifier.tinkers_things.weakness": "弱点",
   "modifier.tinkers_things.weakness.flavor": "Dizziness in an arrow",
-  "modifier.tinkers_things.weakness.description": "Target will be temporarily weakened, reducing attack damage",
-  
-  
-  "modifier.tinkers_things.stowing": "Stowing",
+  "modifier.tinkers_things.weakness.description": "対象は一時的に弱体化され、攻撃ダメージが減少します",
+
+
+  "modifier.tinkers_things.stowing": "収納",
   "modifier.tinkers_things.stowing.flavor": "Holds a lot of stuff",
-  "modifier.tinkers_things.stowing.description": "Tool gains an additional 9 slots of storage",
-  
-  "modifier.tinkers_things.pouch": "Pouch",
+  "modifier.tinkers_things.stowing.description": "ツールに9スロット分のストレージが追加されます",
+
+  "modifier.tinkers_things.pouch": "ポーチ",
   "modifier.tinkers_things.pouch.flavor": "Holds a couple things",
-  "modifier.tinkers_things.pouch.description": "Tools gains an additional 3 slots of storage",
-  
-  
+  "modifier.tinkers_things.pouch.description": "ツールに3スロット分のストレージが追加されます",
+
+
   "block.tinkers_things.hematite_block": "ヘマタイトブロック",
   "item.tinkers_things.hematite": "ヘマタイト",
   "stat.tconstruct.harvest_tier.tinkers_things.hematite": "ヘマタイト",
-  
+
   "block.tinkers_things.molten_hematite": "溶解したヘマタイト",
   "fluid.tinkers_things.molten_hematite": "溶解したヘマタイト",
   "fluid.tinkers_things.molten_hematite_flowing": "Flowing 溶解したヘマタイト",
   "item.tinkers_things.molten_hematite_bucket": "溶解したヘマタイト入りバケツ",
-  
+
   "item.tinkers_things.laminar_helmet":     "Laminarのヘルメット",
   "item.tinkers_things.laminar_chestplate": "Laminarのチェストプレート",
   "item.tinkers_things.laminar_leggings":   "Laminarのレギンス",
@@ -74,25 +74,28 @@
 
   "material.tinkers_things.hematite": "ヘマタイト",
   "material.tinkers_things.hematite.flavor": "Bloodstone, thought a myth by many and feared by more",
-  "material.tinkers_things.hematite.encyclopedia": "Grants two additional upgrade slots, at the cost of -3 undead damage and -6 mining speed against ores, logs, and dirt",
+  "material.tinkers_things.hematite.encyclopedia": "鉱石、木、土に対する採掘速度とアンデッドに対するダメージを犠牲にして、\n追加のアップグレードスロットを2つを付与します",
 
   "material.tinkers_things.veinline": "Veinline",
   "material.tinkers_things.veinline.flavor": "The blood continues to flow",
-  "material.tinkers_things.veinline.ranged": "Grants an additional upgrade slot at the cost of accuracy",
-  
+  "material.tinkers_things.veinline.ranged": "精度を犠牲にして追加のアップグレードスロットを付与します",
+
   "modifier.tinkers_things.hemodynamic": "Hemodynamic",
   "modifier.tinkers_things.hemodynamic.flavor": "The blood moves",
   "modifier.tinkers_things.hemodynamic.description": "Tool gains an additional upgrade slot, but at what cost?",
+
   "modifier.tinkers_things.hemophilic": "Hemophilic",
   "modifier.tinkers_things.hemophilic.flavor": "Without blood to clot",
-  "modifier.tinkers_things.hemophilic.description": "Tool does less damage against undead",
+  "modifier.tinkers_things.hemophilic.description": "ツールはアンデッドに対して与えるダメージが少なくなります",
   "modifier.tinkers_things.hemophilic.attack_damage": "Undead Damage",
+
   "modifier.tinkers_things.hemotoxins": "Hemotoxins",
   "modifier.tinkers_things.hemotoxins.flavor": "The blood hurts",
-  "modifier.tinkers_things.hemotoxins.description": "Tool is less effective against ores, logs, and dirt",
+  "modifier.tinkers_things.hemotoxins.description": "ツールは鉱石、木、土に対して効果が低くなります",
   "modifier.tinkers_things.hemotoxins.mining_speed": "Hemotoxin Speed",
+
   "modifier.tinkers_things.hemophobic": "Hemophobic",
   "modifier.tinkers_things.hemophobic.flavor": "Fear of the red liquid",
-  "modifier.tinkers_things.hemophobic.description": "Projectiles are less accurate",
+  "modifier.tinkers_things.hemophobic.description": "発射物の精度が低くなります",
   "modifier.tinkers_things.fast_use_item": "Fast Use Item"
 }
