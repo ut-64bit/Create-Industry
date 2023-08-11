@@ -43,18 +43,20 @@
 	"item.createaddition.electrum_wire": "エレクトラムワイヤ",
 	"item.createaddition.electrum_rod": "エレクトラムの棒",
 
+	"item.createaddition.brass_rod": "真鍮の棒",
+
 	"item.createaddition.straw": "ストロー",
-	
+
 	"item.createaddition.seed_oil_bucket": "種油入りバケツ",
 	"item.createaddition.seed_oil_bucket.tooltip": "種油バケツ",
 	"item.createaddition.seed_oil_bucket.tooltip.summary": "_可燃性の液体_",
 	"fluid.createaddition.seed_oil": "種油",
-	
+
 	"item.createaddition.bioethanol_bucket": "バイオエタノール入りバケツ",
 	"item.createaddition.bioethanol_bucket.tooltip": "バイオエタノールバケツ",
 	"item.createaddition.bioethanol_bucket.tooltip.summary": "効率的な_可燃性の液体_",
 	"fluid.createaddition.bioethanol": "バイオエタノール",
-	
+
 	"item.createaddition.biomass": "バイオマス",
 	"item.createaddition.biomass_pellet": "バイオマスペレット",
 	"item.createaddition.biomass_pellet.tooltip": "バイオマスペレット",
@@ -67,7 +69,7 @@
 	"statusbar.createaddition.wire.requires_high_current": "This connection requires a high current wire",
 
 	"block.createaddition.modular_accumulator": "蓄電器",
-	
+
 	"block.createaddition.portable_energy_interface": "ポータブルエネルギーインターフェース",
 
 	"block.createaddition.connector.tooltip.condition1": "低電流",
@@ -88,11 +90,11 @@
 	"block.createaddition.large_connector.tooltip.behaviour3": "モードを切り替えます。",
 
 	"block.createaddition.bioethanol": "バイオエタノール",
-	
+
 	"block.createaddition.barbed_wire": "有刺鉄線",
 	"block.createaddition.barbed_wire.tooltip": "有刺鉄線",
 	"block.createaddition.barbed_wire.tooltip.summary": "通り抜けるとダメージを受ける。",
-	
+
 	"block.createaddition.tesla_coil": "テスラコイル",
 
 	"createaddition.ponder.electric_motor.header": "電動モーターによる回転力の生成",
@@ -100,21 +102,21 @@
 	"createaddition.ponder.electric_motor.text_2": "背面からモーターの回転速度を変更できます",
 	"createaddition.ponder.electric_motor.text_3": "電動モーターには電気(FE)が必要です",
 	"createaddition.ponder.electric_motor.text_4": "電動モーターの消費電力は回転速度で決まります",
-	
+
 	"createaddition.ponder.tesla_coil.header": "テスラコイルを使ったアイテムの充電",
 	"createaddition.ponder.tesla_coil.text_1": "テスラコイルは真下のアイテムを充電します",
 	"createaddition.ponder.tesla_coil.text_2": "あらゆるFEを使用するアイテムなどを充電できます！",
-	
+
 	"createaddition.ponder.tesla_coil_hurt.header": "危険なテスラコイル",
 	"createaddition.ponder.tesla_coil_hurt.text_1": "テスラコイルは近くのプレイヤーやモブにダメージを与えることもできます",
 	"createaddition.ponder.tesla_coil_hurt.text_2": "これはレッドストーン信号で起動できます",
 	"createaddition.ponder.tesla_coil_hurt.text_3": "感電する準備をしてください！",
-	
+
 	"createaddition.ponder.liquid_blaze_burner.header": "液体燃料の燃焼",
 	"createaddition.ponder.liquid_blaze_burner.text_1": "Giving the Blaze Burner a Straw",
 	"createaddition.ponder.liquid_blaze_burner.text_2": "will allow it to accept liquid fuels by Buckets",
 	"createaddition.ponder.liquid_blaze_burner.text_3": "- or by pipes.",
-	
+
 	"createaddition.ponder.modular_accumulator.header": "巨大な蓄電器",
 	"createaddition.ponder.modular_accumulator.text_1": "蓄電器 is a multi-block structure",
 	"createaddition.ponder.modular_accumulator.text_2": "It can store large amounts of electric energy",
@@ -130,7 +132,7 @@
 	"createaddition.display_source.accumulator.max": "Total Capacity",
 	"createaddition.display_source.accumulator.remaining": "Remaining FE",
 	"createaddition.display_source.accumulator.display": "Choose an Option:",
-	
+
 	"createaddition.ponder.pei_transfer.header": "Contraption Energy Exchange",
 	"createaddition.ponder.pei_transfer.text_1": "蓄電器s on moving contraptions cannot connect to stationary connectors.",
 	"createaddition.ponder.pei_transfer.text_2": "This component can interact with 蓄電器s without the need to stop the contraption.",
@@ -139,19 +141,19 @@
 	"createaddition.ponder.pei_transfer.text_5": "While engaged, the stationary interface will represent ALL 蓄電器s on the contraption",
 	"createaddition.ponder.pei_transfer.text_6": "Energy can now be exchanged according to the Push/Pull configuration of the connector...",
 	"createaddition.ponder.pei_transfer.text_7": "After no energy have been exchanged for a while, the contraption will continue on its way.",
-	
+
 	"createaddition.ponder.pei_redstone.header": "レッドストーン制御",
 	"createaddition.ponder.pei_redstone.text_1": "Redstone power will prevent the stationary interface from engaging.",
 
 	"createaddition.schedule.condition.energy_threshold": "Energy Cargo Condition",
 	"createaddition.schedule.condition.threshold.unit": "Kfe",
 	"createaddition.schedule.condition.threshold.energy": "Energy",
-	
+
 	"death.attack.barbed_wire": "%1$sは有刺鉄線を渡ろうとした",
-  	"death.attack.barbed_wire.player": "%1$sは%2$sと戦いながら有刺鉄線を渡ろうとした",
-	
+	"death.attack.barbed_wire.player": "%1$sは%2$sと戦いながら有刺鉄線を渡ろうとした",
+
 	"effect.createaddition.shocking":"感電",
 	"death.attack.tesla_coil": "%1$sは感電した",
-  	"death.attack.tesla_coil.player": "%1$sは%2$sと戦いながら感電した",
-  	"effect.createaddition.shocking.description": "Causes severely reduced movement speed"
+	"death.attack.tesla_coil.player": "%1$sは%2$sと戦いながら感電した",
+	"effect.createaddition.shocking.description": "Causes severely reduced movement speed"
 }
