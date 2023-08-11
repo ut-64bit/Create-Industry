@@ -11,39 +11,21 @@ onEvent('jei.remove.categories', event => {
 	})
 })
 
+/**
+ * @type {Special.Item[]}
+ */
+let hideItem = [
+	global.deleteItems,
+	'create:dough',
+	'createaddition:digital_adapter',
+	"farmersdelight:rope",
+	'@valkyrienskies',
+]
 onEvent('jei.hide.items', event => {
 	// JEIからアイテムを削除
-	{
-		/**
-		 * @type {Special.Item[]}
-		 */
-		let hideItem = [
-			global.deleteItems,
-			'create:dough',
-			'createaddition:digital_adapter',
-			'supplementaries:rope',
-			'@valkyrienskies',
-			/delightful:knives\/.*_knife/,
-			/farmersdelight:.*_knife/,
-			"createindustry:heavy_plate",
-		]
-		console.log(hideItem)
-
-		hideItem.forEach(item => {
-			event.hide(item)
-		})
-	}
-
-	// ツール
-	let hideTool = (material) => {
-		event.hide(`${material}_pickaxe`)
-		event.hide(`${material}_axe`)
-		event.hide(`${material}_shovel`)
-		event.hide(`${material}_hoe`)
-		event.hide(`${material}_sword`)
-	}
-	hideTool('wooden')
-	hideTool('stone')
+	hideItem.forEach(item => {
+		event.hide(item)
+	})
 })
 
 onEvent('jei.add.items', event => {
@@ -53,7 +35,13 @@ onEvent('jei.add.items', event => {
 })
 
 onEvent('item.tooltip', tooltip => {
-	const mags = ['oldguns:mp40_mag', 'oldguns:aks-74u_mag', 'oldguns:colt1911_mag', 'oldguns:galil_mag', 'oldguns:sten_mag', 'oldguns:scorpion_mag', 'oldguns:thompson_mag']
+	// 削除したいアイテムにツールチップを表示
+	tooltip.add(hideItem, Text.red("DELETED").underlined().italic())
+
+	/**
+	 * @type {Special.Item[]}
+	 */
+	let mags = ['oldguns:mp40_mag', 'oldguns:aks-74u_mag', 'oldguns:colt1911_mag', 'oldguns:galil_mag', 'oldguns:sten_mag', 'oldguns:scorpion_mag', 'oldguns:thompson_mag']
 	mags.forEach(mag => {
 		tooltip.addAdvanced(mag, (item, advanced, text) => {
 			let bullets = item.nbt?.bullets

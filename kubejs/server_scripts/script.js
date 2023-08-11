@@ -10,7 +10,7 @@ const TC = (id) => `tconstruct:${id}`
 const IE = (id) => `immersiveengineering:${id}`
 
 /**
- * @type {Special.Item[]}
+ * @type {Internal.Ingredient_}
  */
 global.deleteItems = [
 	"oldguns:iron_with_coal",
@@ -38,6 +38,9 @@ global.deleteItems = [
 	'ffs:tank_computer',
 	'ffs:tit_egg',
 	'ffs:tit',
+	/delightful:.*_knife/,
+	/farmersdelight:.*_knife/,
+
 ]
 const MetalMaterials = ["aluminum", "amethyst_bronze", "brass", "bronze", "cobalt", "constantan", "copper", "electrum", "emerald", "enderium", "gold", "hepatizon", "inlet", "iron", "knightslime", "lead", "lumium", "manyullyn", "molten_debris", "netherite", "nickel", "osmium", "pewter", "pig_iron", "platinum", "queens_slime", "refined_glowstone", "refined_obsidian", "rose_gold", "signalum", "silver", "slimesteel", "soulsteel", "steel", "tin", "tungsten", "uranium", "zinc"]
 const colors = ["black", "blue", "brown", "cyan", "gray", "green", "light_blue", "light_gray", "lime", "magenta", "orange", "pink", "purple", "red", "white", "yellow"]
@@ -90,9 +93,6 @@ onEvent("recipes", event => {
 	 * @type {Special.Item} inter
 	 */
 	let inter
-
-	// アイテムを擬似的に削除
-	global.deleteItems.forEach(item => event.remove({ output: `${item}` }))
 
 	// 一部のキャストレシピを削除
 	MetalMaterials.forEach(material => {
@@ -484,10 +484,6 @@ onEvent("recipes", event => {
 
 	// delight
 	{
-		// ナイフのレシピを削除
-		event.remove({ id: /delightful:knives\/.*_knife/ })
-		event.remove({ id: /farmersdelight:.*_knife/ })
-
 		// #region パン生地のレシピを追加
 		event.remove({ id: "create:smelting/bread" })
 		event.remove({ id: "create:crafting/appliances/dough" })
@@ -519,11 +515,18 @@ onEvent("recipes", event => {
 			"B": "bucket"
 		}).id("farmersdelight:cooking_pot")
 	}
+
+	// アイテムを擬似的に削除
+	global.deleteItems.forEach(item => {
+		event.remove({ output: `${item}` })
+		event.remove({ input: `${item}` })
+	})
 })
 
 onEvent("item.tags", event => {
 	// 統合
 	event.add("forge:flour/wheat", "pneumaticcraft:wheat_flour")
+
 	event.add("forge:storage_blocks/steel", "createindustry:steel_block")
 	event.add("forge:storage_blocks/cast_iron", "createindustry:cast_iron_block")
 	event.add("forge:coal_coke", "createindustry:coal_coke")
@@ -532,6 +535,11 @@ onEvent("item.tags", event => {
 	event.add("forge:dusts/sulfur", "createindustry:sulfur_powder")
 	event.add("forge:dusts/wood", "createindustry:sawdust")
 	event.add("forge:dusts/sulfur", "createindustry:sulfur_powder")
+
+	event.add("forge:tools/axes", "tconstruct:hand_axe")
+	event.add("forge:tools/pickaxes", "tconstruct:pickaxe")
+	event.add("forge:tools/shovels", "tinkers_things:shovel")
+	event.add("forge:tools/hoes", "tconstruct:kama")
 
 	if (vs_eureka) {
 		event.add("vs_eureka:balloons", "vs_eureka:balloon")
