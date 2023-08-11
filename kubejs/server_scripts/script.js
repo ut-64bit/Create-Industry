@@ -230,9 +230,9 @@ onEvent("recipes", event => {
 	// ロープを置き換え
 	event.replaceInput({ input: "supplementaries:rope" }, "supplementaries:rope", "#supplementaries:ropes")
 	event.replaceInput({ input: "farmersdelight:rope" }, "farmersdelight:rope", "#supplementaries:ropes")
-	event.replaceOutput({ output: "supplementaries:rope" }, "supplementaries:rope", "farmersdelight:rope")
+	event.replaceOutput({ output: "farmersdelight:rope" }, "farmersdelight:rope", "supplementaries:rope")
 	event.remove({ id: "farmersdelight:rope" })
-	event.shaped("farmersdelight:rope",
+	event.shaped("supplementaries:rope",
 		[
 			"a",
 			"a"
@@ -538,6 +538,17 @@ onEvent("item.tags", event => {
 		colors.forEach(color => event.add("vs_eureka:balloons", `vs_eureka:${color}_balloon`))
 		woods.forEach(wood => event.add("vs_eureka:ship_helms", `vs_eureka:${wood}_ship_helm`))
 	}
+})
+
+onEvent("block.tags", event => {
+	// createのレンチで壊せるブロックを追加
+	/**
+	 * @type {Special.Block[]}
+	 */
+	let wrench_pickup = [
+		"@toms_storage",
+	]
+	wrench_pickup.forEach(block => event.add("create:wrench_pickup", block))
 })
 
 onEvent("item.entity_interact", event => {
