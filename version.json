@@ -1,39 +1,41 @@
 {
-    "versionName": "0.2.7c",
-    "versionCode": 4,
-    "versionFormat": "%versionName%",
-    "updateURL": {
-        "en_us": "https://github.com/ut-64bit/Create-Industry"
-    },
-    "changelogs": {
-        "0.2.6b": [
-            "一部のテクスチャが壊れていた問題を修正",
-            "混合レシピから溶解した金属のレシピを削除",
-            "翻訳を追加",
-            "MODを更新"
-        ],
-        "0.2.7": [
-            "ほぼすべてのツールをTinkers仕様のものに変更",
-            "バグを修正",
-            "MODを更新"
-        ],
-        "0.2.7b": [
-            "軽量化MODを追加",
-            "バグを修正"
-        ],
-        "0.2.7c": [
-            "MODをアップデート",
-            "バグを修正"
-        ],
-        "0.2.7d": [
-            "テクスチャを追加",
-            "翻訳を修正",
-            "バグを修正"
-        ]
-    },
-    "welcomeMessage": {
-        "tag": [
-            "§aI can't think of a welcome message!!"
-        ]
-    }
+	"versionName": "0.2.7c",
+	"versionCode": 4,
+	"versionFormat": "%versionName%",
+	"updateURL": {
+		"en_us": "https://github.com/ut-64bit/Create-Industry"
+	},
+	"changelogs": {
+		"0.2.6b": [
+			"一部のテクスチャが壊れていた問題を修正",
+			"混合レシピから溶解した金属のレシピを削除",
+			"翻訳を追加",
+			"MODを更新"
+		],
+		"0.2.7": [
+			"ほぼすべてのツールをTinkers仕様のものに変更",
+			"バグを修正",
+			"MODを更新"
+		],
+		"0.2.7b": [
+			"軽量化MODを追加",
+			"バグを修正"
+		],
+		"0.2.7c": [
+			"MODをアップデート",
+			"バグを修正"
+		],
+		"0.2.7d": [
+			"テクスチャを追加",
+			"翻訳を修正",
+			"バグを修正",
+			"アイテムの削除に関する最適化",
+			"Createのレンチで回収できるブロックを追加"
+		]
+	},
+	"welcomeMessage": {
+		"tag": [
+			"§aI can't think of a welcome message!!"
+		]
+	}
 }
